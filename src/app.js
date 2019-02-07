@@ -1,5 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './style.scss'
+
+import Navbar from './components/Navbar'
+
 
 
 class App extends React.Component{
@@ -10,7 +14,10 @@ class App extends React.Component{
 
   render(){
     return(
-      <h1> Hello Team! </h1>
+      <main>
+        <NavBar />
+        <h1> Hello Team! </h1>
+      </main>
     )
   }
 }
