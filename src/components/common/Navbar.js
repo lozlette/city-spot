@@ -1,5 +1,6 @@
 import React from 'react'
 import { Segment, Menu, Dropdown } from 'semantic-ui-react'
+import RegLoginModal from '../Auth/RegLogin'
 
 
 class Navbar extends React.Component{
@@ -33,11 +34,15 @@ class Navbar extends React.Component{
           />
 
           <Menu.Menu position='right'>
-            <Menu.Item
-              name='Sign Up']
-            />
-            <Menu.Item name='logout'>
+
+            <Menu.Item name='Sign Up'>
+              <RegLoginModal tab='Sign Up' />
             </Menu.Item>
+
+            <Menu.Item name='Log In'>
+              <RegLoginModal tab='Log In' />
+            </Menu.Item>
+
           </Menu.Menu>
         </Menu>
       </Segment>
