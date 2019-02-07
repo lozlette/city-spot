@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './style.scss'
 
-import Navbar from './components/Navbar'
+import Navbar from './components/common/Navbar'
 
 
 
@@ -15,7 +15,7 @@ class App extends React.Component{
   render(){
     return(
       <main>
-        <NavBar />
+        <Navbar />
         <h1> Hello Team! </h1>
       </main>
     )
