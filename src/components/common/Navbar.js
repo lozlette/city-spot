@@ -34,15 +34,10 @@ class Navbar extends React.Component{
 
           <Menu.Menu position='right'>
             <Menu.Item
-              name='Sign Up'
-              active={activeItem === 'Sign Up'}
-              onClick={this.handleItemClick}
+              name='Sign Up']
             />
-            <Menu.Item
-              name='logout'
-              active={activeItem === 'logout'}
-              onClick={this.handleItemClick}
-            />
+            <Menu.Item name='logout'>
+            </Menu.Item>
           </Menu.Menu>
         </Menu>
       </Segment>
