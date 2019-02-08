@@ -11,7 +11,7 @@ class RegForm extends React.Component{
   render(){
     const handleChange = this.props.handleChange
     return(
-      <Segment placeholder>
+      <Segment placeholder color='blue'>
         <Form>
           <Grid columns={2} stackable textAlign='center'>
             <Divider vertical> <Icon name="world" size="large" /> </Divider>

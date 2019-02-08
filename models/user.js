@@ -36,7 +36,7 @@ userSchema.pre('save', function hashPassword(next) {
 
 })
 
-userSchema.methods.validatePassword =function(password) {
+userSchema.methods.validatePassword = function(password) {
   return bcrypt.compare.Sync(password, this.password)
 }
 

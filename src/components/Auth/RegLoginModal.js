@@ -1,6 +1,7 @@
 import React from 'react'
 import { Menu, Container } from 'semantic-ui-react'
 import RegForm from './RegForm'
+import LoginForm from './LoginForm'
 
 
 class RegLoginModal extends React.Component{
@@ -43,8 +44,16 @@ class RegLoginModal extends React.Component{
         </Menu>
 
         {activeItem === 'Sign Up' &&
-          <RegForm handleChange={this.handleChange}
-        />}
+          <RegForm
+            handleChange={this.handleChange}
+          />
+        }
+
+        {activeItem === 'Log In' &&
+          <LoginForm
+            handleChange={this.handleChange}
+          />
+        }
       </Container>
 
     )
