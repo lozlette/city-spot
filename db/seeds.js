@@ -55,57 +55,57 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           imgae: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/06/28/17/singa.jpg',
           continent: 'Africa',
           appearedIn: [data.continentAfrica]
-      }),
-      city3: City.create({
-        name: 'Accra',
-        imgae: 'https://i1.wp.com/theleidener.com/wp-content/uploads/2017/04/accra1.jpg?ssl=1',
-        continent: 'Africa',
-        appearedIn: [data.continentAfrica]
-      }),
-      city4: City.create({
-        name: 'Libreville',
-        imgae: 'http://www.travelmagma.com/uploads/images/0_319.jpg',
-        continent: 'Africa',
-        appearedIn: [data.continentAfrica]
-      }),
-      city5: City.create({
-        name: 'Johannesburg',
-        imgae: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Johannesburg_view_topofCC_03.jpg/220px-Johannesburg_view_topofCC_03.jpg',
-        continent: 'Africa',
-        appearedIn: [data.continentAfrica]
-      }),
-      city6: City.create({
-        name: 'Marrakesh',
-        imgae: 'https://timedotcom.files.wordpress.com/2016/03/160314_tra_intl_marrakesh2.jpg',
-        continent: 'Africa',
-        appearedIn: [data.continentAfrica]
-      }),
-      city7: City.create({
-        name: 'Cairo',
-        imgae: 'https://frontera.net/wp-content/uploads/2017/01/Egypt-1-1-1-1-1-1-1-2-1.jpg',
-        continent: 'Africa',
-        appearedIn: [data.continentAfrica]
-      }),
-      city8: City.create({
-        name: 'Lagos',
-        imgae: 'https://i1.wp.com/estateintel.com/wp-content/uploads/2017/06/DSC06402.jpg?resize=1000%2C480&ssl=1',
-        continent: 'Africa',
-        appearedIn: [data.continentAfrica]
-      }),
-      city9: City.create({
-        name: 'Giza',
-        imgae: 'https://cdn.civitatis.com/egipto/el-cairo/galeria/giza.jpg',
-        continent: 'Africa',
-        appearedIn: [data.continentAfrica]
-      }),
-      city10: City.create({
-        name: 'Fes',
-        imgae: 'https://c1.staticflickr.com/5/4284/35001088050_52fcd1cb66_b.jpg',
-        continent: 'Africa',
-        appearedIn: [data.continentAfrica]
-      }),
+        }),
+        city3: City.create({
+          name: 'Accra',
+          imgae: 'https://i1.wp.com/theleidener.com/wp-content/uploads/2017/04/accra1.jpg?ssl=1',
+          continent: 'Africa',
+          appearedIn: [data.continentAfrica]
+        }),
+        city4: City.create({
+          name: 'Libreville',
+          imgae: 'http://www.travelmagma.com/uploads/images/0_319.jpg',
+          continent: 'Africa',
+          appearedIn: [data.continentAfrica]
+        }),
+        city5: City.create({
+          name: 'Johannesburg',
+          imgae: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Johannesburg_view_topofCC_03.jpg/220px-Johannesburg_view_topofCC_03.jpg',
+          continent: 'Africa',
+          appearedIn: [data.continentAfrica]
+        }),
+        city6: City.create({
+          name: 'Marrakesh',
+          imgae: 'https://timedotcom.files.wordpress.com/2016/03/160314_tra_intl_marrakesh2.jpg',
+          continent: 'Africa',
+          appearedIn: [data.continentAfrica]
+        }),
+        city7: City.create({
+          name: 'Cairo',
+          imgae: 'https://frontera.net/wp-content/uploads/2017/01/Egypt-1-1-1-1-1-1-1-2-1.jpg',
+          continent: 'Africa',
+          appearedIn: [data.continentAfrica]
+        }),
+        city8: City.create({
+          name: 'Lagos',
+          imgae: 'https://i1.wp.com/estateintel.com/wp-content/uploads/2017/06/DSC06402.jpg?resize=1000%2C480&ssl=1',
+          continent: 'Africa',
+          appearedIn: [data.continentAfrica]
+        }),
+        city9: City.create({
+          name: 'Giza',
+          imgae: 'https://cdn.civitatis.com/egipto/el-cairo/galeria/giza.jpg',
+          continent: 'Africa',
+          appearedIn: [data.continentAfrica]
+        }),
+        city10: City.create({
+          name: 'Fes',
+          imgae: 'https://c1.staticflickr.com/5/4284/35001088050_52fcd1cb66_b.jpg',
+          continent: 'Africa',
+          appearedIn: [data.continentAfrica]
+        }),
 
-// --------------- EUROPE -----------------
+        // --------------- EUROPE -----------------
 
         city11: City.create({
           name: 'London',
@@ -166,7 +166,72 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           imgae: 'https://indigodergisi.com/wp-content/uploads/2016/12/istanbul-gokdelenleri-elektrik-kesintisi-dogalgaz-kaos.jpg',
           continent: 'Europe',
           appearedIn: [data.continentEurope]
+        }),
+
+        // -----------  NORTH AMERICA ----------------
+
+        city21: City.create({
+          name: 'New York',
+          imgae: 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/brooklyn-bridge-and-lower-manhattan-skyline-new-york-city-usa-matteo-colombo.jpg',
+          continent: 'North America',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city22: City.create({
+          name: 'Montreal',
+          imgae: 'https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/37455/SITours/montreal-attraction-pass-in-montreal-340281.jpg',
+          continent: 'North America',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city23: City.create({
+          name: 'Los Angeles',
+          imgae: 'http://www.edwinbeckenbach.com/images/EHB0830_640.jpg',
+          continent: 'North America',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city24: City.create({
+          name: 'Miami',
+          imgae: 'https://www.muralswallpaper.com/app/uploads/miami-skyline-landscape-plain.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city25: City.create({
+          name: 'Cancun',
+          imgae: 'https://gaytravel-destinations.s3.amazonaws.com/32030/cancun-city-life-skyline__large.jpg',
+          continent: 'North America',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city26: City.create({
+          name: 'Vancouver',
+          imgae: 'http://athenaposters.ca/wp-content/uploads/2017/10/2390-0740-Vancouver-British-Columbia-Skyline.jpg',
+          continent: 'North America',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city27: City.create({
+          name: 'Las Vegas',
+          imgae: 'https://static1.squarespace.com/static/5813cddb8419c25c3b42eacd/593d9408cd0f68786f401768/5970d167d1758e894e5c72be/1529357243880/?format=1000w',
+          continent: 'North America',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city28: City.create({
+          name: 'San Francisco',
+          imgae: 'https://media.gettyimages.com/photos/golden-gate-bridge-and-san-francisco-skyline-picture-id184929400?b=1&k=6&m=184929400&s=612x612&w=0&h=SJ06lv1WS10RLQXgFj1VP6zGf2H8KIxjQEHxA5OC4xo=',
+          continent: 'North America',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city29: City.create({
+          name: 'Panama',
+          imgae: 'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/EQ8Uu6D/panama-city-skyline-timelapse-from-day-to-night-zoom-out_h1hgtmydl_thumbnail-full06.png',
+          continent: 'North America',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city30: City.create({
+          name: 'Puerto Rico',
+          imgae: 'https://cdn.travelpulse.com/images/c0aaedf4-a957-df11-b491-006073e71405/a4a014c3-e469-4ef8-bd07-32a9fdf7d086/630x355.jpeg',
+          continent: 'North America',
+          appearedIn: [data.continentNorthAmerica]
         })
+
+        // -------------- SOUTH AMERICA -------------
 
       })
     })
