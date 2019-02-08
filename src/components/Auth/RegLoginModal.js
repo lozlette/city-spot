@@ -1,6 +1,8 @@
 import React from 'react'
 import { Menu, Container } from 'semantic-ui-react'
 import RegForm from './RegForm'
+import LoginForm from './LoginForm'
+import axios from 'axios'
 
 
 class RegLoginModal extends React.Component{
@@ -21,6 +23,7 @@ class RegLoginModal extends React.Component{
 
     this.handleItemClick = this.handleItemClick.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
 
@@ -33,6 +36,12 @@ class RegLoginModal extends React.Component{
     this.setState({ postData })
   }
 
+  handleSubmit(e){
+    e.preventDefault()
+    axios.post('/api/register', this.postData)
+      .then(res => console.log(res))
+  }
+
   render() {
     const { activeItem } = this.state
     return (
@@ -43,8 +52,18 @@ class RegLoginModal extends React.Component{
         </Menu>
 
         {activeItem === 'Sign Up' &&
-          <RegForm handleChange={this.handleChange}
-        />}
+          <RegForm
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+          />
+        }
+
+        {activeItem === 'Log In' &&
+          <LoginForm
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+          />
+        }
       </Container>
 
     )

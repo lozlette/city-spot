@@ -9,11 +9,20 @@ function indexRoute(req, res) {
 function showRoute(req, res) {
   City
     .findById(req.params.id)
-    .populate({path: 'continent', select: 'name'})
+    .populate({ path: 'continent', select: 'name' })
     .then(cities => res.json(cities))
+}
+
+function createRoute(req, res) {
+  City
+    .create(req.body)
+    .then(cities => res.json(cities))
+    .then(cities => res.status(201).json(cities))
+    .catch(err => res.status(422).json(err.errors))
 }
 
 module.exports = {
   index: indexRoute,
-  show: showRoute
+  show: showRoute,
+  create: createRoute
 }

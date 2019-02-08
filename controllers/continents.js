@@ -12,6 +12,7 @@ function showRoute(req, res) {
     .populate('cities')
     .then(continent => res.json(continent))
 }
+
 module.exports = {
   index: indexRoute,
   show: showRoute
