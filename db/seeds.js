@@ -105,6 +105,72 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         appearedIn: [data.continentAfrica]
       }),
 
+// --------------- EUROPE -----------------
+
+        city11: City.create({
+          name: 'London',
+          imgae: 'https://zenartdesign.com/wp-content/uploads/2017/03/London-Skyline-800x800px.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        }),
+        city12: City.create({
+          name: 'Berlin',
+          imgae: 'https://blog.parkinn.com/wp-content/uploads/sites/7/2018/01/things-in-berlin-skyline.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        }),
+        city13: City.create({
+          name: 'Rome',
+          imgae: 'http://www.dearomatours.com/wp-content/uploads/alba-di-roma-2.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        }),
+        city14: City.create({
+          name: 'Lisbon',
+          imgae: 'https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/travel/city-guides/lisbon.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        }),
+        city15: City.create({
+          name: 'Madrid',
+          imgae: 'https://www.tripsavvy.com/thmb/IFWk4WJn0e-pI59rzr3G1GyK9ZU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/madrid-skyline--gran-v-a-at-dusk-657153546-5a75dd69c5542e00373029b6.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        }),
+        city16: City.create({
+          name: 'Paris',
+          imgae: 'https://tunnelingonline.com/wp-content/uploads/2017/07/Paris-skyline.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        }),
+        city17: City.create({
+          name: 'Amsterdam',
+          imgae: 'https://s3.eu-central-1.amazonaws.com/locationscoutnet/images/2018-03/panoramic-view-on-amsterdam-skyline-netherlands_l.jpeg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        }),
+        city18: City.create({
+          name: 'Athens',
+          imgae: 'https://c1.staticflickr.com/5/4489/36786164663_f66eeaac8b_b.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        }),
+        city19: City.create({
+          name: 'Barcelona',
+          imgae: 'https://www.kimptonhotels.com/blog/wp-content/uploads/2018/09/Barcelona-Skyline.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        }),
+        city20: City.create({
+          name: 'Istanbul',
+          imgae: 'https://indigodergisi.com/wp-content/uploads/2016/12/istanbul-gokdelenleri-elektrik-kesintisi-dogalgaz-kaos.jpg',
+          continent: 'Europe',
+          appearedIn: [data.continentEurope]
+        })
+
+      })
+    })
+
 
 
 
