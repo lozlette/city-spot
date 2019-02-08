@@ -31,7 +31,7 @@ class UserShow extends React.Component{
 
           <Grid columns={1}>
             <Grid.Column>
-               <Header size='huge'> {userData.first} {userData.last} </Header>
+               <Header size='huge'> {userData.firstName} {userData.lastName} </Header>
                <Header as='h3'> {userData.username} </Header>
             </Grid.Column>
           </Grid>

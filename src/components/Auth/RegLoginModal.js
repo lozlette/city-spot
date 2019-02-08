@@ -16,6 +16,8 @@ class RegLoginModal extends React.Component{
         email: '',
         password:'',
         passwordConfirmation: '',
+        firstName: '',
+        lastName: '',
         image: '',
         bio: ''
       },
@@ -45,6 +47,8 @@ class RegLoginModal extends React.Component{
         activeItem: 'Log In',
         postData: {
           username: '',
+          firstName:'',
+          lastName:'',
           email: '',
           password:'',
           passwordConfirmation: '',
