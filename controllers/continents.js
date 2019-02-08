@@ -3,6 +3,7 @@ const Continent = require('../models/continent')
 function indexRoute(req, res) {
   Continent
     .find()
+    .populate('cities')
     .then(continent => res.status(200).json(continent))
 }
 

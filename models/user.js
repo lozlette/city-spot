@@ -3,10 +3,14 @@ const bcrypt = require('bcrypt')
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
+  first: {type: String},
+  last: {type: String},
   email: { type: String, required: true, unique: true },
   image: { type: String },
   bio: { type: String, maxlength: 100, required: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  continent: { type: mongoose.Schema.ObjectId, ref: 'Continent' },
+  gender: { type: String }
 })
 
 userSchema.virtual('posts', {
