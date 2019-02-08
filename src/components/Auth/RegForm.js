@@ -11,10 +11,10 @@ class RegForm extends React.Component{
   render(){
     const { handleChange, handleSubmit } = this.props
     return(
-      <Segment placeholder color='blue'>
-        <Form onSubmit={handleSubmit}>
+      <Segment color='blue'>
+        <Form onSubmit={handleSubmit} textAlign='center'>
           <Grid columns={2} stackable textAlign='center'>
-            <Divider vertical> <Icon name="world" size="large" /> </Divider>
+            <Divider vertical hidden />
             <Grid.Row verticalAlign='middle'>
               <Grid.Column>
                 <Form.Field required>
@@ -55,6 +55,25 @@ class RegForm extends React.Component{
               </Grid.Column>
 
               <Grid.Column>
+
+                <Form.Group widths='equal'>
+                  <Form.Input
+                    fluid
+                    label='First name'
+                    name='firstName'
+                    placeholder='First name'
+                    onChange={handleChange}
+                  />
+                  
+                  <Form.Input
+                    fluid
+                    label='Last name'
+                    name='lastName'
+                    placeholder='Last Name' />
+                </Form.Group>
+
+
+
                   <Form.Field>
                     <label>Profile Image</label>
                     <Input size='large'
@@ -77,7 +96,11 @@ class RegForm extends React.Component{
             </Grid.Row>
           </Grid>
           <Divider hidden />
-          <Button content="Create Your Profile" primary />
+          <Grid columns={1}>
+            <Grid.Row centered>
+              <Button content="Create Your Profile" primary />
+            </Grid.Row>
+          </Grid>
         </Form>
 
       </Segment>
