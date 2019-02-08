@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './style.scss'
 
+import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
-
+import UserShow from './components/Auth/UserShow'
 
 
 class App extends React.Component{
@@ -14,10 +16,16 @@ class App extends React.Component{
 
   render(){
     return(
-      <main>
-        <Navbar />
-        <h1> Hello Team! </h1>
-      </main>
+      <BrowserRouter>
+        <main>
+          <Navbar />
+
+          <Switch>
+            <Route path="/users/:id" component={UserShow} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </main>
+      </BrowserRouter>
     )
   }
 }
