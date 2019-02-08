@@ -360,7 +360,7 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           imgae: 'https://www.luxurytravelmag.com.au/wp-content/uploads/2018/04/shutterstock_567925363-2-1.jpg',
           continent: 'Asia',
           appearedIn: [data.continentAsia]
-        }),
+        })
 
       })
     })
