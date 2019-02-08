@@ -38,8 +38,13 @@ class RegLoginModal extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    axios.post('/api/register', this.postData)
+    if(activeItem === 'Sign Up'){
+      axios.post('/api/register', this.state.postData)
       .then(res => console.log(res))
+    } else {
+        axios.post('/api/login', this.state.postData)
+          .then(res => console.log(res.data))
+      }
   }
 
   render() {
