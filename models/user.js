@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   image: { type: String },
-  bio: { type: String, maxlength: 100, required: true },
+  bio: { type: String, maxlength: 200, required: true },
   password: { type: String, required: true }
 })
 
@@ -48,7 +48,7 @@ userSchema.pre('save', function hashPassword(next) {
 })
 
 userSchema.methods.validatePassword = function(password) {
-  return bcrypt.compare.Sync(password, this.password)
+  return bcrypt.compareSync(password, this.password)
 }
 
 userSchema.set('toJSON', {
