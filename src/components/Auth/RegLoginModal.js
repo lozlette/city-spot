@@ -1,5 +1,6 @@
 import React from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Container } from 'semantic-ui-react'
+import RegForm from './RegForm'
 
 
 class RegLoginModal extends React.Component{
@@ -21,10 +22,15 @@ class RegLoginModal extends React.Component{
   render() {
     const { activeItem } = this.state
     return (
-      <Menu tabular>
-        <Menu.Item name='Sign Up' active={activeItem === 'Sign Up'} onClick={this.handleItemClick} />
-        <Menu.Item name='Log In' active={activeItem === 'Log In'} onClick={this.handleItemClick} />
-      </Menu>
+      <Container>
+        <Menu tabular>
+          <Menu.Item name='Sign Up' active={activeItem === 'Sign Up'} onClick={this.handleItemClick} />
+          <Menu.Item name='Log In' active={activeItem === 'Log In'} onClick={this.handleItemClick} />
+        </Menu>
+
+        {activeItem === 'Sign Up' && <RegForm />}
+      </Container>
+
     )
   }
 }
