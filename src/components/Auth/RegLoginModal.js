@@ -2,6 +2,7 @@ import React from 'react'
 import { Menu, Container } from 'semantic-ui-react'
 import RegForm from './RegForm'
 import LoginForm from './LoginForm'
+import Auth from '../../lib/Auth'
 import axios from 'axios'
 
 
@@ -38,13 +39,25 @@ class RegLoginModal extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    if(activeItem === 'Sign Up'){
+    if(this.state.activeItem === 'Sign Up'){
       axios.post('/api/register', this.state.postData)
-      .then(res => if(res.status === 201)this.setState({ activeItem: 'Log In' }))
+      .then(res => this.setState({
+        activeItem: 'Log In',
+        postData: {
+          username: '',
+          email: '',
+          password:'',
+          passwordConfirmation: '',
+          image: '',
+          bio: ''
+        }}))
       .catch(err => console.log(err))
     } else {
         axios.post('/api/login', this.state.postData)
-          .then(res => console.log(res))
+          .then(res =>{
+            Auth.setToken(res.data.token)
+            console.log(res.data.message)
+          })
       }
   }
 
