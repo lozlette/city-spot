@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Segment, Image, Grid, Header, Divider } from 'semantic-ui-react'
 
 class UserShow extends React.Component{
   constructor(props){
@@ -18,7 +19,21 @@ class UserShow extends React.Component{
     if(!this.state.userData) return null
     const { userData } = this.state
     return(
-      <h1>{userData.username}</h1>
+      <Segment textAlign='center'>
+        <Image
+          src={userData.image}
+          size='medium'
+          circular
+          centered/>
+        <Divider hidden section/>
+
+        <Grid columns={1}>
+          <Grid.Column>
+             <Header size='huge'> {userData.first} {userData.last} </Header>
+             <Header as='h3'> {userData.username} </Header>
+          </Grid.Column>
+        </Grid>
+      </Segment>
     )
   }
 }
