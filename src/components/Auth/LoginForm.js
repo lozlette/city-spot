@@ -7,10 +7,10 @@ class LoginForm extends React.Component{
   }
 
   render(){
-    const { handleChange } = this.props
+    const { handleChange, handleSubmit } = this.props
     return(
       <Segment color="blue">
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Grid columns={1} textAlign='center'>
             <Grid.Column width={6}>
               <Divider hidden />

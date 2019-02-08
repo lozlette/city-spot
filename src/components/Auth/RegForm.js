@@ -9,10 +9,10 @@ class RegForm extends React.Component{
 
 
   render(){
-    const handleChange = this.props.handleChange
+    const { handleChange, handleSubmit } = this.props
     return(
       <Segment placeholder color='blue'>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Grid columns={2} stackable textAlign='center'>
             <Divider vertical> <Icon name="world" size="large" /> </Divider>
             <Grid.Row verticalAlign='middle'>
