@@ -191,7 +191,7 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         city24: City.create({
           name: 'Miami',
           imgae: 'https://www.muralswallpaper.com/app/uploads/miami-skyline-landscape-plain.jpg',
-          continent: 'Europe',
+          continent: 'North America',
           appearedIn: [data.continentNorthAmerica]
         }),
         city25: City.create({
@@ -229,9 +229,138 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           imgae: 'https://cdn.travelpulse.com/images/c0aaedf4-a957-df11-b491-006073e71405/a4a014c3-e469-4ef8-bd07-32a9fdf7d086/630x355.jpeg',
           continent: 'North America',
           appearedIn: [data.continentNorthAmerica]
-        })
+        }),
+
+
 
         // -------------- SOUTH AMERICA -------------
+
+
+        city31: City.create({
+          name: 'Buenos Aires',
+          imgae: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/High-rises_of_Puerto_Madero_%2840022145164%29.jpg/270px-High-rises_of_Puerto_Madero_%2840022145164%29.jpg',
+          continent: 'South America',
+          appearedIn: [data.continentSouthAmerica]
+        }),
+        city32: City.create({
+          name: 'Lima',
+          imgae: 'https://www.tripsavvy.com/thmb/UKFbY6tMCPGx9WW_d5zUZh5Vu2Q=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/493990529-56a412bc5f9b58b7d0d559f6.jpg',
+          continent: 'South America',
+          appearedIn: [data.continentSouthAmerica]
+        }),
+        city33: City.create({
+          name: 'Quito',
+          imgae: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/09/11/quito-main.jpg?w968h681',
+          continent: 'South America',
+          appearedIn: [data.continentSouthAmerica]
+        }),
+        city34: City.create({
+          name: 'Cartagena',
+          imgae: 'https://jschristina-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/Cartagena-Colombia-drone-shot-jetsetchristina-travel-guide-blog-instagram.jpg',
+          continent: 'South America',
+          appearedIn: [data.continentSouthAmerica]
+        }),
+        city35: City.create({
+          name: 'Santiago',
+          imgae: 'https://www.hellomagazine.com/imagenes/travel/2017121444802/top-10-things-to-do-santiago-chile/0-226-738/2-Santiago-Chile-Plaza-de-Armas-z.jpg',
+          continent: 'South America',
+          appearedIn: [data.continentNorthAmerica]
+        }),
+        city36: City.create({
+          name: 'Rio de Janeiro',
+          imgae: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Rio_De_Janeiro_-_Rafael_Defavari.jpg/700px-Rio_De_Janeiro_-_Rafael_Defavari.jpg',
+          continent: 'South America',
+          appearedIn: [data.continentSouthAmerica]
+        }),
+        city37: City.create({
+          name: 'Caracas',
+          imgae: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Teleferico_de_Caracas._Vista_de_la_ciudad.jpg/300px-Teleferico_de_Caracas._Vista_de_la_ciudad.jpg',
+          continent: 'South America',
+          appearedIn: [data.continentSouthAmerica]
+        }),
+        city38: City.create({
+          name: 'Arequipa',
+          imgae: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Arequipa_Catedral_1.png',
+          continent: 'South America',
+          appearedIn: [data.continentSouthAmerica]
+        }),
+        city39: City.create({
+          name: 'Montevideo',
+          imgae: 'https://www.tripsavvy.com/thmb/KyoIG28GXB4P2HQFC5k-KTWv4AY=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/85072256-56a4129d5f9b58b7d0d559ca.jpg',
+          continent: 'South America',
+          appearedIn: [data.continentSouthAmerica]
+        }),
+        city40: City.create({
+          name: 'Salvador',
+          imgae: 'https://www.luxurytravelmag.com.au/wp-content/uploads/2018/04/shutterstock_567925363-2-1.jpg',
+          continent: 'South America',
+          appearedIn: [data.continentSouthAmerica]
+        }),
+
+
+        // -------------- ASIA -------------
+
+
+        city41: City.create({
+          name: 'Buenos Aires',
+          imgae: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/High-rises_of_Puerto_Madero_%2840022145164%29.jpg/270px-High-rises_of_Puerto_Madero_%2840022145164%29.jpg',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
+        city42: City.create({
+          name: 'Lima',
+          imgae: 'https://www.tripsavvy.com/thmb/UKFbY6tMCPGx9WW_d5zUZh5Vu2Q=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/493990529-56a412bc5f9b58b7d0d559f6.jpg',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
+        city43: City.create({
+          name: 'Quito',
+          imgae: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/09/11/quito-main.jpg?w968h681',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
+        city44: City.create({
+          name: 'Cartagena',
+          imgae: 'https://jschristina-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/Cartagena-Colombia-drone-shot-jetsetchristina-travel-guide-blog-instagram.jpg',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
+        city45: City.create({
+          name: 'Santiago',
+          imgae: 'https://www.hellomagazine.com/imagenes/travel/2017121444802/top-10-things-to-do-santiago-chile/0-226-738/2-Santiago-Chile-Plaza-de-Armas-z.jpg',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
+        city46: City.create({
+          name: 'Rio de Janeiro',
+          imgae: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Rio_De_Janeiro_-_Rafael_Defavari.jpg/700px-Rio_De_Janeiro_-_Rafael_Defavari.jpg',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
+        city47: City.create({
+          name: 'Caracas',
+          imgae: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Teleferico_de_Caracas._Vista_de_la_ciudad.jpg/300px-Teleferico_de_Caracas._Vista_de_la_ciudad.jpg',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
+        city48: City.create({
+          name: 'Arequipa',
+          imgae: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Arequipa_Catedral_1.png',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
+        city49: City.create({
+          name: 'Montevideo',
+          imgae: 'https://www.tripsavvy.com/thmb/KyoIG28GXB4P2HQFC5k-KTWv4AY=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/85072256-56a4129d5f9b58b7d0d559ca.jpg',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
+        city50: City.create({
+          name: 'Salvador',
+          imgae: 'https://www.luxurytravelmag.com.au/wp-content/uploads/2018/04/shutterstock_567925363-2-1.jpg',
+          continent: 'Asia',
+          appearedIn: [data.continentAsia]
+        }),
 
       })
     })
