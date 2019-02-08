@@ -3,6 +3,7 @@ const City = require('../models/city')
 function indexRoute(req, res) {
   City
     .find()
+    .populate('posts')
     .then(cities => res.json(cities))
 }
 
