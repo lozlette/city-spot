@@ -4,6 +4,11 @@ import './style.scss'
 
 import Navbar from './components/common/Navbar'
 
+import SecureRoute from './components/common/SecureRoute'
+
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
+
 
 
 class App extends React.Component{

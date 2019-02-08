@@ -7,10 +7,11 @@ const userSchema = new mongoose.Schema({
   last: {type: String},
   email: { type: String, required: true, unique: true },
   image: { type: String },
-  bio: { type: String, maxlength: 100, required: true },
+  bio: { type: String, maxlength: 200, required: true },
   password: { type: String, required: true },
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent' },
   gender: { type: String }
+
 })
 
 userSchema.virtual('posts', {
@@ -51,8 +52,8 @@ userSchema.pre('save', function hashPassword(next) {
 
 })
 
-userSchema.methods.validatePassword =function(password) {
-  return bcrypt.compare.Sync(password, this.password)
+userSchema.methods.validatePassword = function(password) {
+  return bcrypt.compareSync(password, this.password)
 }
 
 userSchema.set('toJSON', {
