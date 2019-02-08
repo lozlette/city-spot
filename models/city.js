@@ -8,7 +8,7 @@ const citySchema = new mongoose.Schema({
   currency: { type: Number},
   lat: {type: Number},
   lng: {type: Number},
-  posts: { type: mongoose.Schema.ObjectId, ref: 'Post'}
+  posts: [{ type: mongoose.Schema.ObjectId, ref: 'Post'}]
 })
 
 module.exports = mongoose.model('City', citySchema)
