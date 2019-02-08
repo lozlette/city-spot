@@ -8,15 +8,29 @@ class RegLoginModal extends React.Component{
     super(props)
 
     this.state = {
+      postData: {
+        username: '',
+        email: '',
+        password:'',
+        passwordConfirmation: '',
+        image: '',
+        bio: ''
+      },
       activeItem: this.props.tab
     }
 
     this.handleItemClick = this.handleItemClick.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
 
   handleItemClick(e, { name }){
     this.setState({ activeItem: name })
+  }
+
+  handleChange({ target: {name, value }}) {
+    const postData = {...this.state.postData, [name]: value }
+    this.setState({ postData })
   }
 
   render() {
@@ -28,7 +42,9 @@ class RegLoginModal extends React.Component{
           <Menu.Item name='Log In' active={activeItem === 'Log In'} onClick={this.handleItemClick} />
         </Menu>
 
-        {activeItem === 'Sign Up' && <RegForm />}
+        {activeItem === 'Sign Up' &&
+          <RegForm handleChange={this.handleChange}
+        />}
       </Container>
 
     )
