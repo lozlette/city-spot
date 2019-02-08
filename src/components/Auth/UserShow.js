@@ -1,33 +1,29 @@
 import React from 'react'
+import axios from 'axios'
+
+class UserShow extends React.Component{
+  constructor(props){
+    super(props)
 
 
-const UserShow = () => {
-  const user = {
-    username: 'joshdoya',
-    firstName: 'Joshua',
-    lastName: 'King',
-    gender: 'Male',
-    bio: 'Beef doner ham hock, buffalo pork chop corned beef boudin burgdoggen shankle pork belly tri-tip. Jerky strip steak frankfurter pancetta doner, pig t-bone flank.',
-    continent: {
-      name: 'Europe'
-    },
-    posts: [{
-        text: 'I love this view of the city',
-        city: 'Barcelona'
-      },{
-        text: 'I can\'t wait to get back to this city',
-        city: 'Rome'
-      },{
-        text: 'I have lived here for about a year and I love it',
-        city: 'London'
-      }
-    ]
+    this.state={}
   }
 
-  return(
-    <h1> User Page </h1>
-  )
+  componentDidMount(){
+    axios.get(`/api/users/${this.props.match.params.id}`)
+      .then(res => this.setState({ userData: res.data }))
+  }
+
+  render(){
+    if(!this.state.userData) return null
+    const { userData } = this.state
+    return(
+      <h1>{userData.username}</h1>
+    )
+  }
 }
+
+
 
 
 export default UserShow
