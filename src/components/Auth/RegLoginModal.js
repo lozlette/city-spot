@@ -1,5 +1,6 @@
 import React from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Container } from 'semantic-ui-react'
+import RegForm from './RegForm'
 
 
 class RegLoginModal extends React.Component{
@@ -7,10 +8,19 @@ class RegLoginModal extends React.Component{
     super(props)
 
     this.state = {
+      postData: {
+        username: '',
+        email: '',
+        password:'',
+        passwordConfirmation: '',
+        image: '',
+        bio: ''
+      },
       activeItem: this.props.tab
     }
 
     this.handleItemClick = this.handleItemClick.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
 
@@ -18,13 +28,25 @@ class RegLoginModal extends React.Component{
     this.setState({ activeItem: name })
   }
 
+  handleChange({ target: {name, value }}) {
+    const postData = {...this.state.postData, [name]: value }
+    this.setState({ postData })
+  }
+
   render() {
     const { activeItem } = this.state
     return (
-      <Menu tabular>
-        <Menu.Item name='Sign Up' active={activeItem === 'Sign Up'} onClick={this.handleItemClick} />
-        <Menu.Item name='Log In' active={activeItem === 'Log In'} onClick={this.handleItemClick} />
-      </Menu>
+      <Container>
+        <Menu tabular>
+          <Menu.Item name='Sign Up' active={activeItem === 'Sign Up'} onClick={this.handleItemClick} />
+          <Menu.Item name='Log In' active={activeItem === 'Log In'} onClick={this.handleItemClick} />
+        </Menu>
+
+        {activeItem === 'Sign Up' &&
+          <RegForm handleChange={this.handleChange}
+        />}
+      </Container>
+
     )
   }
 }
