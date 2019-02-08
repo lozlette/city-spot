@@ -12,70 +12,43 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
   db.dropDatabase()
     .then(() => {
       return Promise.props({
-        continent: Continent.create({
+        continentAfrica: Continent.create({
           name: 'Africa',
-          image: 'https://img1.looper.com/img/gallery/why-we-never-got-to-see-an-inception-sequel/intro.jpg'
-        })
-      })
-    })
-    .then(data => {
-      return City.create({
-        name: 'Cairo',
-        image: 'https://img1.looper.com/img/gallery/why-we-never-got-to-see-an-inception-sequel/intro.jpg',
-        continent: data.continent
-      })
-    })
-    .then(data => {
-      return City.create({
-        name: 'Asmara',
-        image: 'https://img1.looper.com/img/gallery/why-we-never-got-to-see-an-inception-sequel/intro.jpg',
-        continent: data.continent
-      })
-    })
-    .then(() => {
-      return Promise.props({
-        continent: Continent.create({
-          name: 'Asia',
-          image: 'https://img1.looper.com/img/gallery/why-we-never-got-to-see-an-inception-sequel/intro.jpg'
-        })
-      })
-        .then(data => {
-          return City.create({
-            name: 'Singapore',
-            image: 'https://img1.looper.com/img/gallery/why-we-never-got-to-see-an-inception-sequel/intro.jpg',
-            continent: data.continent
-          })
-        })
-    })
-    .then(() => {
-      return Promise.props({
-        continent: Continent.create({
+          image: 'https://www.uticaphoenix.net/wp-content/uploads/2017/05/05-18-2017-clipart-africa.png'
+        }),
+        continentEurope: Continent.create({
           name: 'Europe',
-          image: 'https://img1.looper.com/img/gallery/why-we-never-got-to-see-an-inception-sequel/intro.jpg'
-        })
-      })
-    })
-    .then(() => {
-      return Promise.props({
-        continent: Continent.create({
+          image: 'http://i.imgur.com/dPidNXr.jpg'
+        }),
+        continentNorthAmerica: Continent.create({
           name: 'North America',
-          image: 'https://img1.looper.com/img/gallery/why-we-never-got-to-see-an-inception-sequel/intro.jpg'
-        })
-      })
-    })
-    .then(() => {
-      return Promise.props({
-        continent: Continent.create({
+          image: 'https://i.pinimg.com/originals/fe/59/ba/fe59ba287b112557dc19fa0d9e997659.png'
+        }),
+        continentSouthAmerica: Continent.create({
           name: 'South America',
-          image: 'https://img1.looper.com/img/gallery/why-we-never-got-to-see-an-inception-sequel/intro.jpg'
+          image: 'https://upload.wikimedia.org/wikipedia/en/e/ef/Flags_south_america.png'
+        }),
+        continentOceania: Continent.create({
+          name: 'Oceania',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Map_of_Oceania_with_flags.svg/1200px-Map_of_Oceania_with_flags.svg.png'
+        }),
+        continentAsia: Continent.create({
+          name: 'Asia',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Map_of_Asia_with_flags.svg/2000px-Map_of_Asia_with_flags.svg.png'
+        }),
+        continentAntartica: Continent.create({
+          name: 'Antartica',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proposed_flag_of_Antarctica_%28Graham_Bartram%29.svg/220px-Proposed_flag_of_Antarctica_%28Graham_Bartram%29.svg.png'
         })
       })
     })
-    .then(() => {
+    .then(data => {
       return Promise.props({
-        continent: Continent.create({
-          name: 'Oceana',
-          image: 'https://img1.looper.com/img/gallery/why-we-never-got-to-see-an-inception-sequel/intro.jpg'
+        city1: City.create({
+          name: 'Matthew Fox',
+          imgae: '1966-07-14',
+          continent: '',
+          appearedIn: [data.continentAfrica]
         })
       })
     })
