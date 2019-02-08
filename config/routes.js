@@ -5,7 +5,6 @@ const cityController = require('../controllers/cities')
 const userController = require('../controllers/users')
 const postController = require('../controllers/posts')
 
-// const secureRoute = ('../lib/secureRoute')
 const authController = require('../controllers/auth')
 
 router.post('/register', authController.register)
