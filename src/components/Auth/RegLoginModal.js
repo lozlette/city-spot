@@ -40,10 +40,11 @@ class RegLoginModal extends React.Component{
     e.preventDefault()
     if(activeItem === 'Sign Up'){
       axios.post('/api/register', this.state.postData)
-      .then(res => console.log(res))
+      .then(res => if(res.status === 201)this.setState({ activeItem: 'Log In' }))
+      .catch(err => console.log(err))
     } else {
         axios.post('/api/login', this.state.postData)
-          .then(res => console.log(res.data))
+          .then(res => console.log(res))
       }
   }
 
