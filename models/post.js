@@ -6,7 +6,8 @@ const postSchema = new mongoose.Schema({
   nightlife: { type: String },
   text: { type: String, maxlength: 200 },
   image: { type: String },
-  rating: { type: Number }
+  rating: { type: Number },
+  city: { type: mongoose.Schema.ObjectId, ref: 'City'}
 },{
   timestamps: true
 })

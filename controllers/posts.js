@@ -1,5 +1,18 @@
 const Post = require('../models/post')
 
+function postIndexRoute(req, res) {
+  Post
+    .find()
+    .then(post => res.json(post))
+}
+
+function postShowRoute(req, res) {
+  req.body.user = req.currentUser
+  Post
+    .findById(req.params.id)
+    .then(post => res.status(201).json(post))
+}
+
 function postCreateRoute(req, res) {
   req.body.user = req.currentUser
   Post
@@ -9,5 +22,7 @@ function postCreateRoute(req, res) {
 }
 
 module.exports = {
-  postCreate: postCreateRoute
+  postCreate: postCreateRoute,
+  postShow: postShowRoute,
+  postIndex: postIndexRoute
 }
