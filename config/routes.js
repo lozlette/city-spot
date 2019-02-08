@@ -4,6 +4,10 @@ const continentController = require('../controllers/continents')
 const cityController = require('../controllers/cities')
 const userController = require('../controllers/users')
 const postController = require('../controllers/posts')
+const authController = require('../controllers/auth')
+
+router.post('/register', authController.register)
+router.post('/login', authController.login)
 
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)
