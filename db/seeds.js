@@ -559,169 +559,265 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           image: 'https://www.roadaffair.com/wp-content/uploads/2017/10/sunrise-cusco-peru-shutterstock_354971309.jpg',
           continent: data.continentSouthAmerica
         }),
+        city101: City.create({
+          name: 'Caracas',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Teleferico_de_Caracas._Vista_de_la_ciudad.jpg/300px-Teleferico_de_Caracas._Vista_de_la_ciudad.jpg',
+          continent: data.continentSouthAmerica
+        }),
+        city102: City.create({
+          name: 'Cartagena',
+          image: 'https://jschristina-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/Cartagena-Colombia-drone-shot-jetsetchristina-travel-guide-blog-instagram.jpg',
+          continent: data.continentSouthAmerica
+        }),
+        city103: City.create({
+          name: 'Cusco',
+          image: 'https://3bbdb23jem2j4esrdm1gcdbd-wpengine.netdna-ssl.com/wp-content/uploads/cusco-city-guide-main.jpg',
+          continent: data.continentSouthAmerica
+        }),
+        city104: City.create({
+          name: 'Cordoba',
+          image: 'https://www.tripsavvy.com/thmb/2VS3GmuAGQbKaIOwy6bdxI_tmNk=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-519894407-592a43145f9b585950a5dfec.jpg',
+          continent: data.continentSouthAmerica
+        }),
+        city105: City.create({
+          name: 'Valparaiso',
+          image: 'https://chile.travel/wp-content/uploads/2016/04/Valparaiso-cerroalegre-sernatur-ATR174.jpg',
+          continent: data.continentSouthAmerica
+        }),
+        city106: City.create({
+          name: 'Barquisimeto',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Este_de_Barquisimeto.jpg/240px-Este_de_Barquisimeto.jpg',
+          continent: data.continentSouthAmerica
+        }),
+        city107: City.create({
+          name: 'Rosario',
+          image: 'https://c2.staticflickr.com/8/7146/27499733206_714fbde4a4_b.jpg',
+          continent: data.continentSouthAmerica
+        }),
+        city108: City.create({
+          name: 'Punta del Este',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Punta_del_este3.jpg',
+          continent: data.continentSouthAmerica
+        }),
+        city109: City.create({
+          name: 'Recife',
+          image: 'https://abrilviagemeturismo.files.wordpress.com/2016/12/thinkstockphotos-474448950.jpeg?quality=70&strip=info&w=680&h=453&crop=1',
+          continent: data.continentSouthAmerica
+        }),
+        city110: City.create({
+          name: 'Baños de Agua Santa',
+          image: 'https://i2.wp.com/pasaportesindestino.net/wp-content/uploads/2018/04/2.png?fit=810%2C450&ssl=1',
+          continent: data.continentSouthAmerica
+        }),
+
 
 
         // --------------- ASIA -----------------
 
-        city101: City.create({
+        city111: City.create({
           name: 'Seoul',
           image: 'http://www.adlittle.com/sites/default/files/locations/Seoul-location.jpg',
           continent: data.continentAsia
         }),
-        city102: City.create({
+        city112: City.create({
           name: 'Tokyo',
           image: 'https://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/Japan/Tokyo/tokyo-things-to-do-lead-image.jpg?imwidth=450',
           continent: data.continentAsia
         }),
-        city103: City.create({
+        city113: City.create({
           name: 'Singapore',
           image: 'https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2018/03/14/105066394-GettyImages-498350103_1.1910x1000.jpg',
           continent: data.continentAsia
         }),
-        city104: City.create({
+        city114: City.create({
           name: 'Taipei',
           image: 'https://www.cathaypacific.com/content/dam/destinations/taipei/cityguide-gallery/taipei_skyline_920x500.jpg',
           continent: data.continentAsia
         }),
-        city105: City.create({
+        city115: City.create({
           name: 'Hong Kong',
           image: 'https://www.abercrombiekent.com/-/media/ak/hero-images/asia-china-hong-kong-skyline.jpg?h=500&w=1224&la=en&hash=B9F77AEC6E3B9A35850538C3067588A0D9A32B67',
           continent: data.continentAsia
         }),
-        city106: City.create({
+        city116: City.create({
           name: 'Dubai',
           image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/01/22/13/dubai_lester_ali.jpg?w968h681',
           continent: data.continentAsia
         }),
-        city107: City.create({
+        city117: City.create({
           name: 'Mumbai',
           image: 'https://www.cruisemapper.com/images/ports/15-large-9ae20782c8938eedba46925af5e94fe6.jpg',
           continent: data.continentAsia
         }),
-        city108: City.create({
+        city118: City.create({
           name: 'Manila',
           image: 'https://media.millenniumhotels.com/mhb-media/9/B/D/9BD61C8C-86AC-41A1-8DB5-1C7FB1303CB2/heritage-manila-hero.jpg',
           continent: data.continentAsia
         }),
-        city110: City.create({
+        city119: City.create({
           name: 'Hanoi',
           image: 'http://static.asiawebdirect.com/m/bangkok/portals/vietnam/homepage/hanoi/first-time/pagePropertiesImage/hanoi.jpg.jpg',
           continent: data.continentAsia
         }),
-        city111: City.create({
+        city120: City.create({
           name: 'Kuala Lumpur',
           image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/08/21/15/kuala-lumpur.jpg?w968h681',
+          continent: data.continentAsia
+        }),
+        city121: City.create({
+          name: 'Ho Chi Minh City',
+          image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/07/25/16/ho-chi-minh-skyline.jpg?w968h681',
+          continent: data.continentAsia
+        }),
+        city122: City.create({
+          name: 'Osaka',
+          image: 'https://cdn2.veltra.com/ptr/20160825042916_988833969_11829_0.jpg?imwidth=550&impolicy=custom',
+          continent: data.continentAsia
+        }),
+        city123: City.create({
+          name: 'Chengdu',
+          image: 'https://cdn.newsapi.com.au/image/v1/5db4efaea6a8e05941ae039c5505af62',
+          continent: data.continentAsia
+        }),
+        city124: City.create({
+          name: 'Chiang Mai',
+          image: 'http://static.asiawebdirect.com/m/bangkok/portals/chiangmai-bangkok-com/homepage/pagePropertiesImage/chiang-mai-thailand.jpg.jpg',
+          continent: data.continentAsia
+        }),
+        city125: City.create({
+          name: 'Hangzhou',
+          image: 'https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2015/05/20/102696502-hangzhou.jpg?v=1432167587',
+          continent: data.continentAsia
+        }),
+        city126: City.create({
+          name: 'Ulaanbaatar',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/UB_downtown.jpg/220px-UB_downtown.jpg',
+          continent: data.continentAsia
+        }),
+        city127: City.create({
+          name: 'Dongguan',
+          image: 'http://images.china.cn/attachement/jpg/site1007/20101011/000cf1bdd2450e1cb7a805.jpg',
+          continent: data.continentAsia
+        }),
+        city128: City.create({
+          name: 'Siem Reap',
+          image: 'https://d3hne3c382ip58.cloudfront.net/resized/750x420/full-day-angkor-wat-tour-from-siem-reap-tour-2-215993_1510029029.JPG',
+          continent: data.continentAsia
+        }),
+        city129: City.create({
+          name: 'Riyadh',
+          image: 'https://a1.r9cdn.net/rimg/dimg/c4/71/6192eca9-city-35744-55796af6.jpg?crop=true&width=1000&height=600&xhint=1282&yhint=1007',
+          continent: data.continentAsia
+        }),
+        city130: City.create({
+          name: 'Petra',
+          image: 'https://rvca738f6h5tbwmj3mxylox3-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/GI_521275152_ElDier_PetraMonestary.jpg',
           continent: data.continentAsia
         }),
 
 
         // --------------- OCEANIA -----------------
 
-        city112: City.create({
+        city131: City.create({
           name: 'Papete',
           image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Papeete_-_Marina_Taina.JPG',
           continent: data.continentOceania
         }),
-        city113: City.create({
+        city132: City.create({
           name: 'Brisbane',
           image: 'https://www.australia.com/content/australia/en/places/brisbane-and-surrounds/guide-to-brisbane/jcr:content/image.adapt.1200.HIGH.jpg',
           continent: data.continentOceania
         }),
-        city114: City.create({
+        city133: City.create({
           name: 'Auckland',
           image: 'https://www.aucklandnz.com/sites/build_auckland/files/styles/carousel_banner/public/media-library/images/bc-visit-destinations-central-auckland_0.jpg',
           continent: data.continentOceania
         }),
-        city115: City.create({
+        city134: City.create({
           name: 'Christchurch',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Christchurch_City.jpg/1200px-Christchurch_City.jpg',
           continent: data.continentOceania
         }),
-        city116: City.create({
+        city135: City.create({
           name: 'Sydney',
           image: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Sydney_Opera_house_3.jpg',
           continent: data.continentOceania
         }),
-        city117: City.create({
+        city136: City.create({
           name: 'Tauranga',
           image: 'https://cdn.vroomvroomvroom.co.nz/images/vroomvroomvroom-co-nz/cms/mt-maunganui-beach-from-the-summit-walking-track-of-north-tauranga-nz-dp-min.jpg',
           continent: data.continentOceania
         }),
-        city118: City.create({
+        city137: City.create({
           name: 'Taupo',
           image: 'https://dbijapkm3o6fj.cloudfront.net/resources/3173,1004,1,6,4,0,911,688/-4084-/20161017152932/taupo-panorama.jpeg',
           continent: data.continentOceania
         }),
-        city119: City.create({
+        city138: City.create({
           name: 'Rotorua',
           image: 'https://afar-production.imgix.net/uploads/syndication/holland_americas/images/wpyk4SXfUo/original_WR1683950.jpg?w=750&h=563&fit=crop',
           continent: data.continentOceania
         }),
-        city120: City.create({
+        city139: City.create({
           name: 'Melbourne',
           image: 'https://www.visitvictoria.com/-/media/images/melbourne/destinations/melbourne-park_mel_r_supplied-082_1150x863.jpg?h=600&iar=1&mh=600&mw=800&w=800&ts=20170206470129&hash=130DD71D109FF4701085F90BA3CE0771',
           continent: data.continentOceania
         }),
-        city121: City.create({
+        city140: City.create({
           name: 'Newcastle',
           image: 'https://www.newcastle.nsw.gov.au/Newcastle/media/Images/Backgrounds/Newcastle-Nobbys_BG_MOB.jpg',
           continent: data.continentOceania
+        }),
+        city141: City.create({
+          name: 'Perth',
+          image: 'https://www.experienceperth.com/sites/ep/files/styles/teaser_simple/public/2018-04/Elizabeth%20quay1.jpg?itok=E7HKU4xB',
+          continent: data.continentOceania
+        }),
+        city142: City.create({
+          name: 'Canberra',
+          image: 'https://www.mynrma.com.au/-/media/local-guides/canberra/mobile-banner-aerial-view-canberra.jpg?h=360&la=en&w=640&hash=8B0B68E29FCEA5D539148EFADB10BF25',
+          continent: data.continentOceania
+        }),
+        city143: City.create({
+          name: 'Port Moresby',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Port_Moresby_Town2_Mschlauch.jpg',
+          continent: data.continentOceania
+        }),
+        city144: City.create({
+          name: 'Townsville',
+          image: 'https://assets.atdw-online.com.au/images/Original__9208857_TQTE_0239_Aerial_Townsville_EDITED_fzsmr8a.jpg?rect=298,0,4772,3579&w=2048&h=1536',
+          continent: data.continentOceania
+        }),
+        city145: City.create({
+          name: 'Whangarei',
+          image: 'https://farm1.nzstatic.com/_proxy/imageproxy_1y/serve/whangarei-falls.jpg?focalpointx=50&focalpointy=41&height=427&outputformat=jpg&quality=85&source=4281996&transformationsystem=focalpointcrop&width=640&securitytoken=FC1C2C9D4BB6A16A310B83CC26227D8A',
+          continent: data.continentOceania
+        }),
+        city146: City.create({
+          name: 'Gold Coast',
+          image: 'https://www.australia.com/content/australia/en/places/gold-coast-and-surrounds/guide-to-the-gold-coast/jcr:content/image.adapt.1200.HIGH.jpg',
+          continent: data.continentOceania
+        }),
+        city147: City.create({
+          name: 'Wollongong',
+          image: 'https://assets.atdw-online.com.au/images/36ad45566d944eb734521b4fd9bd5eb5.jpeg?rect=0,0,2048,1536&w=800&h=600',
+          continent: data.continentOceania
+        }),
+        city148: City.create({
+          name: 'Hagåtña',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Hagatna_from_Fort_Santa_Agueda.JPG/250px-Hagatna_from_Fort_Santa_Agueda.JPG',
+          continent: data.continentOceania
+        }),
+        city149: City.create({
+          name: 'Hobart',
+          image: 'https://www.australia.com/content/australia/en/places/hobart-and-surrounds/guide-to-hobart/jcr:content/image.adapt.1200.HIGH.jpg',
+          continent: data.continentOceania
+        }),
+        city150: City.create({
+          name: 'Darwin',
+          image: 'https://image.jimcdn.com/app/cms/image/transf/dimension=origxorig:format=jpg/path/se80bcf7e1bbfb507/image/iecdc4a79e12dc507/version/1486809863/image.jpg',
+          continent: data.continentOceania
         })
-
-
-        // // --------------- ANTARTICA -----------------
-        //
-        // city71: City.create({
-        //   name: 'Villa las Estrellas',
-        //   image: 'https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzLzQyM2M3M2RmMjVjMjllMWY3NF9WaWxsYV9MYXNfRXN0cmVsbGFzLl9WaXN0YV9ub2N0dXJuYS5qcGciXSxbInAiLCJ0aHVtYiIsIngzOTA-Il0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDgxIC1hdXRvLW9yaWVudCJdXQ',
-        //   continent: data.continentAntartica
-        // }),
-        // city72: City.create({
-        //   name: 'Falkland Islands',
-        //   image: 'https://s3.amazonaws.com/iexplore_web/images/assets/000/006/248/original/falkland_islands.jpg?1443182335',
-        //   continent: data.continentAntartica
-        // }),
-        // city73: City.create({
-        //   name: 'Weddell Sea',
-        //   image: 'http://www.rcgs.org/travel/one-ocean-expeditions/images/2018-antarctica-ultimate.jpg',
-        //   continent: data.continentAntartica
-        // }),
-        // city74: City.create({
-        //   name: 'Antarctic Peninsula - Basecamp',
-        //   image: 'https://www.vaya-antarctica.com/wp-content/uploads/Falklands-South-Georgia-Ant-Peninsula-%C2%A9-Fotografie-Dietmar-Denger-Oceanwide-Expeditions241.jpg_Dietmar-DengerOceanwide-Expeditions-1920x1060.jpeg',
-        //   continent: data.continentAntartica
-        // }),
-        // city75: City.create({
-        //   name: 'Paradise Harbor',
-        //   image: 'http://www.destination360.com/antarctica/images/s/paradise-harbor.jpg',
-        //   continent: data.continentAntartica
-        // }),
-        // city76: City.create({
-        //   name: 'King George Island',
-        //   image: 'http://photos.wikimapia.org/p/00/00/28/67/32_big.jpg',
-        //   continent: data.continentAntartica
-        // }),
-        // city77: City.create({
-        //   name: 'Admiralty Bay',
-        //   image: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Admiralty_Bay_-_Base_G.jpg',
-        //   continent: data.continentAntartica
-        // }),
-        // city78: City.create({
-        //   name: 'Elephant Island',
-        //   image: 'https://c1.staticflickr.com/1/335/31856103163_bdb3a4ac21_b.jpg',
-        //   continent: data.continentAntartica
-        // }),
-        // city79: City.create({
-        //   name: 'Deception Island',
-        //   image: 'https://www.cruisemapper.com/images/ports/2464-2db5568b7f7.jpg',
-        //   continent: data.continentAntartica
-        // }),
-        // city80: City.create({
-        //   name: 'South Shetland Islands',
-        //   image: 'https://www.theantarcticaspecialists.com/sites/default/files/styles/1920x1200adaptive/public/slideshow-pics/Chinstrappenguins.jpg?itok=jspfTyKO&slideshow=true&slideshowAuto=true&slideshowSpeed=4000&speed=350&transition=elastic',
-        //   continent: data.continentAntartica
-        //
-        // })
 
       })
 
