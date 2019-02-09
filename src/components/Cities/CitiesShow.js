@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 
 import { Header, Divider, Segment, Container, Grid, Modal, Embed } from 'semantic-ui-react'
+import VidModal from './VidModal'
+import PostsSection from './PostsSection'
 
 const style = (city) => {
   return({
@@ -62,16 +64,16 @@ class CitiesShow extends React.Component{
 
               <Grid.Column width={5}>
                 <Segment>
-                  <h1> Posts Section </h1>
+                  <PostsSection city={city} />
                 </Segment>
               </Grid.Column>
           </Grid>
 
 
-          <Grid columns={3}>
+          <Grid columns={6}>
             <Grid.Column>
-              <Embed id={videoId} placeholder={`https://img.youtube.com/vi/${videoId}/0.jpg`} source='youtube' />
-            <Grid.Column>
+              <VidModal videoId={videoId}/>
+            </Grid.Column>
           </Grid>
         </Container>
       </div>
