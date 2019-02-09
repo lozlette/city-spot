@@ -6,6 +6,7 @@ import './style.scss'
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import UserShow from './components/Auth/UserShow'
+import CitiesShow from './components/Cities/CitiesShow'
 
 
 class App extends React.Component{
@@ -21,6 +22,7 @@ class App extends React.Component{
           <Navbar />
 
           <Switch>
+            <Route path="/cities/:id" component={CitiesShow} />
             <Route path="/users/:id" component={UserShow} />
             <Route path="/" component={Home} />
           </Switch>
