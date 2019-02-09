@@ -122,7 +122,7 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         }),
         city15: City.create({
           name: 'Madrid',
-          image: 'https://www.tripsavvy.com/thmb/IFWk4WJn0e-pI59rzr3G1GyK9ZU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/madrid-skyline--gran-v-a-at-dusk-657153546-5a75dd69c5542e00373029b6.jpg',
+          image: 'http://s1.travix.com/eu/europe-spain-madrid-palace-medium.jpg',
           continent: data.continentEurope
         }),
         city16: City.create({
