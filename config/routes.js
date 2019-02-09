@@ -1,5 +1,7 @@
 const router = require('express').Router()
 
+
+const secureRoute = require('../lib/secureRoute')
 const continentController = require('../controllers/continents')
 const cityController = require('../controllers/cities')
 const userController = require('../controllers/users')
@@ -12,7 +14,7 @@ router.post('/login', authController.login)
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)
 
-router.post('/cities/:id/posts', postController.postCreate)
+router.post('/cities/:id/posts', secureRoute, postController.postCreate)
 
 router.get('/cities/:id/posts', postController.postIndex)
 router.get('/cities/:id/posts/:id', postController.postShow)
