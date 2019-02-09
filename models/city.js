@@ -7,6 +7,7 @@ const citySchema = new mongoose.Schema({
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent', required: true },
   population: { type: Number },
   currency: { type: Number},
+  videoID: { type: String },
   lat: { type: Number },
   lng: { type: Number }
 })

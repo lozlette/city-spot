@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
   image: { type: String, required: true },
   caption: { type: String, required: true },
-  city: { type: mongoose.Schema.ObjectId, ref: 'City', required: true },
+  city: { type: mongoose.Schema.ObjectId, ref: 'City' },
   comments: [commentSchema]
 },{
   timestamps: true
