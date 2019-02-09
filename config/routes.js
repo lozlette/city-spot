@@ -11,7 +11,9 @@ router.post('/login', authController.login)
 
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)
+
 router.post('/cities/:id/posts', postController.postCreate)
+
 router.get('/cities/:id/posts', postController.postIndex)
 router.get('/cities/:id/posts/:postId', postController.postShow)
 
