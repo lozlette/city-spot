@@ -19,7 +19,6 @@ router.get('/continents', continentController.index)
 router.get('/continents/:id', continentController.show)
 
 router.get('/users', userController.index)
-router.post('/users', userController.create)
 router.get('/users/:id', userController.show)
 
 module.exports = router
