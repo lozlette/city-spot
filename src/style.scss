@@ -1,4 +1,32 @@
-.ui.segment{
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+
+
+#circle {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.segmentHeader {
+  color: white !important;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  font-family: 'Major Mono Display', monospace !important;
+}
+
+.ui.header.heading {
+  background-color: #1b1c1d;
+  color: white !important;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  text-align: center;
+  font-size: 80px;
+  font-family: 'Major Mono Display', monospace;
+}
+
+.ui.grid>.row>.column {
+  display: flex;
+  justify-content: center;
+}
+
+#cityHeader{
+  font-size: 60px;
 }
