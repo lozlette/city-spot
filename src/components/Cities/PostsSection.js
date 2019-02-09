@@ -9,8 +9,26 @@ class PostsSection extends React.Component{
   constructor(){
     super()
 
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.state={
+      postData: {
+        image: '',
+        caption: '',
+      },
+      text: ''
+    }
+
+    this.handleChangePost = this.handleChangePost.bind(this)
+    this.handleChangeComment = this.handleChangeComment.bind(this)
+  }
+
+  handleChangePost({ target: {name, value }}) {
+    const commentData = {...this.state.postData, [name]: value }
+    this.setState({ postData })
+  }
+
+  handleChangeComment(e) {
+    const text = e.target.value
+    this.setState({ text })
   }
 
 
@@ -23,6 +41,8 @@ class PostsSection extends React.Component{
         <Feed>
           {posts.map((post, index) =>
               <PostsFeedBlock
+                handleChangePost={this.handleChangePost}
+                handleChangeComment={this.handleChangeComment}
                 city={this.props.city}
                 key={post._id}
                 post={post}
