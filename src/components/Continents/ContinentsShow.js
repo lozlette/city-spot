@@ -31,11 +31,11 @@ class ContinentsShow extends React.Component {
     return(
       <div>
         <Header as='h1' className='heading'>{this.state.continents.name}</Header>
-        <Grid columns={3}>
+        <Grid columns={4}>
           <Grid.Row>
             {this.state.continents.cities.map(city =>
               <Grid.Column key={city._id}>
-                <Segment circular class='circle' style={this.getStyle(city)}>
+                <Segment circular id='circle' style={this.getStyle(city)}>
                   <Header as='h2' className='segmentHeader'>
                     {city.name}
                   </Header>
