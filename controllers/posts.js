@@ -8,7 +8,7 @@ function postIndexRoute(req, res) {
 
 function postShowRoute(req, res) {
   Post
-    .findById(req.params.id)
+    .findById(req.params.postId)
     .then(post => res.status(201).json(post))
 }
 
