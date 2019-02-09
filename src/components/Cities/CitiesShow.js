@@ -21,6 +21,18 @@ const videoId = 'lJ87yD_8u3U'
 class CitiesShow extends React.Component{
   constructor(){
     super()
+
+    this.state={
+      reload: true
+    }
+    this.reload = this.reload.bind(this)
+  }
+
+  reload(){
+    axios
+      .get('/api/cities/5c5de7b6a282ed27d0aae7b9')
+        .then(res => this.setState({ city: res.data }))
+        .then(res => this.setState({reload: !this.state.reload}))
   }
 
   componentDidMount(){
@@ -29,8 +41,11 @@ class CitiesShow extends React.Component{
         .then(res => this.setState({ city: res.data }))
   }
 
+
+
   render(){
-    if(!this.state) return <h1> Loading... </h1>
+    console.log(this.state.reload)
+    if(!this.state.city) return <h1> Loading... </h1>
     const { city } = this.state
     return(
       <div>
@@ -64,7 +79,10 @@ class CitiesShow extends React.Component{
 
               <Grid.Column width={5}>
                 <Segment>
-                  <PostsSection city={city} />
+                  <PostsSection
+                    reload={this.reload}
+                    city={city}
+                  />
                 </Segment>
               </Grid.Column>
           </Grid>
