@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 const citySchema = new mongoose.Schema({
-  user: { type: mongoose.Schema.ObjectId, ref: 'User' },
   name: { type: String, required: true },
   image: { type: String, required: true },
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent', required: true },

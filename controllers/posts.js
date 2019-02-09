@@ -9,6 +9,7 @@ function postIndexRoute(req, res) {
 function postShowRoute(req, res) {
   Post
     .findById(req.params.postId)
+    .populate('user comments.user')
     .then(post => res.status(201).json(post))
 }
 
@@ -17,7 +18,6 @@ function postCreateRoute(req, res) {
   Post
     .create(req.body)
     .then(city => res.status(201).json(city))
-    .catch(err => res.status(422).json(err.errors))
 }
 
 function postDeleteRoute(req, res) {
