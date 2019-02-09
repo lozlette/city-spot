@@ -6,8 +6,7 @@ import './style.scss'
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import UserShow from './components/Auth/UserShow'
-
-
+import ContinentsShow from './components/Continents/ContinentsShow'
 class App extends React.Component{
   constructor(){
     super()
@@ -22,6 +21,7 @@ class App extends React.Component{
 
           <Switch>
             <Route path="/users/:id" component={UserShow} />
+            <Route path="/continents/:id" component={ContinentsShow} />
             <Route path="/" component={Home} />
           </Switch>
         </main>
