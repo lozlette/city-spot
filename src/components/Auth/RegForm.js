@@ -12,7 +12,7 @@ class RegForm extends React.Component{
     const { handleChange, handleSubmit } = this.props
     return(
       <Segment color='blue'>
-        <Form onSubmit={handleSubmit} textAlign='center'>
+        <Form onSubmit={handleSubmit} >
           <Grid columns={2} stackable textAlign='center'>
             <Divider vertical hidden />
             <Grid.Row verticalAlign='middle'>
@@ -64,7 +64,7 @@ class RegForm extends React.Component{
                     placeholder='First name'
                     onChange={handleChange}
                   />
-                  
+
                   <Form.Input
                     fluid
                     label='Last name'
