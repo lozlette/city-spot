@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Header, Divider, Segment, Container, Grid, Modal } from 'semantic-ui-react'
+import { Header, Divider, Segment, Container, Grid, Modal, Embed } from 'semantic-ui-react'
 
 const style = (city) => {
   return({
@@ -11,6 +11,10 @@ const style = (city) => {
       backgroundSize: 'cover'
     })
 }
+
+
+const videoId = 'lJ87yD_8u3U'
+
 
 class CitiesShow extends React.Component{
   constructor(){
@@ -34,24 +38,40 @@ class CitiesShow extends React.Component{
           <Divider />
 
 
-          <Grid columns={2}>
-            <Grid.Column width={11} columns={2}>
-              <Grid.Column>
+          <Grid columns={3}>
+              <Grid.Column width={6}>
                 <Segment circular style={style(city)}>
-
                 </Segment>
               </Grid.Column>
 
-
-              <Grid.Column>
+              <Grid.Column textAlign='left' width={5}>
+                <Divider hidden />
+                  <Header as='h3'>
+                    Population
+                  <Header.Subheader> 2,500,000 </Header.Subheader>
+                  </Header>
+                  <Header as='h3'>
+                    Region
+                  <Header.Subheader> {city.continent.name} </Header.Subheader>
+                  </Header>
+                  <Header as='h3'>
+                    Number of user posts about this city:
+                  <Header.Subheader> {city.posts.length} </Header.Subheader>
+                  </Header>
               </Grid.Column>
-            </Grid.Column>
 
-            <Grid.Column width={5}>
-              <Segment>
-                <h1> Posts Section </h1>
-              </Segment>
-            </Grid.Column>
+              <Grid.Column width={5}>
+                <Segment>
+                  <h1> Posts Section </h1>
+                </Segment>
+              </Grid.Column>
+          </Grid>
+
+
+          <Grid columns={3}>
+            <Grid.Column>
+              <Embed id={videoId} placeholder={`https://img.youtube.com/vi/${videoId}/0.jpg`} source='youtube' />
+            <Grid.Column>
           </Grid>
         </Container>
       </div>
