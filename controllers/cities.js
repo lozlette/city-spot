@@ -3,13 +3,13 @@ const City = require('../models/city')
 function indexRoute(req, res) {
   City
     .find()
-    .populate('posts')
     .then(cities => res.json(cities))
 }
 
 function showRoute(req, res) {
   City
     .findById(req.params.id)
+    .populate('posts')
     .populate({ path: 'continent', select: 'name' })
     .then(cities => res.json(cities))
 }

@@ -10,21 +10,8 @@ const userSchema = new mongoose.Schema({
   bio: { type: String, maxlength: 200, required: true },
   password: { type: String, required: true },
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent' },
-  posts: [{ type: mongoose.Schema.ObjectId, ref: 'Post'}],
   gender: { type: String }
 })
-
-// userSchema.virtual('posts', {
-//   ref: 'Post',
-//   localField: '_id',
-//   foreignField: 'user'
-// })
-//
-// userSchema.set('toJSON', {
-//   virtuals: true,
-//   transform(doc, json) {
-//     delete json.__v
-//   }})
 
 userSchema.virtual('passwordConfirmation')
   .set(function setPasswordConfirmtion(passwordConfirmation) {

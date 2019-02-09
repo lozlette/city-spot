@@ -1,28 +1,20 @@
 const mongoose = require('mongoose')
 
-const postSchema = new mongoose.Schema({
-  user: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  food: [ { type: String } ],
-  nightlife: { type: String },
-  text: { type: String, maxlength: 200 },
-  image: { type: String },
-  rating: { type: Number }
-},{
+const commentSchema = new mongoose.Schema({
+  user: { type: mongoose.ObjectId, ref: 'User'},
+  text: { type: String, required: true, minlength: 10, maxlength: 200 }
+}, {
   timestamps: true
 })
 
-postSchema.virtual('posts', {
-  ref: 'Post',
-  localField: '_id',
-  foreignField: 'city'
-})
-
-postSchema.set('toJSON', {
-  virtuals: true,
-  transform(doc, json) {
-    delete json.__v
-    return json
-  }
+const postSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  image: { type: String, required: true },
+  caption: { type: String, required: true },
+  city: { type: mongoose.Schema.ObjectId, ref: 'City' },
+  comments: [commentSchema]
+},{
+  timestamps: true
 })
 
 module.exports = mongoose.model('Post', postSchema)
