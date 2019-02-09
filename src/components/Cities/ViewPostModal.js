@@ -1,8 +1,7 @@
 import React from 'react'
 import { Comment, Modal, Image, Form, Button, Header } from 'semantic-ui-react'
 
-const ViewPostModal = ({ handleSubmitComment, handleChangeComment, post }) => {
-
+const ViewPostModal = ({ text, handleSubmitComment, handleChangeComment, post }) => {
 
 
   return(
@@ -12,6 +11,7 @@ const ViewPostModal = ({ handleSubmitComment, handleChangeComment, post }) => {
         <Modal.Content image>
           <Image wrapped size='large' src={post.image} />
           <Modal.Description>
+            <Header as='h3'> {post.caption} </Header>
             <Header>Comments</Header>
               <Comment.Group>
                 {post.comments.map(comment =>
@@ -26,8 +26,9 @@ const ViewPostModal = ({ handleSubmitComment, handleChangeComment, post }) => {
                     </Comment.Content>
                   </Comment>
                 )}
-                <Form reply>
+                <Form onSubmit={(e) => handleSubmitComment(e, post._id )} reply>
                   <Form.TextArea
+                    value={text}
                     onChange={handleChangeComment}
                    />
                   <Button

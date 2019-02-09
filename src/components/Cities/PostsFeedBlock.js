@@ -1,9 +1,9 @@
 import React from 'react'
-import { Feed, Divider, Modal, Header, Image, Comment, Form, Button } from 'semantic-ui-react'
+import { Feed } from 'semantic-ui-react'
 import ViewPostModal from './ViewPostModal'
 
 
-const PostsFeedBlock = ({ city, post, index, handleChangePost, handleChangeComment }) => {
+const PostsFeedBlock = ({ text, city, post, index, handleChangePost, handleChangeComment, handleSubmitComment }) => {
   return(
     <Feed.Event>
       <Feed.Label image={post.image} />
@@ -13,7 +13,12 @@ const PostsFeedBlock = ({ city, post, index, handleChangePost, handleChangeComme
           <a>Username</a> created a post about {city.name}.
         </Feed.Summary>
 
-        <ViewPostModal post={post} handleChangeComment={handleChangeComment} />
+        <ViewPostModal
+          post={post}
+          text={text}
+          handleChangeComment={handleChangeComment}
+          handleSubmitComment={handleSubmitComment}
+        />
 
       </Feed.Content>
       <hr />
