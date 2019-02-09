@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import  {  } from 'semantic-ui-react'
+import  { Grid, Segment, Header } from 'semantic-ui-react'
 
 class Home extends React.Component {
   constructor() {
@@ -13,15 +13,36 @@ class Home extends React.Component {
   }
 
   componentDidMount(){
-    axios.get
+    axios.get('/api/continents')
+      .then(res => this.setState({ continents: res.data }))
   }
 
+  getStyle(continent) {
+    return {
+      width: 300,
+      height: 300,
+      backgroundImage: `url(${continent.image})`,
+      backgroundSize: 'cover'
+    }
+  }
 
   render(){
+    if(!this.state.continents) return null
     return(
       <div>
-        <h1> Home Page </h1>
-
+        <Grid columns={3}>
+          <Grid.Row>
+            {this.state.continents.map(continent =>
+              <Grid.Column key={continent._id}>
+                <Segment circular id='circle' style={this.getStyle(continent)}>
+                  <Header as='h2' className='segmentHeader'>
+                    {continent.name}
+                  </Header>
+                </Segment>
+              </Grid.Column>
+            )}
+          </Grid.Row>
+        </Grid>
       </div>
     )
   }
