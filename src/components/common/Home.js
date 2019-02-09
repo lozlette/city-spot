@@ -1,14 +1,51 @@
 import React from 'react'
-import  { Embed } from 'semantic-ui-react'
-const Home = () => {
-  const videoId = 'lJ87yD_8u3U'
-  return(
-    <div>
-      <h1> Home Page </h1>
-        <Embed id={videoId} placeholder={`https://img.youtube.com/vi/${videoId}/0.jpg`} source='youtube' />
-    </div>
-  )
+import axios from 'axios'
 
+import  { Grid, Segment, Header } from 'semantic-ui-react'
+
+class Home extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+
+    }
+  }
+
+  componentDidMount(){
+    axios.get('/api/continents')
+      .then(res => this.setState({ continents: res.data }))
+  }
+
+  getStyle(continent) {
+    return {
+      width: 300,
+      height: 300,
+      backgroundImage: `url(${continent.image})`,
+      backgroundSize: 'cover'
+    }
+  }
+
+  render(){
+    if(!this.state.continents) return null
+    return(
+      <div>
+        <Grid columns={3}>
+          <Grid.Row>
+            {this.state.continents.map(continent =>
+              <Grid.Column key={continent._id}>
+                <Segment circular id='circle' style={this.getStyle(continent)}>
+                  <Header as='h2' className='segmentHeader'>
+                    {continent.name}
+                  </Header>
+                </Segment>
+              </Grid.Column>
+            )}
+          </Grid.Row>
+        </Grid>
+      </div>
+    )
+  }
 }
 
 

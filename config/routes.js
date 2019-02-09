@@ -14,18 +14,17 @@ router.post('/login', authController.login)
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)
 
-router.post('/cities/:id/posts', secureRoute, postController.postCreate)
-
+router.post('/cities/:id/posts', postController.postCreate)
 router.get('/cities/:id/posts', postController.postIndex)
-router.get('/cities/:id/posts/:id', postController.postShow)
+router.get('/cities/:id/posts/:postId', postController.postShow)
+router.delete('/cities/:id/posts/:postId', postController.postDelete)
+
+router.post('/cities/:id/posts/:postId/comments', postController.commentCreate)
 
 router.get('/continents', continentController.index)
 router.get('/continents/:id', continentController.show)
 
 router.get('/users', userController.index)
-
-router.post('/users', userController.create)
-
 router.get('/users/:id', userController.show)
 
 module.exports = router
