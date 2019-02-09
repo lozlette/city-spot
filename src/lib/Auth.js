@@ -15,7 +15,7 @@ class Auth {
     try {
       return JSON.parse(atob(parts[1]))
     } catch {
-        return false
+      return false
     }
   }
 
