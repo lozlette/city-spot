@@ -98,7 +98,7 @@ class PostsSection extends React.Component{
         }
 
 
-        <Feed>
+        <Feed id="feed">
           {posts.map((post, index) =>
               <PostsFeedBlock
                 text={this.state.commentText.text}
