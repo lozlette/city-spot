@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link }  from 'react-router-dom'
 
 import  { Header, Grid, Segment } from 'semantic-ui-react'
-class ContinentsShow extends React.Component {
+class CitiesIndex extends React.Component {
 
   constructor() {
     super()
@@ -21,20 +21,19 @@ class ContinentsShow extends React.Component {
   }
 
   componentDidMount(){
-    axios.get(`/api/continents/${this.props.match.params.id}`)
-      .then(res => this.setState({ continents: res.data }))
+    axios.get('/api/cities')
+      .then(res => this.setState({ cities: res.data }))
   }
 
 
   render (){
-    if(!this.state.continents) return null
-    console.log(this.state.continents.cities)
+    if(!this.state.cities) return null
+    console.log(this.state.cities)
     return(
       <div>
-        <Header as='h1' className='heading'>{this.state.continents.name}</Header>
         <Grid columns={4}>
           <Grid.Row>
-            {this.state.continents.cities.map(city =>
+            {this.state.cities.map(city =>
               <Grid.Column key={city._id}>
                 <Link to={`/cities/${city._id}`}>
                   <Segment circular id='circle' style={this.getStyle(city)}>
@@ -52,4 +51,4 @@ class ContinentsShow extends React.Component {
   }
 }
 
-export default ContinentsShow
+export default CitiesIndex
