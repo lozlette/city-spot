@@ -14,7 +14,7 @@ class RegLoginModal extends React.Component{
       postData: {
         username: '',
         email: '',
-        password:'',
+        password: '',
         passwordConfirmation: '',
         firstName: '',
         lastName: '',
@@ -43,26 +43,26 @@ class RegLoginModal extends React.Component{
     e.preventDefault()
     if(this.state.activeItem === 'Sign Up'){
       axios.post('/api/register', this.state.postData)
-      .then(res => this.setState({
-        activeItem: 'Log In',
-        postData: {
-          username: '',
-          firstName:'',
-          lastName:'',
-          email: '',
-          password:'',
-          passwordConfirmation: '',
-          image: '',
-          bio: ''
-        }}))
-      .catch(err => console.log(err))
+        .then(res => this.setState({
+          activeItem: 'Log In',
+          postData: {
+            username: '',
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            passwordConfirmation: '',
+            image: '',
+            bio: ''
+          }}))
+        .catch(err => console.log(err))
     } else {
-        axios.post('/api/login', this.state.postData)
-          .then(res =>{
-            Auth.setToken(res.data.token)
-            console.log(res.data.message)
-          })
-      }
+      axios.post('/api/login', this.state.postData)
+        .then(res =>{
+          Auth.setToken(res.data.token)
+          console.log(res.data.message)
+        })
+    }
   }
 
   render() {

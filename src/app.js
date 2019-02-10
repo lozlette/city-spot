@@ -7,6 +7,7 @@ import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import UserShow from './components/Auth/UserShow'
 import CitiesShow from './components/Cities/CitiesShow'
+import CitiesIndex from './components/Cities/CitiesIndex'
 import ContinentsShow from './components/Continents/ContinentsShow'
 
 class App extends React.Component{
@@ -23,6 +24,7 @@ class App extends React.Component{
 
           <Switch>
             <Route path="/cities/:id" component={CitiesShow} />
+            <Route path="/cities" component={CitiesIndex} />
             <Route path="/users/:id" component={UserShow} />
             <Route path="/continents/:id" component={ContinentsShow} />
             <Route path="/" component={Home} />

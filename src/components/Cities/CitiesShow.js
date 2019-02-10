@@ -8,11 +8,11 @@ import Auth from '../../lib/Auth'
 
 const style = (city) => {
   return({
-      width: 350,
-      height: 350,
-      backgroundImage: `url(${city.image})`,
-      backgroundSize: 'cover'
-    })
+    width: 350,
+    height: 350,
+    backgroundImage: `url(${city.image})`,
+    backgroundSize: 'cover'
+  })
 }
 
 
@@ -31,15 +31,15 @@ class CitiesShow extends React.Component{
 
   reload(){
     axios
-      .get('/api/cities/5c600ece805b814d990cee5b')
-        .then(res => this.setState({ city: res.data }))
-        .then(res => this.setState({reload: !this.state.reload}))
+      .get(`/api/cities/${this.props.match.params.id}`)
+      .then(res => this.setState({ city: res.data }))
+      .then(res => this.setState({reload: !this.state.reload}))
   }
 
   componentDidMount(){
     axios
-      .get('/api/cities/5c600ece805b814d990cee5b')
-        .then(res => this.setState({ city: res.data }))
+      .get(`/api/cities/${this.props.match.params.id}`)
+      .then(res => this.setState({ city: res.data }))
   }
 
 
@@ -57,42 +57,42 @@ class CitiesShow extends React.Component{
 
 
           <Grid columns={3}>
-              <Grid.Column width={6}>
-                <Segment circular style={style(city)}>
-                </Segment>
-                <Divider  hidden/>
+            <Grid.Column width={6}>
+              <Segment circular style={style(city)}>
+              </Segment>
+              <Divider  hidden/>
 
-                <Grid columns={2}>
-                  <Grid.Column>
-                    <VidModal videoId={videoId}/>
-                  </Grid.Column>
-                </Grid>
-              </Grid.Column>
+              <Grid columns={2}>
+                <Grid.Column>
+                  <VidModal videoId={videoId}/>
+                </Grid.Column>
+              </Grid>
+            </Grid.Column>
 
-              <Grid.Column textAlign='left' width={5}>
-                <Divider hidden />
-                  <Header as='h3'>
+            <Grid.Column textAlign='left' width={5}>
+              <Divider hidden />
+              <Header as='h3'>
                     Population
-                  <Header.Subheader> 2,500,000 </Header.Subheader>
-                  </Header>
-                  <Header as='h3'>
+                <Header.Subheader> 2,500,000 </Header.Subheader>
+              </Header>
+              <Header as='h3'>
                     Region
-                  <Header.Subheader> {city.continent.name} </Header.Subheader>
-                  </Header>
-                  <Header as='h3'>
+                <Header.Subheader> {city.continent.name} </Header.Subheader>
+              </Header>
+              <Header as='h3'>
                     Number of user posts about this city:
-                  <Header.Subheader> {city.posts.length} </Header.Subheader>
-                  </Header>
-              </Grid.Column>
+                <Header.Subheader> {city.posts.length} </Header.Subheader>
+              </Header>
+            </Grid.Column>
 
-              <Grid.Column width={5}>
-                <Segment>
-                  <PostsSection
-                    reload={this.reload}
-                    city={city}
-                  />
-                </Segment>
-              </Grid.Column>
+            <Grid.Column width={5}>
+              <Segment>
+                <PostsSection
+                  reload={this.reload}
+                  city={city}
+                />
+              </Segment>
+            </Grid.Column>
           </Grid>
 
 

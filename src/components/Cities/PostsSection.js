@@ -99,7 +99,7 @@ class PostsSection extends React.Component{
 
 
         <Feed id="feed">
-          {posts.map((post, index) =>
+          {posts.slice().reverse().map((post, index) =>
               <PostsFeedBlock
                 text={this.state.commentText.text}
                 handleChangePost={this.handleChangePost}

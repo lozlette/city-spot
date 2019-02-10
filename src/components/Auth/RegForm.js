@@ -74,24 +74,24 @@ class RegForm extends React.Component{
 
 
 
-                  <Form.Field>
-                    <label>Profile Image</label>
-                    <Input size='large'
-                      name='image'
-                      onChange={handleChange}
-                      placeholder='Image link'
-                    />
-                  </Form.Field>
+                <Form.Field>
+                  <label>Profile Image</label>
+                  <Input size='large'
+                    name='image'
+                    onChange={handleChange}
+                    placeholder='Image link'
+                  />
+                </Form.Field>
 
-                  <Form.Field>
-                    <label>Please Make a Bio</label>
-                    <TextArea
-                      name='bio'
-                      placeholder='Tell Us About Yourself'
-                      style={{ minHeight: 100 }}
-                      onChange={handleChange}
-                    />
-                  </Form.Field>
+                <Form.Field>
+                  <label>Please Make a Bio</label>
+                  <TextArea
+                    name='bio'
+                    placeholder='Tell Us About Yourself'
+                    style={{ minHeight: 100 }}
+                    onChange={handleChange}
+                  />
+                </Form.Field>
               </Grid.Column>
             </Grid.Row>
           </Grid>
