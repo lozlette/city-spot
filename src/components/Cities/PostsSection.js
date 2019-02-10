@@ -1,6 +1,8 @@
 import React from 'react'
-import { Segment, Card, Header, Feed } from 'semantic-ui-react'
+import { Segment, Card, Header, Feed, Modal, Button } from 'semantic-ui-react'
 import PostsFeedBlock from './PostsFeedBlock'
+import PostFormModal from './PostFormModal'
+import Auth from '../../lib/Auth'
 import axios from 'axios'
 
 // {Auth.isAuthenticated() && <Link className="navbar-item" to="/cheeses/new">Add a cheese</Link>}
@@ -21,12 +23,14 @@ class PostsSection extends React.Component{
     }
 
     this.handleChangePost = this.handleChangePost.bind(this)
+    this.handleSubmitPost = this.handleSubmitPost.bind(this)
     this.handleChangeComment = this.handleChangeComment.bind(this)
     this.handleSubmitComment = this.handleSubmitComment.bind(this)
   }
 
   handleChangePost({ target: {name, value }}) {
-    const commentData = {...this.state.postData, [name]: value }
+    console.log(name)
+    const postData = {...this.state.postData, [name]: value }
     this.setState({ postData })
   }
 
@@ -37,17 +41,34 @@ class PostsSection extends React.Component{
     })
   }
 
-  handleSubmitComment(e, postId){
-    console.log(this.state.commentText)
+  handleSubmitPost(e){
     e.preventDefault()
-    axios.post(`/api/cities/${this.props.city._id}/posts/${postId}/comments`, this.state.commentText)
+    axios
+      .post(`/api/cities/${this.props.city._id}/posts`, this.state.postData,
+          { headers: { Authorization: `Bearer ${Auth.getToken()}` }}
+        )
+      .then(this.setState({
+        postData: {
+          caption: '',
+          image: ''
+        }
+       }))
+      .then(this.props.reload)
+      .catch(err => alert(err.message))
+  }
+
+  handleSubmitComment(e, postId){
+    e.preventDefault()
+    axios.post(`/api/cities/${this.props.city._id}/posts/${postId}/comments`, this.state.commentText,
+      { headers: { Authorization: `Bearer ${Auth.getToken()}` }}
+    )
       .then(res => console.log(res))
       .then(this.setState({
         commentText: {
           text: ''
         }
        }))
-       .then(this.props.reload)
+      .then(this.props.reload)
       .catch(err => alert(err.message))
   }
 
@@ -56,6 +77,17 @@ class PostsSection extends React.Component{
     const { posts } = this.props.city
     return(
       <Segment>
+        {Auth.isAuthenticated() &&
+            <Modal trigger={<Button fluid size='large' primary>Add a Post</Button>}>
+              <PostFormModal
+                postData={this.state.postData}
+                handleChangePost={this.handleChangePost}
+                handleSubmitPost={this.handleSubmitPost}
+              />
+            </Modal>
+        }
+
+
         <Feed>
           {posts.map((post, index) =>
               <PostsFeedBlock
