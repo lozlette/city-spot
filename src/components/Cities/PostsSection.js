@@ -27,6 +27,7 @@ class PostsSection extends React.Component{
     this.handleSubmitPost = this.handleSubmitPost.bind(this)
     this.handleChangeComment = this.handleChangeComment.bind(this)
     this.handleSubmitComment = this.handleSubmitComment.bind(this)
+    this.changeFinished = this.changeFinished.bind(this)
   }
 
   handleChangePost({ target: {name, value }}) {
@@ -61,7 +62,9 @@ class PostsSection extends React.Component{
       .catch(err => alert(err.message))
   }
 
-
+  changeFinished(){
+    this.setState({ finished: false })
+  }
 
   handleSubmitComment(e, postId){
     e.preventDefault()
