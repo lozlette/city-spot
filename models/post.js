@@ -8,10 +8,10 @@ const commentSchema = new mongoose.Schema({
 })
 
 const postSchema = new mongoose.Schema({
+  city: { type: mongoose.Schema.ObjectId, ref: 'City' },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
   image: { type: String, required: true },
   caption: { type: String, required: true },
-  city: { type: mongoose.Schema.ObjectId, ref: 'City' },
   comments: [commentSchema]
 },{
   timestamps: true

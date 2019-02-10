@@ -15,9 +15,18 @@ function postShowRoute(req, res) {
 
 function postCreateRoute(req, res) {
   req.body.city = req.params.id
+  req.body.user = req.currentUser
   Post
     .create(req.body)
     .then(city => res.status(201).json(city))
+}
+
+function postUpdateRoute(req, res) {
+  Post
+    .findById(req.params.postId)
+    .then(post => post.set(req.body))
+    .then(post => post.save())
+    .then(post => res.json(post))
 }
 
 function postDeleteRoute(req, res) {
@@ -43,6 +52,7 @@ module.exports = {
   postCreate: postCreateRoute,
   postShow: postShowRoute,
   postIndex: postIndexRoute,
+  postUpdate: postUpdateRoute,
   postDelete: postDeleteRoute,
   commentCreate: commentCreateRoute
 }

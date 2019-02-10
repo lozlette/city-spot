@@ -11,7 +11,22 @@ function createRoute(req, res) {
     .create(req.body)
     .then(users => res.json(users))
     .then(users => res.status(201).json(users))
-    .catch(err => res.status(422).json(err.errors))
+}
+
+function updateRoute(req, res) {
+  User
+    .findById(req.params.id)
+    .then(users => users.set(req.body))
+    .then(users => users.save())
+    .then(users => res.json(users))
+}
+
+function deleteRoute(req, res) {
+  User
+    .findById(req.params.id)
+    .then(users => users.remove())
+    .then(users => users.save())
+    .then(res.json({message: 'User deleted'}))
 }
 
 function showRoute(req, res) {
@@ -23,5 +38,7 @@ function showRoute(req, res) {
 module.exports = {
   index: indexRoute,
   create: createRoute,
-  show: showRoute
+  show: showRoute,
+  update: updateRoute,
+  delete: deleteRoute
 }
