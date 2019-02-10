@@ -376,7 +376,7 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           continent: data.continentNorthAmerica
         }),
         city65: City.create({
-          na6me: 'San Francisco',
+          name: 'San Francisco',
           image: 'https://i.ytimg.com/vi/C9J1p6kO9VA/maxresdefault.jpg',
           continent: data.continentNorthAmerica
         }),
@@ -426,7 +426,7 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           continent: data.continentNorthAmerica
         }),
         city75: City.create({
-          na6me: 'Victoria',
+          name: 'Victoria',
           image: 'https://www.tourismvictoria.com/sites/default/files/victoria_inner_harbour_flowers.jpg',
           continent: data.continentNorthAmerica
         }),
