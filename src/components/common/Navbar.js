@@ -1,6 +1,7 @@
 import React from 'react'
 import { Segment, Menu, Dropdown, Button, Modal, Icon } from 'semantic-ui-react'
 import RegLoginModal from '../Auth/RegLoginModal'
+import Auth from '../../lib/Auth'
 
 
 class Navbar extends React.Component{
@@ -35,6 +36,7 @@ class Navbar extends React.Component{
 
           <Menu.Menu position='right'>
 
+          {!Auth.isAuthenticated() &&
             <Menu.Item name='Sign Up'>
               <Modal trigger={<Button inverted>Sign Up</Button>} closeIcon>
                 <Modal.Content>
@@ -42,7 +44,9 @@ class Navbar extends React.Component{
                 </Modal.Content>
               </Modal>
             </Menu.Item>
+          }
 
+          {!Auth.isAuthenticated() &&
             <Menu.Item name='Log In'>
               <Modal trigger={<Button inverted>Log In</Button>} closeIcon>
                 <Modal.Content>
@@ -50,6 +54,9 @@ class Navbar extends React.Component{
                 </Modal.Content>
               </Modal>
             </Menu.Item>
+          }
+
+
 
           </Menu.Menu>
         </Menu>
