@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Header, Divider, Segment, Container, Grid, Modal, Embed } from 'semantic-ui-react'
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
+import Auth from '../../lib/Auth'
 
 const style = (city) => {
   return({
@@ -30,21 +31,21 @@ class CitiesShow extends React.Component{
 
   reload(){
     axios
-      .get('/api/cities/5c5de7b6a282ed27d0aae7b9')
+      .get('/api/cities/5c600ece805b814d990cee5b')
         .then(res => this.setState({ city: res.data }))
         .then(res => this.setState({reload: !this.state.reload}))
   }
 
   componentDidMount(){
     axios
-      .get('/api/cities/5c5de7b6a282ed27d0aae7b9')
+      .get('/api/cities/5c600ece805b814d990cee5b')
         .then(res => this.setState({ city: res.data }))
   }
 
 
 
   render(){
-    console.log(this.state.reload)
+    Auth.isAuthenticated()
     if(!this.state.city) return <h1> Loading... </h1>
     const { city } = this.state
     return(
@@ -59,6 +60,13 @@ class CitiesShow extends React.Component{
               <Grid.Column width={6}>
                 <Segment circular style={style(city)}>
                 </Segment>
+                <Divider  hidden/>
+
+                <Grid columns={2}>
+                  <Grid.Column>
+                    <VidModal videoId={videoId}/>
+                  </Grid.Column>
+                </Grid>
               </Grid.Column>
 
               <Grid.Column textAlign='left' width={5}>
@@ -88,11 +96,7 @@ class CitiesShow extends React.Component{
           </Grid>
 
 
-          <Grid columns={6}>
-            <Grid.Column>
-              <VidModal videoId={videoId}/>
-            </Grid.Column>
-          </Grid>
+
         </Container>
       </div>
     )

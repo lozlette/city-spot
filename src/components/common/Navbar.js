@@ -1,5 +1,6 @@
 import React from 'react'
-import { Segment, Menu, Button, Modal } from 'semantic-ui-react'
+import { Link, withRouter } from 'react-router-dom'
+import { Segment, Menu, Dropdown, Button, Modal, Icon } from 'semantic-ui-react'
 import RegLoginModal from '../Auth/RegLoginModal'
 import Auth from '../../lib/Auth'
 
@@ -61,7 +62,18 @@ class Navbar extends React.Component{
                   <RegLoginModal tab="Log In" />
                 </Modal.Content>
               </Modal>
-            </Menu.Item>}
+            </Menu.Item>
+          }
+
+          {
+            Auth.isAuthenticated() &&
+            <Menu.Item name='My Profile'>
+              <Link to={`/users/${Auth.getUserID()}`}>My Profile </Link>
+            </Menu.Item>
+
+          }
+
+
 
           </Menu.Menu>
         </Menu>
