@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 
 const PostsFeedBlock = ({ text, city, post, index, handleChangePost, handleChangeComment, handleSubmitComment }) => {
-  console.log(post)
   return(
     <Feed.Event>
       <Feed.Label image={post.image} />
