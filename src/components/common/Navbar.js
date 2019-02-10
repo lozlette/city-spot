@@ -27,19 +27,23 @@ class Navbar extends React.Component{
     return (
       <Segment inverted>
         <Menu inverted pointing secondary>
-          <Link to={'/'}>
             <Menu.Item
               name='home'
               active={activeItem === 'home'}
-              onClick={this.handleItemClick} />
-          </Link>
-          <Link to={'/cities'}>
+              onClick={this.handleItemClick}
+              >
+                <Link to={'/'}> Home </Link>
+            </Menu.Item>
+
+
             <Menu.Item
               name='View All Cities'
               active={activeItem === 'View All Cities'}
               onClick={this.handleItemClick2}
-            />
-          </Link>
+            >
+              <Link to={'/cities'}> View All Cities </Link>
+            </Menu.Item>
+
           <Menu.Menu position='right'>
 
             {!Auth.isAuthenticated() && <Menu.Item
@@ -82,4 +86,4 @@ class Navbar extends React.Component{
 
 
 
-export default withRouter(Navbar)
+export default Navbar

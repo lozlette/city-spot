@@ -32,23 +32,14 @@ class CitiesShow extends React.Component{
   reload(){
     axios
       .get(`/api/cities/${this.props.match.params.id}`)
-<<<<<<< HEAD
-        .then(res => this.setState({ city: res.data }))
-        .then(res => this.setState({reload: !this.state.reload}))
-=======
       .then(res => this.setState({ city: res.data }))
       .then(res => this.setState({reload: !this.state.reload}))
->>>>>>> development
   }
 
   componentDidMount(){
     axios
       .get(`/api/cities/${this.props.match.params.id}`)
-<<<<<<< HEAD
-        .then(res => this.setState({ city: res.data }))
-=======
       .then(res => this.setState({ city: res.data }))
->>>>>>> development
   }
 
 
