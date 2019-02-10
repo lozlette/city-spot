@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Segment, Menu, Dropdown, Button, Modal, Icon } from 'semantic-ui-react'
 import RegLoginModal from '../Auth/RegLoginModal'
 import Auth from '../../lib/Auth'
@@ -13,18 +13,12 @@ class Navbar extends React.Component{
       activeItem: 'home'
     }
     this.handleItemClick = this.handleItemClick.bind(this)
-    this.handleItemClick2 = this.handleItemClick2.bind(this)
   }
 
   handleItemClick(e, { name }){
     this.setState({ activeItem: name })
-    this.props.history.push('/')
   }
 
-  handleItemClick2(e, { name }){
-    this.setState({ activeItem: name })
-    this.props.history.push('/cities')
-  }
 
   render() {
     const { activeItem } = this.state
@@ -33,17 +27,19 @@ class Navbar extends React.Component{
     return (
       <Segment inverted>
         <Menu inverted pointing secondary>
-          <Menu.Item
-            name='home'
-            active={activeItem === 'home'}
-            onClick={this.handleItemClick} />
-
-          <Menu.Item
-            name='View All Cities'
-            active={activeItem === 'View All Cities'}
-            onClick={this.handleItemClick2}
-          />
-
+          <Link to={'/'}>
+            <Menu.Item
+              name='home'
+              active={activeItem === 'home'}
+              onClick={this.handleItemClick} />
+          </Link>
+          <Link to={'/cities'}>
+            <Menu.Item
+              name='View All Cities'
+              active={activeItem === 'View All Cities'}
+              onClick={this.handleItemClick2}
+            />
+          </Link>
           <Menu.Menu position='right'>
 
             {!Auth.isAuthenticated() && <Menu.Item
@@ -63,15 +59,15 @@ class Navbar extends React.Component{
                 </Modal.Content>
               </Modal>
             </Menu.Item>
-          }
+            }
 
-          {
-            Auth.isAuthenticated() &&
+            {
+              Auth.isAuthenticated() &&
             <Menu.Item name='My Profile'>
               <Link to={`/users/${Auth.getUserID()}`}>My Profile </Link>
             </Menu.Item>
 
-          }
+            }
 
 
 

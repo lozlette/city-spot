@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Link  from 'react-router-dom'
+import { Link }  from 'react-router-dom'
 
 import  { Header, Grid, Segment } from 'semantic-ui-react'
 class CitiesIndex extends React.Component {
