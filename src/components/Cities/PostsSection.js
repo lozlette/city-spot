@@ -13,6 +13,7 @@ class PostsSection extends React.Component{
     super(props)
 
     this.state={
+      finished: false,
       postData: {
         image: '',
         caption: '',
@@ -47,15 +48,20 @@ class PostsSection extends React.Component{
       .post(`/api/cities/${this.props.city._id}/posts`, this.state.postData,
           { headers: { Authorization: `Bearer ${Auth.getToken()}` }}
         )
-      .then(this.setState({
-        postData: {
-          caption: '',
-          image: ''
-        }
-       }))
+      .then(res => {
+        if(res.status === 201) this.setState({
+          finished: true,
+          postData: {
+            caption: '',
+            image: ''
+          }
+        })
+      })
       .then(this.props.reload)
       .catch(err => alert(err.message))
   }
+
+
 
   handleSubmitComment(e, postId){
     e.preventDefault()
@@ -78,8 +84,9 @@ class PostsSection extends React.Component{
     return(
       <Segment>
         {Auth.isAuthenticated() &&
-            <Modal trigger={<Button fluid size='large' primary>Add a Post</Button>}>
+            <Modal trigger={<Button onClick={this.changeFinished} fluid size='large' primary>Add a Post</Button>}>
               <PostFormModal
+                finished={this.state.finished}
                 postData={this.state.postData}
                 handleChangePost={this.handleChangePost}
                 handleSubmitPost={this.handleSubmitPost}
