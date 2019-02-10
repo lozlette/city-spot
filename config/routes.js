@@ -1,5 +1,7 @@
 const router = require('express').Router()
 
+
+// const secureRoute = require('../lib/secureRoute')
 const continentController = require('../controllers/continents')
 const cityController = require('../controllers/cities')
 const userController = require('../controllers/users')
