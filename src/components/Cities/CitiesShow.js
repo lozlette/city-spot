@@ -59,6 +59,13 @@ class CitiesShow extends React.Component{
               <Grid.Column width={6}>
                 <Segment circular style={style(city)}>
                 </Segment>
+                <Divider  hidden/>
+
+                <Grid columns={2}>
+                  <Grid.Column>
+                    <VidModal videoId={videoId}/>
+                  </Grid.Column>
+                </Grid>
               </Grid.Column>
 
               <Grid.Column textAlign='left' width={5}>
@@ -88,11 +95,7 @@ class CitiesShow extends React.Component{
           </Grid>
 
 
-          <Grid columns={6}>
-            <Grid.Column>
-              <VidModal videoId={videoId}/>
-            </Grid.Column>
-          </Grid>
+
         </Container>
       </div>
     )
