@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Link  from 'react-router-dom'
 
 import  { Header, Grid, Segment } from 'semantic-ui-react'
 class CitiesIndex extends React.Component {
@@ -34,11 +35,13 @@ class CitiesIndex extends React.Component {
           <Grid.Row>
             {this.state.cities.map(city =>
               <Grid.Column key={city._id}>
-                <Segment circular id='circle' style={this.getStyle(city)}>
-                  <Header as='h2' className='segmentHeader'>
-                    {city.name}
-                  </Header>
-                </Segment>
+                <Link to={`/cities/${city._id}`}>
+                  <Segment circular id='circle' style={this.getStyle(city)}>
+                    <Header as='h2' className='segmentHeader'>
+                      {city.name}
+                    </Header>
+                  </Segment>
+                </Link>
               </Grid.Column>
             )}
           </Grid.Row>
