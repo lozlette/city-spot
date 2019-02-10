@@ -31,14 +31,14 @@ class CitiesShow extends React.Component{
 
   reload(){
     axios
-      .get('/api/cities/5c600ece805b814d990cee5b')
+      .get(`/api/cities/${this.props.match.params.id}`)
         .then(res => this.setState({ city: res.data }))
         .then(res => this.setState({reload: !this.state.reload}))
   }
 
   componentDidMount(){
     axios
-      .get('/api/cities/5c600ece805b814d990cee5b')
+      .get(`/api/cities/${this.props.match.params.id}`)
         .then(res => this.setState({ city: res.data }))
   }
 
