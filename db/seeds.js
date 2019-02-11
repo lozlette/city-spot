@@ -414,151 +414,181 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         city61: City.create({
           name: 'New York',
           image: 'https://thenypost.files.wordpress.com/2014/11/future_midtown_skyline_2.jpg?quality=90&strip=all&w=978&h=652&crop=1',
+          videoID: 'MtCMtC50gwY',
           continent: data.continentNorthAmerica
         }),
         city62: City.create({
           name: 'Montreal',
           image: 'https://www.mcgill.ca/undergraduate-admissions/files/undergraduate-admissions/experience_montreal.jpg',
+          videoID: 'poe2cLKw9ko',
           continent: data.continentNorthAmerica
         }),
         city63: City.create({
           name: 'Cancun',
           image: 'https://ahoycruises.co.uk/images/stories/flexicontent/ships/mediaman/l_miami-usa-port-skyline-2-ahoy-500.jpg',
+          videoID: 'tVflvbwKdHU',
           continent: data.continentNorthAmerica
         }),
         city64: City.create({
           name: 'Vancouver',
           image: 'http://athenaposters.ca/wp-content/uploads/2017/10/2390-0740-Vancouver-British-Columbia-Skyline.jpg',
+          videoID: 'a4d5CbK0b3A',
           continent: data.continentNorthAmerica
         }),
         city65: City.create({
           name: 'San Francisco',
           image: 'https://i.ytimg.com/vi/C9J1p6kO9VA/maxresdefault.jpg',
+          videoID: 'fngw98RjBEc',
           continent: data.continentNorthAmerica
         }),
         city66: City.create({
           name: 'Las Vegas',
           image: 'https://static1.squarespace.com/static/5813cddb8419c25c3b42eacd/593d9408cd0f68786f401768/5970d167d1758e894e5c72be/1529357243880/?format=1000w',
+          videoID: 'gasI6cyjkvM',
           continent: data.continentNorthAmerica
         }),
         city67: City.create({
           name: 'Miami',
           image: 'http://sfns.online/wp-content/uploads/2018/10/miami.jpg',
+          videoID: '58iT2L4VQj4',
           continent: data.continentNorthAmerica
         }),
         city68: City.create({
           name: 'Boston',
           image: 'https://cdn.shopify.com/s/files/1/1000/8436/products/boston_2000x.jpg?v=1521521847',
+          videoID: 'e5cm2SDuHxA',
           continent: data.continentNorthAmerica
         }),
         city69: City.create({
           name: 'Chicago',
           image: 'https://images.adsttc.com/media/images/56a1/90b0/e58e/ceb1/5000/02c7/newsletter/shutterstock_143073025.jpg?1453428902',
+          videoID: 'QSwvg9Rv2EI',
           continent: data.continentNorthAmerica
         }),
         city70: City.create({
           name: 'Toronto',
           image: 'https://img.theculturetrip.com/840x440/smart//wp-content/uploads/2017/03/1024px-toronto_-_on_-_toronto_skyline2.jpg',
+          videoID: '7uY0Ab5HlZ0',
           continent: data.continentNorthAmerica
         }),
         city71: City.create({
           name: 'Seattle',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Seattle_Skyline_WSB.jpg/280px-Seattle_Skyline_WSB.jpg',
+          videoID: '92ISlO9U-84',
           continent: data.continentNorthAmerica
         }),
         city72: City.create({
           name: 'Portland',
           image: 'https://www.visittheusa.co.uk/sites/default/files/styles/hero_m_1300x700/public/images/hero_media_image/2016-11/Drone.__72%20DPI.jpg?itok=jhGikGPz',
+          videoID: '1PGiixdhNVk',
           continent: data.continentNorthAmerica
         }),
         city73: City.create({
           name: 'San Diego',
           image: 'http://www.cbre.us/-/media/cbre/countryunitedstates/corporate%20offices/southern%20california/san%20diego/sandiego_module_768x582.png?mh=0&w=768&mw=0&h=582&la=en&hash=B9A6FE68FBAD3E3600C610B1115A018BC4EB6A89',
+          videoID: '-KMZW_zwRfc',
           continent: data.continentNorthAmerica
         }),
         city74: City.create({
           name: 'Havana',
           image: 'https://cdn.escapism.to/gallery/5b4a68d402b96.jpeg',
+          videoID: 'XJ-3dF5NBIQ',
           continent: data.continentNorthAmerica
         }),
         city75: City.create({
           name: 'Victoria',
           image: 'https://www.tourismvictoria.com/sites/default/files/victoria_inner_harbour_flowers.jpg',
+          videoID: 'xksxS1eBQD4',
           continent: data.continentNorthAmerica
         }),
         city76: City.create({
           name: 'Washington, D.C.',
           image: 'https://www.visitmacysusa.com/sites/default/files/styles/hero/public/macys_washingtondc_header.jpg?itok=lBqsf3Db',
+          videoID: '7dilTLvbHxc',
           continent: data.continentNorthAmerica
         }),
         city77: City.create({
           name: 'Puerto Vallarta',
           image: 'https://www.garzablancaresort.com/blog/wp-content/uploads/2017/06/things-you-didn-t-know-about-puerto-vallarta-mexico.jpg',
+          videoID: '9gq6X9ppmcc',
           continent: data.continentNorthAmerica
         }),
         city78: City.create({
           name: 'Tulum',
           image: 'https://www.travelreport.mx/wp-content/uploads/2018/07/Que-hacer-en-Tulum-Quintana-Roo.jpg',
+          videoID: 'eiG1rHRm_xI',
           continent: data.continentNorthAmerica
         }),
         city79: City.create({
           name: 'Montego Bay',
           image: 'https://images.trvl-media.com/hotels/13000000/12650000/12641000/12640927/d0db3f3f_z.jpg',
+          videoID: '_HPpuozyvAw',
           continent: data.continentNorthAmerica
         }),
         city80: City.create({
           name: 'Orlando',
           image: 'https://www.wwgmc.com/orlando/wp-content/uploads/sites/4/2016/07/orlando.jpg',
+          videoID: 'LfCsOwMc3hk',
           continent: data.continentNorthAmerica
         }),
         city81: City.create({
           name: 'Chichen Itza',
           image: 'https://en.xichen.com.mx/img/zonas-arqueologicas/Chichen/chichen02.jpg',
+          videoID: 'mpiCPxmpzCI',
           continent: data.continentNorthAmerica
         }),
         city82: City.create({
           name: 'Santo Domingo',
           image: 'https://www.colonialtours.com/images/1aMalecMetro-Santo-Domingo_1.jpg',
+          videoID: 'rSMZ0adqPMg',
           continent: data.continentNorthAmerica
         }),
         city83: City.create({
           name: 'Panama',
           image: 'https://corporate.airfrance.com/sites/default/files/styles/main_image_node/public/corpo_panama.jpg?itok=o0hZ_-mN',
+          videoID: 'l3tn-9-d_dA',
           continent: data.continentNorthAmerica
         }),
         city84: City.create({
           name: 'San Jose',
           image: 'https://imagenescityexpress.scdn6.secure.raxcdn.com/sites/default/files/2017-04/best-of-San-Jose-Costa-Rica-1.jpg',
+          videoID: 'TFCBMuI2TRk',
           continent: data.continentNorthAmerica
         }),
         city85: City.create({
           name: 'Mexico City',
           image: 'https://theculturetrip.com/wp-content/uploads/2017/05/flickr-lui_piquee.jpg',
+          videoID: 'GUMXv0VEtoc',
           continent: data.continentNorthAmerica
         }),
         city86: City.create({
           name: 'Playa del Carmen',
           image: 'https://developerdirectinvestments.com/wp-content/uploads/2018/05/Invest-in-Playa-condos.jpg',
+          videoID: '3ML5ZyviP0o',
           continent: data.continentNorthAmerica
         }),
         city87: City.create({
           name: 'Puerto Escondido',
           image: 'https://visitapuerto.com/wp-content/uploads/2014/04/puerto-escondido1.jpg',
+          videoID: 'OeWmd70KciY',
           continent: data.continentNorthAmerica
         }),
         city88: City.create({
           name: 'Honolulu',
           image: 'https://www.gohawaii.com/sites/default/files/styles/image_gallery_bg_xl/public/hero-unit-images/Oahu-Honolulu-Aerial-Hero-2_1.jpg?itok=XX4tTNBw',
+          videoID: 'aH--sKPgbSE',
           continent: data.continentNorthAmerica
         }),
         city89: City.create({
           name: 'San Antonio',
           image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDigQX4YopL91w8I8yvjOSolIdTaH7VJAy74xTljakZQlLUGrS',
+          videoID: 'ifW6I46cIpk',
           continent: data.continentNorthAmerica
         }),
         city90: City.create({
           name: 'Houston',
           image: 'https://assets.simpleviewcms.com/simpleview/image/upload/c_fill,h_300,q_60,w_600/v1/clients/houston/highlight5_d37d5a87-b8cd-49a0-86d6-f7c22efe2f02.jpg',
+          videoID: 'p9jWxwpXMPM',
           continent: data.continentNorthAmerica
         }),
 
