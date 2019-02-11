@@ -72,7 +72,7 @@ class Navbar extends React.Component{
             <Menu.Item
               name='My Profile'
               onClick={this.handleItemClick}
-            > My Profile
+            > <Icon name='user circle'/> My Profile
             </Menu.Item>
 
             }
@@ -82,7 +82,7 @@ class Navbar extends React.Component{
               <Menu.Item
                 name='Logout'
                 onClick={this.logout}
-              > Logout
+              > <Icon name='remove user' /> Logout
               </Menu.Item>
 
             }

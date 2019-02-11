@@ -29,6 +29,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData }) => {
               />
 
               <Form.Input
+              onChange={handleChange}
                 label='Last name'
                 name='lastName'
                 placeholder='Last Name' />
@@ -81,7 +82,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData }) => {
               />
             </Form.Field>
 
-            
+
             <Button fluid content="Create Your Profile" primary />
 
           </Form>
