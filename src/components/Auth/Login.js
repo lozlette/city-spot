@@ -1,6 +1,8 @@
 import React from 'react'
 import { Divider, Button, Grid, Form, Input, Segment, Header, Icon } from 'semantic-ui-react'
 import { withRouter } from 'semantic-ui-react'
+import Auth from '../../lib/Auth'
+import axios from 'axios'
 
 class Login extends React.Component{
   constructor(){
@@ -14,20 +16,27 @@ class Login extends React.Component{
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.goToRegister = this.goToRegister.bind(this)
   }
 
   handleChange({ target: {name, value }}) {
+    console.log(this.state)
     const postData = {...this.state.postData, [name]: value }
     this.setState({ postData })
   }
 
   handleSubmit(e){
     e.preventDefault()
+    console.log(this.state.postData, 'postData here')
     axios.post('/api/login', this.state.postData)
-      .then(res => this.props.history.push('/'))
+      .then(res => Auth.setToken(res.data.token))
+      .then(()=> this.props.history.push('/'))
       .catch(err => this.setState({ errors: err }))
     }
 
+  goToRegister(){
+    this.props.history.push('/register')
+  }
 
 
 
@@ -39,7 +48,6 @@ class Login extends React.Component{
         <Grid.Column width={5}>
           <Segment color="blue">
             <Icon name='user circle' size='huge' />
-            <Header as='h1'> Login </Header>
             <Form onSubmit={this.handleSubmit}>
               <Divider hidden />
               <Form.Field>
@@ -64,6 +72,7 @@ class Login extends React.Component{
               <Divider hidden/>
               <Button fluid content="Log In" primary />
             </Form>
+            <a href='#' onClick={this.goToRegister}> Don't have an account? Click Here to Sign Up. </a>
         </Segment>
       </Grid.Column>
     </Grid>

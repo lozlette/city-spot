@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Grid, Form, Input, Divider, Button, TextArea, Container } from 'semantic-ui-react'
+import { Segment, Grid, Form, Input, Divider, Button, TextArea, Container, Icon, Header } from 'semantic-ui-react'
 
 
 
@@ -8,6 +8,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData }) => {
     <Grid columns={1} stackable textAlign='center'>
       <Grid.Column width={8}>
         <Segment color='blue'>
+          <Icon name='add user' size='huge' />
           <Form onSubmit={handleSubmit} >
 
             <Form.Field required>
@@ -80,7 +81,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData }) => {
               />
             </Form.Field>
 
-            <Divider hidden />
+            
             <Button fluid content="Create Your Profile" primary />
 
           </Form>
