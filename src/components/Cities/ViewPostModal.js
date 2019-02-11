@@ -1,24 +1,34 @@
 import React from 'react'
-import { Comment, Modal, Image, Form, Button, Header } from 'semantic-ui-react'
+import { Comment, Modal, Image, Form, Button, Header, Segment, Divider } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 const ViewPostModal = ({ text, handleSubmitComment, handleChangeComment, post }) => {
-
-
   return(
     <Modal trigger={<a>Click to view post</a>}>
-        <Modal.Header>Authors Name and Image</Modal.Header>
 
         <Modal.Content image>
           <Image wrapped size='large' src={post.image} />
           <Modal.Description>
-            <Header as='h3'> {post.caption} </Header>
+              <Link to={`/users/${post.user._id}`}>
+                <Header as='h3'>
+                  <Image src={post.user.image} avatar/>
+                  {post.user.username}
+                </Header>
+              </Link>
+
+            <Header as='h4'> {post.caption} </Header>
+            <Divider />
+
             <Header>Comments</Header>
               <Comment.Group>
                 {post.comments.map(comment =>
                   <Comment key={comment._id}>
-                    <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+                    <Comment.Avatar src={comment.user.image} />
                     <Comment.Content>
-                      <Comment.Author as='a'>Username</Comment.Author>
+                      <Comment.Author>
+                        <Link to={`users/${comment.user._id}`}> {comment.user.username}</Link>
+                      </Comment.Author>
+
                       <Comment.Metadata>
                         <div>{comment.createdAt}</div>
                       </Comment.Metadata>

@@ -17,4 +17,18 @@ const postSchema = new mongoose.Schema({
   timestamps: true
 })
 
+postSchema.virtual('likes', {
+  ref: 'Like',
+  localField: '_id',
+  foreignField: 'post'
+})
+
+postSchema.set('toJSON', {
+  virtuals: true,
+  transform(doc, json) {
+    delete json.__v
+    return json
+  }
+})
+
 module.exports = mongoose.model('Post', postSchema)
