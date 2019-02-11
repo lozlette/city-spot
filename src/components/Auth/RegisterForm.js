@@ -9,7 +9,6 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
   const errorMessages = Object.keys(errors).map(errorKey => {
     return errors[errorKey]
   })
-  console.log(errorMessages, 'errors')
 
   return(
     <Grid columns={1} stackable textAlign='center'>
