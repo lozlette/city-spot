@@ -9,7 +9,7 @@ const likeController = require('../controllers/likes')
 const secureRoute = require('../lib/secureRoute')
 
 router.post('/register', authController.register)
-router.post('/login', secureRoute, authController.login)
+router.post('/login', authController.login)
 
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)
