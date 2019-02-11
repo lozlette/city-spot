@@ -35,35 +35,35 @@ class Navbar extends React.Component{
     // const cityOptions =  [ { key: '_id', value: '_id', text: 'London' }, {key: '_id2', value: '_id2', text: 'Barcelona'}]
 
     return (
-      <Segment inverted>
+      <Segment inverted id="nav">
         <Menu inverted pointing secondary>
-            <Menu.Item
-              name='home'
-              active={this.props.location.pathname === '/'}
-              onClick={this.handleItemClick}
-              > <Icon name='home' /> Home
-            </Menu.Item>
+          <Menu.Item
+            name='home'
+            active={this.props.location.pathname === '/'}
+            onClick={this.handleItemClick}
+          > <Icon name='home' /> Home
+          </Menu.Item>
 
 
-            <Menu.Item
-              name='View All Cities'
-              active={this.props.location.pathname === '/cities'}
-              onClick={this.handleItemClick}
-            > View All Cities
-            </Menu.Item>
+          <Menu.Item
+            name='View All Cities'
+            active={this.props.location.pathname === '/cities'}
+            onClick={this.handleItemClick}
+          > View All Cities
+          </Menu.Item>
 
           <Menu.Menu position='right'>
 
             {!Auth.isAuthenticated() && <Menu.Item
               name='Sign Up'
               onClick={this.handleItemClick}
-              > <Icon name='add user' /> Sign Up
-              </Menu.Item>}
+            > <Icon name='add user' /> Sign Up
+            </Menu.Item>}
 
             {!Auth.isAuthenticated() && <Menu.Item
               name='Login'
               onClick={this.handleItemClick}
-              > <Icon name='user circle'/> Log In
+            > <Icon name='user circle'/> Log In
             </Menu.Item>
             }
 
