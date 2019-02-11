@@ -41,7 +41,7 @@ class Navbar extends React.Component{
               name='home'
               active={this.props.location.pathname === '/'}
               onClick={this.handleItemClick}
-              > Home
+              > <Icon name='home' /> Home
             </Menu.Item>
 
 
@@ -57,13 +57,13 @@ class Navbar extends React.Component{
             {!Auth.isAuthenticated() && <Menu.Item
               name='Sign Up'
               onClick={this.handleItemClick}
-              > Sign Up
+              > <Icon name='add user' /> Sign Up
               </Menu.Item>}
 
             {!Auth.isAuthenticated() && <Menu.Item
               name='Login'
               onClick={this.handleItemClick}
-              > Log In
+              > <Icon name='user circle'/> Log In
             </Menu.Item>
             }
 
