@@ -1,35 +1,52 @@
 import React from 'react'
-import { Segment, Grid, Form, Input, Divider, Button, TextArea, Container, Icon, Header } from 'semantic-ui-react'
+import { Segment, Grid, Form, Input, Divider, Button, TextArea, Container, Icon, Header, Message } from 'semantic-ui-react'
 
 
 
-const RegisterForm = ({ handleChange, handleSubmit, postData }) => {
+const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
+
+
+  const errorMessages = Object.keys(errors).map(errorKey => {
+    return errors[errorKey]
+  })
+  console.log(errorMessages, 'errors')
+
   return(
     <Grid columns={1} stackable textAlign='center'>
       <Grid.Column width={8}>
         <Segment color='blue'>
           <Icon name='add user' size='huge' />
+          {errorMessages.length >0 && <Message
+            error
+            header='There was some errors with your submission'
+            list={errorMessages}
+            />}
           <Form onSubmit={handleSubmit} >
+
 
             <Form.Field required>
               <label>Create A Username</label>
               <Input
                 onChange={handleChange}
                 placeholder='Username'
+                required
                 name='username'
               />
             </Form.Field>
 
+
             <Form.Group widths='equal'>
               <Form.Input
                 label='First name'
+                required
                 name='firstName'
                 placeholder='First name'
                 onChange={handleChange}
               />
 
               <Form.Input
-              onChange={handleChange}
+                onChange={handleChange}
+                required
                 label='Last name'
                 name='lastName'
                 placeholder='Last Name' />
@@ -63,7 +80,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData }) => {
               />
             </Form.Field>
 
-            <Form.Field>
+            <Form.Field required>
               <label>Profile Image</label>
               <Input size='large'
                 name='image'
@@ -72,7 +89,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData }) => {
               />
             </Form.Field>
 
-            <Form.Field>
+            <Form.Field required>
               <label>Please Make a Bio</label>
               <TextArea
                 name='bio'
