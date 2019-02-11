@@ -5,6 +5,7 @@ import './style.scss'
 
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
+import FlashMessages from './components/common/FlashMessages'
 import UserShow from './components/Auth/UserShow'
 import CitiesShow from './components/Cities/CitiesShow'
 import CitiesIndex from './components/Cities/CitiesIndex'
@@ -23,7 +24,7 @@ class App extends React.Component{
       <BrowserRouter>
         <main>
           <Navbar />
-
+          <FlashMessages />
           <Switch>
             <Route path="/cities/:id" component={CitiesShow} />
             <Route path="/cities" component={CitiesIndex} />

@@ -37,6 +37,7 @@ function deleteRoute(req, res, next) {
 function showRoute(req, res, next) {
   User
     .findById(req.params.id)
+    .populate('posts')
     .then(users => res.json(users))
     .catch(next)
 }

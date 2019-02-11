@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const commentSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  text: { type: String, required: true, minlength: 10, maxlength: 200 }
+  text: { type: String, required: 'Characters length must be from 10-200', minlength: 10, maxlength: 200 }
 }, {
   timestamps: true
 })

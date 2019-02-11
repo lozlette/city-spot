@@ -2,6 +2,7 @@ import React from 'react'
 import { Divider, Button, Grid, Form, Input, Segment, Header, Icon } from 'semantic-ui-react'
 import { withRouter } from 'semantic-ui-react'
 import Auth from '../../lib/Auth'
+import Flash from '../../lib/Flash'
 import axios from 'axios'
 
 class Login extends React.Component{
@@ -27,10 +28,12 @@ class Login extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    console.log(this.state.postData, 'postData here')
     axios.post('/api/login', this.state.postData)
-      .then(res => Auth.setToken(res.data.token))
-      .then(()=> this.props.history.push('/'))
+      .then(res => {
+        Auth.setToken(res.data.token)
+        Flash.setMessage('success', res.data.message)
+        this.props.history.push('/')
+      })
       .catch(err => this.setState({ errors: err }))
     }
 
