@@ -230,151 +230,181 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         city31: City.create({
           name: 'London',
           image: 'https://zenartdesign.com/wp-content/uploads/2017/03/London-Skyline-800x800px.jpg',
+          videoID: '45ETZ1xvHS0',
           continent: data.continentEurope
         }),
         city32: City.create({
           name: 'Berlin',
           image: 'https://blog.parkinn.com/wp-content/uploads/sites/7/2018/01/things-in-berlin-skyline.jpg',
+          videoID: 'hVfBQNENS9s',
           continent: data.continentEurope
         }),
         city33: City.create({
           name: 'Rome',
           image: 'http://www.dearomatours.com/wp-content/uploads/alba-di-roma-2.jpg',
+          videoID: 'DEJx0CYrDHk',
           continent: data.continentEurope
         }),
         city34: City.create({
           name: 'Lisbon',
           image: 'https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/travel/city-guides/lisbon.jpg',
+          videoID: '3se_8OtkUt8',
           continent: data.continentEurope
         }),
         city35: City.create({
           name: 'Madrid',
           image: 'https://media-cdn.tripadvisor.com/media/photo-s/15/60/83/89/home-to-the-kings-of.jpg',
+          videoID: '79wiD35hdmM',
           continent: data.continentEurope
         }),
         city36: City.create({
           name: 'Paris',
           image: 'https://tunnelingonline.com/wp-content/uploads/2017/07/Paris-skyline.jpg',
+          videoID: 'AQ6GmpMu5L8',
           continent: data.continentEurope
         }),
         city37: City.create({
           name: 'Amsterdam',
           image: 'https://s3.eu-central-1.amazonaws.com/locationscoutnet/images/2018-03/panoramic-view-on-amsterdam-skyline-netherlands_l.jpeg',
+          videoID: 'ey_L_VzPwEI',
           continent: data.continentEurope
         }),
         city38: City.create({
           name: 'Athens',
           image: 'https://c1.staticflickr.com/5/4489/36786164663_f66eeaac8b_b.jpg',
+          videoID: 'huIUfwUDPN4',
           continent: data.continentEurope
         }),
         city39: City.create({
           name: 'Barcelona',
           image: 'https://www.kimptonhotels.com/blog/wp-content/uploads/2018/09/Barcelona-Skyline.jpg',
+          videoID: 'L_bgTJkFk3k',
           continent: data.continentEurope
         }),
         city40: City.create({
           name: 'Istanbul',
           image: 'https://indigodergisi.com/wp-content/uploads/2016/12/istanbul-gokdelenleri-elektrik-kesintisi-dogalgaz-kaos.jpg',
+          videoID: 'KwmjJvM_rLs',
           continent: data.continentEurope
         }),
         city41: City.create({
           name: 'Naples',
           image: 'https://media.timeout.com/images/105237777/image.jpg',
+          videoID: 'mEM1v4vPIYk',
           continent: data.continentEurope
         }),
         city42: City.create({
           name: 'Valencia',
           image: 'https://d3hne3c382ip58.cloudfront.net/files/uploads/bookmundi/resized/cmsfeatured/valencia-tours-holidays-1519988330-1000X561.jpg',
+          videoID: '1SjWuQd96lU',
           continent: data.continentEurope
         }),
         city43: City.create({
           name: 'Porto',
           image: 'https://www.visitportugal.com/sites/default/files/styles/experiencias_detalhe/public/mediateca/N2100d.jpg?itok=69vSCG0s',
+          videoID: 'v7hctWeJaY0',
           continent: data.continentEurope
         }),
         city44: City.create({
           name: 'Nice',
           image: 'https://d2bgjx2gb489de.cloudfront.net/gbb-blogs/wp-content/uploads/2018/05/27184710/Nice-azure-coast-of-France-panoramic-view-79115095-870x400.jpg',
+          videoID: 'wn89rYh09MM',
           continent: data.continentEurope
         }),
         city45: City.create({
           name: 'Bordeaux',
           image: 'https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/France/Bordeaux/Bordeaux-itineraries-cityscape.jpg?imwidth=450',
+          videoID: 'vdpTMa-okkg',
           continent: data.continentEurope
         }),
         city46: City.create({
           name: 'Sevilla',
           image: 'https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i49b64a5899da8ae4/version/1497350538/sevilla.jpg',
+          videoID: 'x4BAmmUXsaQ',
           continent: data.continentEurope
         }),
         city47: City.create({
           name: 'Budapest',
           image: 'https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5515999951001_5214933106001-vs.jpg?pubId=5104226627001&videoId=5214933106001',
+          videoID: 'dZYpHr1wDmY',
           continent: data.continentEurope
         }),
         city48: City.create({
           name: 'Prague',
           image: 'https://images.musement.com/cover/0002/43/prague-castle-fotolia-jpeg_header-142535.jpeg?&q=60&fit=crop&lossless=true&auto=format&w=412&h=250',
+          videoID: 'ajJj0x0928I',
           continent: data.continentEurope
         }),
         city49: City.create({
           name: 'Riga',
           image: 'https://loveincorporated.blob.core.windows.net/contentimages/fullsize/9ea3eb8e-6fac-4724-956f-92363c0ac1c3-riga-areal.jpg',
+          videoID: 'CaDOXx8rFUo',
           continent: data.continentEurope
         }),
         city50: City.create({
           name: 'Copenhagen',
           image: 'https://thesavvybackpacker.com/wp-content/uploads/2015/07/copenhangen-travel-costs.jpg',
+          videoID: 'yHZlNfWuA7g&t=157s',
           continent: data.continentEurope
         }),
         city51: City.create({
           name: 'Kiev',
           image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/07/19/14/kiev-landscape.jpg?w968h681',
+          videoID: 'hUGIJYWFmcw',
           continent: data.continentEurope
         }),
         city52: City.create({
           name: 'Oslo',
           image: 'https://www.visitoslo.com/Images/Bilder%20Oslo/Byliv%20and%20Omr%C3%A5der/byen-og-fjorden_FWFoto.jpg?t=ScaleToFill%7C1450x720&ts=vSfnxHgXA7cLsnf8iM8TVpElbOc%3D&pr=2.625',
+          videoID: 'A3Yj3q0QRLM',
           continent: data.continentEurope
         }),
         city53: City.create({
           name: 'Vilnius',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Vilnius_Modern_Skyline_At_Dusk%2C_Lithuania_-_Diliff.jpg/346px-Vilnius_Modern_Skyline_At_Dusk%2C_Lithuania_-_Diliff.jpg',
+          videoID: 'ssAO7U29H5Q',
           continent: data.continentEurope
         }),
         city54: City.create({
           name: 'Tbilisi',
           image: 'https://georgia.travel/files/image/2017-10-30/400X360/10004.jpg',
+          videoID: '57sMUHeluR0',
           continent: data.continentEurope
         }),
         city55: City.create({
           name: 'Luxembourg',
           image: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/LuxembourgCityView.jpg',
+          videoID: 'GWnUU3u7Cfg',
           continent: data.continentEurope
         }),
         city56: City.create({
           name: 'Zagreb',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Zagreb_%2829255640143%29.jpg/365px-Zagreb_%2829255640143%29.jpg',
+          videoID: 'YSrujLA3H2c',
           continent: data.continentEurope
         }),
         city57: City.create({
           name: 'Nicosia',
           image: 'https://lonelyplanetimages.imgix.net/a/g/hi/t/80b103e77809e631eac5de2bc67041fe-nicosia-lefkosia.jpg?sharp=10&vib=20&w=1200',
+          videoID: 'qs6KXuRQLKI',
           continent: data.continentEurope
         }),
         city58: City.create({
           name: 'Edinburgh',
           image: 'https://cimg.visitscotland.com/cms-images/video/edinburgh-view?size=md',
+          videoID: 'LX2nq-tthxs',
           continent: data.continentEurope
         }),
         city59: City.create({
           name: 'Dublin',
           image: 'https://www.theccd.ie/media/copy_dublin_city.png',
+          videoID: 'LcKnx7I97yk',
           continent: data.continentEurope
         }),
         city60: City.create({
           name: 'Reykjavik',
           image: 'https://www.whatson.is/wp-content/uploads/2018/05/dsc00722-res-min.jpg',
+          videoID: 'vzSHcyXfNPw',
           continent: data.continentEurope
         }),
 
