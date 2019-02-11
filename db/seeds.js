@@ -76,13 +76,13 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         city6: City.create({
           name: 'Marrakesh',
           image: 'https://timedotcom.files.wordpress.com/2016/03/160314_tra_intl_marrakesh2.jpg',
-          videoID: '1igDO8h1Gz4',
+          videoId: '1igDO8h1Gz4',
           continent: data.continentAfrica
         }),
         city7: City.create({
           name: 'Cairo',
           image: 'https://frontera.net/wp-content/uploads/2017/01/Egypt-1-1-1-1-1-1-1-2-1.jpg',
-          videoID: '9awml1WuhY',
+          videoID: 'O-YiOvZuzAg',
           continent: data.continentAfrica
         }),
         city8: City.create({
