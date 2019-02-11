@@ -2,15 +2,15 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  firstName: { type: String },
-  lastName: { type: String },
-  email: { type: String, required: true, unique: true },
-  image: { type: String },
-  bio: { type: String, maxlength: 200, required: true },
-  password: { type: String, required: true },
+  username: { type: String, required: true, unique: 'Please enter a different username' },
+  firstName: { type: String, required: 'Please enter your first name' },
+  lastName: { type: String, required: 'Please enter your last name' },
+  email: { type: String, required: true, unique: 'This email has already been registered' },
+  image: { type: String, required: true, unique: 'Please add an image' },
+  bio: { type: String, maxlength: 200, required: true, unique: 'Please add a short description of yourself' },
+  password: { type: String, required: 'Please enter a password' },
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent' },
-  gender: { type: String },
+  gender: { type: String, required: 'Please select your gender' },
   verified: { type: Boolean, default: false }
 })
 
