@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
   bio: { type: String, minlength: 1, maxlength: 200, required: 'Please add a short description of yourself' },
   password: { type: String, required: 'Please enter a password' },
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent' },
-  gender: { type: String, required: 'Please select your gender' },
+  gender: { type: String },
   verified: { type: Boolean, default: false }
 })
 
