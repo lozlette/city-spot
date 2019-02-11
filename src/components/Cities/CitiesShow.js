@@ -16,7 +16,8 @@ const style = (city) => {
 }
 
 
-const videoId = 'lJ87yD_8u3U'
+const videoId = ''
+//lJ87yD_8u3U
 
 
 class CitiesShow extends React.Component{
