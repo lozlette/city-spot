@@ -1,6 +1,7 @@
 process.env.NODE_ENV = 'test'
-process.env.PORT= 3000
-process.env.MONGODB_URI = 'mongodb://localhost'
+process.env.PORT = 3000
+
+global.Promise = require('bluebird')
 
 const chai = require('chai')
 global.expect = chai.expect
