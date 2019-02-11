@@ -13,6 +13,12 @@ const userSchema = new mongoose.Schema({
   gender: { type: String }
 })
 
+userSchema.virtual('posts', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'user'
+})
+
 userSchema.virtual('passwordConfirmation')
   .set(function setPasswordConfirmtion(passwordConfirmation) {
     this._passwordConfirmation = passwordConfirmation
@@ -44,7 +50,9 @@ userSchema.methods.validatePassword = function(password) {
 }
 
 userSchema.set('toJSON', {
+  virtuals: true,
   transform(doc, json) {
+    delete json.__v
     delete json.password
     return json
   }

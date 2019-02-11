@@ -1,8 +1,11 @@
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
+const mailer = require('../lib/mailer')
+
 
 function registerRoute( req, res, next ) {
   User.create(req.body)
+    .then(user => mailer.sendRegistrationEmail(user))
     .then(() => res.status(201).json({ message: 'Registration completed' }))
     .catch(next)
 }

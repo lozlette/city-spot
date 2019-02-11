@@ -9,7 +9,7 @@ const likeController = require('../controllers/likes')
 const secureRoute = require('../lib/secureRoute')
 
 router.post('/register', authController.register)
-router.post('/login', secureRoute, authController.login)
+router.post('/login', authController.login)
 
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)
@@ -19,7 +19,10 @@ router.get('/cities/:id/posts', postController.postIndex)
 router.get('/cities/:id/posts/:postId', postController.postShow)
 router.delete('/cities/:id/posts/:postId', secureRoute, postController.postDelete)
 router.put('/cities/:id/posts/:postId', secureRoute, postController.postUpdate)
+
 router.post('/cities/:id/posts/:postId/comments', secureRoute, postController.commentCreate)
+// router.put('/cities/:id/posts/:postId/comments/:commentId', secureRoute, postController.commentUpdate)
+// router.delete('/cities/:id/posts/:postId/comments/:commentId', secureRoute, postController.commentDelete)
 
 router.post('/cities/:id/posts/:postId/likes', likeController.likeCreate)
 router.get('/cities/:id/posts/:postId/likes', likeController.likeIndex)
