@@ -14,6 +14,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
   return(
     <Grid columns={1} stackable textAlign='center'>
       <Grid.Column width={8}>
+        <Divider hidden />
         <Segment color='blue'>
           <Icon name='add user' size='huge' />
           {errorMessages.length >0 && <Message
