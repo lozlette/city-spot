@@ -19,6 +19,8 @@ class Navbar extends React.Component{
   handleItemClick(e, { name }){
     this.setState({ activeItem: name })
     if(name === 'home')this.props.history.push('/')
+    if(name === 'Login')this.props.history.push('/login')
+    if(name === 'Sign Up')this.props.history.push('/register')
     if(name === 'View All Cities')this.props.history.push('/cities')
     if(name === 'My Profile')this.props.history.push(`/users/${Auth.getUserID()}`)
   }
@@ -54,21 +56,15 @@ class Navbar extends React.Component{
           <Menu.Menu position='right'>
 
             {!Auth.isAuthenticated() && <Menu.Item
-              name='Sign Up'>
-              <Modal trigger={<Button inverted>Sign Up</Button>} closeIcon>
-                <Modal.Content>
-                  <RegLoginModal tab="Sign Up"/>
-                </Modal.Content>
-              </Modal>
-            </Menu.Item>}
+              name='Sign Up'
+              onClick={this.handleItemClick}
+              > Sign Up
+              </Menu.Item>}
 
             {!Auth.isAuthenticated() && <Menu.Item
-              name='Log In'>
-              <Modal trigger={<Button inverted>Log In</Button>} closeIcon>
-                <Modal.Content>
-                  <RegLoginModal tab="Log In" />
-                </Modal.Content>
-              </Modal>
+              name='Login'
+              onClick={this.handleItemClick}
+              > Log In
             </Menu.Item>
             }
 
