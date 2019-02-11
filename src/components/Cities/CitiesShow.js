@@ -16,7 +16,8 @@ const style = (city) => {
 }
 
 
-const videoId = 'lJ87yD_8u3U'
+const videoID = ''
+//lJ87yD_8u3U
 
 
 class CitiesShow extends React.Component{
@@ -49,6 +50,7 @@ class CitiesShow extends React.Component{
   render(){
     Auth.isAuthenticated()
     if(!this.state.city) return <h1> Loading... </h1>
+    console.log(this.state.city.videoID)
     const { city } = this.state
     return(
       <div>
@@ -66,7 +68,7 @@ class CitiesShow extends React.Component{
 
               <Grid columns={2}>
                 <Grid.Column>
-                  <VidModal videoId={videoId}/>
+                  <VidModal videoId={city.videoID}/>
                 </Grid.Column>
               </Grid>
             </Grid.Column>
