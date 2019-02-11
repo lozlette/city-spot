@@ -3,6 +3,7 @@ const Post = require('../models/post')
 function postIndexRoute(req, res, next) {
   Post
     .find()
+    .populate('likes')
     .then(post => res.json(post))
     .catch(next)
 }
@@ -19,8 +20,8 @@ function postCreateRoute(req, res, next) {
 function postShowRoute(req, res, next) {
   Post
     .findById(req.params.postId)
-    .populate('user comments.user')
-    .then(post => res.status(201).json(post))
+    .populate('user comments.user likes')
+    .then(post => res.json(post))
     .catch(next)
 }
 
