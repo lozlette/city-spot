@@ -55,6 +55,31 @@ function commentCreateRoute(req, res, next) {
     .catch(next)
 }
 
+// function commentUpdateRoute(req, res, next) {
+//   Post
+//     .findById(req.params.postId)
+//     .then(track => {
+//       const comment = track.comments.id(req.params.commentId)
+//       // return comment.remove()
+//       console.log(comment.text.set())
+//
+//
+//     })
+//     .then(track => res.json(track))
+//     .catch(next)
+// }
+
+// function commentDeleteRoute(req, res, next) {
+//   Post
+//     .findById(req.params.postId)
+//     .then(post => {
+//       const comment = post.comments.id(req.params.commentId)
+//       return comment.remove()
+//     })
+//     .then(res.json({ message: 'Comment deleted' }))
+//     .catch(next)
+// }
+
 module.exports = {
   postCreate: postCreateRoute,
   postShow: postShowRoute,
@@ -62,4 +87,6 @@ module.exports = {
   postUpdate: postUpdateRoute,
   postDelete: postDeleteRoute,
   commentCreate: commentCreateRoute
+  // commentUpdate: commentUpdateRoute,
+  // commentDelete: commentDeleteRoute
 }
