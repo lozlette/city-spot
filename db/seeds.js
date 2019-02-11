@@ -36,10 +36,6 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           name: 'Asia',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Map_of_Asia_with_flags.svg/2000px-Map_of_Asia_with_flags.svg.png'
         })
-        // continentAntartica: Continent.create({
-        //   name: 'Antartica',
-        //   image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proposed_flag_of_Antarctica_%28Graham_Bartram%29.svg/220px-Proposed_flag_of_Antarctica_%28Graham_Bartram%29.svg.png'
-        // })
       })
     })
 
@@ -50,151 +46,181 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         city1: City.create({
           name: 'Cape Town',
           image: 'http://www.travelstart.co.za/blog/wp-content/uploads/2018/05/main-best-time-to-visit-cape-town.jpg',
+          videoID: 'sQPXvtJQ9p4',
           continent: data.continentAfrica
         }),
         city2: City.create({
           name: 'Nairobi',
           image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/06/28/17/singa.jpg',
+          videoID: '6vmpa4Gr258',
           continent: data.continentAfrica
         }),
         city3: City.create({
           name: 'Accra',
           image: 'https://i1.wp.com/theleidener.com/wp-content/uploads/2017/04/accra1.jpg?ssl=1',
+          videoID: 'N7q7NeomPEQ',
           continent: data.continentAfrica
         }),
         city4: City.create({
           name: 'Libreville',
           image: 'http://www.travelmagma.com/uploads/images/0_319.jpg',
+          videoID: 'qmtYJAXADfk',
           continent: data.continentAfrica
         }),
         city5: City.create({
           name: 'Johannesburg',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Johannesburg_view_topofCC_03.jpg/220px-Johannesburg_view_topofCC_03.jpg',
+          videoID: '5WBe84VPlWg',
           continent: data.continentAfrica
         }),
         city6: City.create({
           name: 'Marrakesh',
           image: 'https://timedotcom.files.wordpress.com/2016/03/160314_tra_intl_marrakesh2.jpg',
+          videoId: '1igDO8h1Gz4',
           continent: data.continentAfrica
         }),
         city7: City.create({
           name: 'Cairo',
           image: 'https://frontera.net/wp-content/uploads/2017/01/Egypt-1-1-1-1-1-1-1-2-1.jpg',
+          videoID: 'O-YiOvZuzAg',
           continent: data.continentAfrica
         }),
         city8: City.create({
           name: 'Lagos',
           image: 'https://i1.wp.com/estateintel.com/wp-content/uploads/2017/06/DSC06402.jpg?resize=1000%2C480&ssl=1',
+          videoID: 'O-YiOvZuzAg',
           continent: data.continentAfrica
         }),
         city9: City.create({
           name: 'Giza',
           image: 'https://cdn.civitatis.com/egipto/el-cairo/galeria/giza.jpg',
+          videoID: 'QMc6wlAeNnM',
           continent: data.continentAfrica
         }),
         city10: City.create({
           name: 'Fes',
           image: 'https://c1.staticflickr.com/5/4284/35001088050_52fcd1cb66_b.jpg',
+          videoID: 'nZn-AXugSqM',
           continent: data.continentAfrica
         }),
         city11: City.create({
           name: 'Durban',
           image: 'https://www.100resilientcities.org/wp-content/uploads/2017/06/cities-durban_optimized.jpg',
+          videoID: 'iunHa_XS3-M',
           continent: data.continentAfrica
         }),
         city12: City.create({
           name: 'Pretoria',
           image: 'http://gauteng.hotelguide.co.za/images/pretoria-city-gauteng-590x390.jpg',
+          videoID: 'onZmnYpHFn4',
           continent: data.continentAfrica
         }),
         city13: City.create({
           name: 'Addis Ababa',
           image: 'https://media-cdn.tripadvisor.com/media/photo-s/0b/4a/26/d2/nure-beninne-mosque-of.jpg',
+          videoID: '3SArj4cXFgM',
           continent: data.continentAfrica
         }),
         city14: City.create({
           name: 'Dar El Salam',
           image: 'https://www.darelsalam.com/wp-content/uploads/2017/01/malaga.jpg',
+          videoID: 'CercrZcRe6E',
           continent: data.continentAfrica
         }),
         city15: City.create({
           name: 'Casablanca',
           image: 'https://www.moroccopedia.com/wp-content/uploads/2013/12/casablanca.jpg',
+          videoID: '6vmpa4Gr258',
           continent: data.continentAfrica
         }),
         city16: City.create({
           name: 'Luanda',
           image: 'https://image.iol.co.za/image/1/process/620x349?source=https://inm-baobab-prod-eu-west-1.s3.amazonaws.com/public/inm/media/2017/12/13/iol/881/LU.jpg',
+          videoID: 'ioEQHUuz23k',
           continent: data.continentAfrica
         }),
         city17: City.create({
           name: 'Tunis',
           image: 'https://www.mosaicnorthafrica.com/wp-content/uploads/2017/12/Tunis-Zitouna-Mosque.jpg',
+          videoID: 'bVHD5jj7rFk',
           continent: data.continentAfrica
         }),
         city18: City.create({
           name: 'Dakar',
           image: 'http://www.worldbank.org/content/dam/Worldbank/Feature%20Story/Africa/Senegal/sn-dakar-improving-revenue-for-better-urban-management-homepage-780x439.jpg',
+          videoID: 'dBcTJjXTOsw',
           continent: data.continentAfrica
         }),
         city19: City.create({
           name: 'Maputo',
           image: 'http://media.withtank.com/f22986db68/maputo_skyline3.0_460_wide.jpg',
+          videoID: '6vmpa4Gr258',
           continent: data.continentAfrica
         }),
         city20: City.create({
           name: 'Mombasa',
           image: 'https://www.jamiiforums.com/attachments/453530/',
+          videoID: '6_XUBKM3VGo',
           continent: data.continentAfrica
         }),
         city21: City.create({
           name: 'Port Elizabeth',
           image: 'http://www.bocadillos.co.za/wp-content/uploads/things-to-do-places-to-eat-in-port-elizabeth-sum1.jpg',
+          videoID: '9KMalzLeQ5g',
           continent: data.continentAfrica
         }),
         city22: City.create({
           name: 'Agadir',
           image: 'https://objects.airfrance.com/FR/common/common/img/tbaf/destinations/AGA/video/AGA-video-1_1-1024x1024.jpg',
+          videoID: 'BweHQyEbrdA',
           continent: data.continentAfrica
         }),
         city23: City.create({
           name: 'Rabat',
           image: 'https://s1.it.atcdn.net/wp-content/uploads/2017/03/iStock-513955511.jpg',
+          videoID: '5uFy1Xt4-_g',
           continent: data.continentAfrica
         }),
         city24: City.create({
           name: 'Tangier',
           image: 'https://lonelyplanetimages.imgix.net/a/g/hi/t/c9c57c0bf7bde0deb8936f0efd25843a-tangier.jpg?sharp=10&vib=20&w=1200',
+          videoID: '1WhOMO-adkk',
           continent: data.continentAfrica
         }),
         city25: City.create({
           name: 'Antananarivo',
           image: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Lake_Anosy%2C_Central_Antananarivo%2C_Capital_of_Madagascar%2C_Photo_by_Sascha_Grabow.jpg',
+          videoID: 'OAbjBjq1Bfc',
           continent: data.continentAfrica
         }),
         city26: City.create({
           name: 'Alexandria',
           image: 'https://i.redd.it/y1kjj5tg7aw01.jpg',
+          videoID: 'HSBRCytZFME',
           continent: data.continentAfrica
         }),
         city27: City.create({
           name: 'Stellenbosh',
           image: 'https://blog.aifsabroad.com/wp-content/uploads/2018/02/aifs-study-abroad-stellenbosch-south-africa-excursions.jpg',
+          videoID: 'J91WhoWshos',
           continent: data.continentAfrica
         }),
         city28: City.create({
           name: 'Algiers',
           image: 'https://i.guim.co.uk/img/static/sys-images/Travel/Pix/pictures/2010/9/3/1283518317883/City-of-Algiers-overlooki-006.jpg?width=300&quality=85&auto=format&fit=max&s=4239da0d66ccaaea8ee106b70c67b164',
+          videoID: 'cpDM1nJpbp0',
           continent: data.continentAfrica
         }),
         city29: City.create({
           name: 'Kampala',
           image: 'https://www.newvision.co.ug/w-images/7d3bd0c5-dcf4-4f1a-b255-52c38f09c8ff/2/Kampalaview-703x422.jpg',
+          videoID: 'YhwJZF-ZPco',
           continent: data.continentAfrica
         }),
         city30: City.create({
           name: 'Port Louis',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Port_Louis%2C_Mauritius.jpg/220px-Port_Louis%2C_Mauritius.jpg',
+          videoID: 'uyEEqzuTvDg',
           continent: data.continentAfrica
         }),
 
