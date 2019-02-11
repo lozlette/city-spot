@@ -10,19 +10,7 @@ class RegLoginModal extends React.Component{
   constructor(props){
     super(props)
 
-    this.state = {
-      postData: {
-        username: '',
-        email: '',
-        password: '',
-        passwordConfirmation: '',
-        firstName: '',
-        lastName: '',
-        image: '',
-        bio: ''
-      },
-      activeItem: this.props.tab
-    }
+
 
     this.handleItemClick = this.handleItemClick.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -92,5 +80,3 @@ class RegLoginModal extends React.Component{
     )
   }
 }
-
-export default RegLoginModal

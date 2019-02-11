@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { Segment, Menu, Dropdown, Button, Modal, Icon } from 'semantic-ui-react'
-import RegLoginModal from '../Auth/RegLoginModal'
 import Auth from '../../lib/Auth'
 
 
