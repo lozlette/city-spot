@@ -223,7 +223,7 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
         }),
         city35: City.create({
           name: 'Madrid',
-          image: 'http://s1.travix.com/eu/europe-spain-madrid-palace-medium.jpg',
+          image: 'https://media-cdn.tripadvisor.com/media/photo-s/15/60/83/89/home-to-the-kings-of.jpg',
           continent: data.continentEurope
         }),
         city36: City.create({

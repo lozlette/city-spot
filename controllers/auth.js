@@ -10,7 +10,7 @@ function registerRoute( req, res, next ) {
 }
 
 function loginRoute( req, res ) {
-  User.findOne({ email: req.body.email, verified: true })
+  User.findOne({ email: req.body.email })
     .then(user => {
       if(!user || !user.validatePassword(req.body.password)) {
         return res.status(401).json({ message: 'Unauthorized' })
