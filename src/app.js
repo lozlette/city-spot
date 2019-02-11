@@ -9,6 +9,8 @@ import UserShow from './components/Auth/UserShow'
 import CitiesShow from './components/Cities/CitiesShow'
 import CitiesIndex from './components/Cities/CitiesIndex'
 import ContinentsShow from './components/Continents/ContinentsShow'
+import Register from './components/Auth/Register'
+import Login from './components/Auth/Login'
 
 class App extends React.Component{
   constructor(){
@@ -26,6 +28,8 @@ class App extends React.Component{
             <Route path="/cities/:id" component={CitiesShow} />
             <Route path="/cities" component={CitiesIndex} />
             <Route path="/users/:id" component={UserShow} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route path="/continents/:id" component={ContinentsShow} />
             <Route path="/" component={Home} />
           </Switch>
