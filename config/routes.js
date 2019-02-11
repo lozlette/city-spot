@@ -19,7 +19,10 @@ router.get('/cities/:id/posts', postController.postIndex)
 router.get('/cities/:id/posts/:postId', postController.postShow)
 router.delete('/cities/:id/posts/:postId', secureRoute, postController.postDelete)
 router.put('/cities/:id/posts/:postId', secureRoute, postController.postUpdate)
+
 router.post('/cities/:id/posts/:postId/comments', secureRoute, postController.commentCreate)
+// router.put('/cities/:id/posts/:postId/comments/:commentId', secureRoute, postController.commentUpdate)
+// router.delete('/cities/:id/posts/:postId/comments/:commentId', secureRoute, postController.commentDelete)
 
 router.post('/cities/:id/posts/:postId/likes', likeController.likeCreate)
 router.get('/cities/:id/posts/:postId/likes', likeController.likeIndex)

@@ -40,6 +40,8 @@ class CitiesShow extends React.Component{
     axios
       .get(`/api/cities/${this.props.match.params.id}`)
       .then(res => this.setState({ city: res.data }))
+
+
   }
 
 
@@ -82,6 +84,10 @@ class CitiesShow extends React.Component{
               <Header as='h3'>
                     Number of user posts about this city:
                 <Header.Subheader> {city.posts.length} </Header.Subheader>
+              </Header>
+              <Header as='h3'>
+                    Weather in this city:
+                <Header.Subheader> Weather summary to go here </Header.Subheader>
               </Header>
             </Grid.Column>
 

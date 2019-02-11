@@ -37,7 +37,7 @@ class UserShow extends React.Component{
             </Segment>
           </Grid.Column>
           <Grid.Column width="9">
-            <Segment.Group id="top">
+            <Segment.Group id="topUserSegment">
               <Segment>
                 <Header as="h2">
                   <Icon name="user"></Icon>
@@ -62,6 +62,7 @@ class UserShow extends React.Component{
               </Segment>
               <Segment.Group>
                 <Segment>
+                User comments to go here...
                 </Segment>
               </Segment.Group>
             </Segment.Group>
