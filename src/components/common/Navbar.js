@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { Segment, Menu, Dropdown, Button, Modal, Icon } from 'semantic-ui-react'
-import RegLoginModal from '../Auth/RegLoginModal'
 import Auth from '../../lib/Auth'
 
 
@@ -19,6 +18,8 @@ class Navbar extends React.Component{
   handleItemClick(e, { name }){
     this.setState({ activeItem: name })
     if(name === 'home')this.props.history.push('/')
+    if(name === 'Login')this.props.history.push('/login')
+    if(name === 'Sign Up')this.props.history.push('/register')
     if(name === 'View All Cities')this.props.history.push('/cities')
     if(name === 'My Profile')this.props.history.push(`/users/${Auth.getUserID()}`)
   }
@@ -40,7 +41,7 @@ class Navbar extends React.Component{
               name='home'
               active={this.props.location.pathname === '/'}
               onClick={this.handleItemClick}
-              > Home
+              > <Icon name='home' /> Home
             </Menu.Item>
 
 
@@ -54,21 +55,15 @@ class Navbar extends React.Component{
           <Menu.Menu position='right'>
 
             {!Auth.isAuthenticated() && <Menu.Item
-              name='Sign Up'>
-              <Modal trigger={<Button inverted>Sign Up</Button>} closeIcon>
-                <Modal.Content>
-                  <RegLoginModal tab="Sign Up"/>
-                </Modal.Content>
-              </Modal>
-            </Menu.Item>}
+              name='Sign Up'
+              onClick={this.handleItemClick}
+              > <Icon name='add user' /> Sign Up
+              </Menu.Item>}
 
             {!Auth.isAuthenticated() && <Menu.Item
-              name='Log In'>
-              <Modal trigger={<Button inverted>Log In</Button>} closeIcon>
-                <Modal.Content>
-                  <RegLoginModal tab="Log In" />
-                </Modal.Content>
-              </Modal>
+              name='Login'
+              onClick={this.handleItemClick}
+              > <Icon name='user circle'/> Log In
             </Menu.Item>
             }
 
@@ -77,7 +72,7 @@ class Navbar extends React.Component{
             <Menu.Item
               name='My Profile'
               onClick={this.handleItemClick}
-            > My Profile
+            > <Icon name='user circle'/> My Profile
             </Menu.Item>
 
             }
@@ -87,7 +82,7 @@ class Navbar extends React.Component{
               <Menu.Item
                 name='Logout'
                 onClick={this.logout}
-              > Logout
+              > <Icon name='remove user' /> Logout
               </Menu.Item>
 
             }

@@ -10,7 +10,8 @@ const userSchema = new mongoose.Schema({
   bio: { type: String, maxlength: 200, required: true },
   password: { type: String, required: true },
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent' },
-  gender: { type: String }
+  gender: { type: String },
+  verified: { type: Boolean, default: false }
 })
 
 userSchema.virtual('posts', {

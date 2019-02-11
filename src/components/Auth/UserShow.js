@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Segment, Image, Grid, Header, Divider, Container, Card } from 'semantic-ui-react'
+import { Segment, Grid, Header, Icon } from 'semantic-ui-react'
 
 class UserShow extends React.Component{
   constructor(props){
@@ -15,44 +15,73 @@ class UserShow extends React.Component{
       .then(res => this.setState({ userData: res.data }))
   }
 
+  getStyle(userData) {
+    return {
+      width: 300,
+      height: 300,
+      backgroundImage: `url(${userData.image})`,
+      backgroundSize: 'cover'
+    }
+  }
+
   render(){
     if(!this.state.userData) return null
+    console.log(this.state.userData)
     const { userData } = this.state
     return(
       <div>
-        <Segment inverted color='teal' textAlign='center'>
-          <Divider hidden/>
-          <Image
-            src={userData.image}
-            size='medium'
-            circular
-            centered/>
-          <Divider hidden />
+        <Header as='h1' className='heading'>{userData.username}</Header>
+        <Grid columns={2}>
+          <Grid.Column width="6" id="divColumn">
+            <Segment circular id='circle' style={this.getStyle(userData)}>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width="9">
+            <Segment.Group id="top">
+              <Segment>
+                <Header as="h2">
+                  <Icon name="user"></Icon>
+                  {userData.firstName}{userData.lastName}
+                </Header>
+              </Segment>
+              <Segment>
+                <Header as='h3'> Bio </Header>
+              </Segment>
+              <Segment.Group>
+                <Segment>
+                  <p>{userData.bio} </p>
+                </Segment>
+              </Segment.Group>
+            </Segment.Group>
+            <Segment.Group>
+              <Segment>
+                <Header as='h3'>
+                  <Icon name="compose"></Icon>
+                  Your recent posts:
+                </Header>
+              </Segment>
+              <Segment.Group>
+                <Segment>
+                </Segment>
+              </Segment.Group>
+            </Segment.Group>
+            <Segment.Group>
+              <Segment>
+                <Header as='h3'> Your details: </Header>
+              </Segment>
+              <Segment.Group>
+                <Segment>
+                  <p>{userData.gender}</p>
+                  <p>{userData.email}</p>
+                  <p>{userData.continent}</p>
+                </Segment>
+              </Segment.Group>
+            </Segment.Group>
+          </Grid.Column>
+        </Grid>
 
-          <Grid columns={1}>
-            <Grid.Column>
-               <Header size='huge'> {userData.firstName} {userData.lastName} </Header>
-               <Header as='h3'> {userData.username} </Header>
-            </Grid.Column>
-          </Grid>
-        </Segment>
 
 
-      <Segment style={{ minHeight: 300 }} textAlign='center'>
-        <Divider section hidden />
-        <Container text>
-          <Header as='h3'> Bio </Header>
-          <p>{userData.bio} </p>
-        </Container>
-        <Divider hidden/>
-        <Container>
-          <Header as='h3'> Recent Posts by This User </Header>
-          <Grid columns={3}>
-
-          </Grid>
-        </Container>
-
-      </Segment>
       </div>
     )
   }
