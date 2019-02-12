@@ -5,6 +5,7 @@ import { Header, Divider, Segment, Container, Grid, Reveal } from 'semantic-ui-r
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import CitiesForecast from './CitiesForecast'
+import CitiesEvents from './CitiesEvents'
 import Auth from '../../lib/Auth'
 
 const style = (city) => {
@@ -103,6 +104,7 @@ class CitiesShow extends React.Component{
               <Divider hidden />
 
               <CitiesForecast cityName={city.name} />
+              <CitiesEvents cityName={city.name} />
             </Grid.Column>
 
             <Grid.Column width={5}>

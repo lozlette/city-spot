@@ -8,6 +8,7 @@ const authController = require('../controllers/auth')
 const likeController = require('../controllers/likes')
 const secureRoute = require('../lib/secureRoute')
 const forecastController = require('../controllers/forecasts')
+const eventsController = require('../controllers/events')
 
 router.post('/register', authController.register)
 router.post('/login', authController.login)
@@ -37,5 +38,6 @@ router.put('/users/:id', secureRoute, userController.update)
 router.delete('/users/:id', secureRoute, userController.delete)
 
 router.get('/forecast', forecastController.index)
+router.get('/events', eventsController.index)
 
 module.exports = router
