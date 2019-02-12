@@ -1,5 +1,4 @@
 
-
 #circle {
   margin-bottom: 10px;
   margin-top: 10px;
@@ -7,16 +6,18 @@
   align-items: center;
   justify-content: center;
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  width: 200px !important;
+  height: 200px !important;
 }
 
 #circle:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 #divColumn {
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #topUserSegment {
@@ -29,6 +30,10 @@ justify-content: center;
   font-family: 'Major Mono Display', monospace !important;
 }
 
+.city-spot {
+  color: white !important;
+}
+
 .segmentHeader {
   color: white !important;
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
@@ -36,11 +41,9 @@ justify-content: center;
 }
 
 .ui.header.heading {
-  background-color: #1b1c1d;
-  color: white !important;
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
   text-align: center;
-  font-size: 70px;
+  font-size: 150px;
   font-family: 'Major Mono Display', monospace;
   margin-bottom: 0;
   margin-top: 0;
@@ -48,14 +51,18 @@ justify-content: center;
 }
 
 .ui.header.heading2 {
-  background-color: #1b1c1d;
   color: white !important;
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
   text-align: center;
   font-size: 20px;
   font-family: 'Major Mono Display', monospace;
-  margin-bottom: 0;
-  margin-top: 0;
+
+}
+
+.ui.header.section {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .ui.grid>.row>.column {
@@ -63,17 +70,30 @@ justify-content: center;
   justify-content: center;
 }
 
+.section {
+  height: 760px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://www.whitecase.com/sites/whitecase/files/London_UnitedKingdom_Tablet_1920x960.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #cityHeader{
   font-size: 60px;
 }
 
+.search {
+  margin: 40px;
+}
 
 #feed{
   height: 450px;
   overflow: scroll;
 }
 
-body{
-  background-color: #BBDBF6;
-  height: 100vh;
+.ui.circular.segment {
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5));
+}
+
+.ui.active.embed>.placeholder {
+  display: flex;
 }
