@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './style.scss'
-
+// {<Route path="/cities/:id/forecast" component={CitiesForecast} />}
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import FlashMessages from './components/common/FlashMessages'
@@ -12,6 +12,7 @@ import CitiesIndex from './components/Cities/CitiesIndex'
 import ContinentsShow from './components/Continents/ContinentsShow'
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
+// import CitiesForecast from './components/Cities/CitiesForecast'
 
 class App extends React.Component{
   constructor(){
@@ -26,6 +27,7 @@ class App extends React.Component{
           <Navbar />
           <FlashMessages />
           <Switch>
+
             <Route path="/cities/:id" component={CitiesShow} />
             <Route path="/cities" component={CitiesIndex} />
             <Route path="/users/:id" component={UserShow} />

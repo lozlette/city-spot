@@ -1,9 +1,10 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Header, Divider, Segment, Container, Grid, Modal, Embed } from 'semantic-ui-react'
+import { Header, Divider, Segment, Container, Grid } from 'semantic-ui-react'
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
+import CitiesForecast from './CitiesForecast'
 import Auth from '../../lib/Auth'
 
 const style = (city) => {
@@ -33,7 +34,7 @@ class CitiesShow extends React.Component{
     axios
       .get(`/api/cities/${this.props.match.params.id}`)
       .then(res => this.setState({ city: res.data }))
-      .then(res => this.setState({reload: !this.state.reload}))
+      .then(() => this.setState({reload: !this.state.reload}))
   }
 
   componentDidMount(){
@@ -85,10 +86,7 @@ class CitiesShow extends React.Component{
                     Number of user posts about this city:
                 <Header.Subheader> {city.posts.length} </Header.Subheader>
               </Header>
-              <Header as='h3'>
-                    Weather in this city:
-                <Header.Subheader> Weather summary to go here </Header.Subheader>
-              </Header>
+              <CitiesForecast cityName={city.name} /> 
             </Grid.Column>
 
             <Grid.Column width={5}>
