@@ -38,7 +38,7 @@ class Login extends React.Component{
         this.props.history.push('/')
       })
       .catch(err => this.setState({ errors: err.response.data }))
-    }
+  }
 
 
   goToRegister(){
