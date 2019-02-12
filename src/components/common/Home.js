@@ -3,34 +3,36 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Favicon from 'react-favicon'
 
-import  { Grid, Segment, Header, Search } from 'semantic-ui-react'
-
+import  { Grid, Segment, Header, Search, Dropdown, Button, Form } from 'semantic-ui-react'
+// const countryOptions = [ { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' } ]
 class Home extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
     }
 
-    this.handleSearchChange = this.handleSearchChange.bind(this)
-    this.handleResultSelect = this.handleResultSelect.bind(this)
-
+    this.handleDropDown = this.handleDropDown.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
+
 
   componentDidMount(){
     axios.get('/api/continents')
       .then(res => this.setState({ continents: res.data }))
+
     axios.get('/api/cities')
-      .then(res => this.setState({ cities: res.data }))
+      .then(res => this.setState({ cities: res.data.map(city =>
+        ({ key: city.name, value: city._id, text: city.name })
+      ) }))
   }
 
-  handleSearchChange(e){
-    console.log(e.target.value)
+  handleSubmit(){
+    this.props.history.push(`/cities/${this.state.chosenCity}`)
   }
 
-  handleResultSelect(e) {
-    e.preventDefault()
-    this.setState({ cities: [e.target.value] })
+  handleDropDown(event, data){
+    this.setState({ chosenCity: data.value })
   }
 
   getStyle(continent) {
@@ -53,15 +55,19 @@ class Home extends React.Component {
         <Header className='section'>
           <Header as='h1' className='heading city-spot'>City Spot</Header>
           <Header as="h4" className='heading2'>Share the best spots from your travels</Header>
-          <Grid>
-            <Grid.Row centered>
-              <Search className='search' placeholder={'Find a city'} onSearchChange={this.handleSearchChange} onResultSelect={this.handleResultSelect}>
-                <ui>
-                  {this.state.cities.map(city => <li key={city._id}> {city.name} </li>)}
-                </ui>
-              </Search>
-            </Grid.Row>
-          </Grid>
+
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Field>
+              <Dropdown fluid search selection labeled
+                className='search'
+                placeholder={'Find a city'}
+                onChange={this.handleDropDown}
+                options={this.state.cities}>
+              </Dropdown>
+            </Form.Field>
+            <Button type='submit'>
+            </Button>
+          </Form>
 
           <Grid columns={6}>
             <Grid.Row className='section2'>
