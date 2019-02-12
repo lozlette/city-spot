@@ -5,7 +5,7 @@ import ReactFilestack from 'filestack-react'
 
 
 
-const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
+const RegisterForm = ({ handleChange, handleSubmit, postData, errors, imageSuccess, changeSuccess }) => {
 
 
   const errorMessages = Object.keys(errors).map(errorKey => {
@@ -18,6 +18,10 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
         <Divider hidden />
         <Segment color='blue'>
           <Icon name='add user' size='huge' />
+          {imageSuccess && <Message
+            success> Image Successfully Uploaded </Message>
+          }
+
           {errorMessages.length >0 && <Message
             error
             header='There was some errors with your submission'
@@ -82,20 +86,24 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
               />
             </Form.Field>
 
-            <Form.Field required>
-              <ReactFilestack
-                apikey={ `${process.env.FILE_STACK_KEY}` }
-                mode={'pick'}
-                onSuccess={(res) => handleChange({
-                  target: {
-                    name: 'image',
-                    value: res.filesUploaded[0].url
-                  }})}
-                onError={(e) => console.log(e)}
-                buttonText={'Add Image'}
-                buttonClass={'button is-rounded'}
-              />
-            </Form.Field>
+            {!imageSuccess &&
+              <Form.Field required>
+                <ReactFilestack
+                  apikey={ `${process.env.FILE_STACK_KEY}` }
+                  mode={'pick'}
+                  onSuccess={(res) => {
+                    changeSuccess()
+                    handleChange({
+                    target: {
+                      name: 'image',
+                      value: res.filesUploaded[0].url
+                    }})}}
+                  onError={(e) => console.log(e)}
+                  buttonText={'Add An Image'}
+                  buttonClass={'button is-rounded'}
+                />
+              </Form.Field>
+          }
 
             <Form.Field required>
               <label>Please Make a Bio</label>

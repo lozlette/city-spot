@@ -27,6 +27,7 @@ class Auth {
     const payload = this.getPayload()
     if(!payload) return false
     const now = Math.round(Date.now() / 1000)
+    if (now > payload.exp) removeToken()
     return now < payload.exp
   }
 

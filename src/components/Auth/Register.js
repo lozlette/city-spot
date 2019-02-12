@@ -12,12 +12,14 @@ class Register extends React.Component{
 
 
     this.state = {
+      imageSuccess: false,
       postData: {},
       errors: {}
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.changeSuccess = this.changeSuccess.bind(this)
   }
 
 
@@ -26,6 +28,11 @@ class Register extends React.Component{
     const postData = {...this.state.postData, [name]: value }
     const errors= {}
     this.setState({ postData, errors })
+  }
+
+  changeSuccess(){
+    console.log('changing state')
+    this.setState({ imageSuccess: true })
   }
 
   handleSubmit(e){
@@ -47,6 +54,8 @@ class Register extends React.Component{
 
 
           <RegisterForm
+            changeSuccess={this.changeSuccess}
+            imageSuccess={this.state.imageSuccess}
             errors={this.state.errors}
             postData={this.state.postData}
             handleSubmit={this.handleSubmit}
