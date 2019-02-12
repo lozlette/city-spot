@@ -3,8 +3,8 @@ import axios from 'axios'
 
 class CitiesEvents extends React.Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       events: {}
@@ -12,8 +12,11 @@ class CitiesEvents extends React.Component {
   }
 
   componentDidMount(){
-    axios.get(`/api/events?town=${this.props.cityName}`)
-      .then(res => this.setState({ events: res.data }))
+    axios.get(`/api/events?city=${this.props.cityName}`)
+      .then(res => {
+        this.setState({ events: res.data })
+
+      })
   }
 
 
@@ -24,13 +27,12 @@ class CitiesEvents extends React.Component {
 
   render(){
     if(!this.state.events.results) return null
-    console.log(this.state.events.results)
     return(
       <div>
-      {this.state.events.results.map(event =>
-        <h1 key={event.id}>{event.eventname}</h1>
+        {this.state.events.results.map(event =>
+          <h1 key={event.id}>{event.eventname}</h1>
 
-      )}
+        )}
       </div>
     )
   }

@@ -28,7 +28,7 @@ class CitiesIndex extends React.Component {
 
   render (){
     if(!this.state.cities) return null
-    console.log(this.state.cities)
+    // console.log(this.state.cities)
     return(
       <div>
         <Grid columns={4}>
