@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Button, Grid, Form, Input, Segment, Header, Icon } from 'semantic-ui-react'
+import { Divider, Button, Grid, Form, Input, Segment, Header, Icon, Message } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 import Flash from '../../lib/Flash'
@@ -11,10 +11,11 @@ class Login extends React.Component{
     super()
 
     this.state={
-      postData: {
-        email: '',
-        password: ''
-      }
+        postData:{
+          email: '',
+          password: ''
+        },
+        errors:{}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -36,8 +37,13 @@ class Login extends React.Component{
         Flash.setMessage('success', res.data.message)
         this.props.history.push('/')
       })
+<<<<<<< HEAD
       .catch(err => this.setState({ errors: err }))
   }
+=======
+      .catch(err => this.setState({ errors: err.response.data }))
+    }
+>>>>>>> development
 
   goToRegister(){
     this.props.history.push('/register')
@@ -51,6 +57,9 @@ class Login extends React.Component{
 
 
   render(){
+    const errorMessages = Object.keys(this.state.errors).map(errorKey => {
+      return this.state.errors[errorKey]
+    })
     const { postData } = this.state
     return(
       <Grid columns={1} textAlign='center'>
@@ -58,6 +67,13 @@ class Login extends React.Component{
           <Divider hidden/>
           <Segment color="blue">
             <Icon name='user circle' size='huge' />
+
+            {errorMessages.length >0 && <Message
+              error
+              header='There was some errors with your submission'
+              list={errorMessages}
+              />}
+
             <Form onSubmit={this.handleSubmit}>
               <Divider hidden />
               <Form.Field>

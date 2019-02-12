@@ -1,9 +1,10 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Header, Divider, Segment, Container, Grid, Modal, Embed, Reveal, Image } from 'semantic-ui-react'
+import { Header, Divider, Segment, Container, Grid, Reveal } from 'semantic-ui-react'
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
+import CitiesForecast from './CitiesForecast'
 import Auth from '../../lib/Auth'
 
 const style = (city) => {
@@ -37,7 +38,7 @@ class CitiesShow extends React.Component{
     axios
       .get(`/api/cities/${this.props.match.params.id}`)
       .then(res => this.setState({ city: res.data }))
-      .then(res => this.setState({reload: !this.state.reload}))
+      .then(() => this.setState({reload: !this.state.reload}))
   }
 
   componentDidMount(){
@@ -53,11 +54,10 @@ class CitiesShow extends React.Component{
   render(){
     Auth.isAuthenticated()
     if(!this.state.city) return <h1> Loading... </h1>
-    console.log(this.state.city.videoID)
     const { city } = this.state
     return(
       <div>
-        <Container textAlign='center'>
+        <Container id='cities-show' textAlign='center'>
           <Divider hidden section/>
           <Header id='cityHeader' size='huge'> {city.name} </Header>
           <Divider />
@@ -72,22 +72,18 @@ class CitiesShow extends React.Component{
                 </Reveal.Content>
 
                 <Reveal.Content hidden>
-                  <Segment circular style={style()}>
-                    <Header as='h3'>
+                  <Segment inverted circular style={style()}>
+                    <Header inverted as='h3'>
                         Population
                       <Header.Subheader> 2,500,000 </Header.Subheader>
                     </Header>
-                    <Header as='h3'>
+                    <Header inverted as='h3'>
                         Region
                       <Header.Subheader> {city.continent.name} </Header.Subheader>
                     </Header>
-                    <Header as='h3'>
+                    <Header inverted as='h3'>
                         Number of user posts about this city:
                       <Header.Subheader> {city.posts.length} </Header.Subheader>
-                    </Header>
-                    <Header as='h3'>
-                        Weather in this city:
-                      <Header.Subheader> Weather summary to go here </Header.Subheader>
                     </Header>
                   </Segment>
                 </Reveal.Content>
@@ -102,33 +98,19 @@ class CitiesShow extends React.Component{
               </Grid>
             </Grid.Column>
 
-            <Grid.Column textAlign='left' width={5}>
+            <Grid.Column textAlign='left' width={4}>
               <Divider hidden />
-              <Header as='h3'>
-                    Population
-                <Header.Subheader> 2,500,000 </Header.Subheader>
-              </Header>
-              <Header as='h3'>
-                    Region
-                <Header.Subheader> {city.continent.name} </Header.Subheader>
-              </Header>
-              <Header as='h3'>
-                    Number of user posts about this city:
-                <Header.Subheader> {city.posts.length} </Header.Subheader>
-              </Header>
-              <Header as='h3'>
-                    Weather in this city:
-                <Header.Subheader> Weather summary to go here </Header.Subheader>
-              </Header>
+
+              <CitiesForecast cityName={city.name} />
             </Grid.Column>
 
-            <Grid.Column width={5}>
-              <Segment>
+            <Grid.Column width={6}>
+              <div>
                 <PostsSection
                   reload={this.reload}
                   city={city}
                 />
-              </Segment>
+              </div>
             </Grid.Column>
           </Grid>
 
