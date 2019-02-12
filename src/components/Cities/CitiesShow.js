@@ -105,12 +105,12 @@ class CitiesShow extends React.Component{
             </Grid.Column>
 
             <Grid.Column width={5}>
-              <Segment>
+              <div>
                 <PostsSection
                   reload={this.reload}
                   city={city}
                 />
-              </Segment>
+              </div>
             </Grid.Column>
           </Grid>
 

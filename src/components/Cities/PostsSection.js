@@ -32,6 +32,7 @@ class PostsSection extends React.Component{
     this.handleChangeComment = this.handleChangeComment.bind(this)
     this.handleSubmitComment = this.handleSubmitComment.bind(this)
     this.handleOpen = this.handleOpen.bind(this)
+    this.deletePost = this.deletePost.bind(this)
   }
 
   handleChangePost({ target: {name, value }}) {
@@ -64,6 +65,12 @@ class PostsSection extends React.Component{
       })
       .then(this.props.reload)
       .catch(err => alert(err.message))
+  }
+
+  deletePost(e, postId){
+    axios.delete(`/api/cities/${this.props.match.params.id}/posts/${postId}`)
+    .then(() => this.props.reload())
+    .catch(err => console.log(err.response))
   }
 
   handleOpen(){
@@ -113,6 +120,7 @@ class PostsSection extends React.Component{
         <Feed id="feed">
           {posts.slice().reverse().map((post, index) =>
               <PostsFeedBlock
+                deletePost={this.deletePost}
                 text={this.state.commentText.text}
                 commentError={this.state.commentError}
                 handleChangePost={this.handleChangePost}

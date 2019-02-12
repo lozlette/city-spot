@@ -7,7 +7,7 @@ import Auth from '../../lib/Auth'
 
 const PostsFeedBlock = ({ text, city, post, index,
                         handleChangePost, handleChangeComment,
-                        handleSubmitComment ,commentError }) => {
+                        handleSubmitComment ,commentError, deletePost }) => {
   return(
     <Feed.Event>
       <Feed.Label image={post.image} />
@@ -29,7 +29,7 @@ const PostsFeedBlock = ({ text, city, post, index,
       </Feed.Content>
 
       {Auth.isAuthenticated() && (post.user._id === Auth.getUserID()) &&
-        <Button negative icon >
+        <Button onClick={(e) => deletePost(e, post._id)} negative icon >
           <Icon name='trash' />
         </Button>
       }
