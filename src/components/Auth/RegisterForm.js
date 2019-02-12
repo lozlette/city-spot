@@ -1,5 +1,8 @@
 import React from 'react'
 import { Segment, Grid, Form, Input, Divider, Button, TextArea, Container, Icon, Header, Message } from 'semantic-ui-react'
+import ReactFilestack from 'filestack-react'
+
+
 
 
 
@@ -81,11 +84,17 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
             </Form.Field>
 
             <Form.Field required>
-              <label>Profile Image</label>
-              <Input size='large'
-                name='image'
-                onChange={handleChange}
-                placeholder='Image link'
+              <ReactFilestack
+                apikey={ `${process.env.FILE_STACK_KEY}` }
+                mode={'pick'}
+                onSuccess={(res) => handleChange({
+                  target: {
+                    name: 'image',
+                    value: res.filesUploaded[0].url
+                  }})}
+                onError={(e) => console.log(e)}
+                buttonText={'Add Image'}
+                buttonClass={'button is-rounded'}
               />
             </Form.Field>
 
