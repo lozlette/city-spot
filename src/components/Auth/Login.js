@@ -49,6 +49,7 @@ class Login extends React.Component{
     return(
       <Grid columns={1} textAlign='center'>
         <Grid.Column width={5}>
+          <Divider hidden/>
           <Segment color="blue">
             <Icon name='user circle' size='huge' />
             <Form onSubmit={this.handleSubmit}>

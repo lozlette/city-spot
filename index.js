@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+mongoose.plugin(require('mongoose-unique-validator'))
 const errorHandler = require('./lib/errorHandler')
 
 
@@ -17,3 +18,5 @@ app.use('/api', routes)
 app.use(errorHandler)
 
 app.listen(process.env.PORT, () => console.log(`Up and running on port ${process.env.PORT}`))
+
+module.exports = app

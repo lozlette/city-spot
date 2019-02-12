@@ -10,8 +10,8 @@ const commentSchema = new mongoose.Schema({
 const postSchema = new mongoose.Schema({
   city: { type: mongoose.Schema.ObjectId, ref: 'City' },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  image: { type: String, required: true },
-  caption: { type: String, required: true },
+  image: { type: String, required: 'Please add an image'},
+  caption: { type: String, required: 'Please add a caption' },
   comments: [commentSchema]
 },{
   timestamps: true

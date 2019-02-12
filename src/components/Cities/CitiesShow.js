@@ -1,23 +1,31 @@
 import React from 'react'
 import axios from 'axios'
 
+<<<<<<< HEAD
 import { Header, Divider, Segment, Container, Grid } from 'semantic-ui-react'
+=======
+import { Header, Divider, Segment, Container, Grid, Modal, Embed, Reveal, Image } from 'semantic-ui-react'
+>>>>>>> development
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import CitiesForecast from './CitiesForecast'
 import Auth from '../../lib/Auth'
 
 const style = (city) => {
-  return({
+
+  if(city) return({
     width: 350,
     height: 350,
     backgroundImage: `url(${city.image})`,
     backgroundSize: 'cover'
   })
+  else return({
+    width: 350,
+    height: 350,
+    backgroundColor: 'lightblue'
+  })
 }
 
-
-const videoId = 'lJ87yD_8u3U'
 
 
 class CitiesShow extends React.Component{
@@ -50,6 +58,7 @@ class CitiesShow extends React.Component{
   render(){
     Auth.isAuthenticated()
     if(!this.state.city) return <h1> Loading... </h1>
+    console.log(this.state.city.videoID)
     const { city } = this.state
     return(
       <div>
@@ -61,13 +70,39 @@ class CitiesShow extends React.Component{
 
           <Grid columns={3}>
             <Grid.Column width={6}>
-              <Segment circular style={style(city)}>
-              </Segment>
+
+              <Reveal animated='move'>
+                <Reveal.Content visible>
+                  <Segment circular style={style(city)}></Segment>
+                </Reveal.Content>
+
+                <Reveal.Content hidden>
+                  <Segment circular style={style()}>
+                    <Header as='h3'>
+                        Population
+                      <Header.Subheader> 2,500,000 </Header.Subheader>
+                    </Header>
+                    <Header as='h3'>
+                        Region
+                      <Header.Subheader> {city.continent.name} </Header.Subheader>
+                    </Header>
+                    <Header as='h3'>
+                        Number of user posts about this city:
+                      <Header.Subheader> {city.posts.length} </Header.Subheader>
+                    </Header>
+                    <Header as='h3'>
+                        Weather in this city:
+                      <Header.Subheader> Weather summary to go here </Header.Subheader>
+                    </Header>
+                  </Segment>
+                </Reveal.Content>
+              </Reveal>
+
               <Divider  hidden/>
 
               <Grid columns={2}>
                 <Grid.Column>
-                  <VidModal videoId={videoId}/>
+                  <VidModal videoId={city.videoID}/>
                 </Grid.Column>
               </Grid>
             </Grid.Column>
