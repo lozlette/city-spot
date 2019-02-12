@@ -30,7 +30,7 @@ const PostsFeedBlock = ({ text, city, post, index,
 
       {Auth.isAuthenticated() && (post.user._id === Auth.getUserID()) &&
         <Button negative icon >
-        <Icon name='trash' />
+          <Icon name='trash' />
         </Button>
       }
       <hr />
