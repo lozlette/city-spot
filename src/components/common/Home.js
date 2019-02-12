@@ -9,9 +9,7 @@ class Home extends React.Component {
   constructor() {
     super()
 
-    this.state = {
-
-    }
+    this.state = {}
   }
 
   componentDidMount(){
@@ -24,6 +22,7 @@ class Home extends React.Component {
       width: 300,
       height: 300,
       backgroundImage: `url(${continent.image})`,
+      border: '1px solid black',
       backgroundSize: 'cover'
     }
   }
@@ -35,8 +34,8 @@ class Home extends React.Component {
         <Favicon url="https://i2.wp.com/blog.jackhake.com/wp-content/uploads/2017/08/cropped-globe-favicon.png?fit=512%2C512"/>
 
         <Header className='section'>
-          <Header as='h1' className='heading'>City Spot</Header>
-          <Header as="h4" className='heading2'>Post your favourite spot!</Header>
+          <Header as='h1' className='heading city-spot'>City Spot</Header>
+          <Header as="h4" className='heading2'>Share the best spots from your travels</Header>
           <Grid>
             <Grid.Row centered>
               <Search className='search' placeholder={'Find a city'}> </Search>
