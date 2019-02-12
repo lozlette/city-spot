@@ -5,7 +5,6 @@ import ReactFilestack from 'filestack-react'
 
 
 
-
 const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
 
 
