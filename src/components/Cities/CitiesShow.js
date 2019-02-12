@@ -1,11 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-<<<<<<< HEAD
-import { Header, Divider, Segment, Container, Grid } from 'semantic-ui-react'
-=======
-import { Header, Divider, Segment, Container, Grid, Modal, Embed, Reveal, Image } from 'semantic-ui-react'
->>>>>>> development
+import { Header, Divider, Segment, Container, Grid, Reveal } from 'semantic-ui-react'
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import CitiesForecast from './CitiesForecast'
@@ -121,7 +117,7 @@ class CitiesShow extends React.Component{
                     Number of user posts about this city:
                 <Header.Subheader> {city.posts.length} </Header.Subheader>
               </Header>
-              <CitiesForecast cityName={city.name} /> 
+              <CitiesForecast cityName={city.name} />
             </Grid.Column>
 
             <Grid.Column width={5}>
