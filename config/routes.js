@@ -21,7 +21,7 @@ router.delete('/cities/:id/posts/:postId', secureRoute, postController.postDelet
 router.put('/cities/:id/posts/:postId', secureRoute, postController.postUpdate)
 
 router.post('/cities/:id/posts/:postId/comments', secureRoute, postController.commentCreate)
-// router.put('/cities/:id/posts/:postId/comments/:commentId', secureRoute, postController.commentUpdate)
+router.put('/cities/:id/posts/:postId/comments/:commentId', secureRoute, postController.commentUpdate)
 // router.delete('/cities/:id/posts/:postId/comments/:commentId', secureRoute, postController.commentDelete)
 
 router.post('/cities/:id/posts/:postId/likes', likeController.likeCreate)

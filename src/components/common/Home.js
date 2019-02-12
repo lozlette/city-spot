@@ -9,12 +9,28 @@ class Home extends React.Component {
   constructor() {
     super()
 
-    this.state = {}
+    this.state = {
+    }
+
+    this.handleSearchChange = this.handleSearchChange.bind(this)
+    this.handleResultSelect = this.handleResultSelect.bind(this)
+
   }
 
   componentDidMount(){
     axios.get('/api/continents')
       .then(res => this.setState({ continents: res.data }))
+    axios.get('/api/cities')
+      .then(res => this.setState({ cities: res.data }))
+  }
+
+  handleSearchChange(e){
+    console.log(e.target.value)
+  }
+
+  handleResultSelect(e) {
+    e.preventDefault()
+    this.setState({ cities: [e.target.value] })
   }
 
   getStyle(continent) {
@@ -28,7 +44,8 @@ class Home extends React.Component {
   }
 
   render(){
-    if(!this.state.continents) return null
+    if(!this.state.cities) return null
+    console.log(this.state.cities)
     return(
       <div>
         <Favicon url="https://i2.wp.com/blog.jackhake.com/wp-content/uploads/2017/08/cropped-globe-favicon.png?fit=512%2C512"/>
@@ -38,7 +55,11 @@ class Home extends React.Component {
           <Header as="h4" className='heading2'>Share the best spots from your travels</Header>
           <Grid>
             <Grid.Row centered>
-              <Search className='search' placeholder={'Find a city'}> </Search>
+              <Search className='search' placeholder={'Find a city'} onSearchChange={this.handleSearchChange} onResultSelect={this.handleResultSelect}>
+                <ui>
+                  {this.state.cities.map(city => <li key={city._id}> {city.name} </li>)}
+                </ui>
+              </Search>
             </Grid.Row>
           </Grid>
 
