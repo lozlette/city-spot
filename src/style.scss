@@ -93,3 +93,23 @@
 .ui.active.embed>.placeholder {
   display: flex;
 }
+
+form.ui.form {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+div.search.selection {
+  margin: auto;
+}
+
+.button {
+    margin: auto;
+    width: 20%;
+    padding: 3%;
+}
+
+.input-center {
+  display: flex;
+  align-self: center;
+}

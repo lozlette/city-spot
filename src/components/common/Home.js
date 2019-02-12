@@ -39,8 +39,8 @@ class Home extends React.Component {
     return {
       width: 300,
       height: 300,
-      backgroundImage: `url(${continent.image})`,
-      border: '1px solid black',
+      backgroundImage: `linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url(${continent.image})`,
+      border: '1px solid white',
       backgroundSize: 'cover'
     }
   }
@@ -65,7 +65,8 @@ class Home extends React.Component {
                 options={this.state.cities}>
               </Dropdown>
             </Form.Field>
-            <Button type='submit'>
+            <Button className='button' type='submit'>
+            Search
             </Button>
           </Form>
 
