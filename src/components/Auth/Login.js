@@ -37,13 +37,13 @@ class Login extends React.Component{
         Flash.setMessage('success', res.data.message)
         this.props.history.push('/')
       })
-<<<<<<< HEAD
+
       .catch(err => this.setState({ errors: err }))
   }
-=======
+
       .catch(err => this.setState({ errors: err.response.data }))
     }
->>>>>>> development
+
 
   goToRegister(){
     this.props.history.push('/register')
