@@ -2,6 +2,8 @@ import React from 'react'
 import { Comment, Modal, Image, Form, Button, Header, Segment, Divider, Message } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
+import moment from 'moment'
+
 const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeComment, post }) => {
   return(
     <Modal trigger={<a>Click to view post</a>}>
@@ -30,7 +32,7 @@ const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeCo
                       </Comment.Author>
 
                       <Comment.Metadata>
-                        <div>{comment.createdAt}</div>
+                        <div>{moment(comment.createdAt).format('dddd HH:mm')}</div>
                       </Comment.Metadata>
                       <Comment.Text>{comment.text}</Comment.Text>
                     </Comment.Content>
