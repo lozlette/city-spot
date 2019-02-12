@@ -56,7 +56,7 @@ class Home extends React.Component {
           <Header as='h1' className='heading city-spot'>City Spot</Header>
           <Header as="h4" className='heading2'>Share the best spots from your travels</Header>
 
-          <Form onSubmit={this.handleSubmit}>
+          <Form id="homeForm" onSubmit={this.handleSubmit}>
             <Form.Field>
               <Dropdown fluid search selection labeled
                 className='search'

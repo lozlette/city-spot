@@ -94,7 +94,7 @@
   display: flex;
 }
 
-form.ui.form {
+form#homeForm {
   width: 50%;
   text-align: center;
   margin: 0 auto;
@@ -112,6 +112,7 @@ div.search.selection {
 .input-center {
   display: flex;
   align-self: center;
+}
 
 #delete-button{
   height: 10px;
@@ -119,5 +120,4 @@ div.search.selection {
 
 #cities-show{
   width: 85%;
->>>>>>> development
 }
