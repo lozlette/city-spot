@@ -7,10 +7,9 @@ import moment from 'moment'
 const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeComment, post }) => {
   return(
     <Modal trigger={<a>Click to view post</a>}>
-
         <Modal.Content image>
           <Image wrapped size='large' src={post.image} />
-          <Modal.Description>
+          <Modal.Description style={{width: '350px'}}>
               <Link to={`/users/${post.user._id}`}>
                 <Header as='h3'>
                   <Image src={post.user.image} avatar/>
