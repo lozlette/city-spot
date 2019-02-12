@@ -14,27 +14,27 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
       return Promise.props({
         continentAfrica: Continent.create({
           name: 'Africa',
-          image: 'https://www.uticaphoenix.net/wp-content/uploads/2017/05/05-18-2017-clipart-africa.png'
+          image: 'https://cdn.notonthehighstreet.com/fs/8e/f9/0113-c0b7-429d-9b2c-ef0f381ab881/original_africa-the-middle-east-map-fine-art-giclee-print.jpg'
         }),
         continentEurope: Continent.create({
           name: 'Europe',
-          image: 'http://i.imgur.com/dPidNXr.jpg'
+          image: 'https://cdn.notonthehighstreet.com/fs/58/fc/347a-72bc-4875-9ef9-ede59a7d68f5/original_europe-map-fine-art-giclee-print.jpg'
         }),
         continentNorthAmerica: Continent.create({
           name: 'North America',
-          image: 'https://i.pinimg.com/originals/fe/59/ba/fe59ba287b112557dc19fa0d9e997659.png'
+          image: 'https://st2.depositphotos.com/2198102/7301/v/950/depositphotos_73018123-stock-illustration-watercolor-map-of-north-america.jpg'
         }),
         continentSouthAmerica: Continent.create({
           name: 'South America',
-          image: 'https://upload.wikimedia.org/wikipedia/en/e/ef/Flags_south_america.png'
+          image: 'https://cdn.notonthehighstreet.com/fs/e5/e0/3126-101a-4dcc-bcbd-204a71df75e4/original_south-america-map-fine-art-giclee-print.jpg'
         }),
         continentOceania: Continent.create({
           name: 'Oceania',
-          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Map_of_Oceania_with_flags.svg/1200px-Map_of_Oceania_with_flags.svg.png'
+          image: 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/australia-paint-splashes-map-michael-tompsett.jpg'
         }),
         continentAsia: Continent.create({
           name: 'Asia',
-          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Map_of_Asia_with_flags.svg/2000px-Map_of_Asia_with_flags.svg.png'
+          image: 'https://cdn.notonthehighstreet.com/fs/a9/7c/e5f3-9eae-4aaf-96e6-23d365bd861b/original_asia-map-fine-art-giclee-print.jpg'
         })
       })
     })
