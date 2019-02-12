@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: 'Please enter a password' },
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent' },
   gender: { type: String },
-  verified: { type: Boolean, default: false }
+  verified: { type: Boolean, default: true }
 })
 
 userSchema.virtual('posts', {
@@ -36,6 +36,16 @@ userSchema.pre('validate', function checkPasswordMatch(next){
   next()
 
 })
+
+userSchema.pre('validate', function generateConfirmCode(next) {
+  if(this.isModified('email')) {
+    this.confirmCode = Math.random().toString(16).substr(2)
+  }
+
+  next()
+
+})
+
 
 userSchema.pre('save', function hashPassword(next) {
   if(this.isModified('password')) {

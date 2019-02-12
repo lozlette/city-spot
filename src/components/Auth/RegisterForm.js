@@ -20,7 +20,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
             error
             header='There was some errors with your submission'
             list={errorMessages}
-            />}
+          />}
           <Form onSubmit={handleSubmit} >
 
 

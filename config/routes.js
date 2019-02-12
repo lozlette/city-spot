@@ -7,9 +7,15 @@ const postController = require('../controllers/posts')
 const authController = require('../controllers/auth')
 const likeController = require('../controllers/likes')
 const secureRoute = require('../lib/secureRoute')
+// const passwordReset = require('../lib/passwordReset')
 
 router.post('/register', authController.register)
 router.post('/login', authController.login)
+
+router.post('/resetpassword/', authController.passwordReset) // entering Email
+router.post('/resetpassword/:id', authController.passwordReset) // confirming email
+// router.put('/newpassword', authController.newPassword)
+
 
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)
@@ -32,7 +38,7 @@ router.get('/continents/:id', continentController.show)
 
 router.get('/users', userController.index)
 router.get('/users/:id', userController.show)
-router.put('/users/:id', secureRoute, userController.update)
+router.put('/users/:id', userController.update)
 router.delete('/users/:id', secureRoute, userController.delete)
 
 module.exports = router

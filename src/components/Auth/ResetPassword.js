@@ -6,19 +6,17 @@ import Flash from '../../lib/Flash'
 import axios from 'axios'
 
 
-class Login extends React.Component{
+class ResetPassword extends React.Component{
   constructor(){
     super()
 
     this.state={
       postData: {
-        email: '',
-        password: ''
+        email: ''
       }
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.goToRegister = this.goToRegister.bind(this)
     this.goToSendEmail = this.goToSendEmail.bind(this)
   }
 
@@ -30,7 +28,7 @@ class Login extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    axios.post('/api/login', this.state.postData)
+    axios.post('/api/resetpassword', this.state.postData)
       .then(res => {
         Auth.setToken(res.data.token)
         Flash.setMessage('success', res.data.message)
@@ -39,15 +37,9 @@ class Login extends React.Component{
       .catch(err => this.setState({ errors: err }))
   }
 
-  goToRegister(){
-    this.props.history.push('/register')
+  goToSendEmail(){
+    this.props.history.push('/restepassword/:id')
   }
-
-  goToSendEmail(){   // changed
-    this.props.history.push('/resetpassword')
-  }
-
-
 
 
   render(){
@@ -61,7 +53,7 @@ class Login extends React.Component{
             <Form onSubmit={this.handleSubmit}>
               <Divider hidden />
               <Form.Field>
-                <label>Your Email</label>
+                <label>Please enter your Email Address</label>
                 <Input
                   value={postData.email}
                   onChange={this.handleChange}
@@ -69,22 +61,9 @@ class Login extends React.Component{
                   name='email'
                 />
               </Form.Field>
-              <Form.Field>
-                <label>Your Password</label>
-                <Input
-                  value={postData.password}
-                  onChange={this.handleChange}
-                  type='password'
-                  placeholder='Password'
-                  name='password'
-                />
-              </Form.Field>
               <Divider hidden/>
-              <Button fluid content="Log In" primary />
+              <Button fluid content="Send Email" primary />
             </Form>
-            <a href='#' onClick={this.goToRegister}> Need have an account? Click Here to Sign Up. </a>
-            <br />
-            <a href='#' onClick={this.goToSendEmail}> Forgot password? </a>
           </Segment>
         </Grid.Column>
       </Grid>
@@ -93,4 +72,4 @@ class Login extends React.Component{
 }
 
 
-export default withRouter(Login)
+export default withRouter(ResetPassword)

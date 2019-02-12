@@ -34,7 +34,7 @@ class Register extends React.Component{
     axios.post('/api/register', this.state.postData)
       .then(res => this.setState({ success: true }))
       .catch(err => this.setState({ errors: err.response.data }))
-    }
+  }
 
   goToLogin(){
     this.props.history.push('/login')
@@ -71,8 +71,8 @@ class Register extends React.Component{
             postData={this.state.postData}
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}
-        />}
-    </Container>
+          />}
+      </Container>
     )
   }
 }
