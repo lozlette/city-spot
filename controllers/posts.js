@@ -21,6 +21,7 @@ function postShowRoute(req, res, next) {
   Post
     .findById(req.params.postId)
     .populate('user comments.user likes')
+    .populate({ path: 'city', select: 'name' })
     .then(post => res.json(post))
     .catch(next)
 }
