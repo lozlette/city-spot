@@ -73,22 +73,18 @@ class CitiesShow extends React.Component{
                 </Reveal.Content>
 
                 <Reveal.Content hidden>
-                  <Segment circular style={style()}>
-                    <Header as='h3'>
+                  <Segment inverted circular style={style()}>
+                    <Header inverted as='h3'>
                         Population
                       <Header.Subheader> 2,500,000 </Header.Subheader>
                     </Header>
-                    <Header as='h3'>
+                    <Header inverted as='h3'>
                         Region
                       <Header.Subheader> {city.continent.name} </Header.Subheader>
                     </Header>
-                    <Header as='h3'>
+                    <Header inverted as='h3'>
                         Number of user posts about this city:
                       <Header.Subheader> {city.posts.length} </Header.Subheader>
-                    </Header>
-                    <Header as='h3'>
-                        Weather in this city:
-                      <Header.Subheader> Weather summary to go here </Header.Subheader>
                     </Header>
                   </Segment>
                 </Reveal.Content>
@@ -105,18 +101,7 @@ class CitiesShow extends React.Component{
 
             <Grid.Column textAlign='left' width={5}>
               <Divider hidden />
-              <Header as='h3'>
-                    Population
-                <Header.Subheader> 2,500,000 </Header.Subheader>
-              </Header>
-              <Header as='h3'>
-                    Region
-                <Header.Subheader> {city.continent.name} </Header.Subheader>
-              </Header>
-              <Header as='h3'>
-                    Number of user posts about this city:
-                <Header.Subheader> {city.posts.length} </Header.Subheader>
-              </Header>
+
               <CitiesForecast cityName={city.name} />
             </Grid.Column>
 

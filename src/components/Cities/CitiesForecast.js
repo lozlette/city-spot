@@ -1,7 +1,9 @@
 import React from 'react'
 import axios from 'axios'
+import moment from 'moment'
 
-import { Header } from 'semantic-ui-react'
+
+import { Header, Grid, Container } from 'semantic-ui-react'
 
 class CitiesForecast extends React.Component {
 
@@ -11,6 +13,7 @@ class CitiesForecast extends React.Component {
     this.state = {
       forecast: {}
     }
+
   }
 
   componentDidMount(){
@@ -22,15 +25,39 @@ class CitiesForecast extends React.Component {
 
 
   render(){
-    if(!this.state.forecast) return null
-    console.log(this.state.forecast)
+    if(!this.state.forecast.data) return null
+    console.log(this.state.forecast.data)
     return(
-      <Header as='h3'>
-          Weekly weather forecast:
-        <Header.Subheader>
-          {this.state.forecast.summary}
-        </Header.Subheader>
-      </Header>
+      <Container>
+        <Header as='h3'>
+          Weekly weather forecast in {this.props.cityName}:
+          <Header.Subheader>
+            {this.state.forecast.summary}
+          </Header.Subheader>
+        </Header>
+
+
+        {this.state.forecast.data.map(day =>
+          <Grid.Row key={day.time}>
+            <Grid columns={3}>
+              <Grid.Column>
+                {moment.unix(day.time).format('dddd')}
+              </Grid.Column>
+              <Grid.Column>
+                {Math.round(day.temperatureLow)}ºC
+              / {Math.round(day.temperatureHigh)}ºC
+              </Grid.Column>
+              <Grid.Column>
+
+              </Grid.Column>
+            </Grid>
+          </Grid.Row>
+        )}
+
+
+      </Container>
+
+
     )
   }
 }
