@@ -2,20 +2,14 @@ import React from 'react'
 import  { Form, Segment, Button, Header, Icon } from 'semantic-ui-react'
 
 
-const PostFormModal = ({ handleChangePost, handleSubmitPost, postData, finished }) => {
+const PostFormModal = ({ handleChangePost, handleSubmitPost, postData }) => {
 
-  if(finished)return(
-    <Segment textAlign="center">
-      <Header as='h2'icon>
-        <Icon name='check' />
-          Your Post Was Successful
-      </Header>
-    </Segment>
-  )
+  
 
 
 
   return(
+
     <Segment>
       <Form onSubmit={handleSubmitPost}>
         <Form.Field>

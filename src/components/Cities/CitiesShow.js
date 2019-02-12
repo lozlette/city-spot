@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Header, Divider, Segment, Container, Grid, Modal, Embed, Reveal, Image } from 'semantic-ui-react'
+import { Header, Divider, Segment, Container, Grid, Modal, Reveal } from 'semantic-ui-react'
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import Auth from '../../lib/Auth'
@@ -56,7 +56,6 @@ class CitiesShow extends React.Component{
   render(){
     Auth.isAuthenticated()
     if(!this.state.city) return <h1> Loading... </h1>
-    console.log(this.state.city.videoID)
     const { city } = this.state
     return(
       <div>
