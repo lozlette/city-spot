@@ -22,9 +22,6 @@ const style = (city) => {
 }
 
 
-const videoID = ''
-//lJ87yD_8u3U
-
 
 class CitiesShow extends React.Component{
   constructor(){
@@ -69,32 +66,32 @@ class CitiesShow extends React.Component{
           <Grid columns={3}>
             <Grid.Column width={6}>
 
-            <Reveal animated='move'>
-              <Reveal.Content visible>
-                <Segment circular style={style(city)}></Segment>
-              </Reveal.Content>
+              <Reveal animated='move'>
+                <Reveal.Content visible>
+                  <Segment circular style={style(city)}></Segment>
+                </Reveal.Content>
 
-              <Reveal.Content hidden>
-                <Segment circular style={style()}>
-                <Header as='h3'>
-                      Population
-                  <Header.Subheader> 2,500,000 </Header.Subheader>
-                </Header>
-                <Header as='h3'>
-                      Region
-                  <Header.Subheader> {city.continent.name} </Header.Subheader>
-                </Header>
-                <Header as='h3'>
-                      Number of user posts about this city:
-                  <Header.Subheader> {city.posts.length} </Header.Subheader>
-                </Header>
-                <Header as='h3'>
-                      Weather in this city:
-                  <Header.Subheader> Weather summary to go here </Header.Subheader>
-                </Header>
-                </Segment>
-              </Reveal.Content>
-            </Reveal>
+                <Reveal.Content hidden>
+                  <Segment circular style={style()}>
+                    <Header as='h3'>
+                        Population
+                      <Header.Subheader> 2,500,000 </Header.Subheader>
+                    </Header>
+                    <Header as='h3'>
+                        Region
+                      <Header.Subheader> {city.continent.name} </Header.Subheader>
+                    </Header>
+                    <Header as='h3'>
+                        Number of user posts about this city:
+                      <Header.Subheader> {city.posts.length} </Header.Subheader>
+                    </Header>
+                    <Header as='h3'>
+                        Weather in this city:
+                      <Header.Subheader> Weather summary to go here </Header.Subheader>
+                    </Header>
+                  </Segment>
+                </Reveal.Content>
+              </Reveal>
 
               <Divider  hidden/>
 
