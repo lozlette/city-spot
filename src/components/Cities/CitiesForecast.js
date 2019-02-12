@@ -27,7 +27,7 @@ class CitiesForecast extends React.Component {
     if(!this.state.forecast.data) return null
     return(
       <Container>
-        <Header as='h3'>
+        <Header as='h2' textAlign='center'>
           Weekly weather forecast in {this.props.cityName}:
           <Header.Subheader>
             {this.state.forecast.summary}

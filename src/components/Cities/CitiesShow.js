@@ -60,65 +60,67 @@ class CitiesShow extends React.Component{
     return(
       <div>
         <Container textAlign='center'>
-          <Divider hidden section/>
-          <Header id='cityHeader' size='huge'> {city.name} </Header>
-          <Divider />
+          <Grid.Row>
+            <Divider hidden section/>
 
+            <Header id='cityHeader' size='huge'> {city.name} </Header>
+            <Divider />
 
-          <Grid columns={3}>
-            <Grid.Column width={6}>
-
-              <Reveal animated='move'>
-                <Reveal.Content visible>
-                  <Segment circular style={style(city)}></Segment>
-                </Reveal.Content>
-
-                <Reveal.Content hidden>
-                  <Segment inverted circular style={style()}>
-                    <Header inverted as='h3'>
+            <Grid columns={3}>
+              <Grid.Column width={6}>
+                <Reveal animated='move'>
+                  <Reveal.Content visible>
+                    <Segment circular style={style(city)}></Segment>
+                  </Reveal.Content>
+                  <Reveal.Content hidden>
+                    <Segment inverted circular style={style()}>
+                      <Header inverted as='h3'>
                         Population
-                      <Header.Subheader> 2,500,000 </Header.Subheader>
-                    </Header>
-                    <Header inverted as='h3'>
+                        <Header.Subheader>
+                          2,500,000
+                        </Header.Subheader>
+                      </Header>
+                      <Header inverted as='h3'>
                         Region
-                      <Header.Subheader> {city.continent.name} </Header.Subheader>
-                    </Header>
-                    <Header inverted as='h3'>
-                        Number of user posts about this city:
-                      <Header.Subheader> {city.posts.length} </Header.Subheader>
-                    </Header>
-                  </Segment>
-                </Reveal.Content>
-              </Reveal>
+                        <Header.Subheader>
+                          {city.continent.name}
+                        </Header.Subheader>
+                      </Header>
+                      <Header inverted as='h3'>
+                          Number of user posts about this city:
+                        <Header.Subheader>
+                          {city.posts.length}
+                        </Header.Subheader>
+                      </Header>
+                    </Segment>
+                  </Reveal.Content>
+                </Reveal>
+                <Divider  hidden/>
+                <Grid columns={2}>
+                  <Grid.Column>
+                    <VidModal videoId={city.videoID}/>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Column>
 
-              <Divider  hidden/>
+              <Grid.Column textAlign='left' width={5}>
+                <Divider hidden />
+                <CitiesForecast cityName={city.name} />
+              </Grid.Column>
 
-              <Grid columns={2}>
-                <Grid.Column>
-                  <VidModal videoId={city.videoID}/>
-                </Grid.Column>
-              </Grid>
-            </Grid.Column>
-
-            <Grid.Column textAlign='left' width={5}>
-              <Divider hidden />
-
-              <CitiesForecast cityName={city.name} />
-              <CitiesEvents cityName={city.name} />
-            </Grid.Column>
-
-            <Grid.Column width={5}>
-              <Segment>
-                <PostsSection
-                  reload={this.reload}
-                  city={city}
-                />
-              </Segment>
-            </Grid.Column>
-          </Grid>
-
-
-
+              <Grid.Column width={5}>
+                <Segment>
+                  <PostsSection
+                    reload={this.reload}
+                    city={city}
+                  />
+                </Segment>
+              </Grid.Column>
+            </Grid>
+          </Grid.Row>
+          <Grid.Row>
+            <CitiesEvents cityName={city.name} />
+          </Grid.Row>
         </Container>
       </div>
     )
