@@ -1,41 +1,86 @@
 import React from 'react'
-import  { Form, Segment, Button, Header, Icon } from 'semantic-ui-react'
+import  { Form, Segment, Button, Header, Icon, Grid, Container, Divider, Message } from 'semantic-ui-react'
+import ReactFilestack from 'filestack-react'
 
 
-const PostFormModal = ({ handleChangePost, handleSubmitPost, postData }) => {
+class PostFormModal extends React.Component{
+  constructor(props){
+    super(props)
 
-  
+    this.state={
+      imageSuccess: false
+    }
+  }
 
 
 
-  return(
+  changeSuccess(){
+    this.setState({ imageSuccess: true })
+  }
 
-    <Segment>
-      <Form onSubmit={handleSubmitPost}>
-        <Form.Field>
-          <Form.Input
-            required
-            label='Please add an image link'
-            name='image'
-            onChange={handleChangePost}
-            value={postData.image}
-            placeholder='Image Link Here'
-          />
-        </Form.Field>
-        <Form.Field>
-          <Form.TextArea
-            required
-            label='Please add a brief description about your photo'
-            placeholder='Write your caption...'
-            name='caption'
-            value={postData.caption}
-            onChange={handleChangePost}
-          />
-        </Form.Field>
-        <Button primary fluid> Submit Your Post </Button>
-      </Form>
-    </Segment>
-  )
+
+
+  render(){
+    const {toggleOpen, handleChangePost, handleSubmitPost, postData } = this.props
+    return(
+      <Container>
+        <Grid textAlign='center' columns={1}>
+          <Grid.Column width={8}>
+            <Segment>
+              {this.state.imageSuccess && <Message
+                success> Image Successfully Uploaded </Message>
+              }
+              <Form onSubmit={handleSubmitPost}>
+
+
+              {!this.state.imageSuccess &&
+                <Form.Field required>
+                  <ReactFilestack
+                    apikey={ `${process.env.FILE_STACK_KEY}` }
+                    mode={'pick'}
+                    onSuccess={(res) => {
+                      this.changeSuccess()
+                      handleChangePost({
+                      target: {
+                        name: 'image',
+                        value: res.filesUploaded[0].url
+                      }})}}
+                    onError={(e) => console.log(e)}
+                    buttonText={'Add An Image'}
+                    buttonClass={'button is-rounded'}
+                  />
+                </Form.Field>
+            }
+
+
+
+
+                <Form.Field>
+                  <Form.TextArea
+                    required
+                    label='Please add a brief description about your photo'
+                    placeholder='Write your caption...'
+                    name='caption'
+                    value={postData.caption}
+                    onChange={handleChangePost}
+                  />
+                </Form.Field>
+
+                <Divider hidden />
+
+                <Button.Group fluid>
+                <Button primary > Submit </Button>
+                <Button.Or />
+                <Button onClick={toggleOpen} negative > Cancel </Button>
+                </Button.Group>
+              </Form>
+
+            </Segment>
+          </Grid.Column>
+        </Grid>
+      </Container>
+    )
+  }
 }
 
 

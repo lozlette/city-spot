@@ -31,7 +31,7 @@ class PostsSection extends React.Component{
     this.handleSubmitPost = this.handleSubmitPost.bind(this)
     this.handleChangeComment = this.handleChangeComment.bind(this)
     this.handleSubmitComment = this.handleSubmitComment.bind(this)
-    this.handleOpen = this.handleOpen.bind(this)
+    this.toggleOpen = this.toggleOpen.bind(this)
     this.deletePost = this.deletePost.bind(this)
   }
 
@@ -73,8 +73,9 @@ class PostsSection extends React.Component{
     .catch(err => console.log(err.response))
   }
 
-  handleOpen(){
-    this.setState({ modalOpen: true })
+  toggleOpen(){
+    if(this.state.modalOpen)this.setState({ modalOpen: false })
+    if(!this.state.modalOpen)this.setState({ modalOpen: true })
   }
 
   handleErrors(response){
@@ -103,16 +104,17 @@ class PostsSection extends React.Component{
       <Segment>
         {Auth.isAuthenticated() &&
             <Modal
-            closeIcon
-            open={this.state.modalOpen}
-            trigger={<Button onClick={this.handleOpen}
-            fluid size='large'
-            primary>Add a Post</Button>}>
-              <PostFormModal
-                postData={this.state.postData}
-                handleChangePost={this.handleChangePost}
-                handleSubmitPost={this.handleSubmitPost}
-              />
+              open={this.state.modalOpen}
+              basic
+              trigger={<Button onClick={this.toggleOpen}
+              fluid size='large'
+              primary>Add a Post</Button>}>
+                <PostFormModal
+                  toggleOpen={this.toggleOpen}
+                  postData={this.state.postData}
+                  handleChangePost={this.handleChangePost}
+                  handleSubmitPost={this.handleSubmitPost}
+                />
             </Modal>
         }
 

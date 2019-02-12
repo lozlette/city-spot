@@ -29,7 +29,8 @@ const PostsFeedBlock = ({ text, city, post, index,
       </Feed.Content>
 
       {Auth.isAuthenticated() && (post.user._id === Auth.getUserID()) &&
-        <Button onClick={(e) => deletePost(e, post._id)} negative icon >
+        
+        <Button size='small' onClick={(e) => deletePost(e, post._id)} negative icon >
           <Icon name='trash' />
         </Button>
       }
