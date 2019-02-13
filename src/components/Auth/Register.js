@@ -2,6 +2,7 @@ import React from 'react'
 import {   Container } from 'semantic-ui-react'
 import axios from 'axios'
 import RegisterForm from './RegisterForm'
+import UserShow from './UserShow'
 import { withRouter } from 'react-router-dom'
 import Flash from '../../lib/Flash'
 
@@ -24,7 +25,7 @@ class Register extends React.Component{
 
 
 
-  handleChange({ target: {name, value }}) {
+  handleChange({ target: { name, value }}) {
     const postData = {...this.state.postData, [name]: value }
     const errors= {}
     this.setState({ postData, errors })
@@ -50,9 +51,6 @@ class Register extends React.Component{
   render(){
     return(
       <Container>
-
-
-
         <RegisterForm
           changeSuccess={this.changeSuccess}
           imageSuccess={this.state.imageSuccess}

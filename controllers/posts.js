@@ -8,6 +8,13 @@ function postIndexRoute(req, res, next) {
     .catch(next)
 }
 
+// function allPostIndexRoute(req, res, next) {
+//   Post
+//     .find()
+//     .then(post => res.json(post))
+//     .catch(next)
+// }
+
 function postCreateRoute(req, res, next) {
   req.body.city = req.params.id
   req.body.user = req.currentUser
@@ -106,6 +113,19 @@ function likeCreateRoute(req, res, next) {
     .catch(next)
 }
 
+function popularPostRoute(req, res, next) {
+  Post
+    .find()
+    .then(posts => {
+      return posts.sort(function(postA, postB){
+        return postB.likes.length - postA.likes.length
+      })
+    })
+    .then(arr => arr.slice(0, 11) || arr)
+    .then(arr => res.status(200).json(arr))
+    .catch(next)
+}
+
 // function likeIndexRoute(req, res, next) {
 //   req.body.user = req.currentUser
 //   Post
@@ -119,11 +139,13 @@ function likeCreateRoute(req, res, next) {
 // }
 
 module.exports = {
+  // allPostIndex: allPostIndexRoute,
   postCreate: postCreateRoute,
   postShow: postShowRoute,
   postIndex: postIndexRoute,
   postUpdate: postUpdateRoute,
   postDelete: postDeleteRoute,
+  popularPostRoute: popularPostRoute,
   commentCreate: commentCreateRoute,
   commentUpdate: commentUpdateRoute,
   commentDelete: commentDeleteRoute,

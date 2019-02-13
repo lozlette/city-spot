@@ -4,7 +4,7 @@ const citySchema = new mongoose.Schema({
   name: { type: String, required: true },
   image: { type: String, required: true },
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent', required: true },
-  population: { type: Number },
+  population: { type: String },
   currency: { type: Number},
   videoID: { type: String },
   lat: { type: Number },

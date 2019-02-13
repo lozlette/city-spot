@@ -1,13 +1,19 @@
 import React from 'react'
 import axios from 'axios'
 import { Segment, Grid, Header, Icon, Container } from 'semantic-ui-react'
+import ReactFilestack from 'filestack-react'
+
 
 class UserShow extends React.Component{
   constructor(props){
     super(props)
 
+    this.changeSuccess = this.changeSuccess.bind(this)
+    this.handleChange = this.handleChange.bind(this)
 
-    this.state={}
+    this.state={
+      imageSuccess: false
+    }
   }
 
   componentDidMount(){
@@ -24,6 +30,15 @@ class UserShow extends React.Component{
     }
   }
 
+  changeSuccess(){
+    console.log('changing state')
+    this.setState({ imageSuccess: true })
+  }
+
+  handleChange(){
+
+  }
+
   render(){
     if(!this.state.userData) return null
     console.log(this.state.userData)
@@ -32,6 +47,19 @@ class UserShow extends React.Component{
       <div>
         <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
         <Container>
+          {!this.stateimageSuccess &&
+            <ReactFilestack
+              apikey={ `${process.env.FILE_STACK_KEY}` }
+              mode={'pick'}
+              onSuccess={() => {
+                this.changeSuccess
+                this.handleChange
+              }}
+              onError={(e) => console.log(e)}
+              buttonText={'Add A Header Image'}
+              buttonClass={'button is-rounded'}
+            />
+          }
           <Segment circular id='circle2' style={this.getStyle(userData)}>
           </Segment>
         </Container>
@@ -61,8 +89,7 @@ class UserShow extends React.Component{
               </Segment>
               <Segment.Group>
                 <Segment>
-                  <p>{userData.firstName}</p>
-                  <p>{userData.lastName}</p>
+                  <p>{userData.firstName} {userData.lastName}</p>
                   <p>{userData.gender}</p>
                   <p>{userData.email}</p>
                   <p>{userData.continent}</p>
