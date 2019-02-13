@@ -31,7 +31,7 @@ class Popular extends React.Component{
         <Grid columns={5}>
         {this.state.popularPosts.map(post =>
           <Grid.Column key={post._id}>
-            <Card>
+            <Card style={{ height: '350px' }}>
               <Image src={post.image} />
                 <Card.Content>
               <Card.Header>{post.user.username}</Card.Header>
