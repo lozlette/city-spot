@@ -38,7 +38,7 @@ class PostsAll extends React.Component {
             <Card.Content>
               <Card.Header>{post.user.username}</Card.Header>
               <Card.Meta>
-                <span className='date'>{post.createdAt}</span>
+                <span className='date'>Posted on: {post.createdAt}</span>
               </Card.Meta>
               <Card.Description>{post.caption}</Card.Description>
             </Card.Content>

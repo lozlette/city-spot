@@ -45,20 +45,20 @@ class UserShow extends React.Component{
     return(
       <div>
         <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
+        {!this.stateimageSuccess &&
+          <ReactFilestack
+            apikey={ `${process.env.FILE_STACK_KEY}` }
+            mode={'pick'}
+            onSuccess={() => {
+              this.changeSuccess
+              this.handleChange
+            }}
+            onError={(e) => console.log(e)}
+            buttonText={'Add A Header Image'}
+            buttonClass={'button is-rounded'}
+          />
+        }
         <Container>
-          {!this.stateimageSuccess &&
-            <ReactFilestack
-              apikey={ `${process.env.FILE_STACK_KEY}` }
-              mode={'pick'}
-              onSuccess={() => {
-                this.changeSuccess
-                this.handleChange
-              }}
-              onError={(e) => console.log(e)}
-              buttonText={'Add A Header Image'}
-              buttonClass={'button is-rounded'}
-            />
-          }
           <Segment circular id='circle2' style={this.getStyle(userData)}>
           </Segment>
         </Container>
@@ -104,7 +104,7 @@ class UserShow extends React.Component{
           Your recent posts:
                 </Header>
                 <div className='user-posts2'>
-                  {this.state.userData.posts.map(post => <div key={post._id}> <img src={post.image} alt='User post' className='user-posts' /> </div>)}
+                  {this.state.userData.posts.map(post => <div key={post._id}> <img src={post.image} alt='User post' id='square' /> </div>)}
                 </div>
               </Segment>
               <Segment.Group>
