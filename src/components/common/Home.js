@@ -47,6 +47,7 @@ class Home extends React.Component {
   }
 
   render(){
+    if(!this.state.cities) return <LoadingPage />
     if(!this.state.continents) return <LoadingPage />
     return(
       <div>
@@ -61,9 +62,8 @@ class Home extends React.Component {
               <Dropdown fluid search selection labeled
                 className='search'
                 placeholder={'Find a city'}
+                options={this.state.cities} />
                 onChange={this.handleDropDown}
-                options={this.state.cities}>
-              </Dropdown>
             </Form.Field>
             <Button className='button' type='submit'>
              Search
