@@ -18,12 +18,13 @@ router.post('/register', authController.register)
 router.post('/login', authController.login)
 
 router.post('/resetpassword/', authController.passwordReset) // entering Email
-router.post('/resetpassword/:id', authController.passwordReset) // confirming email
-// router.put('/newpassword', authController.newPassword)
+
 
 
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)
+
+
 
 router.post('/cities/:id/posts', secureRoute, postController.postCreate)
 router.get('/cities/:id/posts', postController.postIndex)
@@ -37,7 +38,10 @@ router.delete('/cities/:id/posts/:postId/comments/:commentId', postController.co
 
 router.post('/cities/:id/posts/:postId/likes', postController.likeCreate)
 
+
 router.get('/popularposts', postController.popularPostRoute)
+
+router.delete('/cities/:id/posts/:postId/likes/:likeId', postController.likeDelete)
 
 router.get('/continents', continentController.index)
 router.get('/continents/:id', continentController.show)
