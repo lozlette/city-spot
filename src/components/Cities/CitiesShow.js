@@ -77,11 +77,11 @@ class CitiesShow extends React.Component{
                   <Segment inverted circular style={style()}>
                     <Header inverted as='h3'>
                         Population
-                        <Header.Subheader>
+                      <Header.Subheader>
                           2,500,000
-                        </Header.Subheader>
-                      </Header>
-                      <Header inverted as='h3'>
+                      </Header.Subheader>
+                    </Header>
+                    <Header inverted as='h3'>
                         Region
                       <Header.Subheader> {city.continent.name} </Header.Subheader>
                     </Header>

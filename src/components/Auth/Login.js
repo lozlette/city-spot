@@ -14,8 +14,8 @@ class Login extends React.Component{
       postData: {
         email: '',
         password: ''
-      }
-      // errors:{ },
+      },
+      errors: {}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -45,7 +45,7 @@ class Login extends React.Component{
     this.props.history.push('/register')
   }
 
-  goToSendEmail(){   // changed
+  goToSendEmail(){  
     this.props.history.push('/resetpassword')
   }
 

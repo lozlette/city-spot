@@ -34,7 +34,7 @@ class ResetPassword extends React.Component{
         Flash.setMessage('success', res.data.message)
         this.props.history.push('/')
       })
-      .catch(err => this.setState({ errors: err }))
+      .catch(err => this.setState({ errors: err.response.data }))
   }
 
   goToSendEmail(){

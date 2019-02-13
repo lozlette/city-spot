@@ -47,7 +47,7 @@ class Home extends React.Component {
   }
 
   render(){
-    if(!this.state.continents) return LoadingPage
+    if(!this.state.continents) return <LoadingPage/>
     return(
       <div>
         <Favicon url="https://i2.wp.com/blog.jackhake.com/wp-content/uploads/2017/08/cropped-globe-favicon.png?fit=512%2C512"/>
