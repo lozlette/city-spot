@@ -834,120 +834,140 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           name: 'Seoul',
           image: 'http://www.adlittle.com/sites/default/files/locations/Seoul-location.jpg',
           videoID: 'J86Hx7RTnIQ',
+          population: '9,962,393',
           continent: data.continentAsia
         }),
         city112: City.create({
           name: 'Tokyo',
           image: 'https://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/Japan/Tokyo/tokyo-things-to-do-lead-image.jpg?imwidth=450',
           videoID: '94-49K--ZpI',
+          population: '37,435,191',
           continent: data.continentAsia
         }),
         city113: City.create({
           name: 'Singapore',
           image: 'https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2018/03/14/105066394-GettyImages-498350103_1.1910x1000.jpg',
           videoID: 'P_q3BdrFsLI',
+          population: '5,710,000',
           continent: data.continentAsia
         }),
         city114: City.create({
           name: 'Taipei',
           image: 'https://www.cathaypacific.com/content/dam/destinations/taipei/cityguide-gallery/taipei_skyline_920x500.jpg',
           videoID: 'ZNC9V1J-ebg',
+          population: '7,400,000',
           continent: data.continentAsia
         }),
         city115: City.create({
           name: 'Hong Kong',
           image: 'https://www.abercrombiekent.com/-/media/ak/hero-images/asia-china-hong-kong-skyline.jpg?h=500&w=1224&la=en&hash=B9F77AEC6E3B9A35850538C3067588A0D9A32B67',
           videoID: 'MjMP30Ge_dM',
+          population: '7,490,776',
           continent: data.continentAsia
         }),
         city116: City.create({
           name: 'Dubai',
           image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/01/22/13/dubai_lester_ali.jpg?w968h681',
           videoID: 'nPOO1Coe2DI',
+          population: '2,833,079',
           continent: data.continentAsia
         }),
         city117: City.create({
           name: 'Mumbai',
           image: 'https://www.cruisemapper.com/images/ports/15-large-9ae20782c8938eedba46925af5e94fe6.jpg',
           videoID: 'pvuU0CPBnFM',
+          population: '20,185,064',
           continent: data.continentAsia
         }),
         city118: City.create({
           name: 'Manila',
           image: 'https://media.millenniumhotels.com/mhb-media/9/B/D/9BD61C8C-86AC-41A1-8DB5-1C7FB1303CB2/heritage-manila-hero.jpg',
           videoID: 'WU85r57DtBA',
+          population: '12,800,000',
           continent: data.continentAsia
         }),
         city119: City.create({
           name: 'Hanoi',
           image: 'http://static.asiawebdirect.com/m/bangkok/portals/vietnam/homepage/hanoi/first-time/pagePropertiesImage/hanoi.jpg.jpg',
           videoID: '35Z4GGvCmlU',
+          population: '8,000,000',
           continent: data.continentAsia
         }),
         city120: City.create({
           name: 'Kuala Lumpur',
           image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/08/21/15/kuala-lumpur.jpg?w968h681',
           videoID: 'mtIeLsMbfzg',
+          population: '7,780,301',
           continent: data.continentAsia
         }),
         city121: City.create({
           name: 'Ho Chi Minh City',
           image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/07/25/16/ho-chi-minh-skyline.jpg?w968h681',
           videoID: '35Z4GGvCmlU&t=17s',
+          population: '3,467,331',
           continent: data.continentAsia
         }),
         city122: City.create({
           name: 'Osaka',
           image: 'https://cdn2.veltra.com/ptr/20160825042916_988833969_11829_0.jpg?imwidth=550&impolicy=custom',
           videoID: 'sgKPzHJkhQk',
+          population: '19,222,665',
           continent: data.continentAsia
         }),
         city123: City.create({
           name: 'Chengdu',
           image: 'https://cdn.newsapi.com.au/image/v1/5db4efaea6a8e05941ae039c5505af62',
           videoID: '1i_06B7xTcM',
+          population: '8,971,839',
           continent: data.continentAsia
         }),
         city124: City.create({
           name: 'Chiang Mai',
           image: 'http://static.asiawebdirect.com/m/bangkok/portals/chiangmai-bangkok-com/homepage/pagePropertiesImage/chiang-mai-thailand.jpg.jpg',
           videoID: 'cgdcRl5UY9g',
+          populatin: '149 261',
           continent: data.continentAsia
         }),
         city125: City.create({
           name: 'Hangzhou',
           image: 'https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2015/05/20/102696502-hangzhou.jpg?v=1432167587',
           videoID: 'bN5_kezXyTU',
+          population: '7,362,011',
           continent: data.continentAsia
         }),
         city126: City.create({
           name: 'Ulaanbaatar',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/UB_downtown.jpg/220px-UB_downtown.jpg',
           videoID: 'IXgb_mk4SQI',
+          population: '1,300,000',
           continent: data.continentAsia
         }),
         city127: City.create({
           name: 'Dongguan',
           image: 'http://images.china.cn/attachement/jpg/site1007/20101011/000cf1bdd2450e1cb7a805.jpg',
           videoID: 'Z_L5xGtCRvA',
+          population: '8,000,000',
           continent: data.continentAsia
         }),
         city128: City.create({
           name: 'Siem Reap',
           image: 'https://d3hne3c382ip58.cloudfront.net/resized/750x420/full-day-angkor-wat-tour-from-siem-reap-tour-2-215993_1510029029.JPG',
           videoID: 'jXbCzlCugDU',
+          population: '139,458',
           continent: data.continentAsia
         }),
         city129: City.create({
           name: 'Riyadh',
           image: 'https://a1.r9cdn.net/rimg/dimg/c4/71/6192eca9-city-35744-55796af6.jpg?crop=true&width=1000&height=600&xhint=1282&yhint=1007',
           videoID: 'o9hKZX0bhw4',
+          population: '6,906,595',
           continent: data.continentAsia
         }),
         city130: City.create({
           name: 'Petra',
           image: 'https://rvca738f6h5tbwmj3mxylox3-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/GI_521275152_ElDier_PetraMonestary.jpg',
           videoID: 'Fx44wQTLZ1o',
+          population: '14,000',
           continent: data.continentAsia
         }),
 
