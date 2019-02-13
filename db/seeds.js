@@ -54,174 +54,203 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           name: 'Nairobi',
           image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/06/28/17/singa.jpg',
           videoID: '6vmpa4Gr258',
+          population: '4,556,381',
           continent: data.continentAfrica
         }),
         city3: City.create({
           name: 'Accra',
           image: 'https://i1.wp.com/theleidener.com/wp-content/uploads/2017/04/accra1.jpg?ssl=1',
           videoID: 'N7q7NeomPEQ',
+          population: '2,475,208',
           continent: data.continentAfrica
         }),
         city4: City.create({
           name: 'Libreville',
           image: 'http://www.travelmagma.com/uploads/images/0_319.jpg',
           videoID: 'qmtYJAXADfk',
+          population: '578,156',
           continent: data.continentAfrica
         }),
         city5: City.create({
           name: 'Johannesburg',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Johannesburg_view_topofCC_03.jpg/220px-Johannesburg_view_topofCC_03.jpg',
           videoID: '5WBe84VPlWg',
+          population: '5,635,127',
           continent: data.continentAfrica
         }),
         city6: City.create({
-          name: 'Marrakesh',
+          name: 'Marrakech',
           image: 'https://timedotcom.files.wordpress.com/2016/03/160314_tra_intl_marrakesh2.jpg',
           videoId: '1igDO8h1Gz4',
+          population: '928,850',
           continent: data.continentAfrica
         }),
         city7: City.create({
           name: 'Cairo',
           image: 'https://frontera.net/wp-content/uploads/2017/01/Egypt-1-1-1-1-1-1-1-2-1.jpg',
           videoID: 'wcEp4M7QfUo',
+          population: '20,484,965',
           continent: data.continentAfrica
         }),
         city8: City.create({
           name: 'Lagos',
           image: 'https://i1.wp.com/estateintel.com/wp-content/uploads/2017/06/DSC06402.jpg?resize=1000%2C480&ssl=1',
           videoID: 'O-YiOvZuzAg',
+          population: '13,903,620',
           continent: data.continentAfrica
         }),
         city9: City.create({
           name: 'Giza',
           image: 'https://cdn.civitatis.com/egipto/el-cairo/galeria/giza.jpg',
           videoID: 'QMc6wlAeNnM',
+          population: '4,288,595',
           continent: data.continentAfrica
         }),
         city10: City.create({
           name: 'Fes',
           image: 'https://c1.staticflickr.com/5/4284/35001088050_52fcd1cb66_b.jpg',
           videoID: 'nZn-AXugSqM',
+          population: '964,891',
           continent: data.continentAfrica
         }),
         city11: City.create({
           name: 'Durban',
           image: 'https://www.100resilientcities.org/wp-content/uploads/2017/06/cities-durban_optimized.jpg',
           videoID: 'iunHa_XS3-M',
+          population: '3,752,850',
           continent: data.continentAfrica
         }),
         city12: City.create({
           name: 'Pretoria',
           image: 'http://gauteng.hotelguide.co.za/images/pretoria-city-gauteng-590x390.jpg',
           videoID: 'onZmnYpHFn4',
+          population: '2,472,612',
           continent: data.continentAfrica
         }),
         city13: City.create({
           name: 'Addis Ababa',
           image: 'https://media-cdn.tripadvisor.com/media/photo-s/0b/4a/26/d2/nure-beninne-mosque-of.jpg',
           videoID: '3SArj4cXFgM',
+          population: '3,228,00',
           continent: data.continentAfrica
         }),
         city14: City.create({
           name: 'Dar El Salam',
           image: 'https://www.darelsalam.com/wp-content/uploads/2017/01/malaga.jpg',
           videoID: 'CercrZcRe6E',
+          population: '6,368,272',
           continent: data.continentAfrica
         }),
         city15: City.create({
           name: 'Casablanca',
           image: 'https://www.moroccopedia.com/wp-content/uploads/2013/12/casablanca.jpg',
           videoID: '6vmpa4Gr258',
+          population: '3,716,093',
           continent: data.continentAfrica
         }),
         city16: City.create({
           name: 'Luanda',
           image: 'https://image.iol.co.za/image/1/process/620x349?source=https://inm-baobab-prod-eu-west-1.s3.amazonaws.com/public/inm/media/2017/12/13/iol/881/LU.jpg',
           videoID: 'ioEQHUuz23k',
+          population: '7,943,006',
           continent: data.continentAfrica
         }),
         city17: City.create({
           name: 'Tunis',
           image: 'https://www.mosaicnorthafrica.com/wp-content/uploads/2017/12/Tunis-Zitouna-Mosque.jpg',
           videoID: 'bVHD5jj7rFk',
+          population: '11,659,174',
           continent: data.continentAfrica
         }),
         city18: City.create({
           name: 'Dakar',
           image: 'http://www.worldbank.org/content/dam/Worldbank/Feature%20Story/Africa/Senegal/sn-dakar-improving-revenue-for-better-urban-management-homepage-780x439.jpg',
           videoID: 'dBcTJjXTOsw',
+          population: '5,000,000',
           continent: data.continentAfrica
         }),
         city19: City.create({
           name: 'Maputo',
           image: 'http://media.withtank.com/f22986db68/maputo_skyline3.0_460_wide.jpg',
           videoID: '6vmpa4Gr258',
+          population: '1,191,613',
           continent: data.continentAfrica
         }),
         city20: City.create({
           name: 'Mombasa',
           image: 'https://www.jamiiforums.com/attachments/453530/',
           videoID: '6_XUBKM3VGo',
+          population: '1,200,000',
           continent: data.continentAfrica
         }),
         city21: City.create({
           name: 'Port Elizabeth',
           image: 'http://www.bocadillos.co.za/wp-content/uploads/things-to-do-places-to-eat-in-port-elizabeth-sum1.jpg',
           videoID: '9KMalzLeQ5g',
+          population: '900,000',
           continent: data.continentAfrica
         }),
         city22: City.create({
           name: 'Agadir',
           image: 'https://objects.airfrance.com/FR/common/common/img/tbaf/destinations/AGA/video/AGA-video-1_1-1024x1024.jpg',
           videoID: 'BweHQyEbrdA',
+          population: '698,310',
           continent: data.continentAfrica
         }),
         city23: City.create({
           name: 'Rabat',
           image: 'https://s1.it.atcdn.net/wp-content/uploads/2017/03/iStock-513955511.jpg',
           videoID: '5uFy1Xt4-_g',
+          population: '12,000',
           continent: data.continentAfrica
         }),
         city24: City.create({
           name: 'Tangier',
           image: 'https://lonelyplanetimages.imgix.net/a/g/hi/t/c9c57c0bf7bde0deb8936f0efd25843a-tangier.jpg?sharp=10&vib=20&w=1200',
           videoID: '1WhOMO-adkk',
+          population: '688,356',
           continent: data.continentAfrica
         }),
         city25: City.create({
           name: 'Antananarivo',
           image: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Lake_Anosy%2C_Central_Antananarivo%2C_Capital_of_Madagascar%2C_Photo_by_Sascha_Grabow.jpg',
           videoID: 'OAbjBjq1Bfc',
+          population: '1,300,000',
           continent: data.continentAfrica
         }),
         city26: City.create({
           name: 'Alexandria',
           image: 'https://i.redd.it/y1kjj5tg7aw01.jpg',
           videoID: 'HSBRCytZFME',
+          population: '5,710,000',
           continent: data.continentAfrica
         }),
         city27: City.create({
-          name: 'Stellenbosh',
+          name: 'Stellenbosch',
           image: 'https://blog.aifsabroad.com/wp-content/uploads/2018/02/aifs-study-abroad-stellenbosch-south-africa-excursions.jpg',
           videoID: 'J91WhoWshos',
+          population: '193,508',
           continent: data.continentAfrica
         }),
         city28: City.create({
           name: 'Algiers',
           image: 'https://i.guim.co.uk/img/static/sys-images/Travel/Pix/pictures/2010/9/3/1283518317883/City-of-Algiers-overlooki-006.jpg?width=300&quality=85&auto=format&fit=max&s=4239da0d66ccaaea8ee106b70c67b164',
           videoID: 'cpDM1nJpbp0',
+          population: '2,713,027',
           continent: data.continentAfrica
         }),
         city29: City.create({
           name: 'Kampala',
           image: 'https://www.newvision.co.ug/w-images/7d3bd0c5-dcf4-4f1a-b255-52c38f09c8ff/2/Kampalaview-703x422.jpg',
           videoID: 'YhwJZF-ZPco',
+          population: '1,353,189',
           continent: data.continentAfrica
         }),
         city30: City.create({
           name: 'Port Louis',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Port_Louis%2C_Mauritius.jpg/220px-Port_Louis%2C_Mauritius.jpg',
           videoID: 'uyEEqzuTvDg',
+          population: '155,226',
           continent: data.continentAfrica
         }),
 
