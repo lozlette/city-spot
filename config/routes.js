@@ -36,7 +36,8 @@ router.put('/cities/:id/posts/:postId/comments/:commentId', postController.comme
 router.delete('/cities/:id/posts/:postId/comments/:commentId', postController.commentDelete)
 
 router.post('/cities/:id/posts/:postId/likes', postController.likeCreate)
-// router.get('/cities/:id/posts/:postId/likes', postController.likeIndex)
+
+router.get('/popularposts', postController.popularPostRoute)
 
 router.get('/continents', continentController.index)
 router.get('/continents/:id', continentController.show)
