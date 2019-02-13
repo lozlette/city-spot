@@ -12,6 +12,7 @@ import ContinentsShow from './components/Continents/ContinentsShow'
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
 import PostsAll from './components/Cities/PostsAll'
+import Popular from './components/common/popular'
 
 
 import ResetPassword from './components/Auth/ResetPassword'
@@ -39,6 +40,7 @@ class App extends React.Component{
             <Switch>
               <Route path="/posts" component={PostsAll} />
               <Route path="/cities/:id" component={CitiesShow} />
+              <Route path="/popular" component={Popular} />
               <Route path="/loading" component={LoadingPage} />
               <Route path="/cities" component={CitiesIndex} />
               <Route path="/users/:id" component={UserShow} />

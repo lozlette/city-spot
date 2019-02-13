@@ -125,7 +125,7 @@ function popularPostRoute(req, res, next) {
         return postB.likes.length - postA.likes.length
       })
     })
-    .then(arr => arr.slice(0, 11) || arr)
+    .then(arr => arr.slice(0, 10) || arr)
     .then(arr => res.status(200).json(arr))
     .catch(next)
 }
