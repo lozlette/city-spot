@@ -7,28 +7,35 @@ const commentSchema = new mongoose.Schema({
   timestamps: true
 })
 
+const likeSchema = new mongoose.Schema({
+  // post: { type: mongoose.Schema.ObjectId, ref: 'Post' },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  like: { type: Boolean }
+})
+
 const postSchema = new mongoose.Schema({
   city: { type: mongoose.Schema.ObjectId, ref: 'City' },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
   image: { type: String, required: 'Please add an image'},
   caption: { type: String, required: 'Please add a caption' },
-  comments: [commentSchema]
+  comments: [commentSchema],
+  likes: [likeSchema]
 },{
   timestamps: true
 })
 
-postSchema.virtual('likes', {
-  ref: 'Like',
-  localField: '_id',
-  foreignField: 'post'
-})
-
-postSchema.set('toJSON', {
-  virtuals: true,
-  transform(doc, json) {
-    delete json.__v
-    return json
-  }
-})
+// postSchema.virtual('likes', {
+//   ref: 'Like',
+//   localField: '_id',
+//   foreignField: 'post'
+// })
+//
+// postSchema.set('toJSON', {
+//   virtuals: true,
+//   transform(doc, json) {
+//     delete json.__v
+//     return json
+//   }
+// })
 
 module.exports = mongoose.model('Post', postSchema)
