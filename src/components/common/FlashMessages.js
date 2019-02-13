@@ -35,14 +35,14 @@ class FlashMessages extends React.Component{
         {this.state.messageObj && Object.keys(this.state.messageObj).map(type =>
           <div key={type}>
             <div>
-            {this.state.visible &&
+              {this.state.visible &&
               <Message
                 onDismiss={this.hide}
                 success
                 size='large'
               > {this.state.messageObj[type]}
               </Message>
-            }
+              }
             </div>
           </div>
         )}
