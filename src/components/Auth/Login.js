@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Button, Grid, Form, Input, Segment, Header, Icon, Message } from 'semantic-ui-react'
+import { Divider, Button, Grid, Form, Input, Segment, Icon, Message } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 import Flash from '../../lib/Flash'
@@ -11,11 +11,11 @@ class Login extends React.Component{
     super()
 
     this.state={
-        postData:{
-          email: '',
-          password: ''
-        },
-        errors:{}
+      postData: {
+        email: '',
+        password: ''
+      },
+      errors:{}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -68,7 +68,7 @@ class Login extends React.Component{
               error
               header='There was some errors with your submission'
               list={errorMessages}
-              />}
+            />}
 
             <Form onSubmit={this.handleSubmit}>
               <Divider hidden />

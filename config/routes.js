@@ -11,6 +11,7 @@ const secureRoute = require('../lib/secureRoute')
 // const passwordReset = require('../lib/passwordReset')
 
 const forecastController = require('../controllers/forecasts')
+const eventsController = require('../controllers/events')
 
 
 router.post('/register', authController.register)
@@ -46,5 +47,6 @@ router.put('/users/:id', userController.update)
 router.delete('/users/:id', secureRoute, userController.delete)
 
 router.get('/forecast', forecastController.index)
+router.get('/events', eventsController.index)
 
 module.exports = router

@@ -4,6 +4,8 @@ import ViewPostModal from './ViewPostModal'
 import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 
+import moment from 'moment'
+
 
 const PostsFeedBlock = ({ text, city, post, index,
                         handleChangePost, handleChangeComment,
@@ -12,7 +14,7 @@ const PostsFeedBlock = ({ text, city, post, index,
     <Feed.Event>
       <Feed.Label image={post.image} />
       <Feed.Content>
-        <Feed.Date>{post.createdAt}</Feed.Date>
+        <Feed.Date>{moment(post.createdAt).format('dddd HH:mm')}</Feed.Date>
         <Feed.Summary>
           <Link to={`/users/${post.user._id}`}> {post.user.username}</Link> created a post about {city.name}.
         </Feed.Summary>
@@ -29,7 +31,7 @@ const PostsFeedBlock = ({ text, city, post, index,
       </Feed.Content>
 
       {Auth.isAuthenticated() && (post.user._id === Auth.getUserID()) &&
-        
+
         <Button size='small' onClick={(e) => deletePost(e, post._id)} negative icon >
           <Icon name='trash' />
         </Button>

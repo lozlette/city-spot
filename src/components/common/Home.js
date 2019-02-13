@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Favicon from 'react-favicon'
+import LoadingPage from './LoadingPage'
 
 import  { Grid, Segment, Header, Dropdown, Button, Form } from 'semantic-ui-react'
 // const countryOptions = [ { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' } ]
@@ -46,8 +47,8 @@ class Home extends React.Component {
   }
 
   render(){
-    if(!this.state.cities) return null
-    console.log(this.state.cities)
+    if(!this.state.cities) return <LoadingPage />
+    if(!this.state.continents) return <LoadingPage />
     return(
       <div>
         <Favicon url="https://i2.wp.com/blog.jackhake.com/wp-content/uploads/2017/08/cropped-globe-favicon.png?fit=512%2C512"/>
@@ -61,12 +62,11 @@ class Home extends React.Component {
               <Dropdown fluid search selection labeled
                 className='search'
                 placeholder={'Find a city'}
+                options={this.state.cities} />
                 onChange={this.handleDropDown}
-                options={this.state.cities}>
-              </Dropdown>
             </Form.Field>
             <Button className='button' type='submit'>
-            Search
+             Search
             </Button>
           </Form>
 
