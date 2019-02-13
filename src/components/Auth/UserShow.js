@@ -33,7 +33,7 @@ class UserShow extends React.Component{
         <Header as='h1' className='heading'>{userData.firstName} {userData.lastName}</Header>
         <Grid columns={2}>
           <Grid.Column width="6" id="divColumn">
-            <Segment circular id='circle' style={this.getStyle(userData)}>
+            <Segment circular id='circle2' style={this.getStyle(userData)}>
             </Segment>
           </Grid.Column>
           <Grid.Column width="9">

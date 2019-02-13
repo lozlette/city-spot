@@ -10,6 +10,17 @@
   height: 200px !important;
 }
 
+#circle2 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  width: 300px !important;
+  height: 300px !important;
+}
+
 #circle:hover {
   transform: scale(1.1);
 }
@@ -126,4 +137,5 @@ div.search.selection {
   display: flex;
   flex-direction: row;
   margin: 0 30px;
+  justify-content: center;
 }
