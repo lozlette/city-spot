@@ -40,7 +40,7 @@ class App extends React.Component{
 
               <Route path="/cities/:id" component={CitiesShow} />
               <Route path="/loading" component={LoadingPage} />
-              <Route path="/popularposts" component={PopularPosts} />
+              <Route path="/posts/popular" component={PopularPosts} />
               <Route path="/cities" component={CitiesIndex} />
               <Route path="/users/:id" component={UserShow} />
               <Route path="/register" component={Register} />
