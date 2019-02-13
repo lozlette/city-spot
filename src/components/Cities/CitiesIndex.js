@@ -29,7 +29,7 @@ class CitiesIndex extends React.Component {
 
 
   render (){
-    if(!this.state.cities) return <LoadingPage/>
+    if(!this.state.cities) return <LoadingPage />
     console.log(this.state.cities)
     return(
       <div>

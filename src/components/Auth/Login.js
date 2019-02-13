@@ -45,7 +45,7 @@ class Login extends React.Component{
     this.props.history.push('/register')
   }
 
-  goToSendEmail(){  
+  goToSendEmail(){
     this.props.history.push('/resetpassword')
   }
 

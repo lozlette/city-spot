@@ -1,14 +1,21 @@
 import React from 'react'
-import { Comment, Modal, Image, Form, Button, Header, Segment, Divider, Message } from 'semantic-ui-react'
+import { Comment, Modal, Image, Form, Button, Header,
+          Segment, Divider, Message, Icon, Label } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeComment, post }) => {
+
+import moment from 'moment'
+
+const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeComment, post, addLike }) => {
+
+
+
+
   return(
     <Modal trigger={<a>Click to view post</a>}>
-
         <Modal.Content image>
           <Image wrapped size='large' src={post.image} />
-          <Modal.Description>
+          <Modal.Description style={{width: '350px'}}>
               <Link to={`/users/${post.user._id}`}>
                 <Header as='h3'>
                   <Image src={post.user.image} avatar/>
@@ -17,6 +24,15 @@ const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeCo
               </Link>
 
             <Header as='h4'> {post.caption} </Header>
+            <Button as='div' labelPosition='right'>
+              <Button onClick={(e) => addLike(e, post._id )} color='red'>
+                <Icon name='heart' />
+                Like
+              </Button>
+              <Label as='a' basic color='red' pointing='left'>
+                {post.likes.length}
+              </Label>
+            </Button>
             <Divider />
 
             <Header>Comments</Header>
@@ -30,7 +46,7 @@ const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeCo
                       </Comment.Author>
 
                       <Comment.Metadata>
-                        <div>{comment.createdAt}</div>
+                        <div>{moment(comment.createdAt).format('dddd HH:mm')}</div>
                       </Comment.Metadata>
                       <Comment.Text>{comment.text}</Comment.Text>
                     </Comment.Content>

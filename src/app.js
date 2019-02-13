@@ -15,6 +15,7 @@ import Login from './components/Auth/Login'
 
 import ResetPassword from './components/Auth/ResetPassword'
 import NewPassword from './components/Auth/NewPassword'
+import LoadingPage from './components/common/LoadingPage'
 
 
 class App extends React.Component{
@@ -37,6 +38,7 @@ class App extends React.Component{
             <Switch>
 
               <Route path="/cities/:id" component={CitiesShow} />
+              <Route path="/loading" component={LoadingPage} />
               <Route path="/cities" component={CitiesIndex} />
               <Route path="/users/:id" component={UserShow} />
               <Route path="/register" component={Register} />
