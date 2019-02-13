@@ -11,6 +11,7 @@ import CitiesIndex from './components/Cities/CitiesIndex'
 import ContinentsShow from './components/Continents/ContinentsShow'
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
+import CitiesInfo from './components/Cities/CitiesInfo'
 
 
 import ResetPassword from './components/Auth/ResetPassword'
@@ -29,7 +30,7 @@ class App extends React.Component{
           <Navbar />
           <FlashMessages />
           <Switch>
-
+            <Route path="/cities/:id/info" component={CitiesInfo} />
             <Route path="/cities/:id" component={CitiesShow} />
             <Route path="/cities" component={CitiesIndex} />
             <Route path="/users/:id" component={UserShow} />

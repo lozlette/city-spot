@@ -5,7 +5,6 @@ import { Header, Divider, Segment, Container, Grid, Reveal } from 'semantic-ui-r
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import CitiesForecast from './CitiesForecast'
-import CitiesEvents from './CitiesEvents'
 import Auth from '../../lib/Auth'
 
 const style = (city) => {
@@ -59,66 +58,65 @@ class CitiesShow extends React.Component{
     return(
       <div>
         <Container id='cities-show' textAlign='center'>
-          <Divider hidden section/>
-          <Header id='cityHeader' size='huge'> {city.name} </Header>
-          <Divider />
+          <Grid.Row>
+            <Divider hidden section/>
+            <Header id='cityHeader' size='huge'> {city.name} </Header>
+            <Divider />
 
 
-          <Grid columns={3}>
-            <Grid.Column width={6}>
+            <Grid columns={3}>
+              <Grid.Column width={6}>
 
-              <Reveal animated='move'>
-                <Reveal.Content visible>
-                  <Segment circular style={style(city)}></Segment>
-                </Reveal.Content>
+                <Reveal animated='move'>
+                  <Reveal.Content visible>
+                    <Segment circular style={style(city)}></Segment>
+                  </Reveal.Content>
 
-                <Reveal.Content hidden>
-                  <Segment inverted circular style={style()}>
-                    <Header inverted as='h3'>
-                        Population
+                  <Reveal.Content hidden>
+                    <Segment inverted circular style={style()}>
+                      <Header inverted as='h3'>
+                          Population
                         <Header.Subheader>
-                          2,500,000
+                            2,500,000
                         </Header.Subheader>
                       </Header>
                       <Header inverted as='h3'>
-                        Region
-                      <Header.Subheader> {city.continent.name} </Header.Subheader>
-                    </Header>
-                    <Header inverted as='h3'>
-                        Number of user posts about this city:
-                      <Header.Subheader> {city.posts.length} </Header.Subheader>
-                    </Header>
-                  </Segment>
-                </Reveal.Content>
-              </Reveal>
+                          Region
+                        <Header.Subheader> {city.continent.name} </Header.Subheader>
+                      </Header>
+                      <Header inverted as='h3'>
+                          Number of user posts about this city:
+                        <Header.Subheader> {city.posts.length} </Header.Subheader>
+                      </Header>
+                    </Segment>
+                  </Reveal.Content>
+                </Reveal>
 
-              <Divider  hidden/>
+                <Divider  hidden/>
 
-              <Grid columns={2}>
-                <Grid.Column>
-                  <VidModal videoId={city.videoID}/>
-                </Grid.Column>
-              </Grid>
-            </Grid.Column>
+                <Grid columns={2}>
+                  <Grid.Column>
+                    <VidModal videoId={city.videoID}/>
+                  </Grid.Column>
+                </Grid>
+              </Grid.Column>
 
-            <Grid.Column textAlign='left' width={4}>
-              <Divider hidden />
+              <Grid.Column textAlign='left' width={4}>
+                <Divider hidden />
 
-              <CitiesForecast cityName={city.name} />
-            </Grid.Column>
+                <CitiesForecast cityName={city.name} />
+              </Grid.Column>
 
-            <Grid.Column width={6}>
-              <div>
-                <PostsSection
-                  reload={this.reload}
-                  city={city}
-                />
-              </div>
-            </Grid.Column>
-          </Grid>
-
-
-
+              <Grid.Column width={6}>
+                <div>
+                  <PostsSection
+                    reload={this.reload}
+                    city={city}
+                  />
+                </div>
+              </Grid.Column>
+            </Grid>
+          </Grid.Row>
         </Container>
       </div>
     )
