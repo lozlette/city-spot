@@ -9,6 +9,8 @@ import CitiesEvents from './CitiesEvents'
 import Auth from '../../lib/Auth'
 import LoadingPage from '../common/LoadingPage'
 
+
+// to be removed later
 const style = (city) => {
 
   if(city) return({
@@ -36,6 +38,9 @@ class CitiesShow extends React.Component{
     this.reload = this.reload.bind(this)
   }
 
+  // reload function is passed down several components down, into posts section, used because was having issues
+  // reloading cities show page. The entire page is loaded with one axios request which made this particular function
+  // useful. To be refactored later
   reload(){
     axios
       .get(`/api/cities/${this.props.match.params.id}`)
@@ -55,7 +60,6 @@ class CitiesShow extends React.Component{
 
 
   render(){
-    Auth.isAuthenticated()
     if(!this.state.city) return <LoadingPage/>
     const { city } = this.state
     return(
@@ -65,7 +69,7 @@ class CitiesShow extends React.Component{
           <Header id='cityHeader' size='huge'> {city.name} </Header>
           <Divider />
 
-
+          {/* Grid with 3 columns. First column is  IMAGE & VIDEO */}
           <Grid columns={3}>
             <Grid.Column width={6}>
 
@@ -103,12 +107,18 @@ class CitiesShow extends React.Component{
               </Grid>
             </Grid.Column>
 
+
+            {/*Second Column is displaying weather from DarkSky API */}
             <Grid.Column textAlign='left' width={4}>
               <Divider hidden />
 
               <CitiesForecast cityName={city.name} />
             </Grid.Column>
 
+
+            {/* Third Column Contains the post section, passing down city data, populated on backend
+              with posts, comments, likes, userdata.
+               */}
             <Grid.Column width={6}>
               <div>
                 <PostsSection

@@ -7,7 +7,7 @@ import ReactFilestack from 'filestack-react'
 
 const RegisterForm = ({ handleChange, handleSubmit, postData, errors, imageSuccess, changeSuccess }) => {
 
-
+  // function made to return error messages from the error response from server, putting them in array to be passed into message
   const errorMessages = Object.keys(errors).map(errorKey => {
     return errors[errorKey]
   })
@@ -22,6 +22,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors, imageSucce
             success> Image Successfully Uploaded </Message>
           }
 
+          {/* displaying any error messages the user has received */}
           {errorMessages.length >0 && <Message
             error
             header='There was some errors with your submission'
@@ -86,6 +87,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors, imageSucce
               />
             </Form.Field>
 
+            {/* filestack component, using handle change to manually set name and value for postData in state */}
             {!imageSuccess &&
               <Form.Field required>
                 <ReactFilestack
