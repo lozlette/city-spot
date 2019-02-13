@@ -7,7 +7,7 @@ import Auth from '../../lib/Auth'
 import moment from 'moment'
 
 
-const PostsFeedBlock = ({ text, city, post, index,
+const PostsFeedBlock = ({ text, city, post, index, addLike,
                         handleChangePost, handleChangeComment,
                         handleSubmitComment ,commentError, deletePost }) => {
   return(
@@ -21,6 +21,7 @@ const PostsFeedBlock = ({ text, city, post, index,
 
 
         <ViewPostModal
+          addLike={addLike}
           post={post}
           text={text}
           commentError={commentError}

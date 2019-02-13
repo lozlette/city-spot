@@ -1,10 +1,16 @@
 import React from 'react'
-import { Comment, Modal, Image, Form, Button, Header, Segment, Divider, Message } from 'semantic-ui-react'
+import { Comment, Modal, Image, Form, Button, Header,
+          Segment, Divider, Message, Icon, Label } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+
 
 import moment from 'moment'
 
-const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeComment, post }) => {
+const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeComment, post, addLike }) => {
+
+
+
+
   return(
     <Modal trigger={<a>Click to view post</a>}>
         <Modal.Content image>
@@ -18,6 +24,15 @@ const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeCo
               </Link>
 
             <Header as='h4'> {post.caption} </Header>
+            <Button as='div' labelPosition='right'>
+              <Button onClick={(e) => addLike(e, post._id )} color='red'>
+                <Icon name='heart' />
+                Like
+              </Button>
+              <Label as='a' basic color='red' pointing='left'>
+                {post.likes.length}
+              </Label>
+            </Button>
             <Divider />
 
             <Header>Comments</Header>
