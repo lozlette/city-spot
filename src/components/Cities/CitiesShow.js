@@ -55,26 +55,26 @@ class CitiesShow extends React.Component{
   render(){
     Auth.isAuthenticated()
     if(!this.state.city) return <h1> Loading... </h1>
-    console.log(this.state.city.videoID)
     const { city } = this.state
     return(
       <div>
-        <Container textAlign='center'>
-          <Grid.Row>
-            <Divider hidden section/>
+        <Container id='cities-show' textAlign='center'>
+          <Divider hidden section/>
+          <Header id='cityHeader' size='huge'> {city.name} </Header>
+          <Divider />
 
-            <Header id='cityHeader' size='huge'> {city.name} </Header>
-            <Divider />
 
-            <Grid columns={3}>
-              <Grid.Column width={6}>
-                <Reveal animated='move'>
-                  <Reveal.Content visible>
-                    <Segment circular style={style(city)}></Segment>
-                  </Reveal.Content>
-                  <Reveal.Content hidden>
-                    <Segment inverted circular style={style()}>
-                      <Header inverted as='h3'>
+          <Grid columns={3}>
+            <Grid.Column width={6}>
+
+              <Reveal animated='move'>
+                <Reveal.Content visible>
+                  <Segment circular style={style(city)}></Segment>
+                </Reveal.Content>
+
+                <Reveal.Content hidden>
+                  <Segment inverted circular style={style()}>
+                    <Header inverted as='h3'>
                         Population
                         <Header.Subheader>
                           2,500,000
@@ -82,45 +82,43 @@ class CitiesShow extends React.Component{
                       </Header>
                       <Header inverted as='h3'>
                         Region
-                        <Header.Subheader>
-                          {city.continent.name}
-                        </Header.Subheader>
-                      </Header>
-                      <Header inverted as='h3'>
-                          Number of user posts about this city:
-                        <Header.Subheader>
-                          {city.posts.length}
-                        </Header.Subheader>
-                      </Header>
-                    </Segment>
-                  </Reveal.Content>
-                </Reveal>
-                <Divider  hidden/>
-                <Grid columns={2}>
-                  <Grid.Column>
-                    <VidModal videoId={city.videoID}/>
-                  </Grid.Column>
-                </Grid>
-              </Grid.Column>
+                      <Header.Subheader> {city.continent.name} </Header.Subheader>
+                    </Header>
+                    <Header inverted as='h3'>
+                        Number of user posts about this city:
+                      <Header.Subheader> {city.posts.length} </Header.Subheader>
+                    </Header>
+                  </Segment>
+                </Reveal.Content>
+              </Reveal>
 
-              <Grid.Column textAlign='left' width={5}>
-                <Divider hidden />
-                <CitiesForecast cityName={city.name} />
-              </Grid.Column>
+              <Divider  hidden/>
 
-              <Grid.Column width={5}>
-                <Segment>
-                  <PostsSection
-                    reload={this.reload}
-                    city={city}
-                  />
-                </Segment>
-              </Grid.Column>
-            </Grid>
-          </Grid.Row>
-          <Grid.Row>
-            <CitiesEvents cityName={city.name} />
-          </Grid.Row>
+              <Grid columns={2}>
+                <Grid.Column>
+                  <VidModal videoId={city.videoID}/>
+                </Grid.Column>
+              </Grid>
+            </Grid.Column>
+
+            <Grid.Column textAlign='left' width={4}>
+              <Divider hidden />
+
+              <CitiesForecast cityName={city.name} />
+            </Grid.Column>
+
+            <Grid.Column width={6}>
+              <div>
+                <PostsSection
+                  reload={this.reload}
+                  city={city}
+                />
+              </div>
+            </Grid.Column>
+          </Grid>
+
+
+
         </Container>
       </div>
     )

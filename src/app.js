@@ -12,6 +12,10 @@ import ContinentsShow from './components/Continents/ContinentsShow'
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
 
+
+import ResetPassword from './components/Auth/ResetPassword'
+import NewPassword from './components/Auth/NewPassword'
+
 class App extends React.Component{
   constructor(){
     super()
@@ -31,6 +35,8 @@ class App extends React.Component{
             <Route path="/users/:id" component={UserShow} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
+            <Route path="/resetpassword" component={ResetPassword} />
+            <Route path="/newpassword/:id" component={NewPassword} />
             <Route path="/continents/:id" component={ContinentsShow} />
             <Route path="/" component={Home} />
           </Switch>

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Comment, Modal, Image, Form, Button, Header, Segment, Divider } from 'semantic-ui-react'
+import { Comment, Modal, Image, Form, Button, Header, Segment, Divider, Message } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-const ViewPostModal = ({ text, handleSubmitComment, handleChangeComment, post }) => {
+const ViewPostModal = ({ commentError, text, handleSubmitComment, handleChangeComment, post }) => {
   return(
     <Modal trigger={<a>Click to view post</a>}>
 
@@ -36,6 +36,10 @@ const ViewPostModal = ({ text, handleSubmitComment, handleChangeComment, post })
                     </Comment.Content>
                   </Comment>
                 )}
+                {commentError && <Message
+                  error
+                  header={commentError}
+                  />}
                 <Form onSubmit={(e) => handleSubmitComment(e, post._id )} reply>
                   <Form.TextArea
                     value={text}
