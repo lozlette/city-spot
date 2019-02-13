@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Segment, Grid, Header, Icon, Container } from 'semantic-ui-react'
+import { Segment, Grid, Header, Icon, Container, Form, Flash, Button, Image } from 'semantic-ui-react'
 import ReactFilestack from 'filestack-react'
 
 
@@ -9,10 +9,13 @@ class UserShow extends React.Component{
     super(props)
 
     this.changeSuccess = this.changeSuccess.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
 
     this.state={
-      imageSuccess: false
+      imageSuccess: false,
+      postData: {},
+      errors: {}
     }
   }
 
@@ -30,36 +33,75 @@ class UserShow extends React.Component{
     }
   }
 
+  // getHeaderStyle(userData) {
+  //   return {
+  //     width: 1056,
+  //     height: 350,
+  //     backgroundImage: `url${userData.headerImage}`,
+  //     backgroundSize: 'cover'
+  //   }
+  // }
+
+  getHeaderStyle(userData) {
+    return {
+      width: 1056,
+      height: 350,
+      backgroundImage: `url(${userData.headerImage})`,
+      backgroundSize: 'cover'
+    }
+  }
+
   changeSuccess(){
-    console.log('changing state')
     this.setState({ imageSuccess: true })
   }
 
-  handleChange(){
+  handleChange({ target: { name, value }}) {
+    const postData = {...this.state.postData, [name]: value }
+    const errors= {}
+    this.setState({ postData, errors })
+  }
+
+  handleSubmit(e){
+    e.preventDefault()
+    axios.put(`/api/users/${this.props.match.params.id}`, this.state.postData)
+      .catch(err => this.setState({ errors: err.response.data }))
   }
 
   render(){
     if(!this.state.userData) return null
-    console.log(this.state.userData)
+    console.log(this.state.userData.headerImage)
     const { userData } = this.state
     return(
       <div>
         <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
-        {!this.stateimageSuccess &&
-          <ReactFilestack
-            apikey={ `${process.env.FILE_STACK_KEY}` }
-            mode={'pick'}
-            onSuccess={() => {
-              this.changeSuccess
-              this.handleChange
-            }}
-            onError={(e) => console.log(e)}
-            buttonText={'Add A Header Image'}
-            buttonClass={'button is-rounded'}
-          />
-        }
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Field>
+            {!this.stateimageSuccess &&
+            <ReactFilestack
+              apikey={ `${process.env.FILE_STACK_KEY}` }
+              mode={'pick'}
+              onSuccess={(res) => {
+                this.changeSuccess()
+                this.handleChange({
+                  target: {
+                    name: 'headerImage',
+                    value: res.filesUploaded[0].url
+                  }})
+              }}
+              onError={(e) => console.log(e)}
+              buttonText={'Add A Header Image'}
+              buttonClass={'button is-rounded'}
+            />
+            }
+            <Button fluid content="Submit Picture" primary />
+          </Form.Field>
+        </Form>
         <Container className="center-image">
-          <Segment circular id='circle2' style={this.getStyle(userData)}>
+          <Segment style={this.getHeaderStyle(userData)}>
+            <Container className="center-image">
+              <Segment circular id='circle2' style={this.getStyle(userData)}>
+              </Segment>
+            </Container>
           </Segment>
         </Container>
         <Grid columns={4}>
