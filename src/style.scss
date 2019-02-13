@@ -43,6 +43,7 @@
 
 #square {
   width: 485px;
+  margin-top: 20px;
 }
 .city-spot {
   color: white !important;
@@ -172,7 +173,7 @@ div.search.selection {
   justify-content: space-around;
 }
 
-.ui.container {
+.center-image {
   justify-content: center;
-  display: flex;
+  display: flex !important;
 }
