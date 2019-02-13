@@ -1,8 +1,8 @@
 import React from 'react'
-import {  Button, Container, Icon, Segment, Header, Grid, Message } from 'semantic-ui-react'
+import {   Container } from 'semantic-ui-react'
 import axios from 'axios'
 import RegisterForm from './RegisterForm'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Flash from '../../lib/Flash'
 
 

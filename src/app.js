@@ -18,6 +18,7 @@ import Login from './components/Auth/Login'
 import ResetPassword from './components/Auth/ResetPassword'
 import NewPassword from './components/Auth/NewPassword'
 
+
 class App extends React.Component{
   constructor(){
     super()
@@ -26,24 +27,31 @@ class App extends React.Component{
 
   render(){
     return(
-      <BrowserRouter>
-        <main>
-          <Navbar />
-          <FlashMessages />
-          <Switch>
+      <div>
+        <BrowserRouter>
 
-            <Route path="/cities/:id" component={CitiesShow} />
-            <Route path="/cities" component={CitiesIndex} />
-            <Route path="/users/:id" component={UserShow} />
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
-            <Route path="/resetpassword" component={ResetPassword} />
-            <Route path="/newpassword/:id" component={NewPassword} />
-            <Route path="/continents/:id" component={ContinentsShow} />
-            <Route path="/" component={Home} />
-          </Switch>
-        </main>
-      </BrowserRouter>
+
+          <main>
+
+            <Navbar />
+
+            <FlashMessages />
+            <Switch>
+
+              <Route path="/cities/:id" component={CitiesShow} />
+              <Route path="/cities" component={CitiesIndex} />
+              <Route path="/users/:id" component={UserShow} />
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path="/resetpassword" component={ResetPassword} />
+              <Route path="/newpassword/:id" component={NewPassword} />
+              <Route path="/continents/:id" component={ContinentsShow} />
+              <Route path="/" component={Home} />
+
+            </Switch>
+          </main>
+        </BrowserRouter>
+      </div>
     )
   }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Favicon from 'react-favicon'
+import LoadingPage from './LoadingPage'
 
 import  { Grid, Segment, Header, Search } from 'semantic-ui-react'
 
@@ -28,7 +29,7 @@ class Home extends React.Component {
   }
 
   render(){
-    if(!this.state.continents) return null
+    if(!this.state.continents) return LoadingPage
     return(
       <div>
         <Favicon url="https://i2.wp.com/blog.jackhake.com/wp-content/uploads/2017/08/cropped-globe-favicon.png?fit=512%2C512"/>

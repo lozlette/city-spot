@@ -6,6 +6,7 @@ import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import CitiesForecast from './CitiesForecast'
 import Auth from '../../lib/Auth'
+import LoadingPage from '../common/LoadingPage'
 
 const style = (city) => {
 
@@ -53,7 +54,7 @@ class CitiesShow extends React.Component{
 
   render(){
     Auth.isAuthenticated()
-    if(!this.state.city) return <h1> Loading... </h1>
+    if(!this.state.city) return <LoadingPage/>
     const { city } = this.state
     return(
       <div>
