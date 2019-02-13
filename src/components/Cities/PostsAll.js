@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import  { Link, Header, Grid, Segment, Card, Image } from 'semantic-ui-react'
+import  { Link, Header, Grid, Segment, Card, Image, Container, Divider } from 'semantic-ui-react'
 class PostsAll extends React.Component {
 
   constructor() {
@@ -29,21 +29,25 @@ class PostsAll extends React.Component {
     console.log(this.state.posts)
     return(
       <div>
-        <Header as='h1' className ='All posts'>
-        All Posts
-        </Header>
+      <Container>
+        <Divider hidden section />
+        <Grid columns={5}>
         {this.state.posts.map(post =>
-          <Card key={post._id}>
+          <Grid.Column key={post._id}>
+          <Card style={{ height: '350px' }}>
             <Image src={post.image} />
             <Card.Content>
-              <Card.Header>{post.user.username}</Card.Header>
+              <Card.Header>@{post.user.username}</Card.Header>
               <Card.Meta>
                 <span className='date'>Posted on: {post.createdAt}</span>
               </Card.Meta>
               <Card.Description>{post.caption}</Card.Description>
             </Card.Content>
-          </Card>
+            </Card>
+          </Grid.Column>
         )}
+        </Grid>
+        </Container>
       </div>
     )
   }
