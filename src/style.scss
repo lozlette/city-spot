@@ -1,5 +1,5 @@
 
-#circle {
+#circle, .user-posts {
   margin-bottom: 10px;
   margin-top: 10px;
   display: flex;
@@ -8,6 +8,17 @@
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
   width: 200px !important;
   height: 200px !important;
+}
+
+#circle2 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  width: 300px !important;
+  height: 300px !important;
 }
 
 #circle:hover {
@@ -81,10 +92,6 @@
   font-size: 60px;
 }
 
-.search {
-  margin: 40px;
-}
-
 #feed{
   height: 450px;
   overflow: scroll;
@@ -98,6 +105,26 @@
   display: flex;
 }
 
+form#homeForm {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+div.search.selection {
+  margin: auto;
+}
+
+// .button {
+//     margin: auto;
+//     width: 20%;
+//     padding: 3%;
+// }
+
+.input-center {
+  display: flex;
+  align-self: center;
+}
+
 #delete-button{
   height: 10px;
 }
@@ -105,6 +132,7 @@
 #cities-show{
   width: 85%;
 }
+
 
 .loader:empty {
     background-size: contain;
@@ -128,3 +156,10 @@
       transform: rotate(360deg);
     }
   }
+
+.user-posts2 {
+  display: flex;
+  flex-direction: row;
+  margin: 0 30px;
+  justify-content: center;
+}

@@ -30,10 +30,10 @@ class UserShow extends React.Component{
     const { userData } = this.state
     return(
       <div>
-        <Header as='h1' className='heading'>{userData.username}</Header>
+        <Header as='h1' className='heading'>{userData.firstName} {userData.lastName}</Header>
         <Grid columns={2}>
           <Grid.Column width="6" id="divColumn">
-            <Segment circular id='circle' style={this.getStyle(userData)}>
+            <Segment circular id='circle2' style={this.getStyle(userData)}>
             </Segment>
           </Grid.Column>
           <Grid.Column width="9">
@@ -49,7 +49,7 @@ class UserShow extends React.Component{
               </Segment>
               <Segment.Group>
                 <Segment>
-                  <p>{userData.bio} </p>
+                  <p> {userData.bio} </p>
                 </Segment>
               </Segment.Group>
             </Segment.Group>
@@ -59,6 +59,9 @@ class UserShow extends React.Component{
                   <Icon name="compose"></Icon>
                   Your recent posts:
                 </Header>
+                <div className='user-posts2'>
+                  {this.state.userData.posts.map(post => <div key={post._id}> <img src={post.image} alt='User post' className='user-posts' /> </div>)}
+                </div>
               </Segment>
               <Segment.Group>
                 <Segment>
@@ -72,6 +75,8 @@ class UserShow extends React.Component{
               </Segment>
               <Segment.Group>
                 <Segment>
+                  <p>{userData.firstName}</p>
+                  <p>{userData.lastName}</p>
                   <p>{userData.gender}</p>
                   <p>{userData.email}</p>
                   <p>{userData.continent}</p>
