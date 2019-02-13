@@ -689,120 +689,140 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           name: 'Buenos Aires',
           image: 'https://i1.wp.com/www.thebubble.com/wp-content/uploads/La-Rueda-Buenos-Aires.jpg?resize=735%2C395&ssl=1',
           videoID: 'PIqawM36dTc',
+          population: '15,057,273',
           continent: data.continentSouthAmerica
         }),
         city92: City.create({
           name: 'Lima',
           image: 'https://cdn-04.independent.ie/life/travel/article34823398.ece/05e10/AUTOCROP/w620/lima.jpg',
           videoID: 'MlrzLYqIsE8',
+          population: '9,751,717',
           continent: data.continentSouthAmerica
         }),
         city93: City.create({
           name: 'Rio de Janeiro',
           image: 'https://data.jigsawpuzzle.co.uk/clementoni.8/rio-de-janeiro-jigsaw-puzzle-500-pieces.60880-1.fs.jpg',
           videoID: 'taA48BInC6s',
+          population: '13,374,275',
           continent: data.continentSouthAmerica
         }),
         city94: City.create({
           name: 'La Paz',
           image: 'https://www.intrepidtravel.com/adventures/wp-content/uploads/2018/09/Intrepid-Travel-bolivia_la-paz_city-of-peace.jpg',
           videoID: 'VEuY9KdjXqY',
+          population: '2,300,000',
           continent: data.continentSouthAmerica
         }),
         city95: City.create({
           name: 'Quito',
           image: 'https://www.blacktomato.com/wp-content/uploads/2012/09/Basilica-del-Voto-Quito_115.jpg',
           videoID: 'YvjDH8ElY2g',
+          population: '2,735,987',
           continent: data.continentSouthAmerica
         }),
         city96: City.create({
           name: 'Porto Alegre',
           image: 'http://martinfletcher.files.wordpress.com/2013/02/porto-alegre-2.jpg',
           videoID: 'Pi9xF6U8J38',
+          population: '1,533,207',
           continent: data.continentSouthAmerica
         }),
         city97: City.create({
           name: 'Barranquilla',
           image: 'https://www.arrecifetours.com/gestor_web/gestor_pv/imgpv_pv/142/142a_hb_58adb5b5a2d73.jpg',
           videoID: 'R4QLjyY2A_o',
+          population: '1,238,146',
           continent: data.continentSouthAmerica
         }),
         city98: City.create({
           name: 'Ushuaia',
           image: 'https://d3hne3c382ip58.cloudfront.net/files/uploads/bookmundi/resized/cmsfeatured/ushuaia-to-argentina-1519295860-1000X561.jpg',
           videoID: 'SPPDNSX9pIQ',
+          population: '75,658',
           continent: data.continentSouthAmerica
         }),
         city99: City.create({
           name: 'Fortaleza',
           image: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/FORTALEZA%2C_BRAZIL.jpg',
           videoID: 'Hb1ocFC01lw',
+          population: '2,708,046',
           continent: data.continentSouthAmerica
         }),
         city100: City.create({
           name: 'Arequipa',
           image: 'https://www.roadaffair.com/wp-content/uploads/2017/10/sunrise-cusco-peru-shutterstock_354971309.jpg',
           videoID: 'vcCobjVIM_I',
+          popuation: '903 760',
           continent: data.continentSouthAmerica
         }),
         city101: City.create({
           name: 'Caracas',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Teleferico_de_Caracas._Vista_de_la_ciudad.jpg/300px-Teleferico_de_Caracas._Vista_de_la_ciudad.jpg',
           videoID: 'qzkEyDZfrq0',
+          population: '1,943,901',
           continent: data.continentSouthAmerica
         }),
         city102: City.create({
           name: 'Cartagena',
           image: 'https://jschristina-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/Cartagena-Colombia-drone-shot-jetsetchristina-travel-guide-blog-instagram.jpg',
           videoID: 'LdvjxHhCPXA',
+          population: '952,024',
           continent: data.continentSouthAmerica
         }),
         city103: City.create({
           name: 'Cusco',
           image: 'https://3bbdb23jem2j4esrdm1gcdbd-wpengine.netdna-ssl.com/wp-content/uploads/cusco-city-guide-main.jpg',
           videoID: 'BY3_7pRHfs0',
+          population: '457,481',
           continent: data.continentSouthAmerica
         }),
         city104: City.create({
           name: 'Cordoba',
           image: 'https://www.tripsavvy.com/thmb/2VS3GmuAGQbKaIOwy6bdxI_tmNk=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-519894407-592a43145f9b585950a5dfec.jpg',
           videoID: 'NvHtHj-zgiM',
+          population: '1,614,264',
           continent: data.continentSouthAmerica
         }),
         city105: City.create({
           name: 'Valparaiso',
           image: 'https://chile.travel/wp-content/uploads/2016/04/Valparaiso-cerroalegre-sernatur-ATR174.jpg',
           videoID: 'pS9rVj6e0KM',
+          population: '33,376',
           continent: data.continentSouthAmerica
         }),
         city106: City.create({
           name: 'Barquisimeto',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Este_de_Barquisimeto.jpg/240px-Este_de_Barquisimeto.jpg',
           videoID: '-MIwmpwMInk',
+          opulation: '862,519',
           continent: data.continentSouthAmerica
         }),
         city107: City.create({
           name: 'Rosario',
           image: 'https://c2.staticflickr.com/8/7146/27499733206_714fbde4a4_b.jpg',
           videoID: 'NTD5e5X4qfA',
+          population: '1,341,276',
           continent: data.continentSouthAmerica
         }),
         city108: City.create({
           name: 'Punta del Este',
           image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Punta_del_este3.jpg',
           videoID: '_uabKfyQpQM',
+          population: '12,204',
           continent: data.continentSouthAmerica
         }),
         city109: City.create({
           name: 'Recife',
           image: 'https://abrilviagemeturismo.files.wordpress.com/2016/12/thinkstockphotos-474448950.jpeg?quality=70&strip=info&w=680&h=453&crop=1',
           videoID: 'doalwE0tK6A',
+          population: '1,683,708',
           continent: data.continentSouthAmerica
         }),
         city110: City.create({
           name: 'Baños de Agua Santa',
           image: 'https://i2.wp.com/pasaportesindestino.net/wp-content/uploads/2018/04/2.png?fit=810%2C450&ssl=1',
           videoID: 'EzaGZwEG1w4',
+          population: '25,000',
           continent: data.continentSouthAmerica
         }),
 
