@@ -78,7 +78,7 @@ class CitiesShow extends React.Component{
                     <Header inverted as='h3'>
                         Population
                       <Header.Subheader>
-                          2,500,000
+                        { city.population }
                       </Header.Subheader>
                     </Header>
                     <Header inverted as='h3'>

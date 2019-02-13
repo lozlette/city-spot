@@ -45,23 +45,8 @@ function passwordReset( req, res, next ) {
 }
 
 
-
-// /confirmpassword/:id
-function confirmRoute(req, res) {
-  User.findOne({ confirmCode: req.params.code })
-    .then(user => {
-      if(!user) return res.status(401).json({ message: 'Unauthorized' })
-
-      user.verified = true
-      return user.save()
-    })
-    .then(() => res.json({ message: 'Account verified' }))
-}
-
-
 module.exports = {
   register: registerRoute,
   login: loginRoute,
-  confirm: confirmRoute,
   passwordReset: passwordReset
 }

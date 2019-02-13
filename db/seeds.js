@@ -47,6 +47,7 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           name: 'Cape Town',
           image: 'http://www.travelstart.co.za/blog/wp-content/uploads/2018/05/main-best-time-to-visit-cape-town.jpg',
           videoID: 'sQPXvtJQ9p4',
+          population: '4,524,111',
           continent: data.continentAfrica
         }),
         city2: City.create({
