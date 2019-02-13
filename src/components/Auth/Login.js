@@ -14,8 +14,8 @@ class Login extends React.Component{
       postData: {
         email: '',
         password: ''
-      }
-      // errors:{ },
+      },
+      errors:{}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)

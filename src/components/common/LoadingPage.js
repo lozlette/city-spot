@@ -25,6 +25,7 @@ class LoadingPage extends React.Component {
     const { loading } = this.state
 
     if(loading) {
+      console.count()
       return true
     }
 
