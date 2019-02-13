@@ -118,9 +118,10 @@ function popularPostRoute(req, res, next) {
     .find()
     .then(posts => {
       return posts.sort(function(postA, postB){
-        return postA.likes.length > postB.likes.length
+        return postB.likes.length - postA.likes.length
       })
     })
+    .then(arr => arr.slice(0, 11) || arr)
     .then(arr => res.status(200).json(arr))
     .catch(next)
 }
