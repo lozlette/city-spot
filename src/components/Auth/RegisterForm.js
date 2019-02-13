@@ -94,16 +94,16 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors, imageSucce
                   onSuccess={(res) => {
                     changeSuccess()
                     handleChange({
-                    target: {
-                      name: 'image',
-                      value: res.filesUploaded[0].url
-                    }})}}
+                      target: {
+                        name: 'image',
+                        value: res.filesUploaded[0].url
+                      }})}}
                   onError={(e) => console.log(e)}
                   buttonText={'Add An Image'}
                   buttonClass={'button is-rounded'}
                 />
               </Form.Field>
-          }
+            }
 
             <Form.Field required>
               <label>Please Make a Bio</label>

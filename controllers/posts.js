@@ -20,7 +20,9 @@ function postCreateRoute(req, res, next) {
 function postShowRoute(req, res, next) {
   Post
     .findById(req.params.postId)
-    .populate('user comments.user likes')
+    // .populate('user comments.user')
+    .populate('user likes.user')
+    // .populate([{path: 'like'}])
     .populate({ path: 'city', select: 'name' })
     .then(post => res.json(post))
     .catch(next)
@@ -79,6 +81,30 @@ function commentDeleteRoute(req, res, next) {
     .catch(next)
 }
 
+function likeCreateRoute(req, res, next) {
+  req.body.user = req.currentUser
+  Post
+    .findById(req.params.postId)
+    .then(post => {
+      post.likes.push(req.body)
+      return post.save()
+    })
+    .then(post => res.status(201).json(post))
+    .catch(next)
+}
+
+// function likeIndexRoute(req, res, next) {
+//   req.body.user = req.currentUser
+//   Post
+//     .find(req.params.postId)
+//     .then(post => {
+//       const like = post.comments.id(req.params.likeId)
+//       return like
+//     })
+//     .then(post => res.status(201).json(post))
+//     .catch(next)
+// }
+
 module.exports = {
   postCreate: postCreateRoute,
   postShow: postShowRoute,
@@ -87,5 +113,7 @@ module.exports = {
   postDelete: postDeleteRoute,
   commentCreate: commentCreateRoute,
   commentUpdate: commentUpdateRoute,
-  commentDelete: commentDeleteRoute
+  commentDelete: commentDeleteRoute,
+  likeCreate: likeCreateRoute
+  // likeIndex: likeIndexRoute
 }

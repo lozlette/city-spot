@@ -5,7 +5,7 @@ const cityController = require('../controllers/cities')
 const userController = require('../controllers/users')
 const postController = require('../controllers/posts')
 const authController = require('../controllers/auth')
-const likeController = require('../controllers/likes')
+// const likeController = require('../controllers/likes')
 const secureRoute = require('../lib/secureRoute')
 
 // const passwordReset = require('../lib/passwordReset')
@@ -35,8 +35,8 @@ router.post('/cities/:id/posts/:postId/comments', secureRoute, postController.co
 router.put('/cities/:id/posts/:postId/comments/:commentId', postController.commentUpdate)
 router.delete('/cities/:id/posts/:postId/comments/:commentId', postController.commentDelete)
 
-router.post('/cities/:id/posts/:postId/likes', likeController.likeCreate)
-router.get('/cities/:id/posts/:postId/likes', likeController.likeIndex)
+router.post('/cities/:id/posts/:postId/likes', postController.likeCreate)
+// router.get('/cities/:id/posts/:postId/likes', postController.likeIndex)
 
 router.get('/continents', continentController.index)
 router.get('/continents/:id', continentController.show)
