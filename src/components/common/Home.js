@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Favicon from 'react-favicon'
 
-import  { Grid, Segment, Header, Search, Dropdown, Button, Form } from 'semantic-ui-react'
+import  { Grid, Segment, Header, Dropdown, Button, Form } from 'semantic-ui-react'
 // const countryOptions = [ { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' } ]
 class Home extends React.Component {
   constructor(props) {
