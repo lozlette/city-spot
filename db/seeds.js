@@ -978,120 +978,140 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           name: 'Papete',
           image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Papeete_-_Marina_Taina.JPG',
           videoID: 'ECRnUDsFPeI',
+          population: '26,357',
           continent: data.continentOceania
         }),
         city132: City.create({
           name: 'Brisbane',
           image: 'https://www.australia.com/content/australia/en/places/brisbane-and-surrounds/guide-to-brisbane/jcr:content/image.adapt.1200.HIGH.jpg',
           videoID: '0Mv48ZM7gu4',
+          population: '2,562,000',
           continent: data.continentOceania
         }),
         city133: City.create({
           name: 'Auckland',
           image: 'https://www.aucklandnz.com/sites/build_auckland/files/styles/carousel_banner/public/media-library/images/bc-visit-destinations-central-auckland_0.jpg',
           videoID: 'LMyyu1bydFI',
+          population: '1,582,028',
           continent: data.continentOceania
         }),
         city134: City.create({
           name: 'Christchurch',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Christchurch_City.jpg/1200px-Christchurch_City.jpg',
           videoID: 'xdm1Mjtfi5k',
+          population: '396,882',
           continent: data.continentOceania
         }),
         city135: City.create({
           name: 'Sydney',
           image: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Sydney_Opera_house_3.jpg',
           videoID: 'OrIDTJH2ZZM',
+          population: '5,050,000',
           continent: data.continentOceania
         }),
         city136: City.create({
           name: 'Tauranga',
           image: 'https://cdn.vroomvroomvroom.co.nz/images/vroomvroomvroom-co-nz/cms/mt-maunganui-beach-from-the-summit-walking-track-of-north-tauranga-nz-dp-min.jpg',
           videoID: 'LZiEwF5R6cI',
+          population: '130,800',
           continent: data.continentOceania
         }),
         city137: City.create({
           name: 'Taupo',
           image: 'https://dbijapkm3o6fj.cloudfront.net/resources/3173,1004,1,6,4,0,911,688/-4084-/20161017152932/taupo-panorama.jpeg',
           videoID: 'uQn8Z0TTXQ0',
+          population: '23,700',
           continent: data.continentOceania
         }),
         city138: City.create({
           name: 'Rotorua',
           image: 'https://afar-production.imgix.net/uploads/syndication/holland_americas/images/wpyk4SXfUo/original_WR1683950.jpg?w=750&h=563&fit=crop',
           videoID: 'FypyPCuMR68',
+          population: '65,901',
           continent: data.continentOceania
         }),
         city139: City.create({
           name: 'Melbourne',
           image: 'https://www.visitvictoria.com/-/media/images/melbourne/destinations/melbourne-park_mel_r_supplied-082_1150x863.jpg?h=600&iar=1&mh=600&mw=800&w=800&ts=20170206470129&hash=130DD71D109FF4701085F90BA3CE0771',
           videoID: 'RLOsQViPLhw',
+          population: '5,000,000',
           continent: data.continentOceania
         }),
         city140: City.create({
           name: 'Newcastle',
           image: 'https://www.newcastle.nsw.gov.au/Newcastle/media/Images/Backgrounds/Newcastle-Nobbys_BG_MOB.jpg',
           videoID: 'ukQnPrxR4Cg',
+          population: '440,000',
           continent: data.continentOceania
         }),
         city141: City.create({
           name: 'Perth',
           image: 'https://www.experienceperth.com/sites/ep/files/styles/teaser_simple/public/2018-04/Elizabeth%20quay1.jpg?itok=E7HKU4xB',
           videoID: 'KtRsk4Bjs9s',
+          population: '2,280,000',
           continent: data.continentOceania
         }),
         city142: City.create({
           name: 'Canberra',
           image: 'https://www.mynrma.com.au/-/media/local-guides/canberra/mobile-banner-aerial-view-canberra.jpg?h=360&la=en&w=640&hash=8B0B68E29FCEA5D539148EFADB10BF25',
           videoID: 'Sj-VzFlJ14o',
+          population: '403,057',
           continent: data.continentOceania
         }),
         city143: City.create({
           name: 'Port Moresby',
           image: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Port_Moresby_Town2_Mschlauch.jpg',
           videoID: 'EnFGP0QxHdk',
+          population: '310,000',
           continent: data.continentOceania
         }),
         city144: City.create({
           name: 'Townsville',
           image: 'https://assets.atdw-online.com.au/images/Original__9208857_TQTE_0239_Aerial_Townsville_EDITED_fzsmr8a.jpg?rect=298,0,4772,3579&w=2048&h=1536',
           videoID: '7in_MHcx0Uw',
+          population: '185,000',
           continent: data.continentOceania
         }),
         city145: City.create({
           name: 'Whangarei',
           image: 'https://farm1.nzstatic.com/_proxy/imageproxy_1y/serve/whangarei-falls.jpg?focalpointx=50&focalpointy=41&height=427&outputformat=jpg&quality=85&source=4281996&transformationsystem=focalpointcrop&width=640&securitytoken=FC1C2C9D4BB6A16A310B83CC26227D8A',
           videoID: 'rMlkY0xV2pY',
+          population: '50,900',
           continent: data.continentOceania
         }),
         city146: City.create({
           name: 'Gold Coast',
           image: 'https://www.australia.com/content/australia/en/places/gold-coast-and-surrounds/guide-to-the-gold-coast/jcr:content/image.adapt.1200.HIGH.jpg',
           videoID: 'HpwtMAlZzEU',
+          population: '560,000',
           continent: data.continentOceania
         }),
         city147: City.create({
           name: 'Wollongong',
           image: 'https://assets.atdw-online.com.au/images/36ad45566d944eb734521b4fd9bd5eb5.jpeg?rect=0,0,2048,1536&w=800&h=600',
           videoID: 'eVPcVckVWA4',
+          population: '295,842',
           continent: data.continentOceania
         }),
         city148: City.create({
           name: 'Hagåtña',
           image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Hagatna_from_Fort_Santa_Agueda.JPG/250px-Hagatna_from_Fort_Santa_Agueda.JPG',
           videoID: 'sIrdM7VDwAE',
+          population: '167,245',
           continent: data.continentOceania
         }),
         city149: City.create({
           name: 'Hobart',
           image: 'https://www.australia.com/content/australia/en/places/hobart-and-surrounds/guide-to-hobart/jcr:content/image.adapt.1200.HIGH.jpg',
           videoID: 'O9hIw6oLJIg',
+          population: '220,000',
           continent: data.continentOceania
         }),
         city150: City.create({
           name: 'Darwin',
           image: 'https://image.jimcdn.com/app/cms/image/transf/dimension=origxorig:format=jpg/path/se80bcf7e1bbfb507/image/iecdc4a79e12dc507/version/1486809863/image.jpg',
           videoID: 'TZ3M3bt22v4',
+          population: '150,880',
           continent: data.continentOceania
         })
 
