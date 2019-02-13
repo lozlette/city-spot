@@ -73,11 +73,24 @@ function commentUpdateRoute(req, res, next) {
 function commentDeleteRoute(req, res, next) {
   Post
     .findById(req.params.postId)
-    .then(post => {
+    .then(post =>  {
       const comment = post.comments.id(req.params.commentId)
-      return comment.remove()
+      comment.remove()
+      return post.save()
     })
     .then(res.json({ message: 'Comment deleted' }))
+    .catch(next)
+}
+
+function likeDeleteRoute(req, res, next) {
+  Post
+    .findById(req.params.postId)
+    .then(post =>  {
+      const like = post.likes.id(req.params.likeId)
+      like.remove()
+      return post.save()
+    })
+    .then(res.json({ message: 'Like deleted' }))
     .catch(next)
 }
 
@@ -114,6 +127,6 @@ module.exports = {
   commentCreate: commentCreateRoute,
   commentUpdate: commentUpdateRoute,
   commentDelete: commentDeleteRoute,
-  likeCreate: likeCreateRoute
-  // likeIndex: likeIndexRoute
+  likeCreate: likeCreateRoute,
+  likeDelete: likeDeleteRoute
 }
