@@ -5,7 +5,9 @@ import { Header, Divider, Segment, Container, Grid, Reveal } from 'semantic-ui-r
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import CitiesForecast from './CitiesForecast'
+import CitiesEvents from './CitiesEvents'
 import Auth from '../../lib/Auth'
+import LoadingPage from '../common/LoadingPage'
 
 const style = (city) => {
 
@@ -53,7 +55,7 @@ class CitiesShow extends React.Component{
 
   render(){
     Auth.isAuthenticated()
-    if(!this.state.city) return <h1> Loading... </h1>
+    if(!this.state.city) return <LoadingPage/>
     const { city } = this.state
     return(
       <div>
@@ -75,9 +77,11 @@ class CitiesShow extends React.Component{
                   <Segment inverted circular style={style()}>
                     <Header inverted as='h3'>
                         Population
-                      <Header.Subheader> 2,500,000 </Header.Subheader>
-                    </Header>
-                    <Header inverted as='h3'>
+                        <Header.Subheader>
+                          2,500,000
+                        </Header.Subheader>
+                      </Header>
+                      <Header inverted as='h3'>
                         Region
                       <Header.Subheader> {city.continent.name} </Header.Subheader>
                     </Header>

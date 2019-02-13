@@ -11,6 +11,7 @@ const secureRoute = require('../lib/secureRoute')
 // const passwordReset = require('../lib/passwordReset')
 
 const forecastController = require('../controllers/forecasts')
+const eventsController = require('../controllers/events')
 
 
 router.post('/register', authController.register)
@@ -31,8 +32,8 @@ router.delete('/cities/:id/posts/:postId', postController.postDelete)
 router.put('/cities/:id/posts/:postId', secureRoute, postController.postUpdate)
 
 router.post('/cities/:id/posts/:postId/comments', secureRoute, postController.commentCreate)
-// router.put('/cities/:id/posts/:postId/comments/:commentId', secureRoute, postController.commentUpdate)
-// router.delete('/cities/:id/posts/:postId/comments/:commentId', secureRoute, postController.commentDelete)
+router.put('/cities/:id/posts/:postId/comments/:commentId', postController.commentUpdate)
+router.delete('/cities/:id/posts/:postId/comments/:commentId', postController.commentDelete)
 
 router.post('/cities/:id/posts/:postId/likes', likeController.likeCreate)
 router.get('/cities/:id/posts/:postId/likes', likeController.likeIndex)
@@ -46,5 +47,6 @@ router.put('/users/:id', userController.update)
 router.delete('/users/:id', secureRoute, userController.delete)
 
 router.get('/forecast', forecastController.index)
+router.get('/events', eventsController.index)
 
 module.exports = router

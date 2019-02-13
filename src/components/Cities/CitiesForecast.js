@@ -17,7 +17,6 @@ class CitiesForecast extends React.Component {
   }
 
   componentDidMount(){
-    console.log(!!this.props.cityName)
     axios.get(`/api/forecast?city=${this.props.cityName}`)
       .then(res => this.setState({ forecast: res.data }))
   }
@@ -26,10 +25,9 @@ class CitiesForecast extends React.Component {
 
   render(){
     if(!this.state.forecast.data) return null
-    console.log(this.state.forecast.data)
     return(
       <Container>
-        <Header as='h3'>
+        <Header as='h2' textAlign='center'>
           Weekly weather forecast in {this.props.cityName}:
           <Header.Subheader>
             {this.state.forecast.summary}

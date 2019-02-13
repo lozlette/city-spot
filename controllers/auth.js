@@ -13,7 +13,7 @@ function loginRoute( req, res ) {
   User.findOne({ email: req.body.email, verified: true })
     .then(user => {
       if(!user || !user.validatePassword(req.body.password)) {
-        return res.status(401).json({ message: 'Unauthorized' })
+        return res.status(401).json({ message: 'Invalid username or password. Please try again' })
       }
 
       const payload = { sub: user._id }

@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import { Link }  from 'react-router-dom'
 
+import LoadingPage from '../common/LoadingPage'
+
 import  { Header, Grid, Segment } from 'semantic-ui-react'
 class CitiesIndex extends React.Component {
 
@@ -27,7 +29,7 @@ class CitiesIndex extends React.Component {
 
 
   render (){
-    if(!this.state.cities) return null
+    if(!this.state.cities) return LoadingPage
     console.log(this.state.cities)
     return(
       <div>
