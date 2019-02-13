@@ -36,7 +36,6 @@ class UserShow extends React.Component{
   }
 
   handleChange(){
-
   }
 
   render(){

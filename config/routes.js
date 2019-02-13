@@ -43,7 +43,7 @@ router.get('/popularposts', postController.popularPostRoute)
 
 router.delete('/cities/:id/posts/:postId/likes/:likeId', postController.likeDelete)
 
-// router.get('/post, postControlle)
+router.get('/posts', postController.allPostIndex)
 
 router.get('/continents', continentController.index)
 router.get('/continents/:id', continentController.show)
