@@ -11,7 +11,7 @@ import CitiesIndex from './components/Cities/CitiesIndex'
 import ContinentsShow from './components/Continents/ContinentsShow'
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
-import PopularPosts from './components/cities/PopularPosts'
+import Popular from './components/common/popular'
 
 
 import ResetPassword from './components/Auth/ResetPassword'
@@ -39,8 +39,8 @@ class App extends React.Component{
             <Switch>
 
               <Route path="/cities/:id" component={CitiesShow} />
+              <Route path="/popular" component={Popular} />
               <Route path="/loading" component={LoadingPage} />
-              <Route path="/posts/popular" component={PopularPosts} />
               <Route path="/cities" component={CitiesIndex} />
               <Route path="/users/:id" component={UserShow} />
               <Route path="/register" component={Register} />

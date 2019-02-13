@@ -40,6 +40,7 @@ class CitiesShow extends React.Component{
     axios
       .get(`/api/cities/${this.props.match.params.id}`)
       .then(res => this.setState({ city: res.data }))
+      .then(() => console.log('hi'))
       .then(() => this.setState({reload: !this.state.reload}))
   }
 
