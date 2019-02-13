@@ -29,7 +29,7 @@ function loginRoute( req, res ) {
 
 //fnd user and send email to user /confirmpassword
 
-function passwordReset( req, res ) {
+function passwordReset( req, res, next ) {
   User.findOne({ email: req.body.email, verified: true })
     .then(user => {
       if(!user) {
@@ -39,9 +39,9 @@ function passwordReset( req, res ) {
       // user has been found
       // send an email
       mailer.sendResetPassword(user)
-        .then(() => res.json({ message: 'Email sent' }))
-        .catch(err => res.status(500).json(err))
     })
+    .then(() => res.json({ message: 'Email has been seccusfully sent to your address'}))
+    .catch(next)
 }
 
 
