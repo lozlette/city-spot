@@ -3,6 +3,7 @@ import {  Button, Container, Icon, Segment, Header, Grid, Message } from 'semant
 import axios from 'axios'
 import RegisterForm from './RegisterForm'
 import { Link, withRouter } from 'react-router-dom'
+import Flash from '../../lib/Flash'
 
 
 class Register extends React.Component{
@@ -11,14 +12,14 @@ class Register extends React.Component{
 
 
     this.state = {
+      imageSuccess: false,
       postData: {},
-      errors: {},
-      success: false
+      errors: {}
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.goToLogin = this.goToLogin.bind(this)
+    this.changeSuccess = this.changeSuccess.bind(this)
   }
 
 
@@ -29,50 +30,38 @@ class Register extends React.Component{
     this.setState({ postData, errors })
   }
 
+  changeSuccess(){
+    console.log('changing state')
+    this.setState({ imageSuccess: true })
+  }
+
   handleSubmit(e){
     e.preventDefault()
     axios.post('/api/register', this.state.postData)
-      .then(res => this.setState({ success: true }))
+      .then(res => {
+        Flash.setMessage('success', res.data.message)
+        this.props.history.push('/login')
+      })
       .catch(err => this.setState({ errors: err.response.data }))
-    }
-
-  goToLogin(){
-    this.props.history.push('/login')
   }
+
 
 
   render(){
     return(
       <Container>
-        {this.state.success &&
-          <Segment textAlign='center'>
-            <Grid stackable textAlign='center' columns={1}>
-              <Grid.Row>
-                <Header as='h2'icon>
-                  <Icon name='check' />
-                    Account Successfully Created
-                </Header>
-              </Grid.Row>
-              <Grid.Row>
-                <Button
-                  content="Continue to Login"
-                  primary
-                  onClick={this.goToLogin}
-                />
-              </Grid.Row>
-            </Grid>
-          </Segment>
-        }
 
 
-        {!this.state.success &&
-          <RegisterForm
-            errors={this.state.errors}
-            postData={this.state.postData}
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
-        />}
-    </Container>
+
+        <RegisterForm
+          changeSuccess={this.changeSuccess}
+          imageSuccess={this.state.imageSuccess}
+          errors={this.state.errors}
+          postData={this.state.postData}
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+        />
+      </Container>
     )
   }
 }

@@ -54,11 +54,10 @@ class CitiesShow extends React.Component{
   render(){
     Auth.isAuthenticated()
     if(!this.state.city) return <h1> Loading... </h1>
-    console.log(this.state.city.videoID)
     const { city } = this.state
     return(
       <div>
-        <Container textAlign='center'>
+        <Container id='cities-show' textAlign='center'>
           <Divider hidden section/>
           <Header id='cityHeader' size='huge'> {city.name} </Header>
           <Divider />
@@ -99,19 +98,19 @@ class CitiesShow extends React.Component{
               </Grid>
             </Grid.Column>
 
-            <Grid.Column textAlign='left' width={5}>
+            <Grid.Column textAlign='left' width={4}>
               <Divider hidden />
 
               <CitiesForecast cityName={city.name} />
             </Grid.Column>
 
-            <Grid.Column width={5}>
-              <Segment>
+            <Grid.Column width={6}>
+              <div>
                 <PostsSection
                   reload={this.reload}
                   city={city}
                 />
-              </Segment>
+              </div>
             </Grid.Column>
           </Grid>
 

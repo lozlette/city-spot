@@ -1,9 +1,10 @@
 import React from 'react'
-import { Divider, Button, Grid, Form, Input, Segment, Header, Icon } from 'semantic-ui-react'
-import { withRouter } from 'semantic-ui-react'
+import { Divider, Button, Grid, Form, Input, Segment, Header, Icon, Message } from 'semantic-ui-react'
+import { withRouter } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 import Flash from '../../lib/Flash'
 import axios from 'axios'
+
 
 class Login extends React.Component{
   constructor(){
@@ -13,11 +14,13 @@ class Login extends React.Component{
         postData:{
           email: '',
           password: ''
-        }
+        },
+        errors:{}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.goToRegister = this.goToRegister.bind(this)
+    this.goToSendEmail = this.goToSendEmail.bind(this)
   }
 
   handleChange({ target: {name, value }}) {
@@ -34,17 +37,25 @@ class Login extends React.Component{
         Flash.setMessage('success', res.data.message)
         this.props.history.push('/')
       })
-      .catch(err => this.setState({ errors: err }))
-    }
+      .catch(err => this.setState({ errors: err.response.data }))
+  }
+
 
   goToRegister(){
     this.props.history.push('/register')
+  }
+
+  goToSendEmail(){   // changed
+    this.props.history.push('/resetpassword')
   }
 
 
 
 
   render(){
+    const errorMessages = Object.keys(this.state.errors).map(errorKey => {
+      return this.state.errors[errorKey]
+    })
     const { postData } = this.state
     return(
       <Grid columns={1} textAlign='center'>
@@ -52,37 +63,46 @@ class Login extends React.Component{
           <Divider hidden/>
           <Segment color="blue">
             <Icon name='user circle' size='huge' />
+
+            {errorMessages.length >0 && <Message
+              error
+              header='There was some errors with your submission'
+              list={errorMessages}
+              />}
+
             <Form onSubmit={this.handleSubmit}>
               <Divider hidden />
               <Form.Field>
-                  <label>Your Email</label>
-                  <Input
-                    value={postData.email}
-                    onChange={this.handleChange}
-                    placeholder='Email'
-                    name='email'
-                  />
+                <label>Your Email</label>
+                <Input
+                  value={postData.email}
+                  onChange={this.handleChange}
+                  placeholder='Email'
+                  name='email'
+                />
               </Form.Field>
               <Form.Field>
-                  <label>Your Password</label>
-                  <Input
-                    value={postData.password}
-                    onChange={this.handleChange}
-                    type='password'
-                    placeholder='Password'
-                    name='password'
-                  />
+                <label>Your Password</label>
+                <Input
+                  value={postData.password}
+                  onChange={this.handleChange}
+                  type='password'
+                  placeholder='Password'
+                  name='password'
+                />
               </Form.Field>
               <Divider hidden/>
               <Button fluid content="Log In" primary />
             </Form>
-            <a href='#' onClick={this.goToRegister}> Don't have an account? Click Here to Sign Up. </a>
-        </Segment>
-      </Grid.Column>
-    </Grid>
+            <a href='#' onClick={this.goToRegister}> Need have an account? Click Here to Sign Up. </a>
+            <br />
+            <a href='#' onClick={this.goToSendEmail}> Forgot password? </a>
+          </Segment>
+        </Grid.Column>
+      </Grid>
     )
   }
 }
 
 
-export default Login
+export default withRouter(Login)
