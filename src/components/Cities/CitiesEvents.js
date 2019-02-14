@@ -36,7 +36,7 @@ class CitiesEvents extends React.Component {
 
 
   render(){
-    if(!this.state.events.results) return <LoadingPage />
+    if(!this.state.events.results) return null
     if(this.state.events.results.length === 0) return null
     return(
 
@@ -67,7 +67,7 @@ class CitiesEvents extends React.Component {
 
 
 
-        <Divider section />
+  
       </Container>
     )
   }
