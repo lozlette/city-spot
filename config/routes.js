@@ -8,10 +8,12 @@ const authController = require('../controllers/auth')
 // const likeController = require('../controllers/likes')
 const secureRoute = require('../lib/secureRoute')
 
+
 // const passwordReset = require('../lib/passwordReset')
 
 const forecastController = require('../controllers/forecasts')
 const eventsController = require('../controllers/events')
+const restaurantsController = require('../controllers/restaurants')
 
 
 router.post('/register', authController.register)
@@ -43,7 +45,7 @@ router.get('/popularposts', postController.popularPostRoute)
 
 router.delete('/cities/:id/posts/:postId/likes/:likeId', postController.likeDelete)
 
-// router.get('/post, postControlle)
+router.get('/posts', postController.allPostIndex)
 
 router.get('/continents', continentController.index)
 router.get('/continents/:id', continentController.show)
@@ -55,5 +57,6 @@ router.delete('/users/:id', secureRoute, userController.delete)
 
 router.get('/forecast', forecastController.index)
 router.get('/events', eventsController.index)
+router.get('/restaurants', restaurantsController.index)
 
 module.exports = router

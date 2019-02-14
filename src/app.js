@@ -11,6 +11,8 @@ import CitiesIndex from './components/Cities/CitiesIndex'
 import ContinentsShow from './components/Continents/ContinentsShow'
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
+import CitiesInfo from './components/Cities/CitiesInfo'
+import PostsAll from './components/Cities/PostsAll'
 import Popular from './components/common/popular'
 
 
@@ -34,7 +36,8 @@ class App extends React.Component{
             <Navbar />
             <FlashMessages />
             <Switch>
-
+            <Route path="/cities/:id/info" component={CitiesInfo} />
+              <Route path="/posts" component={PostsAll} />
               <Route path="/cities/:id" component={CitiesShow} />
               <Route path="/popular" component={Popular} />
               <Route path="/loading" component={LoadingPage} />

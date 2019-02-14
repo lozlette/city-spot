@@ -41,6 +41,10 @@
   font-family: 'Major Mono Display', monospace !important;
 }
 
+#square {
+  width: 485px;
+  margin-top: 20px;
+}
 .city-spot {
   color: white !important;
 }
@@ -68,6 +72,16 @@
   font-size: 20px;
   font-family: 'Major Mono Display', monospace;
 
+}
+
+.ui.header.heading3 {
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  text-align: center;
+  font-size: 70px;
+  font-family: 'Major Mono Display', monospace;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .ui.header.section {
@@ -114,11 +128,9 @@ div.search.selection {
   margin: auto;
 }
 
-// .button {
-//     margin: auto;
-//     width: 20%;
-//     padding: 3%;
-// }
+.button.is-rounded {
+  height: 60px;
+}
 
 .input-center {
   display: flex;
@@ -157,7 +169,7 @@ div.search.selection {
     }
   }
 
-.user-posts2 {
+.center-posts {
   display: flex;
   flex-direction: row;
   margin: 0 30px;
@@ -167,4 +179,19 @@ div.search.selection {
 .ui.four.column.grid {
   display: flex;
   justify-content: space-around;
+}
+
+.center-image {
+  justify-content: center;
+  display: flex !important;
+}
+
+.center-form {
+text-align: center;
+}
+
+.header-modal {
+padding: 40px;
+justify-content: center;
+display: flex;
 }

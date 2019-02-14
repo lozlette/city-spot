@@ -9,7 +9,7 @@ import axios from 'axios'
 class Login extends React.Component{
   constructor(){
     super()
-
+    // data to be sent to back end login route, errors displayed as  message on form
     this.state={
       postData: {
         email: '',
@@ -23,12 +23,14 @@ class Login extends React.Component{
     this.goToSendEmail = this.goToSendEmail.bind(this)
   }
 
+  // taking the value and name of target input and setting them in postData in state
   handleChange({ target: {name, value }}) {
     console.log(this.state)
     const postData = {...this.state.postData, [name]: value }
     this.setState({ postData })
   }
 
+  // submitting the data and making a flash message, then redirecting to home
   handleSubmit(e){
     e.preventDefault()
     axios.post('/api/login', this.state.postData)
@@ -64,6 +66,7 @@ class Login extends React.Component{
           <Segment color="blue">
             <Icon name='user circle' size='huge' />
 
+            {/* displaying error messages when they exist, passing in list  of error messages */}
             {errorMessages.length >0 && <Message
               error
               header='There was some errors with your submission'

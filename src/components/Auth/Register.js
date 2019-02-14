@@ -11,7 +11,7 @@ class Register extends React.Component{
   constructor(){
     super()
 
-
+    // image success, when true, will display flash message and remove image upload button
     this.state = {
       imageSuccess: false,
       postData: {},
@@ -24,18 +24,20 @@ class Register extends React.Component{
   }
 
 
-
+  // taking the value and name of input to set in state, before making post request to register
   handleChange({ target: { name, value }}) {
     const postData = {...this.state.postData, [name]: value }
     const errors= {}
     this.setState({ postData, errors })
   }
 
+  // setting image success to be true
   changeSuccess(){
     console.log('changing state')
     this.setState({ imageSuccess: true })
   }
 
+  // submitting the data to back end register route
   handleSubmit(e){
     e.preventDefault()
     axios.post('/api/register', this.state.postData)
@@ -49,6 +51,7 @@ class Register extends React.Component{
 
 
   render(){
+    console.log(this.state.postData)
     return(
       <Container>
         <RegisterForm
