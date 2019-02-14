@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Segment, Grid, Header, Icon, Container, Form, Flash, Button, Image } from 'semantic-ui-react'
+import { Segment, Grid, Header, Icon, Container, Form, Button, Modal } from 'semantic-ui-react'
 import ReactFilestack from 'filestack-react'
 
 
@@ -20,6 +20,11 @@ class UserShow extends React.Component{
   }
 
   componentDidMount(){
+    axios.get(`/api/users/${this.props.match.params.id}`)
+      .then(res => this.setState({ userData: res.data }))
+  }
+  reload(){
+    console.log('refreshing')
     axios.get(`/api/users/${this.props.match.params.id}`)
       .then(res => this.setState({ userData: res.data }))
   }
@@ -60,53 +65,57 @@ class UserShow extends React.Component{
     const errors= {}
     this.setState({ postData, errors })
       .then(this.props.reload())
-
   }
 
   handleSubmit(e){
     e.preventDefault()
     axios.put(`/api/users/${this.props.match.params.id}`, this.state.postData)
+      .then(this.reload())
       .catch(err => this.setState({ errors: err.response.data }))
-      .then(this.props.reload())
   }
 
   render(){
     if(!this.state.userData) return null
-    console.log(this.state.userData.headerImage)
+    console.log(this.props)
     const { userData } = this.state
     return(
       <div>
         <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Field>
-            {!this.stateimageSuccess &&
-            <ReactFilestack
-              apikey={ `${process.env.FILE_STACK_KEY}` }
-              mode={'pick'}
-              onSuccess={(res) => {
-                this.changeSuccess()
-                this.handleChange({
-                  target: {
-                    name: 'headerImage',
-                    value: res.filesUploaded[0].url
-                  }})
-              }}
-              onError={(e) => console.log(e)}
-              buttonText={'Add A Header Image'}
-              buttonClass={'button is-rounded'}
-            />
-            }
+        <Container className="center-image">
+          <Segment style={this.getHeaderStyle(userData)}>
+            <Modal className='header-modal' size='mini' trigger={<Button>Update Cover Photo</Button>}>
+              <Modal.Description>
+
+                <Form className='center-form' onSubmit={this.handleSubmit}>
+                  <Form.Field className='center-image'>
+                    {!this.stateimageSuccess &&
+                <ReactFilestack
+                  apikey={ `${process.env.FILE_STACK_KEY}` }
+                  mode={'pick'}
+                  onSuccess={(res) => {
+                    this.changeSuccess()
+                    this.handleChange({
+                      target: {
+                        name: 'headerImage',
+                        value: res.filesUploaded[0].url
+                      }})
+                  }}
+                  onError={(e) => console.log(e)}
+                  buttonText={'Choose an Image'}
+                  buttonClass={'button is-rounded'}
+                />
+                    }
+                  </Form.Field>
+                  <Button onClick={this.toggleOpen} content="Submit" color='blue' size='tiny' />
+                </Form>
+              </Modal.Description>
+            </Modal>
             <Container className="center-image">
-              <Segment style={this.getHeaderStyle(userData)}>
-                <Button content="Update Cover Photo" black size='tiny' />
-                <Container className="center-image">
-                  <Segment circular id='circle2' style={this.getStyle(userData)}>
-                  </Segment>
-                </Container>
+              <Segment circular id='circle2' style={this.getStyle(userData)}>
               </Segment>
             </Container>
-          </Form.Field>
-        </Form>
+          </Segment>
+        </Container>
         <Grid columns={4}>
           <Grid.Column width="3" id="divColumn">
           </Grid.Column>
