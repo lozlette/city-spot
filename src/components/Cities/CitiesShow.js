@@ -66,15 +66,9 @@ class CitiesShow extends React.Component{
       <div>
         <Container id='cities-show' textAlign='center'>
 
-<<<<<<< HEAD
           <Divider hidden section/>
           <Header id='cityHeader' size='huge'> {city.name} </Header>
           <Divider />
-=======
-            <Divider hidden section/>
-            <Header id='cityHeader' size='huge'> {city.name} </Header>
-            <Divider />
->>>>>>> development
 
           {/* Grid with 3 columns. First column is  IMAGE & VIDEO */}
           <Grid stackable columns={3}>
