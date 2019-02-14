@@ -16,6 +16,7 @@ import Popular from './components/common/popular'
 
 import ResetPassword from './components/Auth/ResetPassword'
 import NewPassword from './components/Auth/NewPassword'
+import Confirm from './components/Auth/Confirm'
 import LoadingPage from './components/common/LoadingPage'
 
 
@@ -29,12 +30,8 @@ class App extends React.Component{
     return(
       <div>
         <BrowserRouter>
-
-
           <main>
-
             <Navbar />
-
             <FlashMessages />
             <Switch>
 
@@ -44,6 +41,7 @@ class App extends React.Component{
               <Route path="/cities" component={CitiesIndex} />
               <Route path="/users/:id" component={UserShow} />
               <Route path="/register" component={Register} />
+              <Route path="/confirm/:code" component={Confirm} />
               <Route path="/login" component={Login} />
               <Route path="/resetpassword" component={ResetPassword} />
               <Route path="/newpassword/:id" component={NewPassword} />

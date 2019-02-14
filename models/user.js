@@ -11,7 +11,8 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: 'Please enter a password' },
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent' },
   gender: { type: String },
-  verified: { type: Boolean, default: true }
+  verified: { type: Boolean, default: false },
+  confirmCode: { type: String, required: true }
 })
 
 userSchema.virtual('posts', {

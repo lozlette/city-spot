@@ -19,7 +19,7 @@ router.post('/login', authController.login)
 
 router.post('/resetpassword/', authController.passwordReset) // entering Email
 
-
+router.get('/confirm/:code', authController.confirm) //  confirm code  via email
 
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)

@@ -8,8 +8,8 @@ import moment from 'moment'
 
 
 const PostsFeedBlock = ({ text, city, post, index, addLike,
-                        handleChangePost, handleChangeComment,
-                        handleSubmitComment ,commentError, deletePost }) => {
+  handleChangePost, handleChangeComment,
+  handleSubmitComment ,commentError, deletePost }) => {
   return(
     <Feed.Event>
       <Feed.Label image={post.image} />
