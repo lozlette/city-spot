@@ -7,8 +7,6 @@ import Auth from '../../lib/Auth'
 import Flash from '../../lib/Flash'
 import axios from 'axios'
 
-// {Auth.isAuthenticated() && <Link className="navbar-item" to="/cheeses/new">Add a cheese</Link>}
-// Flash.setMessage('success', this.state.message)
 
 class PostsSection extends React.Component{
   constructor(props){
