@@ -33,7 +33,12 @@ class CitiesIndex extends React.Component {
     console.log(this.state.cities)
     return(
       <div>
-        <Grid columns={4}>
+
+        <Header id='citiesHeader'>
+          <Header as='h1' className='headingContinentCity'>Choose your city</Header>
+        </Header>
+
+        <Grid id='cities-index' stackable columns={4}>
           <Grid.Row>
             {this.state.cities.map(city =>
               <Grid.Column key={city._id}>

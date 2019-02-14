@@ -38,7 +38,7 @@ class Navbar extends React.Component{
 
     return (
       <Segment inverted id="nav">
-        <Menu inverted pointing secondary>
+        <Menu stackable inverted pointing secondary>
           <Menu.Item
             name='home'
             active={this.props.location.pathname === '/'}
@@ -51,21 +51,21 @@ class Navbar extends React.Component{
             name='View All Cities'
             active={this.props.location.pathname === '/cities'}
             onClick={this.handleItemClick}
-          > View All Cities
+          > <Icon name='globe' /> View All Cities
           </Menu.Item>
 
           <Menu.Item
             name='View All Posts'
             active={this.props.location.pathname === '/posts'}
             onClick={this.handleItemClick}
-          > View All Posts
+          > <Icon name='th' /> View All Posts
           </Menu.Item>
 
           <Menu.Item
             name='View Most Popular Posts'
             active={this.props.location.pathname === '/popular'}
             onClick={this.handleItemClick}
-          > View Most Popular Posts
+          > <Icon name='heart' /> View Most Popular Posts
           </Menu.Item>
 
 

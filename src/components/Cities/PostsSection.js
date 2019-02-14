@@ -17,12 +17,12 @@ class PostsSection extends React.Component{
       finished: false,
       postData: {
         image: '',
-        caption: '',
+        caption: ''
       },
       commentText: {
         text: ''
       },
-      commentError:''
+      commentError: ''
     }
 
     this.handleChangePost = this.handleChangePost.bind(this)
@@ -51,8 +51,8 @@ class PostsSection extends React.Component{
     e.preventDefault()
     axios
       .post(`/api/cities/${this.props.city._id}/posts`, this.state.postData,
-          { headers: { Authorization: `Bearer ${Auth.getToken()}` }}
-        )
+        { headers: { Authorization: `Bearer ${Auth.getToken()}` }}
+      )
       .then(res => {
         this.setState({
           modalOpen: false,
@@ -68,8 +68,8 @@ class PostsSection extends React.Component{
 
   deletePost(e, postId){
     axios.delete(`/api/cities/${this.props.match.params.id}/posts/${postId}`)
-    .then(() => this.props.reload())
-    .catch(err => console.log(err.response))
+      .then(() => this.props.reload())
+      .catch(err => console.log(err.response))
   }
 
   addLike(e, postId){
@@ -99,8 +99,8 @@ class PostsSection extends React.Component{
         commentText: {
           text: ''
         }
-       }))
-       .then(() => this.props.reload())
+      }))
+      .then(() => this.props.reload())
       .catch(err => this.handleErrors(err.response))
   }
 
@@ -114,33 +114,33 @@ class PostsSection extends React.Component{
               open={this.state.modalOpen}
               basic
               trigger={<Button onClick={this.toggleOpen}
-              fluid size='large'
-              primary>Add a Post</Button>}>
-                <PostFormModal
-                  toggleOpen={this.toggleOpen}
-                  postData={this.state.postData}
-                  handleChangePost={this.handleChangePost}
-                  handleSubmitPost={this.handleSubmitPost}
-                />
+                fluid size='large'
+                primary>Add a Post</Button>}>
+              <PostFormModal
+                toggleOpen={this.toggleOpen}
+                postData={this.state.postData}
+                handleChangePost={this.handleChangePost}
+                handleSubmitPost={this.handleSubmitPost}
+              />
             </Modal>
         }
 
 
         <Feed id="feed">
           {posts.slice().reverse().map((post, index) =>
-              <PostsFeedBlock
-                addLike={this.addLike}
-                deletePost={this.deletePost}
-                text={this.state.commentText.text}
-                commentError={this.state.commentError}
-                handleChangePost={this.handleChangePost}
-                handleChangeComment={this.handleChangeComment}
-                handleSubmitComment={this.handleSubmitComment}
-                city={this.props.city}
-                key={post._id}
-                post={post}
-                index={index}
-              />
+            <PostsFeedBlock
+              addLike={this.addLike}
+              deletePost={this.deletePost}
+              text={this.state.commentText.text}
+              commentError={this.state.commentError}
+              handleChangePost={this.handleChangePost}
+              handleChangeComment={this.handleChangeComment}
+              handleSubmitComment={this.handleSubmitComment}
+              city={this.props.city}
+              key={post._id}
+              post={post}
+              index={index}
+            />
           )}
         </Feed>
       </Segment>

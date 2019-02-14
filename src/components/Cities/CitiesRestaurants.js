@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Header, Grid, Container, Segment } from 'semantic-ui-react'
+import { Header, Grid, Segment } from 'semantic-ui-react'
+
 
 class CitiesRestaurants extends React.Component {
 
@@ -32,18 +33,31 @@ class CitiesRestaurants extends React.Component {
 
   render(){
     if(!this.state.restaurants.restaurants) return null
+    if(this.state.restaurants.restaurants.length === 0) return null
     const resto = this.state.restaurants.restaurants
     console.log(resto[0].restaurant.name)
     return(
-      <Container>
-        <Grid columns={4}>
+      <div>
+        <Header id='infoHeaderEat'>
+          <Header as='h2' className='heading city-spot'>Eateries in {this.props.cityName}</Header>
+        </Header>
+        <Grid stackable columns={4}>
           <Grid.Row>
             {resto.map((restaurant,index) =>
 
               <Grid.Column key={index}>
                 <Segment inverted circular id='circle' style={this.getStyle(restaurant)}>
-                  <Header as='h2' className='segmentHeader'>
+                  <Header className='heading4' inverted as='h4'>
                     {restaurant.restaurant.name}
+                    <Header.Subheader id='infoSubheader'>
+                      Type of food: {restaurant.restaurant.cuisines}
+                    </Header.Subheader>
+                    <Header.Subheader id='infoSubheader'>
+                      Address: {restaurant.restaurant.location.address}
+                    </Header.Subheader>
+                    <Header.Subheader id='infoSubheader'>
+                      Average cost for 2 people: {restaurant.restaurant.currency}{restaurant.restaurant.average_cost_for_two}
+                    </Header.Subheader>
                   </Header>
                 </Segment>
               </Grid.Column>
@@ -51,7 +65,7 @@ class CitiesRestaurants extends React.Component {
             )}
           </Grid.Row>
         </Grid>
-      </Container>
+      </div>
     )
   }
 }

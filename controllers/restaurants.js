@@ -15,13 +15,12 @@ function indexRoute(req, res, next){
     json: true
   })
     .then(response => {
-      console.log(response, 'THE RESPONSE!!!!!!!')
+      console.log(response.results[0].geometry, 'THE RESPONSE!!!!!!!')
       const { lat, lng } = response.results[0].geometry
       return rp({
         method: 'GET',
-        url: `https://developers.zomato.com/api/v2.1/search?lat=${lat}&lon=-${lng}&start=20&radius=1000&sort=real_distance`,
+        url: `https://developers.zomato.com/api/v2.1/search?lat=${lat}&lon=${lng}&start=20&radius=100&sort=real_distance`,
         qs: {
-          // key: process.env.ZOMATO_KEY,
           units: 'si'
         },
         headers: {

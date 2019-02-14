@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Header, Grid, Container, Segment, Divider } from 'semantic-ui-react'
+import { Header, Grid, Segment} from 'semantic-ui-react'
+
 
 class CitiesEvents extends React.Component {
 
@@ -38,37 +39,36 @@ class CitiesEvents extends React.Component {
     if(!this.state.events.results) return null
     if(this.state.events.results.length === 0) return null
     return(
-
-      <Container textAlign='left'>
-        <Header textAlign='center' as='h2'>
-          Events on in {this.props.cityName} today:
+      <div>
+        <Header id='infoHeaderEvent'>
+          <Header as='h2' className='heading city-spot'>Events on today in {this.props.cityName}</Header>
         </Header>
-        <Grid columns={4}>
-          <Grid.Row>
-            {this.state.events.results.map(event =>
+        <Grid stackable columns={4}>
+          {this.state.events.results.map(event =>
 
-              <Grid.Column key={event.id}>
-                <Segment inverted circular id='circle' style={this.getStyle(event)}>
-                  <Header as='h4'>
-                    {event.eventname}
-                    <Header.Subheader>
-                      {event.venue.name}
-                    </Header.Subheader>
-                    <Header.Subheader>
-                      {event.openingtimes.doorsopen}-{event.openingtimes.doorsclose}
-                    </Header.Subheader>
-                  </Header>
-                </Segment>
-              </Grid.Column>
+            <Grid.Column key={event.id}>
+              <Segment inverted circular id='circle' style={this.getStyle(event)}>
+                <Header className='heading4' inverted as='h4'>
+                  {event.eventname}
+                  <Header.Subheader>
+                    {event.venue.name}
+                  </Header.Subheader>
+                  <Header.Subheader>
+                    {event.openingtimes.doorsopen}-{event.openingtimes.doorsclose}
+                  </Header.Subheader>
+                </Header>
+              </Segment>
+            </Grid.Column>
 
-            )}
-          </Grid.Row>
+          )}
         </Grid>
 
+      </div>
 
 
-      <Divider section />
-      </Container>
+
+
+
     )
   }
 

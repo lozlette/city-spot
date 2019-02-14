@@ -97,6 +97,16 @@
   padding-top: 0;
 }
 
+.ui.header.heading4 {
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  text-align: center;
+  font-family: 'Major Mono Display', monospace;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 15px;
+}
+
 .ui.header.section {
   justify-content: center;
   display: flex;
@@ -114,6 +124,78 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+// styles for CitiesInfo page ---------------------
+
+#infoHeaderEvent {
+  height: 760px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('http://thenextweb.com/wp-content/blogs.dir/1/files/2013/11/concert-audience.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#infoHeaderEat {
+  height: 760px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://thimpress.com/wp-content/uploads/2018/04/41993-das-loft-sofitel-19to1.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#infoSubheader {
+  font-size: 10px;
+  font-family: 'Major Mono Display', monospace;
+}
+
+#infoSubheading {
+  font-size: 45px;
+  font-family: 'Major Mono Display', monospace;
+}
+//----------------------------------------------
+
+// ContinentsShow page styles
+#continentsHeader {
+  height: 760px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://www.worldmapsonline.com/images/murals/satellite_image/detailed_world_satellite_image_mural_cen_150_lg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui.header.headingContinentCity {
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Major Mono Display', monospace;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  color:#FFFFFF;
+}
+
+//-------------------------------------------
+
+// CitiesIndex page styles
+
+#citiesHeader {
+  height: 760px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://media.timeout.com/images/105135008/image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+//----------------------------------------------
 
 div.row.section2{
   justify-content: center !important;
@@ -123,6 +205,7 @@ div.row.section2{
 
 #cityHeader{
   font-size: 60px;
+  font-family: 'Major Mono Display', monospace;
 }
 
 #feed{
@@ -216,6 +299,164 @@ text-align: center;
 padding: 40px;
 justify-content: center;
 display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#cities-index{
+    width: 80%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+// LOADER
+// ------------------------------------------------------------------------------------------------------
+#earth {
+position: relative;
+width: 300px;
+height: 300px;
+margin: 3em auto;
+background: #888 url(https://lh5.googleusercontent.com/-kkxEx-SkRaY/VBLF4BV2lZI/AAAAAAAAKao/FnKsv7402_c/s0/earthmap.jpg) 0 0 repeat;
+border-radius: 50%;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+background-size: 630px;
+animation: rotate 4s linear infinite;
+-webkit-animation: rotate 4s linear infinite;
+-moz-animation: rotate 4s linear infinite;
+-ms-animation: rotate 4s linear infinite;
+-o-animation: rotate 4s linear infinite;
+-webkit-transition: -webkit-transform 200ms linear;
+-webkit-transform-style: preserve-3d;
+-moz-transition: -moz-transform 200ms linear;
+-moz-transform-style: preserve-3d;
+transition: transform 200ms linear;
+transform-style: preserve-3d;
+box-shadow: inset 20px 0 80px 6px rgba(0, 0, 0, 1);
+-moz-box-shadow: inset 20px 0 80px 6px rgba(0, 0, 0, 1);
+-webkit-box-shadow: inset 20px 0 80px 6px rgba(0, 0, 0, 1);
+color: #000;
+margin-top: 120px;
+}
+
+#earth:before {
+content: "";
+position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 100%;
+border-radius: 50%;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+box-shadow: -80px 15px 80px 10px rgba(0,0,0,.9) inset;
+-moz-box-shadow: -80px 15px 80px 10px rgba(0,0,0,.9) inset;
+-webkit-box-shadow: -80px 15px 80px 10px rgba(0,0,0,.9) inset;
+z-index: 2;
+}
+
+#earth:after {
+content: "";
+position: absolute;
+border-radius: 50%;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+opacity: 0.2;
+background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+
+
+
+@keyframes rotate {
+0% {background-position: 0 0;}
+100% {background-position: 630px 0;}
+}
+
+
+@-moz-keyframes rotate {
+0% {background-position: 0 0;}
+100% {background-position: 630px 0;}
+}
+
+
+@-webkit-keyframes rotate {
+0% {background-position: 0 0;}
+100% {background-position: 630px 0;}
+}
+
+
+@-ms-keyframes rotate {
+0% {background-position: 0 0;}
+100% {background-position: 630px 0;}
+}
+
+
+@-o-keyframes rotate {
+0% {background-position: 0 0;}
+100% {background-position: 630px 0;}
+}
+
+#circle4, .user-posts {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  width: 200px !important;
+  height: 200px !important;
 }
 
 .homepage-margin {

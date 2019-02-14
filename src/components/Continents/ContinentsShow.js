@@ -31,8 +31,10 @@ class ContinentsShow extends React.Component {
     console.log(this.state.continents.cities)
     return(
       <div>
-        <Header as='h1' className='heading'>{this.state.continents.name}</Header>
-        <Grid columns={4}>
+        <Header id='continentsHeader'>
+          <Header as='h1' className='headingContinentCity'>{this.state.continents.name}</Header>
+        </Header>
+        <Grid stackable columns={4}>
           <Grid.Row>
             {this.state.continents.cities.map(city =>
               <Grid.Column key={city._id}>

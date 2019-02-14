@@ -17,7 +17,7 @@ class LoadingPage extends React.Component {
   render() {
 
     return (
-      <div className='loader' /> 
+      <div id='earth' /> 
 
     )
   }
