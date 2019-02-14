@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Segment, Grid, Header, Icon, Container, Form, Button, Modal, Divider, Image } from 'semantic-ui-react'
+import { Segment, Grid, Header, Icon, Container, Form, Button, Modal, Divider, Image, Link } from 'semantic-ui-react'
 import ReactFilestack from 'filestack-react'
 
 
@@ -14,7 +14,9 @@ class UserShow extends React.Component{
 
     this.state={
       imageSuccess: false,
-      postData: {},
+      postData: {
+        bio: ''
+      },
       errors: {}
     }
   }
@@ -74,7 +76,7 @@ class UserShow extends React.Component{
       <div>
         <Container className='header-container'>
           <Segment style={this.getHeaderStyle(userData)}>
-            <Modal className='header-modal' size='mini' trigger={<Button>Update Cover Photo</Button>}>
+            <Modal className='header-modal' size='mini' trigger={<Button secondary >Update Cover Photo</Button>}>
               <Modal.Description>
 
                 <Form className='center-form' onSubmit={this.handleSubmit}>
@@ -101,6 +103,7 @@ class UserShow extends React.Component{
                 </Form>
               </Modal.Description>
             </Modal>
+
             <Container className='center-image'>
               <Segment circular style={this.getStyle(userData)}>
               </Segment>
@@ -109,6 +112,23 @@ class UserShow extends React.Component{
         </Container>
 
         <Container className='user-container'>
+          <Segment>
+            <Modal className='header-modal' size='mini' trigger={<Button secondary >Edit info</Button>}>
+              <Modal.Description>
+                <Form className='center-form' onSubmit={this.handleSubmit}>
+                  <Form.Field className='center-image'>
+                    <Form.TextArea
+                      label='Bio'
+                      placeholder={this.state.userData.bio}
+                      name='bio'
+                      onChange={this.handleChange}
+                    />
+                  </Form.Field>
+                  <Button onClick={this.toggleOpen} content="Submit" color='blue' size='tiny' />
+                </Form>
+              </Modal.Description>
+            </Modal>
+          </Segment>
           <Grid textAlign='center' columns={1}>
             <Grid.Column>
               <Header as='h2' textAlign='center'> Bio </Header>
@@ -119,10 +139,10 @@ class UserShow extends React.Component{
         </Container>
 
         <Container className='user-container'>
-          <Header as='h2' textAlign='center'> Uploads</Header>
+          <Header as='h2' textAlign='center'> Posts</Header>
           <Grid columns={3}>
 
-            {this.state.userData.posts.map(post => <Grid.Column key={post._id}> <Image size='medium' src={post.image} alt='User post' />
+            {this.state.userData.posts.map(post => <Grid.Column key={post._id}>  <Image size='medium' src={post.image} alt='User post' />
             </Grid.Column>)}
           </Grid>
         </Container>
