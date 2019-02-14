@@ -41,6 +41,10 @@
   font-family: 'Major Mono Display', monospace !important;
 }
 
+#square {
+  width: 485px;
+  margin-top: 20px;
+}
 .city-spot {
   color: white !important;
 }
@@ -157,7 +161,7 @@ div.search.selection {
     }
   }
 
-.user-posts2 {
+.center-posts {
   display: flex;
   flex-direction: row;
   margin: 0 30px;
@@ -167,4 +171,9 @@ div.search.selection {
 .ui.four.column.grid {
   display: flex;
   justify-content: space-around;
+}
+
+.center-image {
+  justify-content: center;
+  display: flex !important;
 }

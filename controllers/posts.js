@@ -8,12 +8,14 @@ function postIndexRoute(req, res, next) {
     .catch(next)
 }
 
-// function allPostIndexRoute(req, res, next) {
-//   Post
-//     .find()
-//     .then(post => res.json(post))
-//     .catch(next)
-// }
+function allPostIndexRoute(req, res, next) {
+  Post
+    .find()
+    .populate({path: 'user', select: 'username'})
+    .populate({path: 'city', select: 'name'})
+    .then(post => res.json(post))
+    .catch(next)
+}
 
 function postCreateRoute(req, res, next) {
   req.body.city = req.params.id
@@ -113,6 +115,8 @@ function likeCreateRoute(req, res, next) {
     .catch(next)
 }
 
+
+
 function popularPostRoute(req, res, next) {
   Post
     .find()
@@ -139,7 +143,7 @@ function popularPostRoute(req, res, next) {
 // }
 
 module.exports = {
-  // allPostIndex: allPostIndexRoute,
+  allPostIndex: allPostIndexRoute,
   postCreate: postCreateRoute,
   postShow: postShowRoute,
   postIndex: postIndexRoute,

@@ -36,7 +36,6 @@ class UserShow extends React.Component{
   }
 
   handleChange(){
-
   }
 
   render(){
@@ -46,20 +45,20 @@ class UserShow extends React.Component{
     return(
       <div>
         <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
-        <Container>
-          {!this.stateimageSuccess &&
-            <ReactFilestack
-              apikey={ `${process.env.FILE_STACK_KEY}` }
-              mode={'pick'}
-              onSuccess={() => {
-                this.changeSuccess
-                this.handleChange
-              }}
-              onError={(e) => console.log(e)}
-              buttonText={'Add A Header Image'}
-              buttonClass={'button is-rounded'}
-            />
-          }
+        {!this.stateimageSuccess &&
+          <ReactFilestack
+            apikey={ `${process.env.FILE_STACK_KEY}` }
+            mode={'pick'}
+            onSuccess={() => {
+              this.changeSuccess
+              this.handleChange
+            }}
+            onError={(e) => console.log(e)}
+            buttonText={'Add A Header Image'}
+            buttonClass={'button is-rounded'}
+          />
+        }
+        <Container className="center-image">
           <Segment circular id='circle2' style={this.getStyle(userData)}>
           </Segment>
         </Container>
@@ -71,7 +70,7 @@ class UserShow extends React.Component{
               <Segment>
                 <Header as="h2">
                   <Icon name="user"></Icon>
-                  {userData.firstName}{userData.lastName}
+                  {userData.firstName} {userData.lastName}
                 </Header>
               </Segment>
               <Segment>
@@ -85,13 +84,13 @@ class UserShow extends React.Component{
             </Segment.Group>
             <Segment.Group>
               <Segment>
-                <Header as='h3'> Your details: </Header>
+                <Header as='h3'> Details: </Header>
               </Segment>
               <Segment.Group>
                 <Segment>
-                  <p>{userData.firstName} {userData.lastName}</p>
+                  <p>Name: {userData.firstName} {userData.lastName}</p>
                   <p>{userData.gender}</p>
-                  <p>{userData.email}</p>
+                  <p>Email: {userData.email}</p>
                   <p>{userData.continent}</p>
                 </Segment>
               </Segment.Group>
@@ -102,10 +101,10 @@ class UserShow extends React.Component{
               <Segment>
                 <Header as='h3'>
                   <Icon name="compose"></Icon>
-          Your recent posts:
+          Recent posts:
                 </Header>
                 <div className='user-posts2'>
-                  {this.state.userData.posts.map(post => <div key={post._id}> <img src={post.image} alt='User post' className='user-posts' /> </div>)}
+                  {this.state.userData.posts.map(post => <div key={post._id}> <div> <img src={post.image} alt='User post' id='square' /> </div> <Header as='h3' textAlign='center'> {post.caption} </Header> </div>)}
                 </div>
               </Segment>
               <Segment.Group>
