@@ -111,6 +111,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+// styles for CitiesInfo page ---------------------
 
 #infoHeaderEvent {
   height: 760px;
@@ -141,6 +142,47 @@
   font-size: 45px;
   font-family: 'Major Mono Display', monospace;
 }
+//----------------------------------------------
+
+// ContinentsShow page styles
+#continentsHeader {
+  height: 760px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://www.worldmapsonline.com/images/murals/satellite_image/detailed_world_satellite_image_mural_cen_150_lg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui.header.headingContinentCity {
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Major Mono Display', monospace;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  color:#FFFFFF;
+}
+
+//-------------------------------------------
+
+// CitiesIndex page styles
+
+#citiesHeader {
+  height: 760px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://media.timeout.com/images/105135008/image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+//----------------------------------------------
 
 #cityHeader{
   font-size: 60px;

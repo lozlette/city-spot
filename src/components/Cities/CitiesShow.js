@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { Link }  from 'react-router-dom'
 
-import { Header, Divider, Segment, Container, Grid, Reveal, Button, Icon } from 'semantic-ui-react'
+import { Header, Divider, Segment, Container, Grid, Reveal, Button} from 'semantic-ui-react'
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import CitiesForecast from './CitiesForecast'

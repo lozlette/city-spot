@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 
-import  { Container, Grid, Header } from 'semantic-ui-react'
+import  { Grid, Header } from 'semantic-ui-react'
 
 import CitiesEvents from './CitiesEvents'
 import CitiesRestaurants from './CitiesRestaurants'
@@ -40,15 +40,9 @@ class CitiesInfo extends React.Component {
     return(
       <div>
         <Header as='h1' className='heading'>Events & Eateries</Header>
-        <Header id='infoHeaderEvent'>
-          <Header as='h2' className='heading city-spot'>Events on today in {city.name}</Header>
-        </Header>
         <Grid.Row>
           <CitiesEvents cityName={city.name} />
         </Grid.Row>
-        <Header id='infoHeaderEat'>
-          <Header as='h2' className='heading city-spot'>Eateries in {city.name}</Header>
-        </Header>
         <Grid.Row>
           <CitiesRestaurants cityName={city.name} />
         </Grid.Row>
