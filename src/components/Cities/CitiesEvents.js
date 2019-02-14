@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Header, Grid, Container, Segment } from 'semantic-ui-react'
+import { Header, Grid, Container, Segment, Divider } from 'semantic-ui-react'
 
 class CitiesEvents extends React.Component {
 
@@ -51,10 +51,10 @@ class CitiesEvents extends React.Component {
                 <Segment inverted circular id='circle' style={this.getStyle(event)}>
                   <Header as='h4'>
                     {event.eventname}
-                    <Header.Subheader inverted>
+                    <Header.Subheader>
                       {event.venue.name}
                     </Header.Subheader>
-                    <Header.Subheader inverted>
+                    <Header.Subheader>
                       {event.openingtimes.doorsopen}-{event.openingtimes.doorsclose}
                     </Header.Subheader>
                   </Header>
@@ -67,7 +67,7 @@ class CitiesEvents extends React.Component {
 
 
 
-
+      <Divider section />
       </Container>
     )
   }
