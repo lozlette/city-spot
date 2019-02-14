@@ -33,7 +33,7 @@
   height: 300px !important;
 }
 
-#circle:hover {
+#circle3:hover {
   transform: scale(1.1);
 }
 
@@ -109,7 +109,7 @@
 }
 
 .background {
-  height: 770px;
+  height: 100vh;
   background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://www.whitecase.com/sites/whitecase/files/London_UnitedKingdom_Tablet_1920x960.jpg');
   background-repeat: no-repeat;
   background-size: cover;
