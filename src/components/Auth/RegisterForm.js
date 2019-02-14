@@ -25,7 +25,7 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors, imageSucce
           {/* displaying any error messages the user has received */}
           {errorMessages.length >0 && <Message
             error
-            header='There was some errors with your submission'
+            header='There were some errors with your submission'
             list={errorMessages}
           />}
           <Form onSubmit={handleSubmit} >

@@ -76,11 +76,10 @@ class UserShow extends React.Component{
 
   render(){
     if(!this.state.userData) return null
-    console.log(this.props)
+    console.log(this.state.userData)
     const { userData } = this.state
     return(
       <div>
-        <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
         <Container className="center-image">
           <Segment style={this.getHeaderStyle(userData)}>
             <Modal className='header-modal' size='mini' trigger={<Button>Update Cover Photo</Button>}>
@@ -113,6 +112,7 @@ class UserShow extends React.Component{
             <Container className="center-image">
               <Segment circular id='circle2' style={this.getStyle(userData)}>
               </Segment>
+              <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
             </Container>
           </Segment>
         </Container>
@@ -158,14 +158,14 @@ class UserShow extends React.Component{
           Recent posts:
                 </Header>
                 <div className='user-posts2'>
-                  {this.state.userData.posts.map(post => <div key={post._id}> <div> <img src={post.image} alt='User post' id='square' /> </div> <Header as='h3' textAlign='center'> {post.caption} </Header> </div>)}
+                  {this.state.userData.posts.map(post => <div key={post._id}> <div> <img src={post.image} alt='User post' id='square' /> </div> <Header as='h3' textAlign='center'> {post.caption} </Header>  <Segment.Group>
+                    <Segment>
+                      {post.comments.text}
+                    </Segment>
+                  </Segment.Group></div>)}
                 </div>
               </Segment>
-              <Segment.Group>
-                <Segment>
-          User comments to go here...
-                </Segment>
-              </Segment.Group>
+
             </Segment.Group>
           </Grid.Column>
           <Grid.Column width="3" id="divColumn">

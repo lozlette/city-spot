@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
   continent: { type: mongoose.Schema.ObjectId, ref: 'Continent' },
   headerImage: {type: String},
   gender: { type: String },
-  verified: { type: Boolean, default: false },
+  verified: { type: Boolean, default: true },
   confirmCode: { type: String, required: true }
 })
 
