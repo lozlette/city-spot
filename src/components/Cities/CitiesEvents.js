@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 import { Header, Grid, Container, Segment, Divider } from 'semantic-ui-react'
+import LoadingPage from '../common/LoadingPage'
 
 class CitiesEvents extends React.Component {
 
@@ -40,8 +41,10 @@ class CitiesEvents extends React.Component {
     return(
 
       <Container textAlign='left'>
-        <Grid columns={4}>
-          <Grid.Row>
+        <Header textAlign='center' className='heading4' as='h2'>
+          Events on in {this.props.cityName} today:
+        </Header>
+        <Grid stackable columns={4}>
             {this.state.events.results.map(event =>
 
               <Grid.Column key={event.id}>
@@ -59,13 +62,12 @@ class CitiesEvents extends React.Component {
               </Grid.Column>
 
             )}
-          </Grid.Row>
         </Grid>
         <Divider />
 
 
 
-
+  
       </Container>
     )
   }

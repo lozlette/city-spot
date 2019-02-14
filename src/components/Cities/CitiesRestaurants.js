@@ -36,7 +36,10 @@ class CitiesRestaurants extends React.Component {
     console.log(resto[0].restaurant.name)
     return(
       <Container>
-        <Grid columns={4}>
+        <Header textAlign='center' className='heading4' as='h2'>
+        Restaurants in {this.props.cityName}:
+        </Header>
+        <Grid stackable columns={4}>
           <Grid.Row>
             {resto.map((restaurant,index) =>
 
