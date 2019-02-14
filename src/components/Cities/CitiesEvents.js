@@ -43,29 +43,29 @@ class CitiesEvents extends React.Component {
         <Header textAlign='center' as='h2'>
           Events on in {this.props.cityName} today:
         </Header>
+        <Grid columns={4}>
+          <Grid.Row>
+            {this.state.events.results.map(event =>
 
-
-        {this.state.events.results.map(event =>
-          <Grid.Row key={event.id}>
-            <Grid columns={3}>
-              <Grid.Column>
-                <Segment circular id='circle' style={this.getStyle(event)}>
+              <Grid.Column key={event.id}>
+                <Segment inverted circular id='circle' style={this.getStyle(event)}>
+                  <Header as='h4'>
+                    {event.eventname}
+                    <Header.Subheader inverted>
+                      {event.venue.name}
+                    </Header.Subheader>
+                    <Header.Subheader inverted>
+                      {event.openingtimes.doorsopen}-{event.openingtimes.doorsclose}
+                    </Header.Subheader>
+                  </Header>
                 </Segment>
               </Grid.Column>
-              <Grid.Column>
-                <Header as='h4' textAlign='center'>
-                  {event.eventname}
-                  <Header.Subheader>
-                    {event.venue.name}
-                  </Header.Subheader>
-                </Header>
-              </Grid.Column>
-              <Grid.Column>
-                {event.openingtimes.doorsopen}-{event.openingtimes.doorsclose}
-              </Grid.Column>
-            </Grid>
+
+            )}
           </Grid.Row>
-        )}
+        </Grid>
+
+
 
 
       </Container>

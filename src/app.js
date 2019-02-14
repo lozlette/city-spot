@@ -11,8 +11,12 @@ import CitiesIndex from './components/Cities/CitiesIndex'
 import ContinentsShow from './components/Continents/ContinentsShow'
 import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
+<<<<<<< HEAD
+import CitiesInfo from './components/Cities/CitiesInfo'
+=======
 import PostsAll from './components/Cities/PostsAll'
 import Popular from './components/common/popular'
+>>>>>>> development
 
 
 import ResetPassword from './components/Auth/ResetPassword'
@@ -38,6 +42,7 @@ class App extends React.Component{
 
             <FlashMessages />
             <Switch>
+            <Route path="/cities/:id/info" component={CitiesInfo} />
               <Route path="/posts" component={PostsAll} />
               <Route path="/cities/:id" component={CitiesShow} />
               <Route path="/popular" component={Popular} />

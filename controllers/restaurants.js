@@ -19,9 +19,15 @@ function indexRoute(req, res, next){
       const { lat, lng } = response.results[0].geometry
       return rp({
         method: 'GET',
-        url: `https://www.skiddle.com/api/v1/events/search/?api_key=${process.env.SKIDDLE_KEY}&latitude=${lat}&longitude=${lng}&radius=5`,
-        json: true,
-        qs: { units: 'si' }
+        url: `https://developers.zomato.com/api/v2.1/search?lat=${lat}&lon=-${lng}&start=20&radius=1000&sort=real_distance`,
+        qs: {
+          // key: process.env.ZOMATO_KEY,
+          units: 'si'
+        },
+        headers: {
+          'user-key': process.env.ZOMATO_KEY
+        },
+        json: true
       })
     })
     .then(data => {
