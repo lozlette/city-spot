@@ -3,8 +3,6 @@ import axios from 'axios'
 
 import { Header, Grid, Container, Segment, Divider } from 'semantic-ui-react'
 
-import LoadingPage from '../common/LoadingPage'
-
 class CitiesEvents extends React.Component {
 
   constructor(props) {
@@ -42,7 +40,7 @@ class CitiesEvents extends React.Component {
     return(
 
       <Container textAlign='left'>
-        <Header textAlign='center' as='h2'>
+        <Header textAlign='center' className='heading4' as='h2'>
           Events on in {this.props.cityName} today:
         </Header>
         <Grid columns={4}>
@@ -51,7 +49,7 @@ class CitiesEvents extends React.Component {
 
               <Grid.Column key={event.id}>
                 <Segment inverted circular id='circle' style={this.getStyle(event)}>
-                  <Header as='h4'>
+                  <Header className='heading4' inverted as='h4'>
                     {event.eventname}
                     <Header.Subheader>
                       {event.venue.name}
@@ -66,6 +64,7 @@ class CitiesEvents extends React.Component {
             )}
           </Grid.Row>
         </Grid>
+        <Divider />
 
 
 
