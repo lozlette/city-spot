@@ -17,7 +17,7 @@ function loginRoute( req, res ) {
       }
 
       const payload = { sub: user._id }
-      const token = jwt.sign(payload, process.env.SECRET, { expiresIn: '2h' })
+      const token = jwt.sign(payload, process.env.SECRET, { expiresIn: '1h' })
 
       res.json({
         token,
@@ -40,7 +40,20 @@ function passwordReset( req, res, next ) {
       // send an email
       mailer.sendResetPassword(user)
     })
-    .then(() => res.json({ message: 'Email has been seccusfully sent to your address'}))
+    .then(() => res.json({ message: 'Email has been succesfully sent to your address'}))
+    .catch(next)
+}
+
+
+function confirmRoute(req, res, next) {
+  User.findOne({ confirmCode: req.params.code })
+    .then(user => {
+      if(!user) return res.status(401).json({ message: 'Unauthorized' })
+
+      user.verified = true
+      return user.save()
+    })
+    .then(() => res.json({ message: 'Account verified' }))
     .catch(next)
 }
 
@@ -48,5 +61,6 @@ function passwordReset( req, res, next ) {
 module.exports = {
   register: registerRoute,
   login: loginRoute,
-  passwordReset: passwordReset
+  passwordReset: passwordReset,
+  confirm: confirmRoute
 }

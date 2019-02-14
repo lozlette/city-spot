@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import { Header, Grid, Container, Segment, Divider } from 'semantic-ui-react'
 
+import LoadingPage from '../common/LoadingPage'
+
 class CitiesEvents extends React.Component {
 
   constructor(props) {
@@ -35,7 +37,7 @@ class CitiesEvents extends React.Component {
 
 
   render(){
-    if(!this.state.events.results) return null
+    if(!this.state.events.results) return <LoadingPage />
     if(this.state.events.results.length === 0) return null
     return(
 
