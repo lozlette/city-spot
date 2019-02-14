@@ -84,6 +84,15 @@
   padding-top: 0;
 }
 
+.ui.header.heading4 {
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  text-align: center;
+  font-family: 'Major Mono Display', monospace;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .ui.header.section {
   justify-content: center;
   display: flex;
@@ -104,6 +113,7 @@
 
 #cityHeader{
   font-size: 60px;
+  font-family: 'Major Mono Display', monospace;
 }
 
 #feed{
