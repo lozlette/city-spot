@@ -195,3 +195,14 @@ padding: 40px;
 justify-content: center;
 display: flex;
 }
+
+#circle4, .user-posts {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  width: 200px !important;
+  height: 200px !important;
+}

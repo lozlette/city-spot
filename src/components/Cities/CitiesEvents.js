@@ -69,7 +69,7 @@ class CitiesEvents extends React.Component {
 
 
 
-      <Divider section />
+        <Divider section />
       </Container>
     )
   }
