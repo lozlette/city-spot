@@ -70,6 +70,7 @@ class CitiesShow extends React.Component{
           <Header id='cityHeader' size='huge'> {city.name} </Header>
           <Divider />
 
+
           {/* Grid with 3 columns. First column is  IMAGE & VIDEO */}
           <Grid stackable columns={3}>
             <Grid.Column width={6}>

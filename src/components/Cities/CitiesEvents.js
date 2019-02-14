@@ -36,7 +36,7 @@ class CitiesEvents extends React.Component {
 
 
   render(){
-    if(!this.state.events.results) return <LoadingPage />
+    if(!this.state.events.results) return null
     if(this.state.events.results.length === 0) return null
     return(
 
@@ -45,29 +45,29 @@ class CitiesEvents extends React.Component {
           Events on in {this.props.cityName} today:
         </Header>
         <Grid stackable columns={4}>
-            {this.state.events.results.map(event =>
+          {this.state.events.results.map(event =>
 
-              <Grid.Column key={event.id}>
-                <Segment inverted circular id='circle' style={this.getStyle(event)}>
-                  <Header className='heading4' inverted as='h4'>
-                    {event.eventname}
-                    <Header.Subheader>
-                      {event.venue.name}
-                    </Header.Subheader>
-                    <Header.Subheader>
-                      {event.openingtimes.doorsopen}-{event.openingtimes.doorsclose}
-                    </Header.Subheader>
-                  </Header>
-                </Segment>
-              </Grid.Column>
+            <Grid.Column key={event.id}>
+              <Segment inverted circular id='circle' style={this.getStyle(event)}>
+                <Header className='heading4' inverted as='h4'>
+                  {event.eventname}
+                  <Header.Subheader>
+                    {event.venue.name}
+                  </Header.Subheader>
+                  <Header.Subheader>
+                    {event.openingtimes.doorsopen}-{event.openingtimes.doorsclose}
+                  </Header.Subheader>
+                </Header>
+              </Segment>
+            </Grid.Column>
 
-            )}
+          )}
         </Grid>
         <Divider />
 
 
 
-      <Divider section />
+  
       </Container>
     )
   }
