@@ -21,17 +21,17 @@
   border-radius: 100%;
   background-color: #1b1c1d;;
 }
-
-#circle2 {
-  margin-bottom: 10px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-  width: 300px !important;
-  height: 300px !important;
-}
+//
+// #circle2 {
+//   margin-bottom: 10px;
+//   margin-top: 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+//   width: 300px !important;
+//   height: 300px !important;
+// }
 
 #circle3:hover {
   transform: scale(1.1);
@@ -88,9 +88,21 @@
 }
 
 .user-container {
-  height: 400px;
+  height: 250px;
+  width: 650px !important;
   border: 0.5px solid #D3D3D3;
   margin: 2px;
+}
+
+.user-container3 {
+  width: 650px !important;
+  border: 0.5px solid #D3D3D3;
+  margin: 2px;
+}
+
+.header-container {
+  justify-content: center;
+  display: flex !important;
 }
 
 .ui.header.heading3 {
@@ -130,6 +142,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+//
+// .ui.container {
+//   justify-content: center;
+//   display: flex;
+// }
 
 // styles for CitiesInfo page ---------------------
 
@@ -299,13 +316,13 @@ div.search.selection {
 }
 
 .center-form {
-text-align: center;
+  text-align: center;
 }
 
 .header-modal {
-padding: 40px;
-justify-content: center;
-display: flex;
+  padding: 40px;
+  justify-content: center;
+  display: flex;
 }
 
 
@@ -455,7 +472,7 @@ background: radial-gradient(circle at 100px 100px, #fff, #000);
 100% {background-position: 630px 0;}
 }
 
-#circle4, .user-posts {
+#circle4 {
   margin-bottom: 10px;
   margin-top: 10px;
   display: flex;

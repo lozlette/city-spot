@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Segment, Grid, Header, Icon, Container, Form, Button, Modal, Divider } from 'semantic-ui-react'
+import { Segment, Grid, Header, Icon, Container, Form, Button, Modal, Divider, Image } from 'semantic-ui-react'
 import ReactFilestack from 'filestack-react'
 
 
@@ -31,8 +31,8 @@ class UserShow extends React.Component{
 
   getStyle(userData) {
     return {
-      width: 300,
-      height: 300,
+      width: 170,
+      height: 170,
       backgroundImage: `url(${userData.image})`,
       backgroundSize: 'cover'
     }
@@ -40,7 +40,8 @@ class UserShow extends React.Component{
 
   getHeaderStyle(userData) {
     return {
-      height: 400,
+      height: 250,
+      width: 650,
       marginTop: 50,
       backgroundImage: `url(${userData.headerImage})`,
       backgroundSize: 'cover'
@@ -71,7 +72,7 @@ class UserShow extends React.Component{
     const { userData } = this.state
     return(
       <div>
-        <Container>
+        <Container className='header-container'>
           <Segment style={this.getHeaderStyle(userData)}>
             <Modal className='header-modal' size='mini' trigger={<Button>Update Cover Photo</Button>}>
               <Modal.Description>
@@ -101,25 +102,29 @@ class UserShow extends React.Component{
               </Modal.Description>
             </Modal>
             <Container className='center-image'>
-              <Segment circular id='circle2' style={this.getStyle(userData)}>
+              <Segment circular style={this.getStyle(userData)}>
               </Segment>
             </Container>
           </Segment>
         </Container>
 
         <Container className='user-container'>
+          <Grid textAlign='center' columns={1}>
+            <Grid.Column>
+              <Header as='h2' textAlign='center'> Bio </Header>
+              {this.state.userData.bio}
+            </Grid.Column>
+
+          </Grid>
         </Container>
 
         <Container className='user-container'>
-          <Header as='h3'>
-          </Header>
-          <div className='user-posts2'>
-            {this.state.userData.posts.map(post => <div key={post._id}> <div> <img src={post.image} alt='User post' id='square' /> </div> <Header as='h3' textAlign='center'> {post.caption} </Header>  <Segment.Group>
-              <Segment>
-                {post.comments.text}
-              </Segment>
-            </Segment.Group></div>)}
-          </div>
+          <Header as='h2' textAlign='center'> Uploads</Header>
+          <Grid columns={3}>
+
+            {this.state.userData.posts.map(post => <Grid.Column key={post._id}> <Image size='medium' src={post.image} alt='User post' />
+            </Grid.Column>)}
+          </Grid>
         </Container>
 
       </div>
