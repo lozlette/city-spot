@@ -39,7 +39,7 @@ class CitiesRestaurants extends React.Component {
         <Header textAlign='center' className='heading4' as='h2'>
         Restaurants in {this.props.cityName}:
         </Header>
-        <Grid columns={4}>
+        <Grid stackable columns={4}>
           <Grid.Row>
             {resto.map((restaurant,index) =>
 
