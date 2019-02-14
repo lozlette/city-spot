@@ -45,7 +45,7 @@ class UserShow extends React.Component{
   getHeaderStyle(userData) {
     return {
       width: 1056,
-      height: 350,
+      height: 400,
       backgroundImage: `url(${userData.headerImage})`,
       backgroundSize: 'cover'
     }
@@ -59,12 +59,15 @@ class UserShow extends React.Component{
     const postData = {...this.state.postData, [name]: value }
     const errors= {}
     this.setState({ postData, errors })
+      .then(this.props.reload())
+
   }
 
   handleSubmit(e){
     e.preventDefault()
     axios.put(`/api/users/${this.props.match.params.id}`, this.state.postData)
       .catch(err => this.setState({ errors: err.response.data }))
+      .then(this.props.reload())
   }
 
   render(){
@@ -93,17 +96,17 @@ class UserShow extends React.Component{
               buttonClass={'button is-rounded'}
             />
             }
-            <Button fluid content="Submit Picture" primary />
-          </Form.Field>
-        </Form>
-        <Container className="center-image">
-          <Segment style={this.getHeaderStyle(userData)}>
             <Container className="center-image">
-              <Segment circular id='circle2' style={this.getStyle(userData)}>
+              <Segment style={this.getHeaderStyle(userData)}>
+                <Button content="Update Cover Photo" black size='tiny' />
+                <Container className="center-image">
+                  <Segment circular id='circle2' style={this.getStyle(userData)}>
+                  </Segment>
+                </Container>
               </Segment>
             </Container>
-          </Segment>
-        </Container>
+          </Form.Field>
+        </Form>
         <Grid columns={4}>
           <Grid.Column width="3" id="divColumn">
           </Grid.Column>
