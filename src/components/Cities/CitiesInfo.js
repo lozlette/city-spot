@@ -38,15 +38,22 @@ class CitiesInfo extends React.Component {
     if(!this.state.city) return <LoadingPage />
     const { city } = this.state
     return(
-      <Container>
-        <Header as='h2' className='heading3'>Events & Eateries</Header>
+      <div>
+        <Header as='h1' className='heading'>Events & Eateries</Header>
+        <Header id='infoHeaderEvent'>
+          <Header as='h2' className='heading city-spot'>Events on today in {city.name}</Header>
+        </Header>
         <Grid.Row>
           <CitiesEvents cityName={city.name} />
         </Grid.Row>
+        <Header id='infoHeaderEat'>
+          <Header as='h2' className='heading city-spot'>Eateries in {city.name}</Header>
+        </Header>
         <Grid.Row>
           <CitiesRestaurants cityName={city.name} />
         </Grid.Row>
-      </Container>
+
+      </div>
     )
   }
 }

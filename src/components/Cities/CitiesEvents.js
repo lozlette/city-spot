@@ -35,14 +35,11 @@ class CitiesEvents extends React.Component {
 
 
   render(){
-    if(!this.state.events.results) return <LoadingPage />
+    if(!this.state.events.results) return null
     if(this.state.events.results.length === 0) return null
     return(
 
       <Container textAlign='left'>
-        <Header textAlign='center' className='heading4' as='h2'>
-          Events on in {this.props.cityName} today:
-        </Header>
         <Grid columns={4}>
           <Grid.Row>
             {this.state.events.results.map(event =>
@@ -68,7 +65,7 @@ class CitiesEvents extends React.Component {
 
 
 
-      <Divider section />
+
       </Container>
     )
   }
