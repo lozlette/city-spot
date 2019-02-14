@@ -29,26 +29,26 @@ class Popular extends React.Component{
       <Container>
         <Divider hidden section />
         <Grid columns={5}>
-        {this.state.popularPosts.map(post =>
-          <Grid.Column key={post._id}>
-            <Card style={{ height: '350px' }}>
-              <Image src={post.image} />
+          {this.state.popularPosts.map(post =>
+            <Grid.Column key={post._id}>
+              <Card style={{ height: '350px' }}>
+                <Image src={post.image} />
                 <Card.Content>
-              <Card.Header>{post.user.username}</Card.Header>
-              <Card.Meta>
-                <span className='date'>Posted {post.createdAt}</span>
-              </Card.Meta>
-              <Card.Description>{post.caption}</Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                <a>
-                  <Icon name='heart' color='red'/>
-                  {post.likes.length}
-                </a>
-              </Card.Content>
-            </Card>
-          </Grid.Column>
-        )}
+                  <Card.Header>{post.user.username}</Card.Header>
+                  <Card.Meta>
+                    <span className='date'>Posted {post.createdAt}</span>
+                  </Card.Meta>
+                  <Card.Description>{post.caption}</Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                  <a>
+                    <Icon name='heart' color='red'/>
+                    {post.likes.length}
+                  </a>
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+          )}
         </Grid>
       </Container>
 
