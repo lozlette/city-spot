@@ -6,6 +6,7 @@ import  { Container, Grid, Header } from 'semantic-ui-react'
 
 import CitiesEvents from './CitiesEvents'
 import CitiesRestaurants from './CitiesRestaurants'
+import LoadingPage from '../common/LoadingPage'
 
 class CitiesInfo extends React.Component {
 
@@ -34,7 +35,7 @@ class CitiesInfo extends React.Component {
   }
 
   render(){
-    if(!this.state.city) return <h1> Loading... </h1>
+    if(!this.state.city) return <LoadingPage />
     const { city } = this.state
     return(
       <Container>

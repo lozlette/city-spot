@@ -36,14 +36,26 @@ class CitiesRestaurants extends React.Component {
     console.log(resto[0].restaurant.name)
     return(
       <Container>
-        <Grid columns={4}>
+        <Header textAlign='center' className='heading4' as='h2'>
+        Restaurants in {this.props.cityName}:
+        </Header>
+        <Grid stackable columns={4}>
           <Grid.Row>
             {resto.map((restaurant,index) =>
 
               <Grid.Column key={index}>
                 <Segment inverted circular id='circle' style={this.getStyle(restaurant)}>
-                  <Header as='h2' className='segmentHeader'>
+                  <Header inverted as='h4'>
                     {restaurant.restaurant.name}
+                    <Header.Subheader>
+                      {restaurant.restaurant.cuisines}
+                    </Header.Subheader>
+                    <Header.Subheader>
+                      {restaurant.restaurant.location.address}
+                    </Header.Subheader>
+                    <Header.Subheader>
+                      Average cost for 2 people: {restaurant.restaurant.currency}{restaurant.restaurant.average_cost_for_two}
+                    </Header.Subheader>
                   </Header>
                 </Segment>
               </Grid.Column>

@@ -38,7 +38,7 @@ class Navbar extends React.Component{
 
     return (
       <Segment inverted id="nav">
-        <Menu inverted pointing secondary>
+        <Menu stackable inverted pointing secondary>
           <Menu.Item
             name='home'
             active={this.props.location.pathname === '/'}
