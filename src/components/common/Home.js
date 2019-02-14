@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Favicon from 'react-favicon'
 import LoadingPage from './LoadingPage'
 
-import  { Grid, Segment, Header, Dropdown, Button, Form } from 'semantic-ui-react'
+import  { Grid, Segment, Header, Dropdown, Button, Form, Container } from 'semantic-ui-react'
 // const countryOptions = [ { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' } ]
 class Home extends React.Component {
   constructor(props) {
@@ -36,12 +36,11 @@ class Home extends React.Component {
     this.setState({ chosenCity: data.value })
   }
 
-  getStyle(continent) {
+  getStyle() {
     return {
-      width: 300,
-      height: 300,
-      backgroundImage: `linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url(${continent.image})`,
-      border: '1px solid white',
+      width: 150,
+      height: 150,
+      backgroundImage: '#1b1c1d',
       backgroundSize: 'cover'
     }
   }
@@ -53,29 +52,14 @@ class Home extends React.Component {
       <div>
         <Favicon url="https://i2.wp.com/blog.jackhake.com/wp-content/uploads/2017/08/cropped-globe-favicon.png?fit=512%2C512"/>
 
-        <Header className='section'>
-          <Header as='h1' className='heading city-spot'>City Spot</Header>
-          <Header as="h4" className='heading2'>Share the best spots from your travels</Header>
-
-          <Form id="homeForm" onSubmit={this.handleSubmit}>
-            <Form.Field>
-              <Dropdown fluid search selection labeled
-                className='search'
-                placeholder={'Find a city'}
-                options={this.state.cities}
-                onChange={this.handleDropDown} />
-            </Form.Field>
-            <Button className='button' type='submit'>
-             Search
-            </Button>
-          </Form>
+        <Header className='background'>
 
           <Grid columns={6}>
             <Grid.Row className='section2'>
               {this.state.continents.map(continent =>
                 <Grid.Column key={continent._id}>
                   <Link to={`/continents/${continent._id}`}>
-                    <Segment circular id='circle' style={this.getStyle(continent)}>
+                    <Segment circular id='circle3' style={this.getStyle(continent)}>
                       <Header as='h2' className='segmentHeader'>
                         {continent.name}
                       </Header>
@@ -83,9 +67,38 @@ class Home extends React.Component {
                   </Link>
                 </Grid.Column>
               )}
-            </Grid.Row>
-          </Grid>
+              </Grid.Row>
+            </Grid>
+
+            <Container className='homepage-margin'>
+              <Header as='h1' className='heading city-spot'>City Spot</Header>
+              <Header as="h4" className='heading2'>Share the best spots from your travels</Header>
+              <Form id="homeForm" onSubmit={this.handleSubmit}>
+                <Form.Field>
+                  <Grid columns={2}>
+                    <Grid.Row className='section2'>
+                      <Grid.Column>
+                        <Dropdown fluid search selection labeled
+                          className='search'
+                          placeholder={'Find a city'}
+                          options={this.state.cities}
+                          onChange={this.handleDropDown} />
+                      </Grid.Column>
+                      <Grid.Column  width={2}>
+                        <Button className='button' type='submit'>
+                    Search
+                        </Button>
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid>
+                </Form.Field>
+              </Form>
+              </Container>
         </Header>
+
+
+
+
       </div>
     )
   }
