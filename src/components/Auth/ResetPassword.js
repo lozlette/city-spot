@@ -1,7 +1,7 @@
 import React from 'react'
 import { Divider, Button, Grid, Form, Input, Segment, Header, Icon } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
-import Auth from '../../lib/Auth'
+// import Auth from '../../lib/Auth'
 import Flash from '../../lib/Flash'
 import axios from 'axios'
 
@@ -29,12 +29,12 @@ class ResetPassword extends React.Component{
   handleSubmit(e){
     e.preventDefault()
     axios.post('/api/resetpassword', this.state.postData)
-      .then(res => {
-        Auth.setToken(res.data.token)
+      .then((res) =>  {
         Flash.setMessage('success', res.data.message)
         this.props.history.push('/')
       })
-      .catch(err => this.setState({ errors: err }))
+      .catch(err => this.setState({ errors: err.response.data }))
+
   }
 
   goToSendEmail(){

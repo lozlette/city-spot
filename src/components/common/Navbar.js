@@ -21,6 +21,8 @@ class Navbar extends React.Component{
     if(name === 'Login')this.props.history.push('/login')
     if(name === 'Sign Up')this.props.history.push('/register')
     if(name === 'View All Cities')this.props.history.push('/cities')
+    if(name === 'View Most Popular Posts')this.props.history.push('/popular')
+    if(name === 'View All Posts')this.props.history.push('/posts')
     if(name === 'My Profile')this.props.history.push(`/users/${Auth.getUserID()}`)
   }
 
@@ -51,6 +53,21 @@ class Navbar extends React.Component{
             onClick={this.handleItemClick}
           > View All Cities
           </Menu.Item>
+
+          <Menu.Item
+            name='View All Posts'
+            active={this.props.location.pathname === '/posts'}
+            onClick={this.handleItemClick}
+          > View All Posts
+          </Menu.Item>
+
+          <Menu.Item
+            name='View Most Popular Posts'
+            active={this.props.location.pathname === '/popular'}
+            onClick={this.handleItemClick}
+          > View Most Popular Posts
+          </Menu.Item>
+
 
           <Menu.Menu position='right'>
 

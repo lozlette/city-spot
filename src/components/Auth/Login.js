@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Button, Grid, Form, Input, Segment, Header, Icon, Message } from 'semantic-ui-react'
+import { Divider, Button, Grid, Form, Input, Segment, Icon, Message } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 import Flash from '../../lib/Flash'
@@ -9,13 +9,13 @@ import axios from 'axios'
 class Login extends React.Component{
   constructor(){
     super()
-
+    // data to be sent to back end login route, errors displayed as  message on form
     this.state={
-        postData:{
-          email: '',
-          password: ''
-        },
-        errors:{}
+      postData: {
+        email: '',
+        password: ''
+      },
+      errors: {}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -23,12 +23,14 @@ class Login extends React.Component{
     this.goToSendEmail = this.goToSendEmail.bind(this)
   }
 
+  // taking the value and name of target input and setting them in postData in state
   handleChange({ target: {name, value }}) {
     console.log(this.state)
     const postData = {...this.state.postData, [name]: value }
     this.setState({ postData })
   }
 
+  // submitting the data and making a flash message, then redirecting to home
   handleSubmit(e){
     e.preventDefault()
     axios.post('/api/login', this.state.postData)
@@ -45,7 +47,7 @@ class Login extends React.Component{
     this.props.history.push('/register')
   }
 
-  goToSendEmail(){   // changed
+  goToSendEmail(){
     this.props.history.push('/resetpassword')
   }
 
@@ -64,11 +66,12 @@ class Login extends React.Component{
           <Segment color="blue">
             <Icon name='user circle' size='huge' />
 
+            {/* displaying error messages when they exist, passing in list  of error messages */}
             {errorMessages.length >0 && <Message
               error
               header='There was some errors with your submission'
               list={errorMessages}
-              />}
+            />}
 
             <Form onSubmit={this.handleSubmit}>
               <Divider hidden />

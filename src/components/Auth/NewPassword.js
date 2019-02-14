@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Button, Grid, Form, Input, Segment, Header, Icon } from 'semantic-ui-react'
+import { Divider, Button, Grid, Form, Input, Segment, Icon } from 'semantic-ui-react'
 // import Auth from '../../lib/Auth'
 // import Flash from '../../lib/Flash'
 import axios from 'axios'
@@ -21,7 +21,6 @@ class NewPassword extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    console.log(this.props)
     axios.put(`/api/users/${this.props.match.params.id}`, this.state.postData)
       .then(() => this.props.history.push('/login'))
       .catch(err => this.setState({ errors: err }))

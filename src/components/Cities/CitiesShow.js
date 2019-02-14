@@ -6,7 +6,10 @@ import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import CitiesForecast from './CitiesForecast'
 import Auth from '../../lib/Auth'
+import LoadingPage from '../common/LoadingPage'
 
+
+// to be removed later
 const style = (city) => {
 
   if(city) return({
@@ -34,10 +37,14 @@ class CitiesShow extends React.Component{
     this.reload = this.reload.bind(this)
   }
 
+  // reload function is passed down several components down, into posts section, used because was having issues
+  // reloading cities show page. The entire page is loaded with one axios request which made this particular function
+  // useful. To be refactored later
   reload(){
     axios
       .get(`/api/cities/${this.props.match.params.id}`)
       .then(res => this.setState({ city: res.data }))
+      .then(() => console.log('hi'))
       .then(() => this.setState({reload: !this.state.reload}))
   }
 
@@ -52,71 +59,78 @@ class CitiesShow extends React.Component{
 
 
   render(){
-    Auth.isAuthenticated()
-    if(!this.state.city) return <h1> Loading... </h1>
+    if(!this.state.city) return <LoadingPage/>
     const { city } = this.state
     return(
       <div>
         <Container id='cities-show' textAlign='center'>
-          <Grid.Row>
+        
             <Divider hidden section/>
             <Header id='cityHeader' size='huge'> {city.name} </Header>
             <Divider />
 
-
-            <Grid columns={3}>
-              <Grid.Column width={6}>
+          {/* Grid with 3 columns. First column is  IMAGE & VIDEO */}
+          <Grid columns={3}>
+            <Grid.Column width={6}>
 
                 <Reveal animated='move'>
                   <Reveal.Content visible>
                     <Segment circular style={style(city)}></Segment>
                   </Reveal.Content>
 
-                  <Reveal.Content hidden>
-                    <Segment inverted circular style={style()}>
-                      <Header inverted as='h3'>
-                          Population
-                        <Header.Subheader>
-                            2,500,000
-                        </Header.Subheader>
-                      </Header>
-                      <Header inverted as='h3'>
-                          Region
-                        <Header.Subheader> {city.continent.name} </Header.Subheader>
-                      </Header>
-                      <Header inverted as='h3'>
-                          Number of user posts about this city:
-                        <Header.Subheader> {city.posts.length} </Header.Subheader>
-                      </Header>
-                    </Segment>
-                  </Reveal.Content>
-                </Reveal>
+                <Reveal.Content hidden>
+                  <Segment inverted circular style={style()}>
+                    <Header inverted as='h3'>
+                        Population
+                      <Header.Subheader>
+                        { city.population }
+                      </Header.Subheader>
+                    </Header>
+                    <Header inverted as='h3'>
+                        Region
+                      <Header.Subheader> {city.continent.name} </Header.Subheader>
+                    </Header>
+                    <Header inverted as='h3'>
+                        Number of user posts about this city:
+                      <Header.Subheader> {city.posts.length} </Header.Subheader>
+                    </Header>
+                  </Segment>
+                </Reveal.Content>
+              </Reveal>
 
-                <Divider  hidden/>
+              <Divider  hidden/>
 
-                <Grid columns={2}>
-                  <Grid.Column>
-                    <VidModal videoId={city.videoID}/>
-                  </Grid.Column>
-                </Grid>
-              </Grid.Column>
+              <Grid columns={2}>
+                <Grid.Column>
+                  <VidModal videoId={city.videoID}/>
+                </Grid.Column>
+              </Grid>
+            </Grid.Column>
 
-              <Grid.Column textAlign='left' width={4}>
-                <Divider hidden />
 
-                <CitiesForecast cityName={city.name} />
-              </Grid.Column>
+            {/*Second Column is displaying weather from DarkSky API */}
+            <Grid.Column textAlign='left' width={4}>
+              <Divider hidden />
 
-              <Grid.Column width={6}>
-                <div>
-                  <PostsSection
-                    reload={this.reload}
-                    city={city}
-                  />
-                </div>
-              </Grid.Column>
-            </Grid>
-          </Grid.Row>
+              <CitiesForecast cityName={city.name} />
+            </Grid.Column>
+
+
+            {/* Third Column Contains the post section, passing down city data, populated on backend
+              with posts, comments, likes, userdata.
+               */}
+            <Grid.Column width={6}>
+              <div>
+                <PostsSection
+                  reload={this.reload}
+                  city={city}
+                />
+              </div>
+            </Grid.Column>
+          </Grid>
+
+
+
         </Container>
       </div>
     )

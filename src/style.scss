@@ -41,6 +41,10 @@
   font-family: 'Major Mono Display', monospace !important;
 }
 
+#square {
+  width: 485px;
+  margin-top: 20px;
+}
 .city-spot {
   color: white !important;
 }
@@ -54,7 +58,7 @@
 .ui.header.heading {
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
   text-align: center;
-  font-size: 150px;
+  font-size: 60px;
   font-family: 'Major Mono Display', monospace;
   margin-bottom: 0;
   margin-top: 0;
@@ -143,9 +147,43 @@ div.search.selection {
   width: 85%;
 }
 
-.user-posts2 {
+
+.loader:empty {
+    background-size: contain;
+    position: absolute;
+    top: calc(50% - 15em);
+    left: calc(50% - 10em);
+    width: 20em;
+    height: 20em;
+    border: 1.5em solid orange;
+    border-left: 1.5em solid dodgerblue;
+    border-radius: 80%;
+    border-right: 1.5em solid dodgerblue;
+    animation: load8 3s infinite linear;
+  }
+
+  @keyframes load8 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.center-posts {
   display: flex;
   flex-direction: row;
   margin: 0 30px;
   justify-content: center;
+}
+
+.ui.four.column.grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.center-image {
+  justify-content: center;
+  display: flex !important;
 }

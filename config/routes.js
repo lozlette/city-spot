@@ -5,7 +5,7 @@ const cityController = require('../controllers/cities')
 const userController = require('../controllers/users')
 const postController = require('../controllers/posts')
 const authController = require('../controllers/auth')
-const likeController = require('../controllers/likes')
+// const likeController = require('../controllers/likes')
 const secureRoute = require('../lib/secureRoute')
 
 
@@ -20,12 +20,13 @@ router.post('/register', authController.register)
 router.post('/login', authController.login)
 
 router.post('/resetpassword/', authController.passwordReset) // entering Email
-router.post('/resetpassword/:id', authController.passwordReset) // confirming email
-// router.put('/newpassword', authController.newPassword)
+
 
 
 router.get('/cities', cityController.index)
 router.get('/cities/:id', cityController.show)
+
+
 
 router.post('/cities/:id/posts', secureRoute, postController.postCreate)
 router.get('/cities/:id/posts', postController.postIndex)
@@ -37,8 +38,14 @@ router.post('/cities/:id/posts/:postId/comments', secureRoute, postController.co
 router.put('/cities/:id/posts/:postId/comments/:commentId', postController.commentUpdate)
 router.delete('/cities/:id/posts/:postId/comments/:commentId', postController.commentDelete)
 
-router.post('/cities/:id/posts/:postId/likes', likeController.likeCreate)
-router.get('/cities/:id/posts/:postId/likes', likeController.likeIndex)
+router.post('/cities/:id/posts/:postId/likes', postController.likeCreate)
+
+
+router.get('/popularposts', postController.popularPostRoute)
+
+router.delete('/cities/:id/posts/:postId/likes/:likeId', postController.likeDelete)
+
+router.get('/posts', postController.allPostIndex)
 
 router.get('/continents', continentController.index)
 router.get('/continents/:id', continentController.show)
