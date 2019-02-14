@@ -110,63 +110,17 @@ class UserShow extends React.Component{
         <Container className='user-container'>
         </Container>
 
-        <Grid columns={4}>
-          <Grid.Column width="3" id="divColumn">
-          </Grid.Column>
-          <Grid.Column width="5">
-            <Segment.Group id="topUserSegment">
+        <Container className='user-container'>
+          <Header as='h3'>
+          </Header>
+          <div className='user-posts2'>
+            {this.state.userData.posts.map(post => <div key={post._id}> <div> <img src={post.image} alt='User post' id='square' /> </div> <Header as='h3' textAlign='center'> {post.caption} </Header>  <Segment.Group>
               <Segment>
-                <Header as="h2">
-                  <Icon name="user"></Icon>
-                  {userData.firstName} {userData.lastName}
-                </Header>
+                {post.comments.text}
               </Segment>
-              <Segment>
-                <Header as='h3'> Bio </Header>
-              </Segment>
-              <Segment.Group>
-                <Segment>
-                  <p> {userData.bio} </p>
-                </Segment>
-              </Segment.Group>
-            </Segment.Group>
-            <Segment.Group>
-              <Segment>
-                <Header as='h3'> Details: </Header>
-              </Segment>
-              <Segment.Group>
-                <Segment>
-                  <p>Name: {userData.firstName} {userData.lastName}</p>
-                  <p>{userData.gender}</p>
-                  <p>Email: {userData.email}</p>
-                  <p>{userData.continent}</p>
-                </Segment>
-              </Segment.Group>
-            </Segment.Group>
-          </Grid.Column>
-          <Grid.Column width="5">
-            <Segment.Group id="topUserSegment">
-              <Segment>
-                <Header as='h3'>
-                  <Icon name="compose"></Icon>
-          Recent posts:
-                </Header>
-                <div className='user-posts2'>
-                  {this.state.userData.posts.map(post => <div key={post._id}> <div> <img src={post.image} alt='User post' id='square' /> </div> <Header as='h3' textAlign='center'> {post.caption} </Header>  <Segment.Group>
-                    <Segment>
-                      {post.comments.text}
-                    </Segment>
-                  </Segment.Group></div>)}
-                </div>
-              </Segment>
-
-            </Segment.Group>
-          </Grid.Column>
-          <Grid.Column width="3" id="divColumn">
-          </Grid.Column>
-        </Grid>
-
-
+            </Segment.Group></div>)}
+          </div>
+        </Container>
 
       </div>
     )
