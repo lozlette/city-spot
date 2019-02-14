@@ -6,7 +6,7 @@ const Promise = require('bluebird')
 mongoose.Promise = Promise
 
 const Continent = require('../models/continent')
-const City = require('../models/City')
+const City = require('../models/city')
 
 mongoose.connect(process.env.MONGODB_URI, (err, db) => {
   db.dropDatabase()

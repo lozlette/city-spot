@@ -13,14 +13,14 @@ import LoadingPage from '../common/LoadingPage'
 const style = (city) => {
 
   if(city) return({
-    width: 350,
-    height: 350,
+    width: 380,
+    height: 380,
     backgroundImage: `url(${city.image})`,
     backgroundSize: 'cover'
   })
   else return({
-    width: 350,
-    height: 350,
+    width: 380,
+    height: 380,
     backgroundColor: 'lightblue'
   })
 }
@@ -64,13 +64,13 @@ class CitiesShow extends React.Component{
     return(
       <div>
         <Container id='cities-show' textAlign='center'>
-        
+
             <Divider hidden section/>
             <Header id='cityHeader' size='huge'> {city.name} </Header>
             <Divider />
 
           {/* Grid with 3 columns. First column is  IMAGE & VIDEO */}
-          <Grid columns={3}>
+          <Grid stackable columns={3}>
             <Grid.Column width={6}>
 
                 <Reveal animated='move'>
@@ -100,7 +100,7 @@ class CitiesShow extends React.Component{
 
               <Divider  hidden/>
 
-              <Grid columns={2}>
+              <Grid textAlign='center' columns={2}>
                 <Grid.Column>
                   <VidModal videoId={city.videoID}/>
                 </Grid.Column>

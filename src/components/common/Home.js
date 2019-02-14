@@ -70,7 +70,7 @@ class Home extends React.Component {
             </Button>
           </Form>
 
-          <Grid columns={6}>
+          <Grid stackable columns={6}>
             <Grid.Row className='section2'>
               {this.state.continents.map(continent =>
                 <Grid.Column key={continent._id}>
