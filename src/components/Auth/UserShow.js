@@ -80,7 +80,6 @@ class UserShow extends React.Component{
     const { userData } = this.state
     return(
       <div>
-        <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
         <Container className="center-image">
           <Segment style={this.getHeaderStyle(userData)}>
             <Modal className='header-modal' size='mini' trigger={<Button>Update Cover Photo</Button>}>
@@ -113,6 +112,7 @@ class UserShow extends React.Component{
             <Container className="center-image">
               <Segment circular id='circle2' style={this.getStyle(userData)}>
               </Segment>
+              <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
             </Container>
           </Segment>
         </Container>
