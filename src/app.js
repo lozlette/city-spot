@@ -36,7 +36,7 @@ class App extends React.Component{
             <Navbar />
             <FlashMessages />
             <Switch>
-            <Route path="/cities/:id/info" component={CitiesInfo} />
+              <Route path="/cities/:id/info" component={CitiesInfo} />
               <Route path="/posts" component={PostsAll} />
               <Route path="/cities/:id" component={CitiesShow} />
               <Route path="/popular" component={Popular} />
