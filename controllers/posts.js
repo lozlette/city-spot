@@ -120,6 +120,8 @@ function likeCreateRoute(req, res, next) {
 function popularPostRoute(req, res, next) {
   Post
     .find()
+    .populate({path: 'city', select: 'name'})
+    .populate({path: 'user', select: 'username'})
     .then(posts => {
       return posts.sort(function(postA, postB){
         return postB.likes.length - postA.likes.length

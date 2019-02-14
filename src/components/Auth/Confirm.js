@@ -14,7 +14,6 @@ class Confirm extends React.Component {
   }
 
   componentDidMount() {
-    // console.log('mounted...')
     axios.get(`/api/confirm/${this.props.match.params.code}`)
       .then(() => {
         Flash.setMessage('info', 'Account verified. Please log in.')
