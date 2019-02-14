@@ -33,7 +33,7 @@ class PostFormModal extends React.Component{
               <Form onSubmit={handleSubmitPost}>
 
 
-              {!this.state.imageSuccess &&
+                {!this.state.imageSuccess &&
                 <Form.Field required>
                   <ReactFilestack
                     apikey={ `${process.env.FILE_STACK_KEY}` }
@@ -41,16 +41,19 @@ class PostFormModal extends React.Component{
                     onSuccess={(res) => {
                       this.changeSuccess()
                       handleChangePost({
-                      target: {
-                        name: 'image',
-                        value: res.filesUploaded[0].url
-                      }})}}
+                        target: {
+                          name: 'image',
+                          value: res.filesUploaded[0].url
+                        }
+                      })
+                    }
+                    }
                     onError={(e) => console.log(e)}
                     buttonText={'Add An Image'}
                     buttonClass={'button is-rounded'}
                   />
                 </Form.Field>
-            }
+                }
 
 
 
@@ -69,9 +72,9 @@ class PostFormModal extends React.Component{
                 <Divider hidden />
 
                 <Button.Group fluid>
-                <Button primary > Submit </Button>
-                <Button.Or />
-                <Button onClick={toggleOpen} negative > Cancel </Button>
+                  <Button primary > Submit </Button>
+                  <Button.Or />
+                  <Button onClick={toggleOpen} negative > Cancel </Button>
                 </Button.Group>
               </Form>
 

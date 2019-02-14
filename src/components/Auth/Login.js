@@ -97,6 +97,7 @@ class Login extends React.Component{
               <Divider hidden/>
               <Button fluid content="Log In" primary />
             </Form>
+            <Divider hidden />
             <a href='#' onClick={this.goToRegister}> Need have an account? Click Here to Sign Up. </a>
             <br />
             <a href='#' onClick={this.goToSendEmail}> Forgot password? </a>

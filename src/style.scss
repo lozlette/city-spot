@@ -138,11 +138,9 @@ div.search.selection {
   margin: auto;
 }
 
-// .button {
-//     margin: auto;
-//     width: 20%;
-//     padding: 3%;
-// }
+.button.is-rounded {
+  height: 60px;
+}
 
 .input-center {
   display: flex;
@@ -196,4 +194,14 @@ div.search.selection {
 .center-image {
   justify-content: center;
   display: flex !important;
+}
+
+.center-form {
+text-align: center;
+}
+
+.header-modal {
+padding: 40px;
+justify-content: center;
+display: flex;
 }

@@ -33,7 +33,7 @@ class Register extends React.Component{
 
   // setting image success to be true
   changeSuccess(){
-    console.log('changing state')
+    // console.log('changing state')
     this.setState({ imageSuccess: true })
   }
 
@@ -41,8 +41,8 @@ class Register extends React.Component{
   handleSubmit(e){
     e.preventDefault()
     axios.post('/api/register', this.state.postData)
-      .then(res => {
-        Flash.setMessage('success', res.data.message)
+      .then(() => {
+        Flash.setMessage('success', 'Please check your email address to verify your account' )
         this.props.history.push('/login')
       })
       .catch(err => this.setState({ errors: err.response.data }))
@@ -51,6 +51,7 @@ class Register extends React.Component{
 
 
   render(){
+    console.log(this.state.postData)
     return(
       <Container>
         <RegisterForm
