@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Segment, Grid, Header, Icon, Container, Form, Button, Modal } from 'semantic-ui-react'
+import { Segment, Grid, Header, Icon, Container, Form, Button, Modal, Divider } from 'semantic-ui-react'
 import ReactFilestack from 'filestack-react'
 
 
@@ -38,19 +38,10 @@ class UserShow extends React.Component{
     }
   }
 
-  // getHeaderStyle(userData) {
-  //   return {
-  //     width: 1056,
-  //     height: 350,
-  //     backgroundImage: `url${userData.headerImage}`,
-  //     backgroundSize: 'cover'
-  //   }
-  // }
-
   getHeaderStyle(userData) {
     return {
-      width: 1056,
       height: 400,
+      marginTop: 50,
       backgroundImage: `url(${userData.headerImage})`,
       backgroundSize: 'cover'
     }
@@ -80,7 +71,7 @@ class UserShow extends React.Component{
     const { userData } = this.state
     return(
       <div>
-        <Container className="center-image">
+        <Container>
           <Segment style={this.getHeaderStyle(userData)}>
             <Modal className='header-modal' size='mini' trigger={<Button>Update Cover Photo</Button>}>
               <Modal.Description>
@@ -109,13 +100,16 @@ class UserShow extends React.Component{
                 </Form>
               </Modal.Description>
             </Modal>
-            <Container className="center-image">
+            <Container className='center-image'>
               <Segment circular id='circle2' style={this.getStyle(userData)}>
               </Segment>
-              <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
             </Container>
           </Segment>
         </Container>
+
+        <Container className='user-container'>
+        </Container>
+
         <Grid columns={4}>
           <Grid.Column width="3" id="divColumn">
           </Grid.Column>
