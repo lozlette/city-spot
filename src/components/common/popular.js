@@ -38,10 +38,10 @@ class Popular extends React.Component{
               <Card style={{ height: '350px' }}>
                 <Image src={post.image} />
                 <Card.Content>
-                  <Card.Header>{post.user.username}</Card.Header>
                   <Card.Meta>
                     <p className='date'>Posted {moment(post.createdAt).format('dddd HH:mm')} <br />
-                    from <Link to={`/cities/${post.city._id}`}> {post.city.name} </Link>
+                    from <Link to={`/cities/${post.city._id}`}> {post.city.name} </Link>  <br />
+                    by <Link to={`/users/${post.user._id}`}> @{post.user.username} </Link>
                     </p>
                   </Card.Meta>
                   <Card.Description>{post.caption}</Card.Description>
