@@ -14,6 +14,7 @@ class CitiesRestaurants extends React.Component {
   }
 
   componentDidMount(){
+    console.log(this.props.cityName, 'name')
     axios.get(`/api/restaurants?city=${this.props.cityName}`)
       .then(res => {
         this.setState({ restaurants: res.data })
