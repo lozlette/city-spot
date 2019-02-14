@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Header, Grid, Container, Segment } from 'semantic-ui-react'
+import { Header, Grid, Segment } from 'semantic-ui-react'
+
 
 class CitiesRestaurants extends React.Component {
 
@@ -32,12 +33,13 @@ class CitiesRestaurants extends React.Component {
 
   render(){
     if(!this.state.restaurants.restaurants) return null
+    if(this.state.restaurants.restaurants.length === 0) return null
     const resto = this.state.restaurants.restaurants
     console.log(resto[0].restaurant.name)
     return(
-      <Container>
-        <Header textAlign='center' className='heading4' as='h2'>
-        Restaurants in {this.props.cityName}:
+      <div>
+        <Header id='infoHeaderEat'>
+          <Header as='h2' className='heading city-spot'>Eateries in {this.props.cityName}</Header>
         </Header>
         <Grid stackable columns={4}>
           <Grid.Row>
@@ -63,7 +65,7 @@ class CitiesRestaurants extends React.Component {
             )}
           </Grid.Row>
         </Grid>
-      </Container>
+      </div>
     )
   }
 }

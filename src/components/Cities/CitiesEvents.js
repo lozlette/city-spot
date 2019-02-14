@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Header, Grid, Container, Segment, Divider } from 'semantic-ui-react'
-import LoadingPage from '../common/LoadingPage'
+import { Header, Grid, Segment} from 'semantic-ui-react'
+
 
 class CitiesEvents extends React.Component {
 
@@ -39,10 +39,9 @@ class CitiesEvents extends React.Component {
     if(!this.state.events.results) return null
     if(this.state.events.results.length === 0) return null
     return(
-
-      <Container textAlign='left'>
-        <Header textAlign='center' className='heading4' as='h2'>
-          Events on in {this.props.cityName} today:
+      <div>
+        <Header id='infoHeaderEvent'>
+          <Header as='h2' className='heading city-spot'>Events on today in {this.props.cityName}</Header>
         </Header>
         <Grid stackable columns={4}>
           {this.state.events.results.map(event =>
@@ -63,12 +62,13 @@ class CitiesEvents extends React.Component {
 
           )}
         </Grid>
-        <Divider />
+
+      </div>
 
 
 
-  
-      </Container>
+
+
     )
   }
 

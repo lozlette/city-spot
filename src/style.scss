@@ -1,13 +1,25 @@
 
 #circle, .user-posts {
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
   width: 200px !important;
   height: 200px !important;
+}
+
+#circle3 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px !important;
+  height: 130px !important;
+  border-radius: 100%;
+  background-color: #1b1c1d;;
 }
 
 #circle2 {
@@ -53,6 +65,7 @@
   color: white !important;
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
   font-family: 'Major Mono Display', monospace !important;
+  font-size: 15px !important;
 }
 
 .ui.header.heading {
@@ -105,12 +118,13 @@
   justify-content: center;
 }
 
-.section {
-  height: 760px;
+.background {
+  height: 770px;
   background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://www.whitecase.com/sites/whitecase/files/London_UnitedKingdom_Tablet_1920x960.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
+// styles for CitiesInfo page ---------------------
 
 #infoHeaderEvent {
   height: 760px;
@@ -140,6 +154,53 @@
 #infoSubheading {
   font-size: 45px;
   font-family: 'Major Mono Display', monospace;
+}
+//----------------------------------------------
+
+// ContinentsShow page styles
+#continentsHeader {
+  height: 760px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://www.worldmapsonline.com/images/murals/satellite_image/detailed_world_satellite_image_mural_cen_150_lg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui.header.headingContinentCity {
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Major Mono Display', monospace;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  color:#FFFFFF;
+}
+
+//-------------------------------------------
+
+// CitiesIndex page styles
+
+#citiesHeader {
+  height: 760px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://media.timeout.com/images/105135008/image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+//----------------------------------------------
+
+div.row.section2{
+  justify-content: center !important;
+  display: flex;
+  // margin-top: 140px;
 }
 
 #cityHeader{
@@ -186,6 +247,9 @@ div.search.selection {
   width: 85%;
 }
 
+.ui.form .field>.selection.dropdown {
+  width: 40%;
+}
 
 .loader:empty {
     background-size: contain;
@@ -236,6 +300,7 @@ padding: 40px;
 justify-content: center;
 display: flex;
 }
+
 
 
 
@@ -392,4 +457,8 @@ background: radial-gradient(circle at 100px 100px, #fff, #000);
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
   width: 200px !important;
   height: 200px !important;
+}
+
+.homepage-margin {
+  margin-top: 200px;
 }
