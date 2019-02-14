@@ -33,7 +33,7 @@ class CitiesIndex extends React.Component {
     console.log(this.state.cities)
     return(
       <div>
-        <Grid stackable columns={4}>
+        <Grid id='cities-index' stackable columns={4}>
           <Grid.Row>
             {this.state.cities.map(city =>
               <Grid.Column key={city._id}>

@@ -1,6 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import  { Link, Header, Grid, Segment, Card, Image, Container, Divider } from 'semantic-ui-react'
+import  { Header, Grid, Segment, Card, Image, Container, Divider } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import moment from 'moment'
+
 class PostsAll extends React.Component {
 
   constructor() {
@@ -39,7 +42,9 @@ class PostsAll extends React.Component {
                   <Card.Content>
                     <Card.Header>@{post.user.username}</Card.Header>
                     <Card.Meta>
-                      <span className='date'>Posted on: {post.createdAt}</span>
+                      <p className='date'>Posted {moment(post.createdAt).format('dddd HH:mm')} <br />
+                      from <Link to={`/cities/${post.city._id}`}> {post.city.name} </Link>
+                      </p>
                     </Card.Meta>
                     <Card.Description>{post.caption}</Card.Description>
                   </Card.Content>
