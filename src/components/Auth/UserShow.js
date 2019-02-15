@@ -76,6 +76,7 @@ class UserShow extends React.Component{
     return(
       <div className='user-background'>
         <Container className='user-main'>
+        
           <Container className='header-container'>
             <Segment style={this.getHeaderStyle(userData)}>
 
@@ -150,12 +151,12 @@ class UserShow extends React.Component{
           <Container className='user-container'>
             <Header as='h2' textAlign='center'> Posts</Header>
             <Grid stackable columns={3}>
-              {this.state.userData.posts.map(post => <Grid.Column key={post._id}> <Reveal animated='fade'>
-                <Reveal.Content visible> <Link to={`/cities/${post.city._id}`}> <Image size='medium' src={post.image} alt='User post' /> </Link> </Reveal.Content>
-                <Reveal.Content hidden>
-                  <Header as='h5' textAlign='center'>  {post.city.name} </Header>  </Reveal.Content>
-              </Reveal>
-              </Grid.Column>)}
+              {this.state.userData.posts.map(post =>
+                <Grid.Column key={post._id}>
+                  <Link to={`/cities/${post.city._id}`}> <Image size='medium' src={post.image} alt='User post' /> </Link>
+
+                  <Header as='h5' textAlign='center'>  {post.city.name} </Header>
+                </Grid.Column>)}
             </Grid>
           </Container>
         </Container>
