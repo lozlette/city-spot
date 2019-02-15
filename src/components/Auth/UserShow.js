@@ -149,7 +149,7 @@ class UserShow extends React.Component{
 
           <Container className='user-container'>
             <Header as='h2' textAlign='center'> Posts</Header>
-            <Grid columns={3}>
+            <Grid stackable columns={3}>
               {this.state.userData.posts.map(post => <Grid.Column key={post._id}> <Reveal animated='fade'>
                 <Reveal.Content visible> <Link to={`/cities/${post.city._id}`}> <Image size='medium' src={post.image} alt='User post' /> </Link> </Reveal.Content>
                 <Reveal.Content hidden>
