@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Segment, Grid, Header, Icon, Container, Form, Button, Modal, Divider, Image, Link } from 'semantic-ui-react'
+import { Segment, Grid, Header, Icon, Container, Form, Button, Modal, Divider, Image, Link, Reveal } from 'semantic-ui-react'
 import ReactFilestack from 'filestack-react'
 
 
@@ -74,6 +74,7 @@ class UserShow extends React.Component{
     const { userData } = this.state
     return(
       <div>
+      <Container className='user-main'>
         <Container className='header-container'>
           <Segment style={this.getHeaderStyle(userData)}>
             <Modal className='header-modal' size='mini' trigger={<Button secondary >Update Cover Photo</Button>}>
@@ -97,26 +98,29 @@ class UserShow extends React.Component{
                   buttonText={'Choose an Image'}
                   buttonClass={'button is-rounded'}
                 />
-                    }
-                  </Form.Field>
-                  <Button onClick={this.toggleOpen} content="Submit" color='blue' size='tiny' />
-                </Form>
-              </Modal.Description>
-            </Modal>
+                      }
+                    </Form.Field>
+                    <Button onClick={this.toggleOpen} content="Submit" color='blue' size='tiny' />
+                  </Form>
+                </Modal.Description>
+              </Modal>
 
-            <Container className='center-image'>
-              <Segment circular style={this.getStyle(userData)}>
-              </Segment>
-            </Container>
-          </Segment>
-        </Container>
+              <Container className='center-image'>
+                <Segment circular style={this.getStyle(userData)}>
+                </Segment>
+              </Container>
+              <Container textAlign='center'>
+                <Header as='h4' className='user-padding'>@{this.state.userData.username}</Header>
+              </Container>
+            </Segment>
 
-        <Container className='user-container'>
-          <Segment>
-            <Modal className='header-modal' size='mini' trigger={<Button secondary >Edit info</Button>}>
+          </Container>
+
+          <Container className='user-container'>
+            <Modal className='header-modal' size='mini' trigger={<Button secondary >Edit Bio</Button>}>
               <Modal.Description>
                 <Form className='center-form' onSubmit={this.handleSubmit}>
-                  <Form.Field className='center-image'>
+                  <Form.Field >
                     <Form.TextArea
                       label='Bio'
                       placeholder={this.state.userData.bio}
@@ -128,7 +132,6 @@ class UserShow extends React.Component{
                 </Form>
               </Modal.Description>
             </Modal>
-          </Segment>
           <Grid textAlign='center' columns={1}>
             <Grid.Column>
               <Header as='h2' textAlign='center'> Bio </Header>
@@ -142,9 +145,14 @@ class UserShow extends React.Component{
           <Header as='h2' textAlign='center'> Posts</Header>
           <Grid columns={3}>
 
-            {this.state.userData.posts.map(post => <Grid.Column key={post._id}>  <Image size='medium' src={post.image} alt='User post' />
+            {this.state.userData.posts.map(post => <Grid.Column key={post._id}> <Reveal animated='fade'>
+    <Reveal.Content visible> <Image size='medium' src={post.image} alt='User post' /> </Reveal.Content>
+    <Reveal.Content hidden>
+            <Header as='h5' textAlign='center'> {post.city.name} </Header>  </Reveal.Content>
+  </Reveal>
             </Grid.Column>)}
           </Grid>
+        </Container>
         </Container>
 
       </div>
