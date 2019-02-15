@@ -54,7 +54,7 @@ class Home extends React.Component {
 
         <Header className='background'>
 
-          <Grid stackable columns={6}>
+          <Grid columns={6}>
             <Grid.Row className='section2'>
               {this.state.continents.map(continent =>
                 <Grid.Column key={continent._id}>

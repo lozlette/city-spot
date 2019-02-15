@@ -1,8 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import { Segment, Grid, Header, Icon, Container, Form, Button, Modal } from 'semantic-ui-react'
+import { Segment, Grid, Header, Container, Form, Button, Modal, Image, Reveal } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import ReactFilestack from 'filestack-react'
-
+import Auth from '../../lib/Auth'
 
 class UserShow extends React.Component{
   constructor(props){
@@ -14,7 +15,9 @@ class UserShow extends React.Component{
 
     this.state={
       imageSuccess: false,
-      postData: {},
+      postData: {
+        bio: ''
+      },
       errors: {}
     }
   }
@@ -31,26 +34,18 @@ class UserShow extends React.Component{
 
   getStyle(userData) {
     return {
-      width: 300,
-      height: 300,
+      width: 170,
+      height: 170,
       backgroundImage: `url(${userData.image})`,
       backgroundSize: 'cover'
     }
   }
 
-  // getHeaderStyle(userData) {
-  //   return {
-  //     width: 1056,
-  //     height: 350,
-  //     backgroundImage: `url${userData.headerImage}`,
-  //     backgroundSize: 'cover'
-  //   }
-  // }
-
   getHeaderStyle(userData) {
     return {
-      width: 1056,
-      height: 400,
+      height: 250,
+      width: 650,
+      marginTop: 50,
       backgroundImage: `url(${userData.headerImage})`,
       backgroundSize: 'cover'
     }
@@ -79,15 +74,18 @@ class UserShow extends React.Component{
     console.log(this.state.userData)
     const { userData } = this.state
     return(
-      <div>
-        <Container className="center-image">
-          <Segment style={this.getHeaderStyle(userData)}>
-            <Modal className='header-modal' size='mini' trigger={<Button>Update Cover Photo</Button>}>
-              <Modal.Description>
+      <div className='user-background'>
+        <Container className='user-main'>
+          <Container className='header-container'>
+            <Segment style={this.getHeaderStyle(userData)}>
 
-                <Form className='center-form' onSubmit={this.handleSubmit}>
-                  <Form.Field className='center-image'>
-                    {!this.stateimageSuccess &&
+              {Auth.isAuthenticated() && (this.state.userData._id === Auth.getUserID()) &&
+              <Modal className='header-modal' size='mini' trigger={<Button secondary >Update Cover Photo</Button>}>
+                <Modal.Description>
+
+                  <Form className='center-form' onSubmit={this.handleSubmit}>
+                    <Form.Field className='center-image'>
+                      {!this.stateimageSuccess &&
                 <ReactFilestack
                   apikey={ `${process.env.FILE_STACK_KEY}` }
                   mode={'pick'}
@@ -103,83 +101,68 @@ class UserShow extends React.Component{
                   buttonText={'Choose an Image'}
                   buttonClass={'button is-rounded'}
                 />
-                    }
+                      }
+                    </Form.Field>
+                    <Button onClick={this.toggleOpen} content="Submit" color='blue' size='tiny' />
+                  </Form>
+                </Modal.Description>
+              </Modal>
+              }
+
+              <Container className='center-image'>
+                <Segment circular style={this.getStyle(userData)}>
+                </Segment>
+              </Container>
+              <Container textAlign='center'>
+                <Header as='h4' className='user-padding'>@{this.state.userData.username} </Header>
+              </Container>
+            </Segment>
+          </Container>
+
+          <Container className='user-container'>
+
+            {Auth.isAuthenticated() && (this.state.userData._id === Auth.getUserID()) &&
+            <Modal className='header-modal' size='mini' trigger={<Button secondary >Edit Bio</Button>}>
+              <Modal.Description>
+                <Form className='center-form' onSubmit={this.handleSubmit}>
+                  <Form.Field >
+                    <Form.TextArea
+                      label='Bio'
+                      placeholder={this.state.userData.bio}
+                      name='bio'
+                      onChange={this.handleChange}
+                    />
                   </Form.Field>
                   <Button onClick={this.toggleOpen} content="Submit" color='blue' size='tiny' />
                 </Form>
               </Modal.Description>
             </Modal>
-            <Container className="center-image">
-              <Segment circular id='circle2' style={this.getStyle(userData)}>
-              </Segment>
-              <Header as='h6' className='heading'>{userData.firstName} {userData.lastName}</Header>
-            </Container>
-          </Segment>
+            }
+
+            <Grid textAlign='center' columns={1}>
+              <Grid.Column>
+                <Header as='h2' textAlign='center'> Bio </Header>
+                {this.state.userData.bio}
+              </Grid.Column>
+            </Grid>
+          </Container>
+
+          <Container className='user-container'>
+            <Header as='h2' textAlign='center'> Posts</Header>
+            <Grid columns={3}>
+              {this.state.userData.posts.map(post => <Grid.Column key={post._id}> <Reveal animated='fade'>
+                <Reveal.Content visible> <Link to={`/cities/${post.city._id}`}> <Image size='medium' src={post.image} alt='User post' /> </Link> </Reveal.Content>
+                <Reveal.Content hidden>
+                  <Header as='h5' textAlign='center'>  {post.city.name} </Header>  </Reveal.Content>
+              </Reveal>
+              </Grid.Column>)}
+            </Grid>
+          </Container>
         </Container>
-        <Grid columns={4}>
-          <Grid.Column width="3" id="divColumn">
-          </Grid.Column>
-          <Grid.Column width="5">
-            <Segment.Group id="topUserSegment">
-              <Segment>
-                <Header as="h2">
-                  <Icon name="user"></Icon>
-                  {userData.firstName} {userData.lastName}
-                </Header>
-              </Segment>
-              <Segment>
-                <Header as='h3'> Bio </Header>
-              </Segment>
-              <Segment.Group>
-                <Segment>
-                  <p> {userData.bio} </p>
-                </Segment>
-              </Segment.Group>
-            </Segment.Group>
-            <Segment.Group>
-              <Segment>
-                <Header as='h3'> Details: </Header>
-              </Segment>
-              <Segment.Group>
-                <Segment>
-                  <p>Name: {userData.firstName} {userData.lastName}</p>
-                  <p>{userData.gender}</p>
-                  <p>Email: {userData.email}</p>
-                  <p>{userData.continent}</p>
-                </Segment>
-              </Segment.Group>
-            </Segment.Group>
-          </Grid.Column>
-          <Grid.Column width="5">
-            <Segment.Group id="topUserSegment">
-              <Segment>
-                <Header as='h3'>
-                  <Icon name="compose"></Icon>
-          Recent posts:
-                </Header>
-                <div className='user-posts2'>
-                  {this.state.userData.posts.map(post => <div key={post._id}> <div> <img src={post.image} alt='User post' id='square' /> </div> <Header as='h3' textAlign='center'> {post.caption} </Header>  <Segment.Group>
-                    <Segment>
-                      {post.comments.text}
-                    </Segment>
-                  </Segment.Group></div>)}
-                </div>
-              </Segment>
-
-            </Segment.Group>
-          </Grid.Column>
-          <Grid.Column width="3" id="divColumn">
-          </Grid.Column>
-        </Grid>
-
-
 
       </div>
     )
   }
 }
-
-
-
 
 export default UserShow
