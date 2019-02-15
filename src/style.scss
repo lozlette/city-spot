@@ -1,5 +1,16 @@
 
-#circle, .user-posts {
+#circle2 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 5px rgba(0,0,0,1);
+  width: 300px !important;
+  height: 300px !important;
+}
+
+ #circle, .user-posts {
   margin-bottom: 10px;
   margin-top: 100px;
   display: flex;
@@ -97,15 +108,7 @@
   padding-top: 0;
 }
 
-.ui.header.heading4 {
-  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-  text-align: center;
-  font-family: 'Major Mono Display', monospace;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-top: 0;
-  font-size: 15px;
-}
+
 
 .ui.header.section {
   justify-content: center;
@@ -147,13 +150,23 @@
 }
 
 #infoSubheader {
-  font-size: 10px;
+  font-size: 15px;
   font-family: 'Major Mono Display', monospace;
 }
 
 #infoSubheading {
   font-size: 45px;
   font-family: 'Major Mono Display', monospace;
+}
+
+.ui.header.eventsRestHeading {
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  text-align: center;
+  font-family: 'Major Mono Display', monospace;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 20px;
 }
 //----------------------------------------------
 
@@ -300,42 +313,6 @@ padding: 40px;
 justify-content: center;
 display: flex;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
