@@ -24,10 +24,11 @@ class CitiesEvents extends React.Component {
 
   getStyle(event) {
     return {
-      width: 5,
-      height: 5,
+      width: 100,
+      height: 100,
       backgroundImage: `url(${event.largeimageurl})`,
       backgroundSize: 'cover'
+
     }
   }
 
@@ -47,8 +48,8 @@ class CitiesEvents extends React.Component {
           {this.state.events.results.map(event =>
 
             <Grid.Column key={event.id}>
-              <Segment inverted circular id='circle' style={this.getStyle(event)}>
-                <Header className='heading4' inverted as='h4'>
+              <Segment inverted circular id='circle2' style={this.getStyle(event)}>
+                <Header className='eventsRestHeading' inverted as='h4'>
                   {event.eventname}
                   <Header.Subheader>
                     {event.venue.name}

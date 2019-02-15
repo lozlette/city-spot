@@ -6,7 +6,7 @@ import { Header, Divider, Segment, Container, Grid, Reveal, Button} from 'semant
 import VidModal from './VidModal'
 import PostsSection from './PostsSection'
 import CitiesForecast from './CitiesForecast'
-import Auth from '../../lib/Auth'
+// import Auth from '../../lib/Auth'
 import LoadingPage from '../common/LoadingPage'
 
 
