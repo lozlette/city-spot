@@ -37,6 +37,7 @@ function showRoute(req, res, next) {
   User
     .findById(req.params.id)
     .populate('posts')
+    .populate({path: 'posts', populate: [{path: 'city'}]})
     .then(user => res.json(user))
     .catch(next)
 }

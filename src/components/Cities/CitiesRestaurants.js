@@ -47,8 +47,8 @@ class CitiesRestaurants extends React.Component {
             {resto.map((restaurant,index) =>
 
               <Grid.Column key={index}>
-                <Segment inverted circular id='circle' style={this.getStyle(restaurant)}>
-                  <Header className='heading4' inverted as='h4'>
+                <Segment inverted circular id='circle2' style={this.getStyle(restaurant)}>
+                  <Header className='eventsRestHeading' inverted as='h4'>
                     {restaurant.restaurant.name}
                     <Header.Subheader id='infoSubheader'>
                       Type of food: {restaurant.restaurant.cuisines}

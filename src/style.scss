@@ -1,5 +1,16 @@
 
-#circle, .user-posts {
+#circle2 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 5px rgba(0,0,0,1);
+  width: 300px !important;
+  height: 300px !important;
+}
+
+ #circle, .user-posts {
   margin-bottom: 10px;
   margin-top: 100px;
   display: flex;
@@ -21,17 +32,17 @@
   border-radius: 100%;
   background-color: #1b1c1d;;
 }
-
-#circle2 {
-  margin-bottom: 10px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-  width: 300px !important;
-  height: 300px !important;
-}
+//
+// #circle2 {
+//   margin-bottom: 10px;
+//   margin-top: 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+//   width: 300px !important;
+//   height: 300px !important;
+// }
 
 #circle3:hover {
   transform: scale(1.1);
@@ -87,6 +98,45 @@
 
 }
 
+.user-container {
+  width: 650px !important;
+  border: 0.5px solid #D3D3D3;
+  margin: 2px;
+}
+
+.user-container3 {
+  width: 650px !important;
+  border: 0.5px solid #D3D3D3;
+  margin: 2px;
+}
+
+.user-padding {
+  margin: 5px !important;
+}
+
+.user-background {
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .9)), url('https://www.whitecase.com/sites/whitecase/files/London_UnitedKingdom_Tablet_1920x960.jpg');
+}
+
+.ui.container.user-container {
+  padding: 20px;
+  background-color: white;
+}
+
+.user-main {
+  padding-bottom: 40px;
+}
+
+.ui.medium.image {
+  width: 300px;
+  height: 166px;
+}
+
+.header-container {
+  justify-content: center;
+  display: flex !important;
+}
+
 .ui.header.heading3 {
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
   text-align: center;
@@ -97,15 +147,7 @@
   padding-top: 0;
 }
 
-.ui.header.heading4 {
-  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-  text-align: center;
-  font-family: 'Major Mono Display', monospace;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-top: 0;
-  font-size: 15px;
-}
+
 
 .ui.header.section {
   justify-content: center;
@@ -119,11 +161,17 @@
 }
 
 .background {
-  height: 100vh;
+  height: 92vh;
   background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .5)), url('https://www.whitecase.com/sites/whitecase/files/London_UnitedKingdom_Tablet_1920x960.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
+//
+// .ui.container {
+//   justify-content: center;
+//   display: flex;
+// }
+
 // styles for CitiesInfo page ---------------------
 
 #infoHeaderEvent {
@@ -147,13 +195,23 @@
 }
 
 #infoSubheader {
-  font-size: 10px;
+  font-size: 15px;
   font-family: 'Major Mono Display', monospace;
 }
 
 #infoSubheading {
   font-size: 45px;
   font-family: 'Major Mono Display', monospace;
+}
+
+.ui.header.eventsRestHeading {
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  text-align: center;
+  font-family: 'Major Mono Display', monospace;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 20px;
 }
 //----------------------------------------------
 
@@ -292,50 +350,14 @@ div.search.selection {
 }
 
 .center-form {
-text-align: center;
+  text-align: center;
 }
 
 .header-modal {
-padding: 40px;
-justify-content: center;
-display: flex;
+  padding: 40px;
+  justify-content: center;
+  display: flex;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -448,7 +470,7 @@ background: radial-gradient(circle at 100px 100px, #fff, #000);
 100% {background-position: 630px 0;}
 }
 
-#circle4, .user-posts {
+#circle4 {
   margin-bottom: 10px;
   margin-top: 10px;
   display: flex;
@@ -460,5 +482,10 @@ background: radial-gradient(circle at 100px 100px, #fff, #000);
 }
 
 .homepage-margin {
-  margin-top: 200px;
+  margin-top: 95px;
+}
+
+.city-image {
+  justify-content: center;
+  display: flex;
 }
