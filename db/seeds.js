@@ -268,7 +268,7 @@ mongoose.connect(process.env.MONGODB_URI, (err, db) => {
           name: 'Berlin',
           image: 'https://blog.parkinn.com/wp-content/uploads/sites/7/2018/01/things-in-berlin-skyline.jpg',
           videoID: 'hVfBQNENS9s',
-          popuation: '3,556,792',
+          population: '3,556,792',
           continent: data.continentEurope
         }),
         city33: City.create({

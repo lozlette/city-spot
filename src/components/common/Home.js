@@ -67,33 +67,33 @@ class Home extends React.Component {
                   </Link>
                 </Grid.Column>
               )}
-              </Grid.Row>
-            </Grid>
+            </Grid.Row>
+          </Grid>
 
-            <Container className='homepage-margin'>
-              <Header as='h1' className='heading city-spot'>City Spot</Header>
-              <Header as="h4" className='heading2'>Share the best spots from your travels</Header>
-              <Form id="homeForm" onSubmit={this.handleSubmit}>
-                <Form.Field>
-                  <Grid columns={2}>
-                    <Grid.Row className='section2'>
-                      <Grid.Column>
-                        <Dropdown fluid search selection labeled
-                          className='search'
-                          placeholder={'Find a city'}
-                          options={this.state.cities}
-                          onChange={this.handleDropDown} />
-                      </Grid.Column>
-                      <Grid.Column  width={2}>
-                        <Button className='button' type='submit'>
-                    Search
-                        </Button>
-                      </Grid.Column>
-                    </Grid.Row>
-                  </Grid>
-                </Form.Field>
-              </Form>
-              </Container>
+          <Container className='homepage-margin'>
+            <Header as='h1' className='heading city-spot'>City Spot</Header>
+            <Header as="h4" className='heading2'>Share the best spots from your travels</Header>
+            <Form id="homeForm" onSubmit={this.handleSubmit}>
+              <Form.Field>
+                <Grid columns={2}>
+                  <Grid.Row className='section2'>
+                    <Grid.Column>
+                      <Dropdown fluid search selection labeled
+                        className='search'
+                        placeholder={'Find a city'}
+                        options={this.state.cities}
+                        onChange={this.handleDropDown} />
+                    </Grid.Column>
+                    <Grid.Column  width={2}>
+                      <Button className='button' type='submit'>
+                  Search
+                      </Button>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Form.Field>
+            </Form>
+          </Container>
         </Header>
 
 
