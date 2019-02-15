@@ -14,12 +14,23 @@ class Popular extends React.Component{
     super()
 
     this.state={}
+
+    this.addLike = this.addLike.bind(this)
   }
 
+  addLike(e, cityId, postId){
+    const like = { like: true }
+    axios.post(`/api/cities/${cityId}/posts/${postId}/likes`, like)
+    .then(() => this.getPosts())
+  }
 
   componentDidMount(){
+    this.getPosts()
+  }
+
+  getPosts(){
     axios.get('/api/popularposts')
-      .then((res) => this.setState({ popularPosts: res.data }))
+      .then(res => this.setState({popularPosts: res.data}))
       .catch(err => console.log(err.response))
   }
 
@@ -27,15 +38,14 @@ class Popular extends React.Component{
 
   render(){
     if(!this.state.popularPosts) return <LoadingPage />
-    console.log(this.state.popularPosts)
     return(
       <Container>
         <Divider hidden section />
-        <Grid columns={5}>
+        <Grid stackable columns={5}>
           {this.state.popularPosts.map(post =>
 
             <Grid.Column key={post._id}>
-              <Card style={{ height: '350px' }}>
+              <Card style={{ minHeight: '350px' }}>
                 <Image src={post.image} />
                 <Card.Content>
                   <Card.Meta>
@@ -47,7 +57,7 @@ class Popular extends React.Component{
                   <Card.Description>{post.caption}</Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                  <a>
+                  <a onClick={(e) => this.addLike(e, post.city._id, post._id)}>
                     <Icon name='heart' color='red'/>
                     {post.likes.length}
                   </a>
