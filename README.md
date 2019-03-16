@@ -56,29 +56,20 @@ The user has a profile page which contains their uploaded profile image, bio, a 
 
 ## Process
 
-We first began creating wireframes to work out the structure of the website and to have an idea of content placement. From then, we were able to establish the endpoints, models and routes needed for our app and we began to develop our backend API. Using Mongoose, three models were created; City, Continent, and User, and the fields we wanted our schema's to contain was easy due to the planning. Then we did the controllers. Each route was tested using Insomnia as our client.
-
-We then created a seeds file and added some data.
-We did error handling as we went along.
-
-------------------------------
--testing ALEX
--register and login ALEX
--external API requests LAUREN
+We first began creating wireframes to work out the structure of the website and to have an idea of content placement. From then, we were able to establish the endpoints, models and routes needed for our app and we began to develop our backend API. Using Mongoose, three models were created; City, Continent, and User, as well as the controllers. Using Insomnia as our client, we were able to test our routes making adjustments needed to populate the information needed to display. We then created a seeds file and added the data for both Continent and City schemas. 
 
 Frontend setup
-
 -setting up components and pages
 -setting up forms
 -connecting API requests to the front end.
 
-## Task Management and Communication
+### Task Management and Communication
 
 Being in a team of four, we decided the easiest way to divide the workload was to have two people build the front-end, and two people build the back-end. We held stand-ups every morning and communicated via Slack to update each other with our progress.
 
 ## Styling
 
--semantic UI
+We used Semantic UI to provide us with sleek and user friendly deisgn.
 -CSS
 
 ## Features
@@ -105,9 +96,7 @@ One of the biggest wins was the team communication. We had a group Slack channel
 
 Currently, the only way to add new Cities is via our seeds file, so an admin account to add the cities will be a useful feature to add in the future.
 
-User messaging & friend requests. To follow the conventions of a social media platform, and for users to engage with each other to have a sense of community.
+To follow the conventions of a social media platform, and for users to engage with each other to have a sense of community, it will be great to implement user messaging & friend requests features.
 
--continent page with search bar
--weather icons on city page separate event and restaurant pages
-
+A search bar for the Continent and City pages to improve user navigation.
 
