@@ -1,5 +1,3 @@
-# project-3
-WDI Project 3
 
 # General Assembly Project 3: City Spot
 
@@ -8,6 +6,7 @@ WDI Project 3
 A group project to build a fullstack React application.
 
 ### Timeframe
+
 7 Days
 
 ## Technologies Used
@@ -17,7 +16,7 @@ A group project to build a fullstack React application.
 * MongoDB
 * Express
 * Webpack
-* Mocha, Chai, Supertest
+* Mocha/Chai/Supertest
 * Filestack
 * Axios
 * SCSS/CSS
@@ -27,13 +26,23 @@ A group project to build a fullstack React application.
 * Git/Github
 * Heroku
 
+## Contributors
+
+Bete Yemane, Josh King, Lauren Bell, Alessandro Lepri
+
+## Our Application - City Spot
+
+![Screenshot 2019-03-16 at 12 34 52](https://user-images.githubusercontent.com/44004811/54475500-d18ad700-47e9-11e9-8997-b206c1586b30.png)
+
 ## Project Summary
 
 City Spot is a web application where users can sign up and post images from their travels. The users can navigate to the city they visited to share their adventures with other travellers.
 
-# Users Journey
+## Users Journey
 
 When the user first visits City Spot, they have two paths to reach their desired city: the search bar where they can search for a city, or the links that takes them to each continent where they can select a city.
+
+![Screenshot 2019-03-16 at 12 34 27](https://user-images.githubusercontent.com/44004811/54475406-e7e46300-47e8-11e9-87c3-6099e41a5c8e.png)
 
 Once on a city's page, users can view information about that city, posts made by other users and a link to view event and restaurant recommendations.
 
@@ -41,34 +50,38 @@ Users can also like and comment on the posts made by other users. Posts with hig
 
 If a user would like to add a post they will have to register and login, and if the user has forgotten their password they can request an email with the link to change their password.
 
+![Screenshot 2019-03-16 at 12 54 08](https://user-images.githubusercontent.com/44004811/54475586-af458900-47ea-11e9-8524-854cdcbe9512.png)
+
 The user has a profile page which contains their uploaded profile image, bio, a cover photo and their posts. They are also able to edit their bio and cover photo image.
 
 ## Process
 
-We first began by wireframing each endpoint which helped us clearly established the routes needed.
+We first began creating wireframes to work out the structure of the website and to have an idea of content placement. From then, we were able to establish the endpoints, models and routes needed for our app and we began to develop our backend API. Using Mongoose, three models were created; City, Continent, and User, and the fields we wanted our schema's to contain was easy due to the planning. Then we did the controllers. Each route was tested using Insomnia as our client.
 
-# Backend setup
+We then created a seeds file and added some data.
+We did error handling as we went along.
 
-The started on the backend by creating three models: City, Continent, and User.
+------------------------------
+-testing ALEX
+-register and login ALEX
+-external API requests LAUREN
 
--routes
--error handling
--testing
--register and login
--external API requests
-
-# Frontend setup
+Frontend setup
 
 -setting up components and pages
 -setting up forms
 -connecting API requests to the front end.
 
-# Styling
+## Task Management and Communication
+
+Being in a team of four, we decided the easiest way to divide the workload was to have two people build the front-end, and two people build the back-end. We held stand-ups every morning and communicated via Slack to update each other with our progress.
+
+## Styling
 
 -semantic UI
 -CSS
 
-# Features
+## Features
 
 -likes
 -comment
@@ -76,24 +89,25 @@ The started on the backend by creating three models: City, Continent, and User.
 -email system
 -view post by likes(popular post page)
 
-### Challenges and Wins
+## Challenges and Wins
 Challenges:
 -email system
--references
--populating
 
 Wins:
+
+One of the biggest wins was the team communication. We had a group Slack channel where every member was equally active. This really helped us manage Git as a team, as we all got into the habit of informing each other when we were pushing to the development branch. Any errors or conflicts during this process, we notified the group channel where we all worked together to resolve the issues.
+
+-likes
 -planning
--managing git as a team
--team communication
 -bringing in the APIs.
 
 ## Future features
 
--admin accounts to add new cities
--user messaging
--friend requests
+Currently, the only way to add new Cities is via our seeds file, so an admin account to add the cities will be a useful feature to add in the future.
+
+User messaging & friend requests. To follow the conventions of a social media platform, and for users to engage with each other to have a sense of community.
+
+-continent page with search bar
 -weather icons on city page separate event and restaurant pages
--continent page with search bar 
 
 
