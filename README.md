@@ -56,7 +56,9 @@ The user has a profile page which contains their uploaded profile image, bio, a 
 
 ## Process
 
-We first began creating wireframes to work out the structure of the website and content placement. From then, we were able to establish the endpoints, models and routes needed for our app and we began to develop our backend API. Using Mongoose, three of our main models were created; City, Continent, and User, as well as the controllers. Using Insomnia as our client, we were able to test our routes making adjustments needed to populate the information needed to display. We then created a seeds file and added the data for both Continent and City schemas. 
+### Developement
+
+We first began creating wireframes to work out the structure of the website and content placement. From then, we were able to establish the endpoints, models and routes needed for our app and we began to develop our backend API. Using Mongoose, three of our main models were created; City, Continent, and User, as well as the controllers. We were then able to test our routes making adjustments needed to populate the information needed to display using Insomnia as our client. We then created a seeds file and added the data for both Continent and City schemas. 
 
 Frontend setup
 -setting up components and pages
@@ -69,8 +71,7 @@ Being in a team of four, we decided the easiest way to divide the workload was t
 
 ## Styling
 
-We used Semantic UI to provide us with sleek and user friendly deisgn.
--CSS
+We used Semantic UI as our CSS Framework which created a sleek and user friendly design. 
 
 ## Features
 
