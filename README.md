@@ -56,9 +56,9 @@ The user has a profile page which contains their uploaded profile image, bio, a 
 
 ## Process
 
-### Developement
+### Development
 
-We first began creating wireframes to work out the structure of the website and content placement. From then, we were able to establish the endpoints, models and routes needed for our app and we began to develop our backend API. Using Mongoose, three of our main models were created; City, Continent, and User, as well as the controllers. We were then able to test our routes making adjustments needed to populate the information needed to display using Insomnia as our client. We then created a seeds file and added the data for both Continent and City schemas. 
+We first began creating wireframes to work out the structure of the website and content placement. From then, we were able to establish the endpoints, models and routes needed for our app. We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User, as well as the controllers. We were then able to test our routes making adjustments needed to populate the accurate information we wanted to display, using Insomnia as our client. We then created a seeds file and added the data for both Continent and City schemas. 
 
 Frontend setup
 -setting up components and pages
@@ -73,14 +73,6 @@ Being in a team of four, we decided the easiest way to divide the workload was t
 
 We used Semantic UI as our CSS Framework which created a sleek and user friendly design. 
 
-## Features
-
--likes
--comment
--posts
--email system
--view post by likes(popular post page)
-
 ## Challenges and Wins
 Challenges:
 -email system
@@ -89,9 +81,32 @@ Wins:
 
 One of the biggest wins was the team communication. We had a group Slack channel where every member was equally active. This really helped us manage Git as a team, as we all got into the habit of informing each other when we were pushing to the development branch. Any errors or conflicts during this process, we notified the group channel where we all worked together to resolve the issues.
 
--likes
--planning
--bringing in the APIs.
+Another win was the implentation of our 'like' feature.
+
+```const postSchema = new mongoose.Schema({
+  city: { type: mongoose.Schema.ObjectId, ref: 'City' },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  image: { type: String, required: 'Please add an image'},
+  caption: { type: String, required: 'Please add a caption' },
+  comments: [commentSchema],
+  likes: [likeSchema]
+},{
+  timestamps: true
+})
+```
+```
+function likeCreateRoute(req, res, next) {
+  req.body.user = req.currentUser
+  Post
+    .findById(req.params.postId)
+    .then(post => {
+      post.likes.push(req.body)
+      return post.save()
+    })
+    .then(post => res.status(201).json(post))
+    .catch(next)
+}
+```
 
 ## Future features
 
