@@ -56,7 +56,7 @@ The user has a profile page which contains their uploaded profile image, bio, a 
 
 ## Process
 
-We first began creating wireframes to work out the structure of the website and to have an idea of content placement. From then, we were able to establish the endpoints, models and routes needed for our app and we began to develop our backend API. Using Mongoose, three models were created; City, Continent, and User, as well as the controllers. Using Insomnia as our client, we were able to test our routes making adjustments needed to populate the information needed to display. We then created a seeds file and added the data for both Continent and City schemas. 
+We first began creating wireframes to work out the structure of the website and content placement. From then, we were able to establish the endpoints, models and routes needed for our app and we began to develop our backend API. Using Mongoose, three of our main models were created; City, Continent, and User, as well as the controllers. Using Insomnia as our client, we were able to test our routes making adjustments needed to populate the information needed to display. We then created a seeds file and added the data for both Continent and City schemas. 
 
 Frontend setup
 -setting up components and pages
