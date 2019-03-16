@@ -99,7 +99,8 @@ const RegisterForm = ({ handleChange, handleSubmit, postData, errors, imageSucce
                       target: {
                         name: 'image',
                         value: res.filesUploaded[0].url
-                      }})}}
+                      }})
+                  }}
                   onError={(e) => console.log(e)}
                   buttonText={'Add An Image'}
                   buttonClass={'button is-rounded'}
