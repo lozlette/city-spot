@@ -112,7 +112,7 @@ function likeCreateRoute(req, res, next) {
 
 * Currently, the only way to add new Cities is via our seeds file, so an admin account to add the cities will be a useful feature to add.
 
-* To follow the conventions of a social media platform, and for users to engage with each other to have a sense of community, it will be great to implement user messaging & friend requests features.
+* To follow the conventions of a social media platform, and for users to engage with each other to have a sense of community, I'd like to implement user messaging & friend requests.
 
 * A search bar for the Continent and City pages to improve user navigation.
 
