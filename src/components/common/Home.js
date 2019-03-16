@@ -86,7 +86,7 @@ class Home extends React.Component {
                     </Grid.Column>
                     <Grid.Column  width={2}>
                       <Button className='button' type='submit'>
-                    Search
+                  Search
                       </Button>
                     </Grid.Column>
                   </Grid.Row>
