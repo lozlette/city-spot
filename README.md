@@ -11,7 +11,7 @@ A group project to build a fullstack React application.
 
 ## Technologies Used
 * React
-* Javascript(ES6)
+* JavaScript(ES6)
 * Node.js
 * MongoDB
 * Express
