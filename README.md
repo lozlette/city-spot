@@ -26,6 +26,10 @@ A group project to build a fullstack React application.
 * Git/Github
 * Heroku
 
+## Website
+
+city-spot.herokuapp.com/
+
 ## Contributors
 
 Bete Yemane, Josh King, Lauren Bell, Alessandro Lepri
@@ -36,19 +40,23 @@ Bete Yemane, Josh King, Lauren Bell, Alessandro Lepri
 
 ## Project Summary
 
-City Spot is a web application where users can sign up and post images from their travels. The users can navigate to the city they visited to share their adventures with other travellers.
+City Spot is a platform for travellers to post images of the cities they have visited. 
 
 ## Users Journey
 
-When the user first visits City Spot, they have two paths to reach their desired city: the search bar where they can search for a city, or the links that takes them to each continent where they can select a city.
+When the user first visits City Spot, they have two paths to reach their desired city: a search bar, and links to each continent where they can select a city.
 
 ![Screenshot 2019-03-16 at 12 34 27](https://user-images.githubusercontent.com/44004811/54475406-e7e46300-47e8-11e9-87c3-6099e41a5c8e.png)
 
-Once on a city's page, users can view information about that city, posts made by other users and a link to view event and restaurant recommendations.
+ Once on a city's page, users can view information about that city, posts made by other users, and a link to view event and restaurant recommendations.
 
-Users can also like and comment on the posts made by other users. Posts with high amounts of likes will be added to the popular posts page and will be able to like the posts they see on that page.
+![Screenshot 2019-03-17 at 23 09 08](https://user-images.githubusercontent.com/44004811/54499448-e2cb0500-4909-11e9-8dc5-2b7fc1ecb0b2.png)
 
-If a user would like to add a post they will have to register and login, and if the user has forgotten their password they can request an email with the link to change their password.
+Users can also like and comment on the posts made by other users. Posts with high amounts of likes will be added to the popular posts page where they'll be able to 'like' the posts they see on that page.
+
+![Screenshot 2019-03-17 at 23 09 24](https://user-images.githubusercontent.com/44004811/54499450-f2e2e480-4909-11e9-9f91-047a2cf6e611.png)
+
+If a user would like to add a post, they are required to register and login. If the user has forgotten their password they have the option to request an email with the link to reset their password.
 
 ![Screenshot 2019-03-16 at 12 54 08](https://user-images.githubusercontent.com/44004811/54475586-af458900-47ea-11e9-8524-854cdcbe9512.png)
 
@@ -58,7 +66,7 @@ The user has a profile page which contains their uploaded profile image, bio, a 
 
 ### Development
 
-We first began creating wireframes to work out the structure of the website and content placement. From then, we were able to establish the endpoints, models and routes needed for our app. We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User, as well as the controllers. We were then able to test our routes making adjustments needed to populate the accurate information we wanted to display, using Insomnia as our client. We then created a seeds file and added the data for both Continent and City schemas. 
+We first began creating wireframes to work out the structure of the website and content placement. From then we were able to establish the endpoints, models, and routes needed for our app. We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User, as well as the controllers. We were then able to test our routes making adjustments needed to populate the accurate information we wanted to display, using Insomnia as our client. We then created a seeds file and added the data for both Continent and City to kick-start our database. 
 
 Frontend setup
 -setting up components and pages
@@ -79,7 +87,7 @@ Challenges:
 
 Wins:
 
-One of the biggest wins was the team communication. We had a group Slack channel where every member was equally active. This really helped us manage Git as a team, as we all got into the habit of informing each other when we were pushing to the development branch. Any errors or conflicts during this process, we notified the group channel where we all worked together to resolve the issues.
+One of the biggest wins was the team communication. We had a group Slack channel where every member was equally active. This really helped us manage Git as a team, as we all got into the habit of informing each other when we were pushing to the development branch. Any errors or conflicts during this process, we notified the group channel where we all worked together to resolve the issue.
 
 Another win was the implentation of our 'like' feature.
 
