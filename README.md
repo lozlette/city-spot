@@ -28,7 +28,7 @@ A group project to build a fullstack React application.
 
 ## Website
 
-city-spot.herokuapp.com/
+https://city-spot.herokuapp.com/
 
 ## Contributors
 
