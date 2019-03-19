@@ -5,7 +5,7 @@ Bete Yemane | Josh King | Lauren Bell | Alessandro Lepri
 
 ## Project Brief
 
-The brief was to build a MERN stack application in a group where it was also a requirement to have automated tests for at least one RESTful resource on the back-end. 
+The brief was to build a MERN stack application in a group and to have automated tests for at least one RESTful resource on the back-end. 
 
 ### Timeframe
 
