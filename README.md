@@ -57,7 +57,7 @@ As well as the posts, the city show pages also include:
  * a youtube video of the city
  * and a weekly weather forcast
  
- This was a tool for user to find out information on cities they're planning to go to in the future. 
+ This was a tool for user to find out information on cities they're planning to go to in the future.
 
 ## Users Journey
 
@@ -69,12 +69,9 @@ City show page.
 
 ![Screenshot 2019-03-17 at 23 09 08](https://user-images.githubusercontent.com/44004811/54499448-e2cb0500-4909-11e9-8dc5-2b7fc1ecb0b2.png)
 
+Post.
 
 ![Screenshot 2019-03-17 at 23 09 24](https://user-images.githubusercontent.com/44004811/54499450-f2e2e480-4909-11e9-9f91-047a2cf6e611.png)
-
-If a user would like to add a post, they are required to register and login and if they have forgotten their password, they have the option to request an email with the link to reset their password.
-
-![Screenshot 2019-03-16 at 12 54 08](https://user-images.githubusercontent.com/44004811/54475586-af458900-47ea-11e9-8524-854cdcbe9512.png)
 
 The user has a profile page which contains their uploaded profile image, bio, a cover photo and their posts. They are also able to edit their bio and cover photo image.
 
@@ -82,8 +79,19 @@ The user has a profile page which contains their uploaded profile image, bio, a 
 
 ### Development
 
-We first began creating wireframes to work out the structure of the website and content placement. From then we were able to establish the endpoints, models, and routes needed for our app. We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User, as well as the controllers. We were then able to test our routes making adjustments needed to populate the accurate information we wanted to display, using Insomnia as our client. We then created a seeds file and added the data for both Continent and City to kick-start our database. 
+We first began creating wireframes to work out the structure of the website and content placement. 
 
+### Backend
+
+From then we were able to establish the endpoints, models, and routes needed for our app. We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User, as well as the controllers. We were then able to test our routes making adjustments needed to populate the accurate information we wanted to display, using Insomnia as our client. We then created a seeds file and added the data for both Continent and City to kick-start our database. 
+
+#### Authentication
+
+If a user would like to add a post, they are required to register and login and if they have forgotten their password, they have the option to request an email with the link to reset their password.
+
+![Screenshot 2019-03-16 at 12 54 08](https://user-images.githubusercontent.com/44004811/54475586-af458900-47ea-11e9-8524-854cdcbe9512.png)
+
+### Frontend
 Frontend setup
 -setting up components and pages
 -setting up forms
