@@ -40,15 +40,15 @@ The brief was to build a MERN stack application in a group where it was also a r
 
 City Spot is a social platform for travellers to showcase their recent trips. This is done by generating a 'post' on a city's show page, which includes:
 
-* an uploaded image.
-* a brief summary of their experience/caption relating to their image. 
+* an uploaded image
+* a brief summary of their experience/caption relating to their image
 
 To increase interactivity amongst the travellers, users can also:
 
 * add a comment to the post
 * 'like' the post
 
-10 Posts with highest amounts of likes in the database will be featured on a popular posts page, where they are ordered from the most likes. The number of 'likes' are shown on the post to visually display this popularity ranking on the page. The users are also able to 'like' the posts they see on that page, and will be navigated to the city's show page if they click on the post.
+10 Posts with highest amounts of likes in the database will be featured on a popular posts page, where they are ordered with the descending likes. The number of 'likes' are shown on the post to visually display this popularity ranking on the page. The users are also able to 'like' the posts they see on that page, and will be navigated to the city's show page if they click on the post.
 
 As well as the posts, the city show pages also include:
 
@@ -65,11 +65,11 @@ When the user first visits City Spot, they have two paths to reach their desired
 
 ![Screenshot 2019-03-16 at 12 34 27](https://user-images.githubusercontent.com/44004811/54475406-e7e46300-47e8-11e9-87c3-6099e41a5c8e.png)
 
-City show page.
+City show page
 
 ![Screenshot 2019-03-17 at 23 09 08](https://user-images.githubusercontent.com/44004811/54499448-e2cb0500-4909-11e9-8dc5-2b7fc1ecb0b2.png)
 
-Post.
+A post
 
 ![Screenshot 2019-03-17 at 23 09 24](https://user-images.githubusercontent.com/44004811/54499450-f2e2e480-4909-11e9-9f91-047a2cf6e611.png)
 
@@ -78,18 +78,32 @@ The user has a profile page which contains their uploaded profile image, bio, a 
 ## Process
 
 ### Development
-
-We first began creating wireframes to work out the structure of the website and content placement. 
+Planning was an integral part the process as our focus was to produce a backend API which could corehently work in the React front-end. We first began creating wireframes to work out this structure and general content placement of the website. It was clear our application would revolve around three elements: User, City and Continent and we established early on that posts will be added to a city's page by a user.
 
 ### Backend
 
-From then we were able to establish the endpoints, models, and routes needed for our app. We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User, as well as the controllers. We were then able to test our routes making adjustments needed to populate the accurate information we wanted to display, using Insomnia as our client. We then created a seeds file and added the data for both Continent and City to kick-start our database. 
+We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User. It was set up so that cities will not exits before the continent was created, which meant the cities will become a virtual schema.
+
+```
+continentSchema.virtual('cities', {
+  ref: 'City',
+  localField: '_id',
+  foreignField: 'continent'
+})
+```
+We were then able to test our routes making adjustments needed to populate the accurate information we wanted to display, using Insomnia as our client. We then created a seeds file and added the data for both Continent and City to kick-start our database. 
 
 #### Authentication
+
+
 
 If a user would like to add a post, they are required to register and login and if they have forgotten their password, they have the option to request an email with the link to reset their password.
 
 ![Screenshot 2019-03-16 at 12 54 08](https://user-images.githubusercontent.com/44004811/54475586-af458900-47ea-11e9-8524-854cdcbe9512.png)
+
+#### Error Handling
+
+
 
 ### Frontend
 Frontend setup
@@ -107,7 +121,7 @@ We used Semantic UI as our CSS Framework which created a sleek and user friendly
 
 ## Challenges and Wins
 Challenges:
--email system
+* email system
 
 Wins:
 
