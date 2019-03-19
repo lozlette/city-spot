@@ -52,7 +52,7 @@ To increase interactivity amongst the travellers, users can also:
 
 As well as the posts, the city show pages also includes general city information such as population and region, event and restaurant recommendations, a youtube video of the city and a weekly weather forcast.
  
-This was a tool for user to find out information on cities they're planning to go to in the future.
+This was a tool for users to find out information on cities they're planning to go to in the future.
 
 ## Users Journey
 
@@ -60,11 +60,11 @@ When the user first visits City Spot, they have two paths to reach their desired
 
 ![Screenshot 2019-03-16 at 12 34 27](https://user-images.githubusercontent.com/44004811/54475406-e7e46300-47e8-11e9-87c3-6099e41a5c8e.png)
 
-City show page
+The city show page
 
 ![Screenshot 2019-03-17 at 23 09 08](https://user-images.githubusercontent.com/44004811/54499448-e2cb0500-4909-11e9-8dc5-2b7fc1ecb0b2.png)
 
-A post
+A post on the city
 
 ![Screenshot 2019-03-17 at 23 09 24](https://user-images.githubusercontent.com/44004811/54499450-f2e2e480-4909-11e9-9f91-047a2cf6e611.png)
 
