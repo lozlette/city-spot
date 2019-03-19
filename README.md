@@ -103,10 +103,6 @@ In order to carry out the authentication process, we used BCrypt to hash passwor
 Upon registering, we used Nodemailer to send an email to the users email which includes a link to verify the email they have registered with. The users are notified on the front-end by a flash message. 
 To experiement with Nodemailer and BCrypt even further, we also added a reset password option for users who have forgotten their password. The link navigates to a route where they input a new password which is undergoes the same backend process as the initial password setup.
 
-#### Error Handling
-
-
-
 ### Frontend
 Frontend setup
 * setting up components and pages
