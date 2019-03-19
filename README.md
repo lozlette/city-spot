@@ -5,7 +5,7 @@ Bete Yemane | Josh King | Lauren Bell | Alessandro Lepri
 
 ## Project Brief
 
-The breif was to build a MERN stack application in a group. The app was also required to have automated tests for at least one RESTful resource on the back-end. 
+The brief was to build a MERN stack application in a group where it was also a requirement to have automated tests for at least one RESTful resource on the back-end. 
 
 ### Timeframe
 
@@ -40,19 +40,24 @@ The breif was to build a MERN stack application in a group. The app was also req
 
 City Spot is a social platform for travellers to showcase their recent trips. This is done by generating a 'post' on a city's show page, which includes:
 
-* a chosen image of the place
+* an uploaded image.
 * a brief summary of their experience/caption relating to their image. 
 
 To increase interactivity amongst the travellers, users can also:
 
-* add a comment to a post
+* add a comment to the post
 * 'like' the post
 
-10 Posts with highest amounts of likes in the database will be featured on a popular posts page, where they are ordered from the most likes to the least likes. The number of 'likes' are shown on the post to clarify this, and to visually display the popularity ranking on the page. The users are also able to 'like' the posts they see on that page, and will be navigated to the city's show page if they click on the post.
+10 Posts with highest amounts of likes in the database will be featured on a popular posts page, where they are ordered from the most likes. The number of 'likes' are shown on the post to visually display this popularity ranking on the page. The users are also able to 'like' the posts they see on that page, and will be navigated to the city's show page if they click on the post.
 
-As well as the posts, the city show pages also include general city information such as population and region, event and restaurant recommendations, and a weekly weather forcast. This was a tool for user to find out information on cities they're planning to go to in the future. 
+As well as the posts, the city show pages also include:
 
-Users can also like and comment on the posts made by other users. 
+ * general city information such as population and region
+ * event and restaurant recommendations
+ * a youtube video of the city
+ * and a weekly weather forcast
+ 
+ This was a tool for user to find out information on cities they're planning to go to in the future. 
 
 ## Users Journey
 
