@@ -77,7 +77,7 @@ Planning was an integral part the process as our focus was to produce a backend 
 
 ### Backend
 
-We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User. As the the cities are within a continent catergory, a 'cities' virtual schema was made.
+We firstly began to develop our backend API using MongoDB, and created three of our main Mongoose models; City, Continent, and User. As the the cities are within a continent catergory, a 'cities' virtual schema was made.
 
 ```
 continentSchema.virtual('cities', {
