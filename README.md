@@ -50,7 +50,7 @@ To increase interactivity amongst the travellers, users can also:
 
 10 Posts with highest amounts of likes in the database will be featured on a popular posts page, where they are sorted by the amount of likes in descending order. The number of 'likes' are shown on the post to visually display this popularity ranking on the page. Users are also able to 'like' the posts they see on that page, and will be navigated to the city's show page when they click on the post.
 
-As well as the posts, the city show pages also includes, general city information such as population and region, event and restaurant recommendations,a youtube video of the city and a weekly weather forcast.
+As well as the posts, the city show pages also includes, general city information such as population and region, event and restaurant recommendations, a youtube video of the city and a weekly weather forcast.
  
 This was a tool for user to find out information on cities they're planning to go to in the future.
 
@@ -86,7 +86,7 @@ continentSchema.virtual('cities', {
   foreignField: 'continent'
 })
 ```
-To begin the database, we created a seeds file to add the data for all the Continents and a handful of Cities, which served two purposes: to create routes in the backend which allowed the front-end to work with the data, and to make adjustments to our API by populatating the accurate information we wanted to display, using Insomnia as our client. 
+To begin the database, we created a seeds file to add the data for all the Continents and a handful of Cities, which served two purposes: to create routes in the back-end which allowed the front-end to work with the data and as a visual tool, to help populate data when making adjustments to our API, using Insomnia as our client. 
 
 #### Authentication
 
