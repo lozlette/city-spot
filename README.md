@@ -82,7 +82,7 @@ Planning was an integral part the process as our focus was to produce a backend 
 
 ### Backend
 
-We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User. It was set up so that cities will not exits before the continent was created, which meant the cities will become a virtual schema.
+We firstly began to develop our backend API using Mongoose, and created three of our main models; City, Continent, and User. As the the cities are within a continent catergory, a 'cities' virtual schema was made.
 
 ```
 continentSchema.virtual('cities', {
@@ -91,12 +91,9 @@ continentSchema.virtual('cities', {
   foreignField: 'continent'
 })
 ```
-
-We were then able to test our routes making adjustments needed to populate the accurate information we wanted to display, using Insomnia as our client. We then created a seeds file and added the data for both Continent and City to kick-start our database. 
+To begin the database, we created a seeds file to add the data for all the Continents and a handful of Cities, which served two purposes: to create routes in the backend which allowed the front-end to work with the data, and to make adjustments on the populatating the accurate information we wanted to display, using Insomnia as our client. 
 
 #### Authentication
-
-Users are required to register and login if they intend to create a post, like, and comment on a post. 
 
 In order to carry out the authentication process, we used BCrypt to hash passwords in the backend and store it in the database so that BCrypt could compare it against the password given when logging in. We also used JSON Web Token to embed JSON into an encrypted token. This was incorporated in our login and register controller and is sent to the client when the users successfully authenticate. 
 
