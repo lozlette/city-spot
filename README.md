@@ -100,25 +100,8 @@ Users are required to register and login if they intend to create a post, like, 
 
 In order to carry out the authentication process, we used BCrypt to hash passwords in the backend and store it in the database so that BCrypt could compare it against the password given when logging in. We also used JSON Web Token to embed JSON into an encrypted token. This was incorporated in our login and register controller and is sent to the client when the users successfully authenticate. 
 
-Upon registering, we used Nodemailer to send an email to the users email which includes a link to verify the email they have registered with. The users are notified this on the front-end by a flash message.
-To experiement with Nodemailer even further, we added a reset password option for users who have forgotten their password. 
-
-```
-function sendResetPassword(user) {
-  if(process.env.NODE_ENV === 'test') return false
-
-  return sendMail(user.email, 'Reset your password', `Dear ${user.username}, You recently requested to reset your City Post password. To select a new password, click on the link below:
-
-  https://city-spot.herokuapp.com/newpassword/${user._id}
-
-  If you did not attempt to reset your password, please contact us immediately to citypostwdi@gmail.com
-
-  Regards,
-  City Post Team`)
-}
-```
-
-![Screenshot 2019-03-16 at 12 54 08](https://user-images.githubusercontent.com/44004811/54475586-af458900-47ea-11e9-8524-854cdcbe9512.png)
+Upon registering, we used Nodemailer to send an email to the users email which includes a link to verify the email they have registered with. The users are notified on the front-end by a flash message. 
+To experiement with Nodemailer and BCrypt even further, we also added a reset password option for users who have forgotten their password. The link navigates to a route where they input a new password which is undergoes the same backend process as the initial password setup.
 
 #### Error Handling
 
