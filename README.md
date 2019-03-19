@@ -1,9 +1,11 @@
 
 # General Assembly Project 3: City Spot
 
+Bete Yemane | Josh King | Lauren Bell | Alessandro Lepri
+
 ## Project Brief
 
-A group project to build a fullstack React application.
+The breif was to build a MERN stack application in a group. The app was also required to have automated tests for at least one RESTful resource on the back-end. 
 
 ### Timeframe
 
@@ -26,13 +28,9 @@ A group project to build a fullstack React application.
 * Git/Github
 * Heroku
 
-## Website
+## Deployed Web App
 
-https://city-spot.herokuapp.com/
-
-## Contributors
-
-Bete Yemane, Josh King, Lauren Bell, Alessandro Lepri
+---> https://city-spot.herokuapp.com/
 
 ## Our Application - City Spot
 
@@ -40,7 +38,21 @@ Bete Yemane, Josh King, Lauren Bell, Alessandro Lepri
 
 ## Project Summary
 
-City Spot is a platform for travellers to share images of the places they've been to and to find out information on cities they're planning to go to in the future. Information includes, posts made by other users, event and restaurant recommendations. Posts with high amounts of likes will be added to the popular posts page where they'll be able to 'like' the posts they see on that page.
+City Spot is a social platform for travellers to showcase their recent trips. This is done by generating a 'post' on a city's show page, which includes:
+
+* a chosen image of the place
+* a brief summary of their experience/caption relating to their image. 
+
+To increase interactivity amongst the travellers, users can also:
+
+* add a comment to a post
+* 'like' the post
+
+10 Posts with highest amounts of likes in the database will be featured on a popular posts page, where they are ordered from the most likes to the least likes. The number of 'likes' are shown on the post to clarify this, and to visually display the popularity ranking on the page. The users are also able to 'like' the posts they see on that page, and will be navigated to the city's show page if they click on the post.
+
+As well as the posts, the city show pages also include general city information such as population and region, event and restaurant recommendations, and a weekly weather forcast. This was a tool for user to find out information on cities they're planning to go to in the future. 
+
+Users can also like and comment on the posts made by other users. 
 
 ## Users Journey
 
@@ -48,11 +60,10 @@ When the user first visits City Spot, they have two paths to reach their desired
 
 ![Screenshot 2019-03-16 at 12 34 27](https://user-images.githubusercontent.com/44004811/54475406-e7e46300-47e8-11e9-87c3-6099e41a5c8e.png)
 
-City page.
+City show page.
 
 ![Screenshot 2019-03-17 at 23 09 08](https://user-images.githubusercontent.com/44004811/54499448-e2cb0500-4909-11e9-8dc5-2b7fc1ecb0b2.png)
 
-Users can also like and comment on the posts made by other users. 
 
 ![Screenshot 2019-03-17 at 23 09 24](https://user-images.githubusercontent.com/44004811/54499450-f2e2e480-4909-11e9-9f91-047a2cf6e611.png)
 
