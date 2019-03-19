@@ -109,9 +109,9 @@ To experiement with Nodemailer and BCrypt even further, we also added a reset pa
 
 ### Frontend
 Frontend setup
--setting up components and pages
--setting up forms
--connecting API requests to the front end.
+* setting up components and pages
+* setting up forms
+* connecting API requests to the front end.
 
 ### Task Management and Communication
 
