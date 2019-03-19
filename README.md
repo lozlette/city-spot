@@ -91,7 +91,7 @@ continentSchema.virtual('cities', {
   foreignField: 'continent'
 })
 ```
-To begin the database, we created a seeds file to add the data for all the Continents and a handful of Cities, which served two purposes: to create routes in the backend which allowed the front-end to work with the data, and to make adjustments on the populatating the accurate information we wanted to display, using Insomnia as our client. 
+To begin the database, we created a seeds file to add the data for all the Continents and a handful of Cities, which served two purposes: to create routes in the backend which allowed the front-end to work with the data, and to make adjustments to our API by populatating the accurate information we wanted to display, using Insomnia as our client. 
 
 #### Authentication
 
