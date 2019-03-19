@@ -48,7 +48,7 @@ To increase interactivity amongst the travellers, users can also:
 * add a comment to the post
 * 'like' the post
 
-10 Posts with highest amounts of likes in the database will be featured on a popular posts page, where they are sorted by the amount of likes in descending order. The number of 'likes' are shown on the post to visually display this popularity ranking on the page. Users are also able to 'like' the posts they see on that page, and will be navigated to the city's show page when they click on the post.
+10 posts with highest amounts of likes in the database will be featured on a popular posts page, where they are sorted by the amount of likes in descending order. The number of 'likes' are added on the post to visually display this popularity ranking on the page. Users are also able to 'like' the posts they see on that page, and will be navigated to the city's show page when they click on the post.
 
 As well as the posts, the city show pages also includes, general city information such as population and region, event and restaurant recommendations, a youtube video of the city and a weekly weather forcast.
  
