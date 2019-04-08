@@ -102,7 +102,24 @@ One of the other developers and I worked on setting up the front-end of the proj
 
 ### APIs
 
-One of my tasks was to incorporate external APIs into the project, and I decided to make to API calls on the backend to ensure our app ran as fast and efficiently as it could. First I used a combination of two APIS; Open Cage and Dark Sky API's to first get the latitude and longitude of each city, and then pass these through into the API call to Dark Sky to get the weather information for that location.
+One of my tasks was to incorporate external APIs into the project, and I decided to make to API calls on the backend to ensure our app ran as fast and efficiently as it could. First I used a combination of two APIS; the Open Cage and Dark Sky API's to first get the latitude and longitude of each city, and then pass these through into the API call to Dark Sky to get the weather information for that location.
+![Screenshot 2019-04-08 at 15 14 11](https://user-images.githubusercontent.com/7090684/55730864-0a952080-5a11-11e9-91f8-60fedb2e1c24.png)
+
+I then displayed this information on the frontend in the City Show Page, as can be seen in the screenshot above.
+
+Next I added the Skiddle API to add events based in a certain city, usung the same logic- I first got the latitude and longitude from Open Cage API and passed this into the API request for Skiddle.
+
+![skiddle](https://user-images.githubusercontent.com/7090684/55731077-6fe91180-5a11-11e9-9169-873aceb7d7d4.png
+
+Lastly, I added an API to display restaurant information for each city, using the Zomato API, again using the Open Cage API for latitude and longitude.
+
+![zomato](https://user-images.githubusercontent.com/7090684/55731341-f69dee80-5a11-11e9-8042-20ee968b3340.png)
+
+On the front end I set up a component each for events and restaurants each with separate API calls, and a Cities Info component to display both on one page.
+![events](https://user-images.githubuse
+rcontent.com/7090684/55731942-f7835000-5a12-11e9-997a-bf910f1e7eaf.png)
+
+![restaurants](https://user-images.githubusercontent.com/7090684/55731914-eafef780-5a12-11e9-94fd-3cf21ab58c02.png)
 
 ### Task Management and Communication
 
@@ -114,7 +131,9 @@ We used Semantic UI as our CSS Framework which created a sleek and user friendly
 
 ## Challenges and Wins
 Challenges:
-* email system
+One challenge for me was getting used to the new CSS library Semantic UI React to style and layout the front end of the project.
+
+Another challenge for me was combining the API requests.
 
 Wins:
 
