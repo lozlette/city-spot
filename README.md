@@ -100,7 +100,9 @@ Frontend setup
 
 One of the other developers and I worked on setting up the front-end of the project. We started by splitting the components and working on these separately. I worked on the City Index page, the Home page and the Continents Show page, while the other developer concentrated on the form pages.
 
-* connecting API requests to the front end.
+### APIs
+
+One of my tasks was to incorporate external APIs into the project, and I decided to make to API calls on the backend to ensure our app ran as fast and efficiently as it could. First I used a combination of two APIS; Open Cage and Dark Sky API's to first get the latitude and longitude of each city, and then pass these through into the API call to Dark Sky to get the weather information for that location.
 
 ### Task Management and Communication
 
