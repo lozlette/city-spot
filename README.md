@@ -116,8 +116,8 @@ Lastly, I added an API to display restaurant information for each city, using th
 ![zomato](https://user-images.githubusercontent.com/7090684/55731341-f69dee80-5a11-11e9-8042-20ee968b3340.png)
 
 On the front end I set up a component each for events and restaurants each with separate API calls, and a Cities Info component to display both on one page.
-![events](https://user-images.githubuse
-rcontent.com/7090684/55731942-f7835000-5a12-11e9-997a-bf910f1e7eaf.png)
+
+![events](https://user-images.githubusercontent.com/7090684/55731942-f7835000-5a12-11e9-997a-bf910f1e7eaf.png)
 
 ![restaurants](https://user-images.githubusercontent.com/7090684/55731914-eafef780-5a12-11e9-94fd-3cf21ab58c02.png)
 
