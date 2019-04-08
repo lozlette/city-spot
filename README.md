@@ -97,8 +97,9 @@ To experiement with Nodemailer and BCrypt even further, we also added a reset pa
 
 ### Frontend
 Frontend setup
-* setting up components and pages
-* setting up forms
+
+One of the other developers and I worked on setting up the front-end of the project. We started by splitting the components and working on these separately. I worked on the City Index page, the Home page and the Continents Show page, while the other developer concentrated on the form pages.
+
 * connecting API requests to the front end.
 
 ### Task Management and Communication
